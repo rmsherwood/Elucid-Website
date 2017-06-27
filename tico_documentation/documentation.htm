@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Theme Documentation</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/font-awesome.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css" media="screen">
+    
+    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+	<link rel="stylesheet" href="assets/css/stylesheet.css" media="screen">
+	<script src="assets/jquery.js"></script>
+	<script src="assets/scripts.js"></script>
+</head>
+
+<body>
+	<div class="mobile-menu"></div>
+   
+	
+    <div id="content">
+        <div class="bg-content-top">
+            <div class="container-fluid">
+                <!-- Docs nav==================================================-->
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-lg-2">
+                        <div class="affix-top" id="nav_container">
+                            <a href="http://gaviasthemes.com/" id="affect_all" target="_blank"> <span class="expand" style="padding-top: 10px;display: block;"><strong>GAVIASTHEMES.COM</strong></span></a>
+                            <div class="clearfix"></div>
+                            <ul class="nav nav-list bs-docs-sidenav" id="nav">
+                                
+								<li class="nav-item item1 first">
+                                    <dl class="slide-down"> <dt><a href="#start" class="fa fa-info">Start</a></dt>
+                                    </dl>
+                                </li>
+								
+                                <li class="nav-item item2">
+                                    <dl class="slide-down"> <dt><a href="#install" class="fa fa-angle-double-right">1. Installation</a><i class="fa fa-sample"></i></dt></dl>
+									<dd style="display: none;">
+										<ul class="list">
+											<li class="first "><a href="#fresh_install"><i class="fa fa-sample"></i>Fresh Installation</a></li>
+											<li class="first "><a href="#exits_install"><i class="fa fa-sample"></i>Existing Sites Installation</a></li>
+										</ul>
+									</dd>
+                                </li>
+								
+								<li class="nav-item item3">
+                                    <dl class="slide-down"><dt><a href="#block" class="fa fa-angle-double-right">2. Block</a><i class="fa fa-sample"></i></dt>
+                                    </dl>
+									<dd style="display: none;">
+										<ul class="list">
+											<li class="first "><a href="#block_layout"><i class="fa fa-sample"></i>Block Layout</a></li>
+											<li class="first "><a href="#block_config"><i class="fa fa-sample"></i>Block Config</a></li>
+										</ul>
+									</dd>
+                                </li>
+								
+								<li class="nav-item item4">
+                                    <dl class="slide-down"> <dt><a href="#block_builder" class="fa fa-angle-double-right">3. Using Block Builder</a></dt>
+                                    </dl>
+                                </li>
+								
+								<li class="nav-item item5">
+                                    <dl class="slide-down"> <dt><a href="#sliders" class="fa fa-angle-double-right">4. Using Sliders</a></dt>
+                                    </dl>
+                                </li>
+								
+								<li class="nav-item item6">
+                                    <dl class="slide-down"><dt><a href="#menus" class="fa fa-angle-double-right">5. Menus</a></dt>
+                                    </dl>
+                                </li>
+								
+								<li class="nav-item item7">
+                                    <dl class="slide-down"><dt><a href="#post_types" class="fa fa-angle-double-right">6. Post Types</a></dt>
+                                    </dl>
+                                </li>
+								
+								<li class="nav-item item8">
+                                    <dl class="slide-down"><dt><a href="#theme_setting" class="fa fa-angle-double-right">7. Theme settings</a><i class="fa fa-sample"></i></dt></dl>
+									<dd style="display: none;">
+										<ul class="list">
+											<li class="first "><a href="#setting_gerenal"><i class="fa fa-sample"></i>Gerenal options</a></li>
+											<li class="first"><a href="#setting_header"><i class="fa fa-sample"></i>Header options</a></li>
+											<li class="first hidden"><a href="#setting_social"><i class="fa fa-sample"></i>Social options</a></li>
+											<li class="first "><a href="#setting_customize"><i class="fa fa-sample"></i>Settings Customize</a></li>
+											<li class="first "><a href="#setting_css"><i class="fa fa-sample"></i>Customize css</a></li>
+										</ul>
+									</dd>
+                                </li>
+								
+								<li class="nav-item item9">
+                                    <dl class="slide-down"><dt><a href="#region" class="fa fa-angle-double-right">9. Region</a></dt>
+                                    </dl>
+                                </li>
+								
+                                <li class="nav-item item10 last">
+                                    <dl class="slide-down"> <dt><a href="#finally" class="fa fa-angle-double-right">10. Finally</a></dt>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+					<div class="col-xs-12 col-md-9 col-lg-10">
+                        <!-- box-content==================================================-->
+                        <div class="box-content">
+                            <!-- block-started==================================================-->
+                            <section class="block-started" id="start">
+                                <h1 class="title">Tico - Responsive Business Drupal 8 Theme</h1>
+								<br>
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<div class="alert alert-info" role="alert">
+											<p>
+												<span class="bold">Created:</span> 09.08.2016<br>
+												<span class="bold">Author:</span> Gaviasthemes<br>
+												<span class="bold">Email:</span> <a href="mailto:gaviasthemes@gmail.com">gaviasthemes@gmail.com</a>
+											</p>
+											<p class="max-width">
+												If you have any questions, please feel free to write us an email.
+											</p>
+											<a class="button" href="mailto:gaviasthemes@gmail.com">Support via Email</a>
+											<a class="button" href="http://themeforest.net/user/gavias">Go to Themeforest</a>
+										</div>
+									</div>
+                            </section>
+							
+                            <div id="install">
+                            <section id="fresh_install"> <!-- #01 -->
+								<div class="row">
+									<h2 class="margin-top-small">Fresh Installation</h2>
+								</div>
+								<div class="row gutters">
+									<div class="col span_12">
+										<p>
+											The Quickstart Package consists on a complete Durpal! + Template + Various Extensions + Sample Content, excellent for beginner users to explore back-end settings and sample content. Installing the Quickstart is just like installing Drupal!, but you will have the full demo of the theme on your server. Once your environment is ready, follow this quick guide:
+										</p>
+										<p>
+											Localhost only: create a new folder in the htdocs folder for Xampp (www folder for Wamp). Example: mywebsite <br/>
+											Unpack all files and folders of the Template Package file and open the demo folder.<br/>
+										</p>
+									</div>
+								</div>
+
+							
+								<div class="row gutters">
+									<div class="col span_12">
+										<p>
+										This section will guide you through general information such as Download Package, Included Files, System Requirements and Installation. Please note that you need to check your PHP memory cache when using an installation profile. Depending on the installation profile you need to allocate more memory cache for PHP.
+										</p>
+										
+										<h4>Download Package</h4>
+										<p>	
+											Compatible with Drupal 8.x
+											Copyright (C) 2015-2016 Gaviasthemes. All Rights Reserved.
+											@license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+										</p>
+										
+										<h4>System Requirements </h4>
+										<p>If you are new to <a href="https://www.drupal.org/">Drupal</a>, please take a look at <a href="https://www.drupal.org/requirements">System requirements</a> on drupal.org</p>
+							
+										<p>Drupal 8: <strong>PHP</strong> 5.5.9 or higher <br>
+										<strong>MySQL</strong> 5.5.3/MariaDB 5.5.20/Percona Server 5.5.8 or higher with PDO and an InnoDB-compatible primary storage engine,<br>
+											<strong>PostgreSQL</strong> 9.1.2 or higher with PDO,<br>
+											<strong>SQLite</strong> 3.6.8 or higher<br>
+										</p>
+
+										<h4>Installation </h4>
+										<iframe width="900" height="600" src="https://www.youtube.com/embed/2-FNKVT6SnE" frameborder="0" allowfullscreen></iframe>
+										<p><b>You can watch Fresh Installation on Live Hosting </b></p>
+										<iframe width="900" height="600" src="https://www.youtube.com/embed/HJ1m5wm2Ut4" frameborder="0" allowfullscreen></iframe>
+										
+										
+										<p>If you are new to Drupal, please see <a href="https://www.drupal.org/documentation/install"> Installation guide</a> on drupal.org to install standard Drupal website and You can see all guide for drupal <a href="https://www.drupal.org/documentation"></a>.</p>
+
+										<h4>How to Fresh Installation</h4>
+										<p>This instruction are for people that have experience manually installing Drupal and importing databases. If you do not feel comfortable performing these steps yourself, contact your server administrator for help. WARNING Do not import the provided SQL file into an existing Drupal database or you will lose all existing data.</p>
+
+									<p>Full Drupal installation comes without images, which was only for theme demonstration.</p>
+
+									<p>After purchasing theme, you will get a download package. Extract the archive somewhere on your computer.</p>
+
+										<h6>step 1</h6>
+										<p>Download a theme package of your choice (e.g. gavias_tico_full)</p>
+										<h6>step 2</h6>
+										<p>Extract package.</p>
+										<h6>step 3</h6>
+										<p>Goto folder <code>fresh-installation/demo</code>. Copy the entire contents of the <code>demo</code> folder to the location on your web server where you want your site to be accessed. If you want your primary domain to point to your install of Tico Theme, copy everything to the root folder. If you want your site to be accessed as a subsection of your domain (for example: yourdomain.com/drupal) then simply rename the <code>demo</code> folder to the desired name and upload to the root of your server..</p>
+										<h6>step 4</h6>
+										<p>Access your MySQL database and create a new DB (e.g. gavias_tico)</p>
+										<p><img src="assets/images/install/7.png" /></p>
+										<p>Import the SQL file <code>fresh-installation/database.sql.zip</code> to database for theme(e.g. gavias_tico). The <a target="_blank" href="http://www.phpmyadmin.net/home_page/downloads.php">PhpMyAdmin</a> might be helpfull for managing your databases. </p>
+										<p><img src="assets/images/install/8.png" /></p>
+										<h6>step 5</h6>
+										<p>Install profile standard for drupal </p>
+										<p><img src="assets/images/install/1.png" /></p>
+										<p><img src="assets/images/install/2.png" /></p>
+										<p><img src="assets/images/install/3.png" /></p>
+										<p><img src="assets/images/install/9.png" /></p>
+										<h6>step 6</h6>
+										<p>Login to your site with the username <code>admin</code> and the password <code>admin</code> and visit <code>admin/people</code> to change the admin username and password again, visit <code>admin/config/system/site-information</code> to change the site-information again</p>
+										<p>Go through the Drupal configuration found in admin/config options and update all the necessary information to reflect your website. Also be sure to visit <code>/admin/config/media/file-system</code> and update the Files Directories. </p>
+										<p>And visit <code>admin/config/development/performance</code> Clear all cache drupal.
+										<h6>Finish</h6>
+										<p>You're having a full website.</p>
+									</div>
+								</div>
+							</section>
+                            
+							<section id="exits_install"> <!-- #01 -->
+								<div class="row">
+									<h2 class="margin-top-small">Installation for existing sites</h2>
+									<p>
+										<b> Note: The installation theme drupal on an existing site very hard, you need a lot of experience doing it.If you can, you should install quickstart demo. It is easy use.</b><br>
+										<b> You need backup database and file for your webiste.</b>
+									</p>
+								</div>
+								<div><iframe width="853" height="480" src="https://www.youtube.com/embed/he9p1gr8U6k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+								<div class="row gutters">
+									<div class="col span_12">
+										<p>
+										This section will guide you through general information such as Download Package, Included Files, System Requirements and Installation. Please note that you need to check your PHP memory cache when using an installation profile. Depending on the installation profile you need to allocate more memory cache for PHP.
+										</p>
+										
+										<h4>Download Package</h4>
+										<p>	
+											Compatible with Drupal 8.x
+											Copyright (C) 2015-2016 Gaviasthemes. All Rights Reserved.
+											@license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+										</p>
+										
+										<h4>System Requirements </h4>
+										<p>If you are new to <a href="https://www.drupal.org/">Drupal</a>, please take a look at <a href="https://www.drupal.org/requirements">System requirements</a> on drupal.org</p>
+										<p><b>Note:</b></p>
+										<p>Drupal 8: PHP 5.5.9 or higher</p>
+										<p>  MySQL 5.5.3/MariaDB 5.5.20/Percona Server 5.5.8 or higher with PDO and an InnoDB-compatible primary storage engine,<br>
+											PostgreSQL 9.1.2 or higher with PDO,<br>
+											SQLite 3.6.8 or higher<br>
+										</p>
+										<p>If you enable xdebug extension, you need set <code>xdebug.max_nesting_level = 256</code> for your server and reset your server.</p>
+
+										<h4>How to install theme with demo package</p>
+										<h6>step 1</h6>
+										<p>Download a theme package of your choice and Extract the downloaded theme archive somewhere on your computer.</p>
+
+										<h6>step 2 : Upload file</h6>
+											<p>Upload theme in folder <code>existing-installation/themes/gavias_tico</code> to your site folder in /themes</p>
+											<p>Upload modules all required modules <code>existing-installation/modules/</code> to your site in /modules folder.</p>
+
+										<h6> step 3: Theme activation </h6>
+										<p>Login to your Drupal site and go to <code>admin/appearance</code> enable the Tico Theme theme and set it as the default theme.</p>
+										<p><img src="assets/images/active-theme.png" /></p>
+										
+										<h6> step 4: Install modules </h6>
+										<p>Please make sure what you are have enabled next modules before enabling the theme: </p>
+											<ul>
+												<li>blockclass</li>
+												<li>gaviasthemer</li>
+												<li>features</li>
+												<li>config_update</li>
+												<li>gavias_blockbuilder</li>
+												<li>simplenews</li>
+												<li>tico_features(It will import content type, field, node, block, view for theme, You need install other before)</li>
+											</ul>
+											
+										<h6> step 5: Import and create home page </h6>
+										You can read more <a class="" href="#block_builder">Home Page Demo</a>
+								
+									</div>
+								</div>
+							</section>
+                            </div>
+                            
+							<div id="block">
+								<section id="block_layout"> <!-- #01 -->
+									<div class="row">
+										<h2 class="margin-top-small">Block Layout</h2>
+									</div>
+									<div class="row">
+										<p><img src="assets/images/layout/1.png"/></p>
+									</div>
+								</section>
+								<section id="block_config"> <!-- #01 -->
+									<div class="row">
+										<h2 class="margin-top-small">Block Config</h2>
+									</div>
+									<div class="row">
+										<p><img src="assets/images/block/1.png"/></p>
+									</div>
+								</section>
+                            </div> 							
+								
+						    <section id="block_builder"> <!-- #02 -->
+								<div class="row">
+									<h2>Using Block Builder</h2>
+				
+									<div class=" gutters">
+										<div style="margin-bottom: 20px"><b>You can watch video using module</b> <a href="https://www.youtube.com/watch?v=0wsq9NvucY4">https://www.youtube.com/watch?v=0wsq9NvucY4</a></div>
+										<div><iframe width="800" height="400" src="https://www.youtube.com/embed/0wsq9NvucY4" frameborder="0" allowfullscreen></iframe></div>
+										<div style="clear:both"></div>
+										<div class="col span_12" style="margin-left: 0;">
+											<p><b>Visit yourdomain.com/admin/structure/gavias_blockbuilder to create a block builder by importing code from (/files_export_blockbuilder/files_export_home_v1.txt).</b></p>
+											<p>1. <b>Create new blockbuilder:</b> Please goto yourdomain.com/admin/structure/gavias_blockbuilder/form/0</p>
+											<p>2. <b>Import:</b> You can import block builder by importing code from (/files_export_blockbuilder/files_export_home_v1.txt) to the new block builder</p>
+											<p>3. <b>Save:</b> Click save button to the block builder.</p>
+											<p>4. <b>Assign Block:</b> You need goto yourdomain.com/admin/structure/block and config assign block builder to region.(recommend: region before fullwidth)</p>
+											
+											<p><img src="assets/images/gbb/1.png"/></p>
+											
+											<p><b>You can drag & drop and config row, columns and element in Layout designer to change position of Blocks.</b></p>
+											<p><img src="assets/images/gbb/2.png"/></p>
+											
+										</div>
+									</div>
+									
+									<h2>Using Shortcode of Block Builder</h2>
+									<iframe width="800" height="400" src="https://www.youtube.com/embed/lIDMqpnVj4U" frameborder="0" allowfullscreen></iframe>
+									 <div class=" gutters">
+										<h6> step 1: Config Shortcode for editor </h6>
+											<p>You can visit /admin/config/content/formats and config "Text formats and editors"</p>
+											<p><img src="assets/images/shortcode/1.jpg"/></p>
+										<h6> step 2: Enable Shortcode for editor </h6>
+											<p><img src="assets/images/shortcode/2.jpg"/></p>
+										<h6> step 3: Add shortcode block builder to editor </h6>
+											<p>You need create new page full node and add shortcode block builder to editor</p>
+											<p><img src="assets/images/shortcode/3.jpg"/></p>
+									</div>									
+								
+								</div>
+							</section>
+                            
+                            <section id="sliders" class=""> <!-- #02 -->
+								<div class="row">
+									<h2>Using slider</h2>
+									
+									<div class="row gutters">
+										<div class="col span_12"><p><b>Tico Theme supports slider layer </b></p></div>
+										<div style="margin-bottom: 20px">You can watch sample demo</div>
+										<div><iframe width="800" height="400" src="https://www.youtube.com/embed/WeulxS_oKyQ" frameborder="0" allowfullscreen></iframe></div>
+									</div>
+								
+								</div>
+							</section>
+							 
+							 <section id="menus"> <!-- #02 -->
+								<div class="row">
+									<h2>Menu</h2>
+									
+									<div class="row gutters">
+										<div class="col span_12">
+											<h6>Step 1</h6>
+											<p>
+												 Go to <code>Structure > Menu > Main navigation</code>. Click to list link of Edit menu
+											</p>
+											<p><img src="assets/images/menu/1.png"/></p>
+											
+											<h6>Step 2</h6>
+											<p>
+												 Add list menu of main menu
+											</p>
+											<p><img src="assets/images/menu/2.png"/></p>
+											
+											<h6>Step 3</h6>
+											<p>
+												 Setting Mega Menu
+											</p>
+											
+											<p>Edit menu level 1</p>
+											<p><img src="assets/images/menu/3.png"/></p>
+											<p>And setting follow image</p>
+											<p><img src="assets/images/menu/4.png"/></p>
+										</div>
+									</div>
+								
+								</div>
+							</section>
+                           
+						  
+							<section id="post_types"> <!-- #04 -->
+
+								<div class="row">
+									<h2>Custom Post Type</h2>
+								</div>
+
+								<div class="row gutters">
+									<div class="col span_12">
+										<h4 class="margin-top-small">Article</h4>
+										<p><img  src="assets/images/post-type/blog.png"></p>
+										<p>
+											<ul>
+												<li><b>Body:</b> The default body field.</li>
+												<li><b>Post Category:</b> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+												<li><b>Post Image:</b> The default Image field used for uploading the images.</li>
+												<li><b>Post Format:</b> The display post format (Image, Gallery, Video, Audio).</li>
+												<li><b>Post Gallery:</b> Gallery field used for uploading the images for Gallery post format.</li>
+												<li><b>Post Embed:</b> Embed field user for Code video audio for Video, audio post format.</li>
+											</ul>
+										</p>
+									</div>	
+								</div>
+								
+								<div class="row gutters">
+									<div class="col span_12">
+										<h4 class="margin-top-small">Gallery</h4>
+										<p><img  src="assets/images/post-type/gallery.png"></p>
+										<p>
+											<ul>
+												<li><b>Body:</b> The default body field.</li>
+												<li><b>Gallery Thumbnail:</b> The default Thumbnail field used for uploading the image thumbnail.</li>
+												<li><b>Gallery Images:</b> Gallery field used for uploading the images for Gallery Slideshow.</li>
+											</ul>
+										</p>
+									</div>	
+								</div>
+								
+								<div class="row gutters">
+									<div class="col span_12">
+										<h4 class="margin-top-small">Portfolio</h4>
+										<p><img  src="assets/images/post-type/portfolio.png"></p>
+										<p>
+											<ul>
+												<li><b>Body:</b> The default body field.</li>
+												<li><b>Image:</b> The default Thumbnail field used for uploading the image thumbnail.</li>
+												<li><b>Portfolio Gallery:</b> Gallery field used for uploading the images for portfolio.</li>
+												<li><b>Portfolio Embed:</b>Embed field user for Code video.</li>
+												<li><b>Portfolio Tags:</b>This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+											</ul>
+										</p>
+									</div>	
+								</div>
+								
+								<div class="row gutters">
+									<div class="col span_12">
+										<h4 class="margin-top-small">Testimonial</h4>
+										<p><img  src="assets/images/post-type/testimonial.png"></p>
+										<p>
+											<ul>
+												<li><b>Body:</b> The default body field.</li>
+												<li><b>Testimonial Image:</b> The default Thumbnail field used for uploading the image thumbnail.</li>
+												<li><b>Testimonial Avatar:</b> The Avatar field used for uploading the avatar.</li>
+												<li><b>Testimonial Embed:</b> Embed field user for Code video.</li>
+												<li><b>Testimonial job:</b>The job for testimonial.</li>
+												<li><b>Testimonial name:</b>The name for testimonial.</li>
+											</ul>
+										</p>
+									</div>	
+								</div>
+							</section>
+							
+							<section id="theme_setting"> <!-- #02 -->
+								<div class="row">
+									<h2>Theme Options</h2>
+									
+									<p>Visit <code>/admin/appearance/settings/gavias_tico</code> to configure your theme's settings. You can select your color scheme, add your own custom CSS, add your own custom logo, etc.</p>
+									
+									<div id="setting_gerenal">
+										<h4>Gerenal options</h4>
+										<p><img src="assets/images/admin/1.png"></p>
+									</div>
+									
+									<div id="setting_header">
+										<h4>Header options</h4>
+										<p><img src="assets/images/admin/2.png"></p>
+									</div>
+									
+									<div id="setting_social" class="hidden">
+										<h4>Social options</h4>
+										<p><img src="assets/images/admin/3.png"></p>
+									</div>
+									
+									<div id="setting_customize">
+										<h4>Settings Customize</h4>
+										<p><img src="assets/images/admin/6.png"></p>
+									</div>
+									
+									<div id="setting_css">
+										<h4>Customize css</h4>
+										<p><img src="assets/images/admin/5.png"></p>
+									</div>
+								
+								</div>
+							</section>
+							
+							<section id="region"> <!-- #02 -->
+								<div class="row">
+									<h2>Region</h2>
+									
+									<div class="row gutters">
+										<div class="col span_12">
+											<p>If you used demo install profile, then this setup will be already done. In which case you may only need to modify things. <br>
+											However we still recommend that you read this section carefully because it contains important information which will be useful during modification of the block configuration.</p>
+										</div>
+										<div class="col span_12">
+											<h4>Assigning block</h4>
+											<p>
+												 Blocks are placed in regions via the Block Admin page <code> Dashboard > Structure > Blocks </code>. Here you can Enable, throttle, place, configure blocks and Add a region
+											</p>
+											
+											<h4>Creating new a region</h4>
+											<p>
+												 1. Open gavias_tico/gavias_tico.info.yml file (with a text editor)<br>
+												 2. Find copyright: Copyright<br>
+												 3. Insert code after: region_name = Region human readable name<br>
+												 4. Save gavias_tico.info.yml file and go to Configuration > Performance to clear site cache
+											</p>
+											
+											<h4>Placing your block region into the theme</h4>
+											<p>
+												1. Open gavias_tico/template/page/main.html.twig file (with a text editor)<br>
+												2. Paste this code to wherever you want to display block region: <br>
+												<img src="assets/images/region.jpg">
+											</p>
+										</div>
+									</div>
+								
+								</div>
+							</section>
+                           
+                           
+							
+                            <section id="finally">
+								<div class="row">
+									<div class="col span_12">
+										<h1>Finally</h1>
+
+										<h2>Thank you for reading!</h2>
+										<p>
+											We hope you can create the best website with our themes.</p>
+										<p>
+											One again, thank you so much for using our theme. As i said at the beginning, i&#39;d be glad to help you if you have any questions relating to this theme. No guarantees, but i&#39;ll do my best to assist. If you have a more general question relating to the themes.</p>
+										<p>
+											Do not hesitant to contact us via email : <b>gaviasthemes@gmail.com</b> </p>
+										<p>
+											Please take a screenshot photo with descriptions about your problem. More details about your problems help us more easier to figure out and respond you sooner.</p>
+										<p>
+											*******************Note*********************************************************************************************************</p>
+										<p>
+											<b>SCOPE OF SUPPORT </b></p>
+										<p>
+											Our support covers getting setup, trouble using any features and any bug fixes that may arise. Unfortunately we cannot provide support for customizations or 3rd party plugins. If you need help with customizations of your theme, please contact with us with your requirement. Our technical team will help you with some fees.</p>
+										<p>
+											<b>SUPPORT SCHEDULE</b></p>
+										<p>
+											Our working from <b>Monday to Friday </b>. So if you email us besides this working time, we are really sorry that we are not able to respond you soon. We will try to reply you as fast as we can. Especially if you email or submit ticket at weekend, please be patient and we will respond to you right when we are back on Monday.</p>
+									</div>
+								</div>
+							</section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer==================================================-->
+    <footer>
+        <div class="container"> Theme Documentation
+            <br>© <span id="copyright-year">2016</span> <span id="copyright">GaviasThemes</span> </div>
+    </footer>
+    <div class="" id="back-top"> <a href="#"><i class="fa fa-angle-double-up"></i></a> </div>
+
+
+</body></html>

@@ -1,0 +1,16 @@
+<div class="width-700">
+   {% if attributes -%}
+      <div id="gva-images-carousel" {{ attributes.addClass('text-center') }}>
+   {% endif %}
+
+      {% for row in rows %}
+         <div class="gallery-large carousel-item">
+            <div class="item content">{{ row.content }}</div>
+         </div>
+      {% endfor %}  
+       
+   {% if attributes -%}
+      </div>
+   {% endif %}
+</div>
+

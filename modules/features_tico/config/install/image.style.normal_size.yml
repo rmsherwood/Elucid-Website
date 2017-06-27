@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: normal_size
+label: 'Normal (770 x 480)'
+effects:
+  356b0231-c7fd-49a3-ab03-3f6c6e2642d0:
+    uuid: 356b0231-c7fd-49a3-ab03-3f6c6e2642d0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 770
+      height: 480

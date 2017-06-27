@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portfolio_tags
+    - node.type.portfolio
+    - taxonomy.vocabulary.portfolio_tags
+id: node.portfolio.field_portfolio_tags
+field_name: field_portfolio_tags
+entity_type: node
+bundle: portfolio
+label: 'Portfolio Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      portfolio_tags: portfolio_tags
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,33 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.post_other
+  module:
+    - block_visibility_groups
+    - gaviasthemer
+    - views
+  theme:
+    - gavias_tico
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_tico_views_block__post_other_block_2
+theme: gavias_tico
+region: '-1'
+weight: -3
+provider: null
+plugin: 'views_block:post_other-block_2'
+settings:
+  id: 'views_block:post_other-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

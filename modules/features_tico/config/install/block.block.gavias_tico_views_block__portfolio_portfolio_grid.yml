@@ -1,0 +1,23 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.portfolio
+  module:
+    - views
+  theme:
+    - gavias_tico
+id: gavias_tico_views_block__portfolio_portfolio_grid
+theme: gavias_tico
+region: '-1'
+weight: -12
+provider: null
+plugin: 'views_block:portfolio-portfolio_grid'
+settings:
+  id: 'views_block:portfolio-portfolio_grid'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

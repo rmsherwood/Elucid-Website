@@ -1,0 +1,116 @@
+global-styling:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Raleway:400,600,700,800,900: { type: external }
+      //fonts.googleapis.com/css?family=Open+Sans:400,600,700,800: { type: external }
+      css/sliderlayer.css: {}
+      css/font-awesome.css: {}
+      css/icon.css: {}
+      css/animate.css: {}
+      vendor/owl-carousel/assets/owl.carousel.min.css: {}
+      vendor/owl-carousel/assets/owl.theme.default.min.css: {}
+      vendor/prettyphoto/css/prettyPhoto.css: {}
+      vendor/ytplayer/css/jquery.mb.YTPlayer.min.css: {}
+  js:
+    js/bootstrap.js: {}
+    js/imagesloader.min.js: {}
+    vendor/jquery.easing.js: {}
+    vendor/jquery.appear.js: {}
+    vendor/jquery.easypiechart.min.js: {}
+    vendor/owl-carousel/owl.carousel.min.js: {}
+    vendor/waypoint.js: {}
+    vendor/count-to.js: {}
+    vendor/masonry.pkgd.min.js: {}
+    vendor/isotope.pkgd.min.js: {}
+    vendor/wow.min.js: {}
+    vendor/jpreloader.min.js: {}
+    vendor/prettyphoto/js/jquery.prettyPhoto.js: {}
+    vendor/ytplayer/js/jquery.mb.YTPlayer.min.js: {}
+    vendor/jquery.typer/src/jquery.typer.js: {}
+    vendor/jquery.unveil.js: {}
+    js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+tico.skin.default:
+  css:
+    theme: 
+      css/template.css: {}
+      css/bootstrap.css: {}
+
+tico.skin.green:
+  css:
+    theme: 
+      css/skins/green/template.css: {}
+      css/skins/green/bootstrap.css: {}
+
+tico.skin.lilac:
+  css:
+    theme: 
+      css/skins/lilac/template.css: {}
+      css/skins/lilac/bootstrap.css: {}
+
+tico.skin.orange:
+  css:
+    theme: 
+      css/skins/orange/template.css: {}
+      css/skins/orange/bootstrap.css: {}
+
+tico.skin.red:
+  css:
+    theme: 
+      css/skins/red/template.css: {}
+      css/skins/red/bootstrap.css: {}
+
+tico.skin.yellow:
+  css:
+    theme: 
+      css/skins/yellow/template.css: {}
+      css/skins/yellow/bootstrap.css: {}
+
+tico.skin.blue:
+  css:
+    theme: 
+      css/skins/blue/template.css: {}
+      css/skins/blue/bootstrap.css: {}
+
+
+gavias-tico-admin:
+  version: VERSION
+  css: 
+    theme: 
+      css/theme-settings.css: {}
+      vendor/colorpicker/css/colorpicker.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/addon/hint/show-hint.css: {}
+  js:
+      vendor/colorpicker/js/colorpicker.js: {}
+      vendor/codemirror/lib/codemirror.js: {cope: footer}
+      vendor/codemirror/addon/hint/show-hint.js: {cope: footer}
+      vendor/codemirror/addon/hint/xml-hint.js: {cope: footer}
+      vendor/codemirror/addon/hint/html-hint.js: {cope: footer}
+      vendor/codemirror/mode/xml/xml.js: {cope: footer}
+      vendor/codemirror/mode/javascript/javascript.js: {cope: footer}
+      vendor/codemirror/mode/css/css.js: {cope: footer}
+      vendor/codemirror/mode/htmlmixed/htmlmixed.js: {cope: footer}
+      js/customize.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}
+
+views-infinite-scroll:
+  version: VERSION
+  js:
+    js/override/infinite-scroll.js : {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.debounce

@@ -1,0 +1,72 @@
+.poll{
+	.poll-item{
+		margin-top: 20px;
+		.heading{
+			position: relative;
+			.text{
+				font-weight: 600;
+				color: #333333;
+				padding-right: 40px;
+			}
+			.percent{
+				display: inline-block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 9;
+				font-weight: 600;
+			}
+		}
+		.bar .foreground{
+			background: $theme-color;
+		}
+	}
+	.total{
+		margin-top: 20px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	.choices{
+		.form-item.form-item-choice{
+			input.form-radio{
+				margin: 0!important;
+			}
+			label{
+				vertical-align: text-top;
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+.block-poll{
+	ul.links{
+		text-align: center;
+		overflow: hidden;
+		padding: 15px 0 0;
+		li{
+			display: inline-block;
+			margin-right: 20px;
+			a{
+				padding-right: 10px;
+				position: relative;
+				@include transition(all 0.35s);
+				&:after{
+					content: "\f105";
+					position: absolute;
+					top: -1px;
+					right: 0;
+					font-family: "FontAwesome";
+				}
+				&:hover{
+					padding-right: 15px;
+				}
+			}
+			&:last-child{
+				margin: 0;
+			}
+		}
+	}
+}
+
+  

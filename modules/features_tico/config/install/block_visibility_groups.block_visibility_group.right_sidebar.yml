@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: right_sidebar
+label: 'Right sidebar'
+logic: and
+conditions:
+  5ff0adf9-4ca6-4d48-a693-38cdf3a08282:
+    id: request_path
+    pages: "#Page Service ------\r\n/services\r\n\r\n#Page About us -----\r\n/node/81\r\n/node/104\r\n/node/105\r\n\r\n#Page 404 -----\r\n/node/106\r\n\r\n#Page Blog ------\r\n/blogs-grid\r\n/blogs-masonry\r\n/gallery\r\n\r\n#Page Portfolio -----\r\n/portfolio\r\n/portfolio-1\r\n/portfolio-2\r\n/portfolio-3\r\n\r\n#Page Pricing\r\n/node/83\r\n/node/107\r\n\r\n#Other Page -----\r\n/contact\r\n/node/108\r\n/node/109\r\n"
+    negate: true
+    context_mapping: {  }
+    uuid: 5ff0adf9-4ca6-4d48-a693-38cdf3a08282
+allow_other_conditions: false

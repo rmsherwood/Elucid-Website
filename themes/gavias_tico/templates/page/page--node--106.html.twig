@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+
+<div class="body-page">
+	{% include directory ~ '/templates/page/parts/preloader.html.twig' %}
+   {% include header_skin %}
+
+	<div role="main" class="main main-page">
+		<div id="content" class="content content-full">
+			<div class="page-notfound">
+				{% if page.content %}
+					<div class="content-main">
+						{{ page.content }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% include directory ~ '/templates/page/footer.html.twig' %}
+	
+</div>
+

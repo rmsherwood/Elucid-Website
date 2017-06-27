@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_type
+    - node.type.article
+  module:
+    - options
+id: node.article.field_post_type
+field_name: field_post_type
+entity_type: node
+bundle: article
+label: 'Post type'
+description: 'Post type display by filter views'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

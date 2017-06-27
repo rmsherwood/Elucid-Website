@@ -1,0 +1,27 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.testimonial
+  module:
+    - gaviasthemer
+    - views
+  theme:
+    - gavias_tico
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_tico_views_block__testimonial_testimonial_v3
+theme: gavias_tico
+region: '-1'
+weight: -5
+provider: null
+plugin: 'views_block:testimonial-testimonial_v3'
+settings:
+  id: 'views_block:testimonial-testimonial_v3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

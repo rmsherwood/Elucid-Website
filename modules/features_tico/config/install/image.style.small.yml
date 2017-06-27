@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: small
+label: 'Small (440×295)'
+effects:
+  7939f4ad-5984-4241-8447-48d3389b9b6d:
+    uuid: 7939f4ad-5984-4241-8447-48d3389b9b6d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 440
+      height: 295

@@ -1,0 +1,33 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.gallery
+  module:
+    - block_visibility_groups
+    - gaviasthemer
+    - views
+  theme:
+    - gavias_tico
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_tico_views_block__gallery_gallery_grid
+theme: gavias_tico
+region: '-1'
+weight: -4
+provider: null
+plugin: 'views_block:gallery-gallery_grid'
+settings:
+  id: 'views_block:gallery-gallery_grid'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

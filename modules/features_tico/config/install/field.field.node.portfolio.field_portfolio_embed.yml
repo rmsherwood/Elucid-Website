@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portfolio_embed
+    - node.type.portfolio
+id: node.portfolio.field_portfolio_embed
+field_name: field_portfolio_embed
+entity_type: node
+bundle: portfolio
+label: 'Portfolio Embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

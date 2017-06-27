@@ -1,0 +1,374 @@
+// Block Layout styles
+//----------------------------
+.block {
+  background: $nocolor;
+  margin-bottom: 30px;
+  .block{
+    margin-bottom: 0!important;
+  }
+  .block-title { 
+    background: none;
+	  position: relative;
+    margin: 0 0 15px;
+    padding: 0 0 0;
+    color: $theme-color;
+    > span{
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase; 
+      position: relative;
+      letter-spacing: 2px;
+      color: $black;
+      padding: 10px 0;
+      font-family: $font-second;
+      z-index: 9;
+    }
+  }
+  &.block-system-main-block{
+    margin-bottom: 0;
+  }
+  &.block-system-breadcrumb-block{
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+  &.block-none, &.no-padding{
+    background: none!important;
+    padding: 0!important;
+    .block-content{
+      padding: 0!important;
+    }
+  }
+  &.no-title{
+    margin-top: 0;
+	  border: none;
+  	&:before{
+  		content: none;
+  	}
+  }
+  &.style-higlight{
+    background: #34495E;
+    padding-left: 20px;
+    padding-right: 20px;
+    .block-title {
+		border: none;
+		span:before{
+			content: none;
+		}
+      h2{
+        margin: 0;
+        padding: 0;
+        border: none;
+        span{
+          padding: 10px;
+          background: #4E6984;
+          color: $white;
+        }
+      }
+    }
+    .post-title a{
+      color: $white;
+    }
+    .more-link a{
+      color: $white;
+      padding: 0 15px 15px;
+      display: block;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  &#block-system-main{
+    padding-top: 10px;
+  }
+  &.block-local-tasks-block{
+    margin-bottom: 0;
+  }
+  &.no-title{
+    border: none;
+    > .block-title, > div > .block-title {
+      padding: 0;
+      margin: 0;
+	    border: none;
+  		&:before{
+  			content: none;
+  		}
+    }
+  }
+  
+  &.block-simplenews{
+    input#edit-subscribe{
+      margin-top: 15px;
+      background: $white;
+      @include box-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      font-family: $font-second;
+      font-size: 12px;
+      color: $black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      @include transition(all 0.35s);
+      &:hover{
+        background: rgba(255, 255, 255, 0.8);
+      }
+    }
+    #edit-mail-wrapper{
+      label{
+        display: none;
+      }
+      input.form-email{
+        padding: 0;
+        margin: 10px 0 15px;
+        width: 100%;
+        background: none; 
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+  &.block-blocktabs{
+    position: relative;
+    .ui-widget{
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+    }
+    .ui-tabs-nav{
+      padding: 0;
+      border: none;
+      background: none!important;
+      display: inline-block;
+      float: right;
+      position: absolute;
+      right: 20px;
+      top: -60px;
+      z-index: 99;
+      > li{
+        background: none;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        position: relative;
+        > a{
+          font-size: 14px;
+          text-transform: none;
+          font-family: $font-family-base;
+          font-weight: 700;
+        }
+        &:last-child{
+          > a{
+            padding-right: 0;
+          }
+        }
+        &.ui-tabs-active{
+           > a{
+            color: $theme-color;
+           }
+        }
+      }
+    }
+    .blocktabs{
+      border: none;
+      padding: 0;
+      @include border-radius(0);
+      .ui-tabs-panel{
+        padding: 0!important;
+      }
+    }
+    .block{
+      margin-bottom: 0!important;
+    }
+  }
+}
+
+.block{
+  &.site-branding{
+    margin-bottom: 0;
+  }
+}
+.block-local-tasks-block{
+  position: relative;
+  z-index: 99;
+}
+
+.drupal-tabs{
+  @include clearfix();
+  border-bottom: 1px solid $border-color;
+  a{
+    font-size: 12px;
+  }
+  .is-active a{
+    color: $theme-color;
+  }
+}
+.help{
+  .control-panel{
+    display: none;
+  }
+}
+body.logged-in.node--type-page-full, body.logged-in.node--type-page{
+  .help{
+    position: fixed;
+    top: 300px;
+    left: 0;
+    @include translateX(-100%);
+    z-index: 99;
+    width: auto;
+    min-width: 164px;
+    background: $white;
+    @include box-shadow(0px 0px 10px 3px rgba(0, 0, 0, 0.1));
+    border: 1px solid $border-color;
+    @include transition(all 0.35s);
+    .container{
+      width: auto!important;
+    }
+    &.show{
+      @include translateX(0);
+    }
+    .control-panel{
+      display: block;
+      border: 1px solid $border-color;
+      @include size(30px, 30px);
+      line-height: 30px;
+      background: $white;
+      text-align: center;
+      @include box-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+      position: absolute;
+      top: 20px;
+      left: 100%;
+      margin-top: -15px;
+      z-index: 11;
+      &:hover{
+        cursor: pointer;
+        color: $theme-color;
+      }
+    }
+    .drupal-tabs{
+      border: none;
+      width: 100%;
+      > li{
+        float: none;
+        a{
+          font-size: 12px;
+        }
+      }
+    }
+    .messages__wrapper{
+      padding: 10px!important;
+    }
+  }
+}
+
+
+.sidebar{
+  .block{
+    background: $white;
+    margin-bottom: 30px;
+    .block-title{
+      margin: 0;
+      border-bottom: 1px solid $theme-color;
+      padding: 0;
+      margin: 0 0 20px;
+      position: relative;
+    }
+  }
+}
+
+.footer{
+  .block{
+    .block-title span{
+      font-size: 18px;
+      text-transform: none;
+    }
+  }
+}
+
+.text-light{
+  .title{
+    color: $white!important;
+  }
+}
+
+.region-main-menu{
+  .block{
+    background: $nocolor;
+    .block-content{
+      padding: 0;
+    }
+  }
+}
+
+
+//--------- Block recent comment ---------------------
+.recent-comment-block{
+  .views-field-picture{
+    @include rtl-margin-right(10px);
+  }
+  .views-field-title{
+    margin-top: -4px;
+    a{
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .views-field-name{
+    color: #a4a4a4;
+    a{
+      color: #a4a4a4;
+    }
+  }
+}
+
+.list-tags{
+  .view-list{
+    ul > li{
+      float: left;
+      border: 1px solid $border-color;
+      display: inline-block;
+      width: auto!important;
+      padding: 0!important;
+      margin: 0 10px 10px 0!important;
+      a{
+        padding: 6px 10px;
+        display: block;
+        @include transition(all 0.35s);
+      }
+      &:hover{
+        background: $theme-color;
+        a{
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.contact-info{
+  line-height: 28px;
+}
+
+nav.breadcrumb{
+  margin-bottom: 0!important;
+  background: none;
+  color: #999999;
+  ol{
+    @include clearfix();
+    list-style: none;
+    margin-bottom: 0!important; 
+    padding: 0;
+    > li{
+      float: left;
+      font-size: 13px;
+      a{
+        color: #999999;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+      span{
+        padding: 0 2px 0px 0px;
+      }
+    }
+  }
+}

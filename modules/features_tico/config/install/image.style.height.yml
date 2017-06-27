@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: height
+label: 'Height (600 x770)'
+effects:
+  17178450-04d0-4c84-92c0-6051789e9836:
+    uuid: 17178450-04d0-4c84-92c0-6051789e9836
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 770

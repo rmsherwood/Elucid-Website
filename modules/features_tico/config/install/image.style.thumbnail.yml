@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail
+label: 'Thumbnail (150×150)'
+effects:
+  d2b6caee-0c96-4a61-8e1a-2630d7bae4ab:
+    uuid: d2b6caee-0c96-4a61-8e1a-2630d7bae4ab
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 150
+      height: 150

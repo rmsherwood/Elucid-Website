@@ -1,0 +1,23 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.post_other
+  module:
+    - views
+  theme:
+    - gavias_tico
+id: gavias_tico_views_block__post_other_block_9
+theme: gavias_tico
+region: '-1'
+weight: -11
+provider: null
+plugin: 'views_block:post_other-block_9'
+settings:
+  id: 'views_block:post_other-block_9'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

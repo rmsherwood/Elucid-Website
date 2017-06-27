@@ -1,0 +1,79 @@
+gavias_blockbuilder.assets.admin:
+  version: 1.x
+  css:
+    theme:
+      assets/css/admin.css: {}
+      vendor/font-awesome/css/font-awesome.min.css: {}
+      vendor/notify/styles/metro/notify-metro.css: {}
+      assets/css/admin.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/addon/hint/show-hint.css: {}
+  js:
+    assets/js/datepicker.min.js: { scope: footer }
+    assets/js/admin.js: { scope: footer }
+    assets/js/fields/upload/jquery.ui.widget.js: { scope: footer }
+    assets/js/fields/upload/jquery.iframe-transport.js: { scope: footer }
+    assets/js/fields/upload/jquery.fileupload.js: { scope: footer  }
+    assets/js/fields/upload/script.js: { scope: footer }
+    assets/js/fields/tabs/tabs.js: { scope: footer }
+    vendor/notify/notify.min.js: { scope: footer }
+    vendor/notify/styles/metro/notify-metro.js: { scope: footer }
+
+    vendor/codemirror/lib/codemirror.js: {cope: footer}
+    vendor/codemirror/addon/hint/show-hint.js: {cope: footer}
+    vendor/codemirror/addon/hint/xml-hint.js: {cope: footer}
+    vendor/codemirror/addon/hint/html-hint.js: {cope: footer}
+    vendor/codemirror/mode/xml/xml.js: {cope: footer}
+    vendor/codemirror/mode/javascript/javascript.js: {cope: footer}
+    vendor/codemirror/mode/css/css.js: {cope: footer}
+    vendor/codemirror/mode/htmlmixed/htmlmixed.js: {cope: footer}
+    assets/js/admin.js: { scope: footer }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.ui.draggable
+    - core/jquery.ui.sortable
+    - core/jquery.ui.dropable
+    - core/jquery.ui.dialog 
+
+gavias_blockbuilder.assets.admin_editor:
+  version: 1.x
+  css:
+    theme:
+      assets/css/admin.css: {}
+      vendor/font-awesome/css/font-awesome.min.css: {}
+      vendor/notify/styles/metro/notify-metro.css: {}
+      assets/css/admin.css: {}
+  js:
+    assets/js/datepicker.min.js: { scope: footer }
+    assets/js/admin_editor.js: { scope: footer }
+    assets/js/fields/upload/jquery.ui.widget.js: { scope: footer }
+    assets/js/fields/upload/jquery.iframe-transport.js: { scope: footer }
+    assets/js/fields/upload/jquery.fileupload.js: { scope: footer  }
+    assets/js/fields/upload/script.js: { scope: footer }
+    assets/js/fields/tabs/tabs_editor.js: { scope: footer }
+    vendor/notify/notify.min.js: { scope: footer }
+    vendor/notify/styles/metro/notify-metro.js: { scope: footer }
+    assets/js/admin_editor.js: { scope: footer }
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.ui.draggable
+    - core/jquery.ui.sortable
+    - core/jquery.ui.dropable
+    - core/jquery.ui.dialog 
+
+gavias_blockbuilder.assets.frontend:
+  version: 1.x
+  css: 
+    theme:
+      assets/css/frontend.css: {}
+  js:
+    vendor/skrollr.min.js: {cope: footer}
+    vendor/main.js: {cope: footer}

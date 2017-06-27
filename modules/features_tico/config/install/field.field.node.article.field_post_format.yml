@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_format
+    - node.type.article
+  module:
+    - options
+id: node.article.field_post_format
+field_name: field_post_format
+entity_type: node
+bundle: article
+label: 'Post format'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

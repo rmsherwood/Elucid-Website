@@ -295,7 +295,7 @@ $config_directories = array();
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = '7lZbQnt6s6ilZexHuEf1sUh0Ikw4_4w9hF5zRQctPUNyOsHgw8eeMZewYG6w58t2CMfO6Kyi8A';
 
 /**
  * Deployment identifier.
@@ -773,3 +773,15 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+$databases['default']['default'] = array (
+  'database' => 'elucid_website_dev',
+  'username' => 'root',
+  'password' => 'Tdrvyubi798',
+  'prefix' => '',
+  'host' => '127.0.0.1',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['install_profile'] = 'standard';
+$config_directories['sync'] = 'sites/default/files/config_BdcOxk69rC3FskNYWJBZn6wrhASioK9ziHpL0xhi-FycNBQJ0o66QjWouq9R8hcmcc56IbzDuw/sync';

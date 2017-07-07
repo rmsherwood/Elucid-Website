@@ -13,6 +13,7 @@ global-styling:
       vendor/owl-carousel/assets/owl.theme.default.min.css: {}
       vendor/prettyphoto/css/prettyPhoto.css: {}
       vendor/ytplayer/css/jquery.mb.YTPlayer.min.css: {}
+      font-awesome-4.7.0/css/font-awesome.min.css: {}
   js:
     js/bootstrap.js: {}
     js/imagesloader.min.js: {}

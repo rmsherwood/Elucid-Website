@@ -1,0 +1,4 @@
+elucid_theme:
+  css
+    component:
+      css/style.css: {}

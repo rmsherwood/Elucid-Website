@@ -1,0 +1,35 @@
+name: Elucid Theme
+type: theme
+description: Elucid's corporate website theme based upon Gavias Tico.
+core: 8.x
+base theme: gavias_tico
+libraries:
+  - elucid_theme/elucid_theme
+regions:
+  # The following regions are inherited directly from gavias tico.
+  offcanvas: 'After Offcanvas'
+  topbar: 'Topbar'
+  branding: 'Branding'
+  search: 'Search'
+  header_right: 'Header Right'
+  breadcrumbs: 'Breadcrumbs'
+  help: 'Help'
+  main_menu: 'Main menu'
+  slideshow_content: 'Slideshow'
+  fw_before_content: 'Before Full Width Content'
+  content_top: 'Content Top'
+  content: 'Main content'
+  content_bottom: 'Content Bottom'
+  sidebar_left: 'Sidebar Left'
+  sidebar_right: 'Sidebar Right'
+  after_content: 'After Content'
+  highlighted: 'Highlighted'
+  fw_after_content: 'After Full Width Content'
+  before_footer: 'Before Footer'
+  footer_first: 'Footer Fisrt'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+  footer_four: 'Footer Four'
+  after_footer: 'After Footer'
+  copyright: Copyright
+  other: Other

@@ -1,0 +1,20 @@
+base:
+  version: VERSION
+  js:
+    libraries/bootstrap-4.0.0/dist/js/bootstrap.min.js: {}
+  css:
+    theme:
+      css/style.css: {} 
+      # Note: Popper is a Bootstrap dependency.
+      https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js: { type: external, minified: true }
+      libraries/bootstrap-4.0.0/dist/css/bootstrap.min.css: {}
+  dependencies:
+    - core/underscore
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.ui.draggable
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.ui.datepicker
+    - core/modernizr
+    - core/drupal

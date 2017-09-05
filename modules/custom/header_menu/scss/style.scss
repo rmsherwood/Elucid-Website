@@ -1,0 +1,126 @@
+/*
+  This module defines the default styling for
+  Header Menu elements.
+*/
+$header-menu-width:  1024px;
+$header-menu-height: 72px;
+$header-menu-z-index: 100;
+$header-menu-widescreen-view-dropdown-container-background-color: white;
+$header-menu-widescreen-view-dropdown-item-width: 200px;
+$header-menu-mobile-view-background-color: white;
+$header-menu-mobile-view-header-background-color: #4a4a4a;
+$header-menu-mobile-view-header-title-color: white;
+
+.header_menu_drupal_menu {
+  display: none;
+}
+.header_menu_widescreen_view,
+.header_menu_mobile_view {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.header_menu_widescreen_view {
+  .header_menu_widescreen_view_menu_component {
+    .header_menu_menu_list[data-menu-level="0"] {
+      display: inline-block;
+      display: flex;
+      height: $header-menu-height;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 100%;
+      
+      .header_menu_menu_item[data-menu-level="0"] {
+        display: inline-block;
+        text-align: center;
+      }
+      .header_menu_menu_item[data-menu-level="1"] {
+        display: none;
+      }
+    }
+  }
+  .header_menu_widescreen_view_dropdown_component {
+    .header_menu_menu_list[data-menu-level="1"] {
+      background-color: $header-menu-widescreen-view-dropdown-container-background-color;
+      margin: 0;
+      position: absolute;
+      z-index: $header-menu-z-index;
+
+      .header_menu_menu_item[data-menu-level="1"] {
+        width: $header-menu-widescreen-view-dropdown-item-width;
+      }
+    }
+    .header_menu_menu_list[data-menu-level="2"] {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+.header_menu_mobile_view {
+  background-color: $header-menu-mobile-view-background-color;
+  display: none;
+
+  .header_menu_mobile_view_header {
+    background-color: $header-menu-mobile-view-header-background-color;
+    cursor: pointer;
+    width: 100%;
+
+    .header_menu_mobile_view_title {
+      color: $header-menu-mobile-view-header-title-color;
+      text-align: center;
+    }
+  }
+  .header_menu_mobile_view_collapsible {
+    background-color: $header-menu-mobile-view-background-color;
+    box-shadow: #4a4a4a 0px 1px 2px;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: $header-menu-z-index;
+
+    .header_menu_mobile_view_body {
+      .header_menu_mobile_view_slide_container {
+        position: relative;
+        overflow: hidden;
+
+        .header_menu_mobile_view_slide {
+          position: absolute;
+          width: 100vw;
+
+          .header_menu_mobile_view_slide_back_button {
+            cursor: pointer;
+
+          }
+          .header_menu_mobile_view_slide_item {
+            cursor: pointer;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .header_menu_mobile_view_footer {
+      width: 100%;
+
+      .header_menu_mobile_view_close_button {
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .header_menu_widescreen_view {
+    display: none;
+  }
+  .header_menu_mobile_view {
+    display: block;
+  }
+}
+

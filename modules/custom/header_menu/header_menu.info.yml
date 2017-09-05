@@ -1,0 +1,5 @@
+name: Header Menu
+description: Creates a dropdown header menu that can be used to replace Drupal menus.
+package: Elucid Solutions
+type: module
+core: 8.x

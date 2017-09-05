@@ -1,0 +1,6 @@
+name: Rate Table
+description: Provides the Labor Rates block which renders labor rates as an interactive table.
+package: Elucid Solutions
+type: module
+core: 8.x
+

@@ -47,11 +47,11 @@ class RateTable extends BlockBase {
       ->condition ('type', 'labor_category')
       ->condition ('status', 1);
 
-    $result = $query->execute ();
-    foreach (array_keys ($result) as $nid) {
+    $result = array_values ($query->execute ());
+    foreach ($result as $nid) {
       $node = \Drupal\node\Entity\Node::load ($nid);
       $labor_categories [] = [
-        'id' => $nid,
+        'id' => (int) $nid,
         'name' => $node->getTitle (),
         'vehicle' => (int) $node->get ('field_labor_category_vehicle')->target_id, 
       ];
@@ -74,8 +74,8 @@ class RateTable extends BlockBase {
       ->condition ('type', 'labor_rate')
       ->condition ('status', 1);
 
-    $result = $query->execute ();
-    foreach (array_keys ($result) as $nid) {
+    $result = array_values ($query->execute ());
+    foreach ($result as $nid) {
       $node = \Drupal\node\Entity\Node::load ($nid);
       $labor_rates [] = [
         'category' => (int) $node->get ('field_rate_category')->target_id, 

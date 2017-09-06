@@ -184,6 +184,7 @@
     represents the feature.
   */
   function Feature (featureElement) {
+    this._categories = [];
     this._currentPage = 0;
     this._location = Onsite;
     this._num = DefaultNum;
@@ -196,6 +197,14 @@
     this._filterInputElement = null;
     this._tableBodyElement = null;
     this._paginationLinksElement = null;
+  }
+
+  /*
+    Accepts no arguments and returns the current
+    labor categories to display in this table.
+  */
+  Feature.prototype.getCategories = function () {
+    return this._categories;
   }
 
   /*
@@ -439,9 +448,8 @@
   */
   Feature.prototype.getTableRows = function () {
     var index = this.getCurrentPage () * this.getNum ();
-    return createTableRows (
-      filterLaborCategories (this.getVehicle (), this.getQuery ()).slice (index, index + this.getNum ()), 
-      this.getLocation ());
+    this._categories = filterLaborCategories (this.getVehicle (), this.getQuery ());
+    return createTableRows (this.getCategories ().slice (index, index + this.getNum ()), this.getLocation ());
   }
 
   /*
@@ -589,7 +597,7 @@
     of pages that should be displayed.
   */
   Feature.prototype.getNumPages = function () {
-    return Math.ceil (LaborCategories.length / this.getNum ());
+    return Math.ceil (this.getCategories ().length / this.getNum ());
   }
 
   /*

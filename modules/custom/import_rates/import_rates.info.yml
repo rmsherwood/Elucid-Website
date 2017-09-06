@@ -1,0 +1,5 @@
+name: Import Rates
+description: Imports Elucid Solutions Labor Rates and Rate Categories.
+package: Elucid Solutions
+type: module
+core: 8.x

@@ -37,7 +37,11 @@
     Note: each Labor Category object has the
     following structure:
 
-      {id: NODEID, name: NAME}
+      {
+        id: NODEID,
+        name: NAME,
+        vehicle: VEHICLENODEID
+      }
   */
   var LaborCategories = drupalSettings.rate_table.labor_categories;
 
@@ -159,6 +163,15 @@
   }
 
   /*
+    Accepts a jQuery HTML Element,
+    featureElement, that represents a rate table,
+    and returns its contract vehicle node ID.
+  */
+  function getVehicleAttrib (featureElement) {
+    return parseInt (featureElement.attr (getVehicleAttribName ()));
+  }
+
+  /*
     Returns the class name used to label Rate
     Table feature elements.
   */
@@ -176,6 +189,7 @@
     this._num = DefaultNum;
     this._query = DefaultQuery;
     this._featureElement = featureElement;
+    this._vehicle = getVehicleAttrib (featureElement);
     this._offsiteTabElement = null;
     this._onsiteTabElement = null;
     this._numElement = null;
@@ -222,6 +236,14 @@
   */
   Feature.prototype.getFeatureElement = function () {
     return this._featureElement;
+  }
+
+  /*
+    Accepts no arguments and returns this
+    feature's contract vehicle node ID.
+  */
+  Feature.prototype.getVehicle = function () {
+    return this._vehicle;
   }
 
   /*
@@ -418,19 +440,26 @@
   Feature.prototype.getTableRows = function () {
     var index = this.getCurrentPage () * this.getNum ();
     return createTableRows (
-      filterLaborCategories (this.getQuery ()).slice (index, index + this.getNum ()), 
+      filterLaborCategories (this.getVehicle (), this.getQuery ()).slice (index, index + this.getNum ()), 
       this.getLocation ());
   }
 
   /*
-    Accepts a query string and returns those
-    labor categories whose names match the
-    query string.
+    Accepts two arguments:
+
+    * vehicle, an integer that represents a
+      contract vehicle node ID
+    * and query, a string that represents a
+      filter query
+
+    and returns an array listing the labor
+    categories that have the given contract
+    vehicle and match query.
   */
-  function filterLaborCategories (query) {
-    if (!query) { return LaborCategories; }
+  function filterLaborCategories (vehicle, query) {
     return LaborCategories.filter (function (laborCategory) {
-      console.log (laborCategory.name);
+      if (laborCategory.vehicle !== vehicle) { return false; }
+      if (!query) { return true; }
       var regexp = new RegExp (query, 'ig');
       return regexp.test (laborCategory.name);
     });
@@ -728,6 +757,9 @@
 
   // Represents the table body element class name.
   function getTableBodyClassName () { return 'rate_table_table_body'; }
+
+  // Returns the contract vehichle data attribute name.
+  function getVehicleAttribName () { return 'data-rate-table-vehicle-nid'; }
 
   // Represents the data attribute prefix used by all data attributes.
   function getFeatureDataPrefix () { return 'data-rate-table'; }

@@ -52,7 +52,8 @@ class RateTable extends BlockBase {
       $node = \Drupal\node\Entity\Node::load ($nid);
       $labor_categories [] = [
         'id' => $nid,
-        'name' => $node->getTitle ()
+        'name' => $node->getTitle (),
+        'vehicle' => (int) $node->get ('field_labor_category_vehicle')->target_id, 
       ];
     }
     return $labor_categories;

@@ -1,0 +1,286 @@
+/*
+  Defines the styles applied to the Rate Table
+  blocks. These blocks are provided by the Rate
+  Table module.
+*/
+.rate_table {
+  $padding: $margin-large;
+  $tablet-radius: 2;
+  $mobile-radius: 1;
+  $default-font-size: 12px;
+  $tab-font-size: 16px;
+  $input-font-size: 14px;
+  $input-label-font-size: 10px;
+  $input-width: 280px;
+  $footer-font-size: 12px;
+
+  @include styleguide;
+  font-size: $default-font-size;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+
+  &:before {
+    background-image: linear-gradient(-270deg, #73CAF1 2%, #03A9F3 100%); 
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    content: "";
+    display: block;
+    height: 8px;
+    width: 100%;
+  }
+  .rate_table_header {
+    border-bottom: 1px solid $gray-light;
+    padding: $margin-med $margin-large 0;
+    @include mobile(padding, $margin-med $margin-med 0);
+    .mdc-tab-bar {
+      margin: 0 !important;
+      .mdc-tab {
+        font-family: $default-font-family;
+        &:after {
+          background-color: white;
+          display: none;
+        }
+        &.mdc-tab--active {
+          border-bottom: 3px solid $blue;
+          color: $blue;
+        }
+      }
+    }
+    .rate_table_title {
+      @include mobile(font-size, $tab-font-size);
+      color: $red;
+      font-size: $default-h4-font-size;
+      font-weight: normal;
+      margin-bottom: $margin-large;
+    }
+    .rate_table_header_tab_section {
+      font-size: $tab-font-size;
+      .mdc-tab {
+        @include at-breakpoint($xsmall-breakpoint, padding, 0);
+        font-size: $tab-font-size;
+        text-transform: none;
+      }
+      .rate_table_header_tab_elucid {
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+      .rate_table_header_tab_onsite {
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  .rate_table_body {
+    border-bottom: 1px solid $blue-lightest;
+    .rate_table_body_filter_section {
+      @include mobile(padding, 0 $margin-med);
+      font-size: $input-font-size;
+      padding: 0 $padding;
+
+      .rate_table_filter {
+        @include mobile(width, 100%);
+        @include mobile(margin-bottom, $margin-small);
+        width: $input-width;
+        .rate_table_filter_icon {
+          margin: 15px 0 10px 15px;
+        }
+        .mdc-textfield__label {
+          bottom: 0; // override default placement.
+        }
+        .mdc-textfield__input {
+          color: $gray;
+          font-family: $default-font-family;
+        }
+        &.mdc-textfield--focused {
+          .mdc-textfield__label {
+            color: $blue;
+          }
+          .rate_table_filter_icon {
+            path {
+              fill: $blue;
+            }
+          }
+          &:after {
+            background-color: $blue;
+          }
+        }
+      }
+      .mdc-select {
+        color: $gray;
+      }
+      .rate_table_num {
+        @include at-breakpoint(700px, display, block);
+        @include at-breakpoint(700px, margin-left, 0);
+        color: $gray;
+        margin-left: $margin-med;
+        display: inline-block;
+        .rate_table_num_label {
+          display: block;
+          font-size: $input-label-font-size;
+        }
+        .rate_table_num_select {
+          @include mobile(width, 100%);
+          @include mobile(max-width, 100%);
+          border-bottom: 1px solid $gray-light;
+          display: block;
+          padding-bottom: 7px; // fine-tuned to align bottom borders.
+          position: relative;
+          width: $input-width;
+          .rate_table_num_select_select {
+            width: 100%;
+          }
+          .rate_table_select_icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1; // place icon "behind" select element to allow select to receive inputs.
+          }
+        }
+      }
+    }
+    .rate_table_body_table_section {
+      .rate_table_table {
+        th {
+          border: none;
+          font-weight: 600;
+        }
+        td {
+          border: none;
+        }
+        .rate_table_table_header_year {
+          border-bottom: 1px solid $blue-light;
+          text-align: center;
+        }
+        .rate_table_table_header_category {
+          @include mobile(padding-left, $margin-med);
+          padding-left: $padding;
+        }
+        .rate_table_column_header {
+          text-align: center;
+          &.rate_table_column_header_radius_5 {
+            @include at-breakpoint(1100px, display, none);
+          }
+          &.rate_table_column_header_radius_4 {
+            @include at-breakpoint(1000px, display, none);
+          }
+          &.rate_table_column_header_radius_3 {
+            @include at-breakpoint(900px, display, none);
+          }
+          &.rate_table_column_header_radius_2 {
+            @include at-breakpoint(800px, display, none);
+          }
+          &.rate_table_column_header_radius_1 {
+            @include at-breakpoint(600px, display, none);
+          }
+          &.rate_table_active {
+            display: table-cell;
+          }
+        }
+        .rate_table_table_body {
+          border-top: 1px solid $blue-light;
+          .rate_table_table_body_row { 
+            @include mobile(margin, 0 $margin-med);
+            margin: 0 $padding;
+            &:nth-of-type(2n+1) {
+              background-color: $blue-lightest;
+            }
+            td {
+              text-align: center;
+              &:first-of-type {
+                @include mobile(padding-left, $margin-med);
+                @include mobile(min-width, 0);
+                min-width: 270px; // fine-tuned based on max content width.
+                padding-left: $padding;
+                text-align: left;;
+              }
+              &:last-of-type {
+                @include mobile(padding-right, $margin-med);
+                padding-right: $padding;
+              }
+              &.rate_table_field_radius_5 {
+                @include at-breakpoint(1100px, display, none);
+              }
+              &.rate_table_field_radius_4 {
+                @include at-breakpoint(1000px, display, none);
+              }
+              &.rate_table_field_radius_3 {
+                @include at-breakpoint(900px, display, none);
+              }
+              &.rate_table_field_radius_2 {
+                @include at-breakpoint(800px, display, none);
+              }
+              &.rate_table_field_radius_1 {
+                @include at-breakpoint(600px, display, none);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @mixin pagination-item-highlighted () {
+    background: $blue;
+    color: white;
+  }
+  @mixin pagination-item () {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px;
+    &:hover {
+      @include pagination-item-highlighted();
+    }
+    &.rate_table_active {
+      @include pagination-item-highlighted();
+    }
+    &.rate_table_disabled {
+      color: $gray-light;
+      cursor: not-allowed;
+      &:hover {
+        background: transparent;
+        color: $gray-light;
+      }
+    }
+  }
+  .rate_table_footer {
+    font-size: $footer-font-size;
+    @include mobile(padding, $margin-small);
+    padding: $margin-med $padding;
+    @include mobile(text-align, center);
+    .rate_table_pagination {
+      border: 1px solid $gray-light;
+      display: inline-block;
+      .rate_table_pagination_first {
+        @include pagination-item();
+        border-right: 1px solid $gray-light;
+      }
+      .rate_table_pagination_prev {
+        @include pagination-item();
+        border-right: 1px solid $gray-light;
+      }
+      .rate_table_pagination_links {
+        display: inline-block;
+
+        .rate_table_pagination_link {
+          @include pagination-item();
+          border-right: 1px solid $gray-light;
+          &.rate_table_pagination_link_radius_3 {
+            display: none;
+          }
+          &.rate_table_pagination_link_radius_2 {
+            @include tablet(display, none);
+          }
+        }
+      }
+      .rate_table_pagination_next {
+        @include pagination-item();
+        border-right: 1px solid $gray-light;
+      }
+      .rate_table_pagination_last {
+        @include pagination-item();
+      }
+    }
+    .rate_table_index {
+      display: inline-block;
+      margin: $margin-med;
+    }
+  }
+}

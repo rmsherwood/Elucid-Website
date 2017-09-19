@@ -1,0 +1,1460 @@
+<?php
+/**
+ * @file
+ * Imports Elucid Solutions' labor rates.
+ */
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_install().
+ */
+function import_rates_install () {
+  import_rates_categories ();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function import_rates_uninstall () {
+// for testing purposes only.
+
+  $nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties(array('type' => 'labor_rate'));
+
+  foreach ($nodes as $node) {
+      $node->delete();
+  }
+
+  $nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties(array('type' => 'labor_category'));
+
+  foreach ($nodes as $node) {
+      $node->delete();
+  }
+
+}
+
+/**
+ * Create labor category nodes.
+ */
+function import_rates_categories () {
+  // Represents the contract vehicle that rates will be imported under.
+  $import_rates_VEHICLE = 48;
+
+  /**
+   * Represents Elucid Solutions' labor categories.
+   */
+  $import_rates_CATEGORIES = [
+    [
+      "machine_name" => "administrative_assistant_level_i",
+      "title"        => "Administrative Assistant – Level I",
+      "offsite_rates" => [
+        47.42, 48.13, 49.09, 50.08, 51.08, 52.1, 53.14, 54.2, 55.29, 56.39
+      ],
+      "onsite_rates" => [
+        42.23, 42.86, 43.72, 44.59, 45.48, 46.39, 47.32, 48.27, 49.23, 50.22
+      ]
+    ],
+    [
+      "machine_name" => "administrative_assistant_level_ii",
+      "title"        => "Administrative Assistant – Level II",
+      "offsite_rates" => [
+        58.82, 59.7, 60.89, 62.11, 63.35, 64.62, 65.91, 67.23, 68.57, 69.94
+      ],
+      "onsite_rates" => [
+        52.37, 53.16, 54.22, 55.31, 56.41, 57.54, 58.69, 59.86, 61.06, 62.28
+      ]
+    ],
+    [
+      "machine_name" => "application_engineer_level_i",
+      "title"        => "Application Engineer – Level I",
+      "offsite_rates" => [
+        88.01, 89.33, 91.12, 92.94, 94.8, 96.69, 98.63, 100.6, 102.61, 104.66
+      ],
+      "onsite_rates" => [
+        78.37, 79.54, 81.13, 82.76, 84.41, 86.1, 87.82, 89.58, 91.37, 93.2
+      ]
+    ],
+    [
+      "machine_name" => "application_engineer_level_ii",
+      "title"        => "Application Engineer – Level II",
+      "offsite_rates" => [
+        100.2, 101.7, 103.74, 105.81, 107.93, 110.09, 112.29, 114.53, 116.82, 119.16
+      ],
+      "onsite_rates" => [
+        89.22, 90.56, 92.37, 94.22, 96.11, 98.03, 99.99, 101.99, 104.03, 106.11
+      ]
+    ],
+    [
+      "machine_name" => "application_programmer_level_i",
+      "title"        => "Application Programmer – Level I",
+      "offsite_rates" => [
+        75.17, 76.3, 77.82, 79.38, 80.97, 82.59, 84.24, 85.92, 87.64, 89.4
+      ],
+      "onsite_rates" => [
+        66.94, 67.94, 69.3, 70.69, 72.1, 73.54, 75.01, 76.51, 78.04, 79.6
+      ]
+    ],
+    [
+      "machine_name" => "application_programmer_level_ii",
+      "title"        => "Application Programmer – Level II",
+      "offsite_rates" => [
+        86.14, 87.43, 89.18, 90.96, 92.78, 94.63, 96.53, 98.46, 100.43, 102.44
+      ],
+      "onsite_rates" => [
+        76.7, 77.85, 79.41, 81, 82.62, 84.27, 85.95, 87.67, 89.43, 91.21
+      ]
+    ],
+    [
+      "machine_name" => "application_systems_analyst",
+      "title"        => "Application Systems Analyst",
+      "offsite_rates" => [
+        123.11, 124.96, 127.46, 130.01, 132.61, 135.26, 137.96, 140.72, 143.54, 146.41
+      ],
+      "onsite_rates" => [
+        109.62, 111.27, 113.49, 115.76, 118.08, 120.44, 122.85, 125.31, 127.81, 130.37
+      ]
+    ],
+    [
+      "machine_name" => "applications_programmer_level_iii",
+      "title"        => "Applications Programmer – Level III",
+      "offsite_rates" => [
+        101.14, 102.66, 104.71, 106.8, 108.94, 111.12, 113.34, 115.61, 117.92, 120.28
+      ],
+      "onsite_rates" => [
+        90.06, 91.41, 93.24, 95.1, 97.01, 98.95, 100.93, 102.94, 105, 107.1
+      ]
+    ],
+    [
+      "machine_name" => "biostatatician",
+      "title"        => "Biostatatician",
+      "offsite_rates" => [
+        137, 139.05, 141.84, 144.67, 147.57, 150.52, 153.53, 156.6, 159.73, 162.92
+      ],
+      "onsite_rates" => [
+        121.99, 123.82, 126.3, 128.82, 131.4, 134.03, 136.71, 139.44, 142.23, 145.08
+      ]
+    ],
+    [
+      "machine_name" => "business_analyst_level_i",
+      "title"        => "Business Analyst – Level I",
+      "offsite_rates" => [
+        78.66, 79.84, 81.43, 83.06, 84.72, 86.42, 88.14, 89.91, 91.71, 93.54
+      ],
+      "onsite_rates" => [
+        70.04, 71.09, 72.51, 73.96, 75.44, 76.95, 78.49, 80.06, 81.66, 83.29
+      ]
+    ],
+    [
+      "machine_name" => "business_analyst_level_ii",
+      "title"        => "Business Analyst – Level II",
+      "offsite_rates" => [
+        87.74, 89.05, 90.84, 92.65, 94.5, 96.39, 98.32, 100.29, 102.29, 104.34
+      ],
+      "onsite_rates" => [
+        78.13, 79.3, 80.88, 82.5, 84.15, 85.84, 87.55, 89.3, 91.09, 92.91
+      ]
+    ],
+    [
+      "machine_name" => "business_analyst_level_iii",
+      "title"        => "Business Analyst – Level III",
+      "offsite_rates" => [
+        97.73, 99.19, 101.18, 103.2, 105.26, 107.37, 109.52, 111.71, 113.94, 116.22
+      ],
+      "onsite_rates" => [
+        87.02, 88.33, 90.09, 91.9, 93.73, 95.61, 97.52, 99.47, 101.46, 103.49
+      ]
+    ],
+    [
+      "machine_name" => "business_process_reengineering_specialist_level_i",
+      "title"        => "Business Process Reengineering Specialist – Level I",
+      "offsite_rates" => [
+        92.01, 93.39, 95.26, 97.17, 99.11, 101.09, 103.11, 105.18, 107.28, 109.43
+      ],
+      "onsite_rates" => [
+        81.93, 83.16, 84.83, 86.52, 88.25, 90.02, 91.82, 93.66, 95.53, 97.44
+      ]
+    ],
+    [
+      "machine_name" => "business_process_reengineering_specialist_level_ii",
+      "title"        => "Business Process Reengineering Specialist – Level II",
+      "offsite_rates" => [
+        103.92, 105.47, 107.58, 109.74, 111.93, 114.17, 116.45, 118.78, 121.16, 123.58
+      ],
+      "onsite_rates" => [
+        92.53, 93.92, 95.8, 97.71, 99.67, 101.66, 103.7, 105.77, 107.88, 110.04
+      ]
+    ],
+    [
+      "machine_name" => "business_process_reengineering_specialist_level_iii",
+      "title"        => "Business Process Reengineering Specialist – Level III",
+      "offsite_rates" => [
+        116.79, 118.54, 120.91, 123.33, 125.8, 128.32, 130.88, 133.5, 136.17, 138.89
+      ],
+      "onsite_rates" => [
+        104, 105.56, 107.67, 109.82, 112.02, 114.26, 116.54, 118.88, 121.25, 123.68
+      ]
+    ],
+    [
+      "machine_name" => "chief_information_security_officer",
+      "title"        => "Chief Information Security Officer",
+      "offsite_rates" => [
+        212.52, 215.71, 220.03, 224.43, 228.92, 233.49, 238.16, 242.93, 247.79, 252.74
+      ],
+      "onsite_rates" => [
+        189.24, 192.08, 195.92, 199.84, 203.84, 207.92, 212.07, 216.32, 220.64, 225.05
+      ]
+    ],
+    [
+      "machine_name" => "communications_hardware_specialist",
+      "title"        => "Communications Hardware Specialist",
+      "offsite_rates" => [
+        101.75, 103.28, 105.34, 107.45, 109.6, 111.79, 114.03, 116.31, 118.63, 121
+      ],
+      "onsite_rates" => [
+        90.6, 91.96, 93.8, 95.68, 97.59, 99.54, 101.53, 103.57, 105.64, 107.75
+      ]
+    ],
+    [
+      "machine_name" => "communications_network_manager",
+      "title"        => "Communications Network Manager",
+      "offsite_rates" => [
+        136.75, 138.8, 141.57, 144.41, 147.29, 150.24, 153.25, 156.31, 159.44, 162.62
+      ],
+      "onsite_rates" => [
+        121.77, 123.59, 126.07, 128.59, 131.16, 133.78, 136.46, 139.19, 141.97, 144.81
+      ]
+    ],
+    [
+      "machine_name" => "communications_software_specialist",
+      "title"        => "Communications Software Specialist",
+      "offsite_rates" => [
+        111.69, 113.36, 115.63, 117.94, 120.3, 122.71, 125.16, 127.66, 130.22, 132.82
+      ],
+      "onsite_rates" => [
+        99.45, 100.94, 102.96, 105.02, 107.12, 109.27, 111.45, 113.68, 115.95, 118.27
+      ]
+    ],
+    [
+      "machine_name" => "communications_specialist",
+      "title"        => "Communications Specialist",
+      "offsite_rates" => [
+        111.69, 113.36, 115.63, 117.94, 120.3, 122.71, 125.16, 127.66, 130.22, 132.82
+      ],
+      "onsite_rates" => [
+        99.45, 100.94, 102.96, 105.02, 107.12, 109.27, 111.45, 113.68, 115.95, 118.27
+      ]
+    ],
+    [
+      "machine_name" => "computer_data_librarian",
+      "title"        => "Computer Data Librarian",
+      "offsite_rates" => [
+        85.81, 87.09, 88.83, 90.61, 92.42, 94.27, 96.16, 98.08, 100.04, 102.04
+      ],
+      "onsite_rates" => [
+        76.41, 77.55, 79.1, 80.68, 82.3, 83.94, 85.62, 87.34, 89.08, 90.86
+      ]
+    ],
+    [
+      "machine_name" => "computer_scientist",
+      "title"        => "Computer Scientist",
+      "offsite_rates" => [
+        123.96, 125.82, 128.34, 130.9, 133.52, 136.19, 138.92, 141.69, 144.53, 147.42
+      ],
+      "onsite_rates" => [
+        110.38, 112.04, 114.28, 116.56, 118.9, 121.27, 123.7, 126.17, 128.7, 131.27
+      ]
+    ],
+    [
+      "machine_name" => "computer_security_system_specialist_level_i",
+      "title"        => "Computer Security System Specialist – Level I",
+      "offsite_rates" => [
+        78.3, 79.47, 81.06, 82.68, 84.34, 86.02, 87.74, 89.5, 91.29, 93.11
+      ],
+      "onsite_rates" => [
+        69.72, 70.77, 72.18, 73.62, 75.1, 76.6, 78.13, 79.69, 81.29, 82.91
+      ]
+    ],
+    [
+      "machine_name" => "computer_security_system_specialist_level_ii",
+      "title"        => "Computer Security System Specialist – Level II",
+      "offsite_rates" => [
+        91.17, 92.54, 94.39, 96.27, 98.2, 100.16, 102.17, 104.21, 106.29, 108.42
+      ],
+      "onsite_rates" => [
+        81.18, 82.4, 84.05, 85.73, 87.44, 89.19, 90.97, 92.79, 94.65, 96.54
+      ]
+    ],
+    [
+      "machine_name" => "computer_security_system_specialist_level_iii",
+      "title"        => "Computer Security System Specialist – Level III",
+      "offsite_rates" => [
+        102.97, 104.51, 106.6, 108.73, 110.91, 113.13, 115.39, 117.7, 120.05, 122.45
+      ],
+      "onsite_rates" => [
+        91.69, 93.06, 94.92, 96.82, 98.76, 100.73, 102.75, 104.8, 106.9, 109.04
+      ]
+    ],
+    [
+      "machine_name" => "computer_systems_analyst_level_ii",
+      "title"        => "Computer Systems Analyst – Level II",
+      "offsite_rates" => [
+        89.34, 90.68, 92.49, 94.34, 96.23, 98.15, 100.12, 102.12, 104.16, 106.24
+      ],
+      "onsite_rates" => [
+        79.55, 80.75, 82.36, 84.01, 85.69, 87.4, 89.15, 90.93, 92.75, 94.61
+      ]
+    ],
+    [
+      "machine_name" => "computer_systems_analyst_level_iii",
+      "title"        => "Computer Systems Analyst – Level III",
+      "offsite_rates" => [
+        99.08, 100.57, 102.58, 104.63, 106.73, 108.86, 111.04, 113.26, 115.52, 117.83
+      ],
+      "onsite_rates" => [
+        88.23, 89.55, 91.34, 93.17, 95.04, 96.94, 98.87, 100.85, 102.87, 104.93
+      ]
+    ],
+    [
+      "machine_name" => "computer_systems_analyst_level_i",
+      "title"        => "Computer Systems Analyst – Level I",
+      "offsite_rates" => [
+        80.63, 81.84, 83.48, 85.14, 86.85, 88.58, 90.36, 92.16, 94.01, 95.89
+      ],
+      "onsite_rates" => [
+        71.8, 72.87, 74.33, 75.82, 77.33, 78.88, 80.46, 82.07, 83.71, 85.38
+      ]
+    ],
+    [
+      "machine_name" => "configuration_management_specialist",
+      "title"        => "Configuration Management Specialist",
+      "offsite_rates" => [
+        98.03, 99.5, 101.49, 103.52, 105.59, 107.7, 109.86, 112.05, 114.29, 116.58
+      ],
+      "onsite_rates" => [
+        87.29, 88.6, 90.37, 92.18, 94.02, 95.9, 97.82, 99.78, 101.77, 103.81
+      ]
+    ],
+    [
+      "machine_name" => "cost_analyst_level_i",
+      "title"        => "Cost Analyst – Level I",
+      "offsite_rates" => [
+        63.75, 64.71, 66, 67.32, 68.67, 70.04, 71.44, 72.87, 74.33, 75.81
+      ],
+      "onsite_rates" => [
+        56.77, 57.62, 58.77, 59.95, 61.15, 62.37, 63.62, 64.89, 66.19, 67.51
+      ]
+    ],
+    [
+      "machine_name" => "cost_analyst_level_ii",
+      "title"        => "Cost Analyst – Level II",
+      "offsite_rates" => [
+        79.01, 80.19, 81.8, 83.43, 85.1, 86.81, 88.54, 90.31, 92.12, 93.96
+      ],
+      "onsite_rates" => [
+        70.35, 71.41, 72.84, 74.29, 75.78, 77.3, 78.84, 80.42, 82.03, 83.67
+      ]
+    ],
+    [
+      "machine_name" => "data_entry_clerk",
+      "title"        => "Data Entry Clerk",
+      "offsite_rates" => [
+        45.03, 45.7, 46.61, 47.55, 48.5, 49.47, 50.46, 51.47, 52.5, 53.55
+      ],
+      "onsite_rates" => [
+        40.09, 40.69, 41.51, 42.34, 43.19, 44.05, 44.93, 45.83, 46.75, 47.68
+      ]
+    ],
+    [
+      "machine_name" => "data_security_specialist",
+      "title"        => "Data Security Specialist",
+      "offsite_rates" => [
+        124.54, 126.41, 128.94, 131.52, 134.15, 136.83, 139.57, 142.36, 145.21, 148.11
+      ],
+      "onsite_rates" => [
+        110.9, 112.56, 114.81, 117.11, 119.45, 121.84, 124.28, 126.76, 129.3, 131.89
+      ]
+    ],
+    [
+      "machine_name" => "data_standardization_specialist",
+      "title"        => "Data Standardization Specialist",
+      "offsite_rates" => [
+        91.17, 92.54, 94.39, 96.27, 98.2, 100.16, 102.17, 104.21, 106.29, 108.42
+      ],
+      "onsite_rates" => [
+        81.18, 82.4, 84.05, 85.73, 87.44, 89.19, 90.97, 92.79, 94.65, 96.54
+      ]
+    ],
+    [
+      "machine_name" => "data_warehouse_analyst",
+      "title"        => "Data Warehouse Analyst",
+      "offsite_rates" => [
+        102.67, 104.21, 106.3, 108.42, 110.59, 112.8, 115.06, 117.36, 119.71, 122.1
+      ],
+      "onsite_rates" => [
+        91.43, 92.8, 94.65, 96.55, 98.48, 100.45, 102.46, 104.51, 106.6, 108.73
+      ]
+    ],
+    [
+      "machine_name" => "data_warehouse_programmer",
+      "title"        => "Data Warehouse Programmer",
+      "offsite_rates" => [
+        114.13, 115.84, 118.16, 120.52, 122.93, 125.39, 127.9, 130.46, 133.07, 135.73
+      ],
+      "onsite_rates" => [
+        101.63, 103.15, 105.22, 107.32, 109.47, 111.66, 113.89, 116.17, 118.49, 120.86
+      ]
+    ],
+    [
+      "machine_name" => "data_warehousing_administrator",
+      "title"        => "Data Warehousing Administrator",
+      "offsite_rates" => [
+        115.15, 116.88, 119.22, 121.6, 124.04, 126.52, 129.05, 131.63, 134.26, 136.95
+      ],
+      "onsite_rates" => [
+        102.54, 104.08, 106.16, 108.28, 110.45, 112.66, 114.91, 117.21, 119.55, 121.94
+      ]
+    ],
+    [
+      "machine_name" => "database_administrator",
+      "title"        => "Database Administrator",
+      "offsite_rates" => [
+        125.11, 126.99, 129.53, 132.12, 134.76, 137.46, 140.21, 143.01, 145.87, 148.79
+      ],
+      "onsite_rates" => [
+        111.41, 113.08, 115.34, 117.65, 120, 122.4, 124.85, 127.35, 129.89, 132.49
+      ]
+    ],
+    [
+      "machine_name" => "database_management_specialist_level_i",
+      "title"        => "Database Management Specialist – Level I",
+      "offsite_rates" => [
+        75.66, 76.79, 78.33, 79.9, 81.5, 83.12, 84.79, 86.48, 88.21, 89.98
+      ],
+      "onsite_rates" => [
+        67.37, 68.38, 69.75, 71.14, 72.57, 74.02, 75.5, 77.01, 78.55, 80.12
+      ]
+    ],
+    [
+      "machine_name" => "database_management_specialist_level_ii",
+      "title"        => "Database Management Specialist – Level II",
+      "offsite_rates" => [
+        94.59, 96.01, 97.93, 99.88, 101.88, 103.92, 106, 108.12, 110.28, 112.49
+      ],
+      "onsite_rates" => [
+        84.23, 85.49, 87.2, 88.94, 90.72, 92.54, 94.39, 96.27, 98.2, 100.16
+      ]
+    ],
+    [
+      "machine_name" => "database_management_specialist_level_iii",
+      "title"        => "Database Management Specialist – Level III",
+      "offsite_rates" => [
+        111.1, 112.77, 115.02, 117.33, 119.67, 122.06, 124.51, 127, 129.54, 132.13
+      ],
+      "onsite_rates" => [
+        98.93, 100.42, 102.42, 104.47, 106.56, 108.69, 110.87, 113.08, 115.35, 117.65
+      ]
+    ],
+    [
+      "machine_name" => "database_specialist_level_i",
+      "title"        => "Database Specialist – Level I",
+      "offsite_rates" => [
+        74.05, 75.16, 76.66, 78.2, 79.76, 81.36, 82.98, 84.64, 86.34, 88.06
+      ],
+      "onsite_rates" => [
+        65.94, 66.93, 68.27, 69.63, 71.02, 72.45, 73.89, 75.37, 76.88, 78.42
+      ]
+    ],
+    [
+      "machine_name" => "database_specialist_level_ii",
+      "title"        => "Database Specialist – Level II",
+      "offsite_rates" => [
+        91.87, 93.25, 95.11, 97.01, 98.95, 100.93, 102.95, 105.01, 107.11, 109.25
+      ],
+      "onsite_rates" => [
+        81.8, 83.03, 84.69, 86.39, 88.11, 89.88, 91.67, 93.51, 95.38, 97.28
+      ]
+    ],
+    [
+      "machine_name" => "database_specialist_level_iii",
+      "title"        => "Database Specialist – Level III",
+      "offsite_rates" => [
+        111.24, 112.9, 115.16, 117.47, 119.81, 122.21, 124.66, 127.15, 129.69, 132.29
+      ],
+      "onsite_rates" => [
+        99.05, 100.54, 102.55, 104.6, 106.69, 108.82, 111, 113.22, 115.48, 117.79
+      ]
+    ],
+    [
+      "machine_name" => "disaster_recovery_specialist",
+      "title"        => "Disaster Recovery Specialist",
+      "offsite_rates" => [
+        102.05, 103.58, 105.65, 107.77, 109.92, 112.12, 114.36, 116.65, 118.98, 121.36
+      ],
+      "onsite_rates" => [
+        90.87, 92.23, 94.08, 95.96, 97.88, 99.84, 101.83, 103.87, 105.95, 108.07
+      ]
+    ],
+    [
+      "machine_name" => "document_control_specialist_level_ii",
+      "title"        => "Document Control Specialist - Level II",
+      "offsite_rates" => [
+        92.24, 93.62, 95.5, 97.41, 99.35, 101.34, 103.37, 105.44, 107.54, 109.7
+      ],
+      "onsite_rates" => [
+        82.14, 83.37, 85.04, 86.74, 88.47, 90.24, 92.05, 93.89, 95.76, 97.68
+      ]
+    ],
+    [
+      "machine_name" => "document_control_specialist_level_i",
+      "title"        => "Document Control Specialist – Level I",
+      "offsite_rates" => [
+        87.95, 89.27, 91.05, 92.88, 94.73, 96.63, 98.56, 100.53, 102.54, 104.59
+      ],
+      "onsite_rates" => [
+        78.32, 79.49, 81.08, 82.7, 84.36, 86.04, 87.76, 89.52, 91.31, 93.14
+      ]
+    ],
+    [
+      "machine_name" => "document_control_specialist_level_iii",
+      "title"        => "Document Control Specialist – Level III",
+      "offsite_rates" => [
+        97.6, 99.07, 101.05, 103.07, 105.13, 107.23, 109.38, 111.57, 113.8, 116.07
+      ],
+      "onsite_rates" => [
+        86.91, 88.22, 89.98, 91.78, 93.61, 95.49, 97.4, 99.34, 101.33, 103.36
+      ]
+    ],
+    [
+      "machine_name" => "document_support_specialist_level_i",
+      "title"        => "Document Support Specialist – Level I",
+      "offsite_rates" => [
+        85.81, 87.09, 88.83, 90.61, 92.42, 94.27, 96.16, 98.08, 100.04, 102.04
+      ],
+      "onsite_rates" => [
+        76.41, 77.55, 79.1, 80.68, 82.3, 83.94, 85.62, 87.34, 89.08, 90.86
+      ]
+    ],
+    [
+      "machine_name" => "document_support_specialist_level_ii",
+      "title"        => "Document Support Specialist – Level II",
+      "offsite_rates" => [
+        90.1, 91.45, 93.28, 95.14, 97.04, 98.98, 100.96, 102.98, 105.04, 107.14
+      ],
+      "onsite_rates" => [
+        80.23, 81.43, 83.06, 84.72, 86.41, 88.14, 89.9, 91.7, 93.54, 95.41
+      ]
+    ],
+    [
+      "machine_name" => "duplicating_machine_operator",
+      "title"        => "Duplicating Machine Operator",
+      "offsite_rates" => [
+        69.72, 70.76, 72.18, 73.62, 75.09, 76.6, 78.13, 79.69, 81.28, 82.91
+      ],
+      "onsite_rates" => [
+        62.08, 63.01, 64.27, 65.56, 66.87, 68.2, 69.57, 70.96, 72.38, 73.83
+      ]
+    ],
+    [
+      "machine_name" => "electronic_data_interchange_edi_specialist",
+      "title"        => "Electronic Data Interchange (EDI) Specialist",
+      "offsite_rates" => [
+        90.6, 91.96, 93.8, 95.67, 97.59, 99.54, 101.53, 103.56, 105.63, 107.74
+      ],
+      "onsite_rates" => [
+        80.67, 81.89, 83.52, 85.19, 86.9, 88.63, 90.41, 92.22, 94.06, 95.94
+      ]
+    ],
+    [
+      "machine_name" => "electronic_meeting_technographer",
+      "title"        => "Electronic Meeting Technographer",
+      "offsite_rates" => [
+        61.14, 62.05, 63.29, 64.56, 65.85, 67.17, 68.51, 69.88, 71.28, 72.71
+      ],
+      "onsite_rates" => [
+        54.44, 55.26, 56.36, 57.49, 58.64, 59.81, 61.01, 62.23, 63.47, 64.74
+      ]
+    ],
+    [
+      "machine_name" => "enterprise_resource_planning_erp_specialist",
+      "title"        => "Enterprise Resource Planning (ERP) Specialist",
+      "offsite_rates" => [
+        128.89, 130.82, 133.44, 136.11, 138.83, 141.61, 144.44, 147.33, 150.27, 153.28
+      ],
+      "onsite_rates" => [
+        114.77, 116.49, 118.82, 121.2, 123.62, 126.09, 128.62, 131.19, 133.81, 136.49
+      ]
+    ],
+    [
+      "machine_name" => "facilitator",
+      "title"        => "Facilitator",
+      "offsite_rates" => [
+        80.44, 81.65, 83.28, 84.95, 86.65, 88.38, 90.15, 91.95, 93.79, 95.66
+      ],
+      "onsite_rates" => [
+        71.63, 72.7, 74.16, 75.64, 77.15, 78.7, 80.27, 81.88, 83.51, 85.19
+      ]
+    ],
+    [
+      "machine_name" => "financial_analyst_it",
+      "title"        => "Financial Analyst – IT",
+      "offsite_rates" => [
+        85.81, 87.09, 88.83, 90.61, 92.42, 94.27, 96.16, 98.08, 100.04, 102.04
+      ],
+      "onsite_rates" => [
+        76.41, 77.55, 79.1, 80.68, 82.3, 83.94, 85.62, 87.34, 89.08, 90.86
+      ]
+    ],
+    [
+      "machine_name" => "functional_analyst_level_i",
+      "title"        => "Functional Analyst – Level I",
+      "offsite_rates" => [
+        80.44, 81.65, 83.28, 84.95, 86.65, 88.38, 90.15, 91.95, 93.79, 95.66
+      ],
+      "onsite_rates" => [
+        71.63, 72.7, 74.16, 75.64, 77.15, 78.7, 80.27, 81.88, 83.51, 85.19
+      ]
+    ],
+    [
+      "machine_name" => "functional_analyst_level_ii",
+      "title"        => "Functional Analyst – Level II",
+      "offsite_rates" => [
+        96.53, 97.98, 99.94, 101.94, 103.98, 106.06, 108.18, 110.34, 112.55, 114.8
+      ],
+      "onsite_rates" => [
+        85.96, 87.25, 88.99, 90.77, 92.59, 94.44, 96.33, 98.25, 100.22, 102.22
+      ]
+    ],
+    [
+      "machine_name" => "general_clerk_level_i",
+      "title"        => "General Clerk – Level I",
+      "offsite_rates" => [
+        35.55, 36.09, 36.81, 37.54, 38.29, 39.06, 39.84, 40.64, 41.45, 42.28
+      ],
+      "onsite_rates" => [
+        31.66, 32.13, 32.78, 33.43, 34.1, 34.78, 35.48, 36.19, 36.91, 37.65
+      ]
+    ],
+    [
+      "machine_name" => "general_clerk_level_ii",
+      "title"        => "General Clerk – Level II",
+      "offsite_rates" => [
+        40.45, 41.06, 41.88, 42.72, 43.57, 44.44, 45.33, 46.24, 47.16, 48.1
+      ],
+      "onsite_rates" => [
+        36.02, 36.56, 37.29, 38.04, 38.8, 39.57, 40.36, 41.17, 41.99, 42.83
+      ]
+    ],
+    [
+      "machine_name" => "general_clerk_level_iii",
+      "title"        => "General Clerk – Level III",
+      "offsite_rates" => [
+        48.86, 49.59, 50.58, 51.59, 52.63, 53.68, 54.75, 55.85, 56.96, 58.1
+      ],
+      "onsite_rates" => [
+        43.51, 44.16, 45.04, 45.94, 46.86, 47.8, 48.75, 49.73, 50.72, 51.74
+      ]
+    ],
+    [
+      "machine_name" => "geographic_information_system_gis_specialist",
+      "title"        => "Geographic Information System (GIS) Specialist",
+      "offsite_rates" => [
+        109.37, 111.02, 113.24, 115.5, 117.81, 120.17, 122.57, 125.02, 127.52, 130.07
+      ],
+      "onsite_rates" => [
+        97.39, 98.85, 100.83, 102.85, 104.9, 107, 109.14, 111.33, 113.55, 115.82
+      ]
+    ],
+    [
+      "machine_name" => "graphical_user_interface_designer",
+      "title"        => "Graphical User Interface Designer",
+      "offsite_rates" => [
+        103.53, 105.08, 107.18, 109.33, 111.52, 113.75, 116.02, 118.34, 120.71, 123.12
+      ],
+      "onsite_rates" => [
+        92.19, 93.57, 95.44, 97.35, 99.3, 101.29, 103.31, 105.38, 107.48, 109.63
+      ]
+    ],
+    [
+      "machine_name" => "graphics_specialist",
+      "title"        => "Graphics Specialist",
+      "offsite_rates" => [
+        78.25, 79.43, 81.02, 82.64, 84.29, 85.97, 87.69, 89.45, 91.24, 93.06
+      ],
+      "onsite_rates" => [
+        69.68, 70.73, 72.14, 73.58, 75.06, 76.56, 78.09, 79.65, 81.24, 82.87
+      ]
+    ],
+    [
+      "machine_name" => "hardware_draftsman",
+      "title"        => "Hardware Draftsman",
+      "offsite_rates" => [
+        69.72, 70.76, 72.18, 73.62, 75.09, 76.6, 78.13, 79.69, 81.28, 82.91
+      ],
+      "onsite_rates" => [
+        62.08, 63.01, 64.27, 65.56, 66.87, 68.2, 69.57, 70.96, 72.38, 73.83
+      ]
+    ],
+    [
+      "machine_name" => "hardware_installation_technician_level_i",
+      "title"        => "Hardware Installation Technician – Level I",
+      "offsite_rates" => [
+        42.9, 43.55, 44.42, 45.31, 46.21, 47.14, 48.08, 49.04, 50.02, 51.02
+      ],
+      "onsite_rates" => [
+        38.2, 38.78, 39.55, 40.34, 41.15, 41.97, 42.81, 43.67, 44.54, 45.43
+      ]
+    ],
+    [
+      "machine_name" => "hardware_installation_technician_level_ii",
+      "title"        => "Hardware Installation Technician – Level II",
+      "offsite_rates" => [
+        58.99, 59.88, 61.07, 62.29, 63.54, 64.81, 66.11, 67.43, 68.78, 70.15
+      ],
+      "onsite_rates" => [
+        52.53, 53.32, 54.38, 55.47, 56.58, 57.71, 58.87, 60.04, 61.24, 62.47
+      ]
+    ],
+    [
+      "machine_name" => "hardware_specialist_information_technology",
+      "title"        => "Hardware Specialist – Information Technology",
+      "offsite_rates" => [
+        64.35, 65.32, 66.63, 67.96, 69.32, 70.7, 72.12, 73.56, 75.03, 76.53
+      ],
+      "onsite_rates" => [
+        57.3, 58.16, 59.33, 60.51, 61.72, 62.96, 64.22, 65.5, 66.81, 68.15
+      ]
+    ],
+    [
+      "machine_name" => "help_desk_manager",
+      "title"        => "Help Desk Manager",
+      "offsite_rates" => [
+        113.9, 115.61, 117.92, 120.28, 122.68, 125.14, 127.64, 130.19, 132.8, 135.45
+      ],
+      "onsite_rates" => [
+        101.42, 102.94, 105, 107.1, 109.24, 111.43, 113.66, 115.93, 118.25, 120.61
+      ]
+    ],
+    [
+      "machine_name" => "help_desk_specialist",
+      "title"        => "Help Desk Specialist",
+      "offsite_rates" => [
+        48.27, 48.99, 49.97, 50.97, 51.99, 53.03, 54.09, 55.17, 56.27, 57.4
+      ],
+      "onsite_rates" => [
+        42.98, 43.62, 44.5, 45.39, 46.29, 47.22, 48.16, 49.13, 50.11, 51.11
+      ]
+    ],
+    [
+      "machine_name" => "imaging_specialist_technician_level_i",
+      "title"        => "Imaging Specialist/Technician – Level I",
+      "offsite_rates" => [
+        76.15, 77.29, 78.84, 80.42, 82.03, 83.67, 85.34, 87.05, 88.79, 90.56
+      ],
+      "onsite_rates" => [
+        67.81, 68.83, 70.2, 71.61, 73.04, 74.5, 75.99, 77.51, 79.06, 80.64
+      ]
+    ],
+    [
+      "machine_name" => "imaging_specialist_technician_level_ii",
+      "title"        => "Imaging Specialist/Technician – Level II",
+      "offsite_rates" => [
+        81.51, 82.74, 84.39, 86.08, 87.8, 89.56, 91.35, 93.18, 95.04, 96.94
+      ],
+      "onsite_rates" => [
+        72.59, 73.67, 75.15, 76.65, 78.18, 79.75, 81.34, 82.97, 84.63, 86.32
+      ]
+    ],
+    [
+      "machine_name" => "imaging_specialist_technician_level_iii",
+      "title"        => "Imaging Specialist/Technician – Level III",
+      "offsite_rates" => [
+        87.95, 89.27, 91.05, 92.88, 94.73, 96.63, 98.56, 100.53, 102.54, 104.59
+      ],
+      "onsite_rates" => [
+        78.32, 79.49, 81.08, 82.7, 84.36, 86.04, 87.76, 89.52, 91.31, 93.14
+      ]
+    ],
+    [
+      "machine_name" => "informatic_specialist_bioinformatician",
+      "title"        => "Informatic Specialist/Bioinformatician",
+      "offsite_rates" => [
+        96.53, 97.98, 99.94, 101.94, 103.98, 106.06, 108.18, 110.34, 112.55, 114.8
+      ],
+      "onsite_rates" => [
+        85.96, 87.25, 88.99, 90.77, 92.59, 94.44, 96.33, 98.25, 100.22, 102.22
+      ]
+    ],
+    [
+      "machine_name" => "information_engineer_level_i",
+      "title"        => "Information Engineer – Level I",
+      "offsite_rates" => [
+        80.44, 81.65, 83.28, 84.95, 86.65, 88.38, 90.15, 91.95, 93.79, 95.66
+      ],
+      "onsite_rates" => [
+        71.63, 72.7, 74.16, 75.64, 77.15, 78.7, 80.27, 81.88, 83.51, 85.19
+      ]
+    ],
+    [
+      "machine_name" => "information_engineer_level_ii",
+      "title"        => "Information Engineer – Level II",
+      "offsite_rates" => [
+        96.53, 97.98, 99.94, 101.94, 103.98, 106.06, 108.18, 110.34, 112.55, 114.8
+      ],
+      "onsite_rates" => [
+        85.96, 87.25, 88.99, 90.77, 92.59, 94.44, 96.33, 98.25, 100.22, 102.22
+      ]
+    ],
+    [
+      "machine_name" => "information_resource_management_analyst",
+      "title"        => "Information Resource Management Analyst",
+      "offsite_rates" => [
+        101.89, 103.42, 105.49, 107.6, 109.75, 111.95, 114.19, 116.47, 118.8, 121.18
+      ],
+      "onsite_rates" => [
+        90.73, 92.09, 93.93, 95.81, 97.73, 99.68, 101.68, 103.71, 105.79, 107.9
+      ]
+    ],
+    [
+      "machine_name" => "information_systems_training_specialist",
+      "title"        => "Information Systems Training Specialist",
+      "offsite_rates" => [
+        100.82, 102.33, 104.38, 106.47, 108.6, 110.77, 112.98, 115.24, 117.55, 119.9
+      ],
+      "onsite_rates" => [
+        89.78, 91.12, 92.95, 94.8, 96.7, 98.63, 100.61, 102.62, 104.67, 106.77
+      ]
+    ],
+    [
+      "machine_name" => "it_policy_legislative_specialist",
+      "title"        => "IT Policy/Legislative Specialist",
+      "offsite_rates" => [
+        96.53, 97.98, 99.94, 101.94, 103.98, 106.06, 108.18, 110.34, 112.55, 114.8
+      ],
+      "onsite_rates" => [
+        85.96, 87.25, 88.99, 90.77, 92.59, 94.44, 96.33, 98.25, 100.22, 102.22
+      ]
+    ],
+    [
+      "machine_name" => "it_strategic_capital_planner",
+      "title"        => "IT Strategic/Capital Planner",
+      "offsite_rates" => [
+        120.13, 121.93, 124.37, 126.85, 129.39, 131.98, 134.62, 137.31, 140.06, 142.86
+      ],
+      "onsite_rates" => [
+        106.97, 108.57, 110.74, 112.96, 115.22, 117.52, 119.87, 122.27, 124.72, 127.21
+      ]
+    ],
+    [
+      "machine_name" => "knowledge_management_specialist",
+      "title"        => "Knowledge Management Specialist",
+      "offsite_rates" => [
+        88.59, 89.92, 91.71, 93.55, 95.42, 97.33, 99.27, 101.26, 103.29, 105.35
+      ],
+      "onsite_rates" => [
+        78.88, 80.07, 81.67, 83.3, 84.97, 86.67, 88.4, 90.17, 91.97, 93.81
+      ]
+    ],
+    [
+      "machine_name" => "librarian",
+      "title"        => "Librarian",
+      "offsite_rates" => [
+        76.22, 77.37, 78.92, 80.49, 82.1, 83.75, 85.42, 87.13, 88.87, 90.65
+      ],
+      "onsite_rates" => [
+        67.88, 68.89, 70.27, 71.68, 73.11, 74.57, 76.06, 77.58, 79.14, 80.72
+      ]
+    ],
+    [
+      "machine_name" => "librarian_technician",
+      "title"        => "Librarian Technician",
+      "offsite_rates" => [
+        86.88, 88.18, 89.94, 91.74, 93.58, 95.45, 97.36, 99.31, 101.29, 103.32
+      ],
+      "onsite_rates" => [
+        77.36, 78.52, 80.09, 81.69, 83.33, 84.99, 86.69, 88.43, 90.2, 92
+      ]
+    ],
+    [
+      "machine_name" => "medical_billing_account_management_specialist",
+      "title"        => "Medical Billing/Account Management Specialist",
+      "offsite_rates" => [
+        32.18, 32.66, 33.31, 33.98, 34.66, 35.35, 36.06, 36.78, 37.52, 38.27
+      ],
+      "onsite_rates" => [
+        28.65, 29.08, 29.66, 30.26, 30.86, 31.48, 32.11, 32.75, 33.41, 34.07
+      ]
+    ],
+    [
+      "machine_name" => "modeling_and_simulation_specialist",
+      "title"        => "Modeling and Simulation Specialist",
+      "offsite_rates" => [
+        120.13, 121.93, 124.37, 126.85, 129.39, 131.98, 134.62, 137.31, 140.06, 142.86
+      ],
+      "onsite_rates" => [
+        106.97, 108.57, 110.74, 112.96, 115.22, 117.52, 119.87, 122.27, 124.72, 127.21
+      ]
+    ],
+    [
+      "machine_name" => "network_administrator",
+      "title"        => "Network Administrator",
+      "offsite_rates" => [
+        98.68, 100.16, 102.16, 104.2, 106.29, 108.41, 110.58, 112.79, 115.05, 117.35
+      ],
+      "onsite_rates" => [
+        87.87, 89.18, 90.97, 92.79, 94.64, 96.54, 98.47, 100.44, 102.45, 104.49
+      ]
+    ],
+    [
+      "machine_name" => "network_draftsman",
+      "title"        => "Network Draftsman",
+      "offsite_rates" => [
+        128.71, 130.64, 133.25, 135.92, 138.63, 141.41, 144.24, 147.12, 150.06, 153.06
+      ],
+      "onsite_rates" => [
+        114.61, 116.33, 118.65, 121.03, 123.45, 125.92, 128.44, 131, 133.62, 136.3
+      ]
+    ],
+    [
+      "machine_name" => "network_installation_technician_level_i",
+      "title"        => "Network Installation Technician – Level I",
+      "offsite_rates" => [
+        65.43, 66.41, 67.74, 69.09, 70.47, 71.88, 73.32, 74.79, 76.28, 77.81
+      ],
+      "onsite_rates" => [
+        58.26, 59.13, 60.32, 61.52, 62.75, 64.01, 65.29, 66.59, 67.93, 69.28
+      ]
+    ],
+    [
+      "machine_name" => "network_installation_technician_level_ii",
+      "title"        => "Network Installation Technician – Level II",
+      "offsite_rates" => [
+        74.01, 75.12, 76.62, 78.15, 79.71, 81.31, 82.94, 84.59, 86.29, 88.01
+      ],
+      "onsite_rates" => [
+        65.9, 66.89, 68.23, 69.59, 70.98, 72.4, 73.85, 75.33, 76.83, 78.37
+      ]
+    ],
+    [
+      "machine_name" => "network_support_technician",
+      "title"        => "Network Support Technician",
+      "offsite_rates" => [
+        73.19, 74.29, 75.78, 77.29, 78.84, 80.41, 82.02, 83.66, 85.34, 87.04
+      ],
+      "onsite_rates" => [
+        65.18, 66.15, 67.48, 68.83, 70.2, 71.61, 73.04, 74.5, 75.99, 77.51
+      ]
+    ],
+    [
+      "machine_name" => "operations_manager",
+      "title"        => "Operations Manager",
+      "offsite_rates" => [
+        93.31, 94.71, 96.61, 98.54, 100.51, 102.52, 104.57, 106.66, 108.8, 110.97
+      ],
+      "onsite_rates" => [
+        83.09, 84.34, 86.02, 87.74, 89.5, 91.29, 93.12, 94.98, 96.88, 98.81
+      ]
+    ],
+    [
+      "machine_name" => "procurement_product_specialist",
+      "title"        => "Procurement Product Specialist",
+      "offsite_rates" => [
+        84.73, 86, 87.72, 89.48, 91.27, 93.09, 94.95, 96.85, 98.79, 100.77
+      ],
+      "onsite_rates" => [
+        75.45, 76.58, 78.11, 79.68, 81.27, 82.9, 84.55, 86.24, 87.97, 89.73
+      ]
+    ],
+    [
+      "machine_name" => "program_administration_specialist",
+      "title"        => "Program Administration Specialist",
+      "offsite_rates" => [
+        90.1, 91.45, 93.28, 95.14, 97.04, 98.98, 100.96, 102.98, 105.04, 107.14
+      ],
+      "onsite_rates" => [
+        80.23, 81.43, 83.06, 84.72, 86.41, 88.14, 89.9, 91.7, 93.54, 95.41
+      ]
+    ],
+    [
+      "machine_name" => "program_analyst",
+      "title"        => "Program Analyst",
+      "offsite_rates" => [
+        107.26, 108.87, 111.04, 113.26, 115.53, 117.84, 120.2, 122.6, 125.05, 127.55
+      ],
+      "onsite_rates" => [
+        95.51, 96.94, 98.88, 100.86, 102.87, 104.93, 107.03, 109.17, 111.35, 113.58
+      ]
+    ],
+    [
+      "machine_name" => "program_manager",
+      "title"        => "Program Manager",
+      "offsite_rates" => [
+        156.15, 158.5, 161.67, 164.9, 168.2, 171.56, 174.99, 178.49, 182.06, 185.7
+      ],
+      "onsite_rates" => [
+        139.05, 141.13, 143.96, 146.84, 149.77, 152.77, 155.82, 158.94, 162.12, 165.36
+      ]
+    ],
+    [
+      "machine_name" => "project_control_specialist",
+      "title"        => "Project Control Specialist",
+      "offsite_rates" => [
+        105.62, 107.2, 109.34, 111.53, 113.76, 116.04, 118.36, 120.73, 123.14, 125.6
+      ],
+      "onsite_rates" => [
+        94.05, 95.46, 97.37, 99.31, 101.3, 103.33, 105.39, 107.5, 109.65, 111.84
+      ]
+    ],
+    [
+      "machine_name" => "project_leader",
+      "title"        => "Project Leader",
+      "offsite_rates" => [
+        78.3, 79.47, 81.06, 82.68, 84.34, 86.02, 87.74, 89.5, 91.29, 93.11
+      ],
+      "onsite_rates" => [
+        69.72, 70.77, 72.18, 73.62, 75.1, 76.6, 78.13, 79.69, 81.29, 82.91
+      ]
+    ],
+    [
+      "machine_name" => "project_manager_level_i",
+      "title"        => "Project Manager – Level I",
+      "offsite_rates" => [
+        87.69, 89, 90.78, 92.6, 94.45, 96.34, 98.27, 100.23, 102.24, 104.28
+      ],
+      "onsite_rates" => [
+        78.08, 79.25, 80.84, 82.45, 84.1, 85.79, 87.5, 89.25, 91.04, 92.86
+      ]
+    ],
+    [
+      "machine_name" => "project_manager_level_ii",
+      "title"        => "Project Manager – Level II",
+      "offsite_rates" => [
+        104.81, 106.38, 108.51, 110.68, 112.89, 115.15, 117.45, 119.8, 122.2, 124.64
+      ],
+      "onsite_rates" => [
+        93.33, 94.73, 96.62, 98.56, 100.53, 102.54, 104.59, 106.68, 108.81, 110.99
+      ]
+    ],
+    [
+      "machine_name" => "project_manager_level_iii",
+      "title"        => "Project Manager – Level III",
+      "offsite_rates" => [
+        119.9, 121.7, 124.13, 126.62, 129.15, 131.73, 134.37, 137.05, 139.8, 142.59
+      ],
+      "onsite_rates" => [
+        106.77, 108.37, 110.54, 112.75, 115, 117.3, 119.65, 122.04, 124.48, 126.97
+      ]
+    ],
+    [
+      "machine_name" => "public_health_analyst",
+      "title"        => "Public Health Analyst",
+      "offsite_rates" => [
+        79.1, 80.28, 81.89, 83.53, 85.2, 86.9, 88.64, 90.41, 92.22, 94.07
+      ],
+      "onsite_rates" => [
+        70.43, 71.49, 72.92, 74.38, 75.87, 77.38, 78.93, 80.51, 82.12, 83.76
+      ]
+    ],
+    [
+      "machine_name" => "quality_assurance_analyst",
+      "title"        => "Quality Assurance Analyst",
+      "offsite_rates" => [
+        82.8, 84.04, 85.72, 87.43, 89.18, 90.97, 92.79, 94.64, 96.53, 98.46
+      ],
+      "onsite_rates" => [
+        73.73, 74.83, 76.33, 77.86, 79.41, 81, 82.62, 84.27, 85.96, 87.68
+      ]
+    ],
+    [
+      "machine_name" => "quality_assurance_manager",
+      "title"        => "Quality Assurance Manager",
+      "offsite_rates" => [
+        112.61, 114.3, 116.59, 118.92, 121.3, 123.72, 126.2, 128.72, 131.3, 133.92
+      ],
+      "onsite_rates" => [
+        100.28, 101.78, 103.82, 105.89, 108.01, 110.17, 112.37, 114.62, 116.91, 119.25
+      ]
+    ],
+    [
+      "machine_name" => "quality_assurance_specialist",
+      "title"        => "Quality Assurance Specialist",
+      "offsite_rates" => [
+        83.84, 85.1, 86.8, 88.54, 90.31, 92.11, 93.96, 95.84, 97.75, 99.71
+      ],
+      "onsite_rates" => [
+        74.66, 75.78, 77.29, 78.84, 80.42, 82.02, 83.66, 85.34, 87.04, 88.79
+      ]
+    ],
+    [
+      "machine_name" => "records_management_specialist",
+      "title"        => "Records Management Specialist",
+      "offsite_rates" => [
+        68.28, 69.3, 70.69, 72.1, 73.55, 75.02, 76.52, 78.05, 79.61, 81.2
+      ],
+      "onsite_rates" => [
+        60.8, 61.71, 62.95, 64.21, 65.49, 66.8, 68.14, 69.5, 70.89, 72.31
+      ]
+    ],
+    [
+      "machine_name" => "scanner_operator",
+      "title"        => "Scanner Operator",
+      "offsite_rates" => [
+        32.18, 32.66, 33.31, 33.98, 34.66, 35.35, 36.06, 36.78, 37.52, 38.27
+      ],
+      "onsite_rates" => [
+        28.65, 29.08, 29.66, 30.26, 30.86, 31.48, 32.11, 32.75, 33.41, 34.07
+      ]
+    ],
+    [
+      "machine_name" => "scientific_data_analyst",
+      "title"        => "Scientific Data Analyst",
+      "offsite_rates" => [
+        75.85, 76.98, 78.52, 80.09, 81.7, 83.33, 85, 86.7, 88.43, 90.2
+      ],
+      "onsite_rates" => [
+        67.54, 68.55, 69.92, 71.32, 72.75, 74.2, 75.69, 77.2, 78.74, 80.32
+      ]
+    ],
+    [
+      "machine_name" => "subject_matter_expert_level_i",
+      "title"        => "Subject Matter Expert – Level I",
+      "offsite_rates" => [
+        150.16, 152.41, 155.46, 158.57, 161.74, 164.97, 168.27, 171.64, 175.07, 178.57
+      ],
+      "onsite_rates" => [
+        133.71, 135.72, 138.43, 141.2, 144.02, 146.9, 149.84, 152.84, 155.89, 159.01
+      ]
+    ],
+    [
+      "machine_name" => "subject_matter_expert_level_ii",
+      "title"        => "Subject Matter Expert – Level II",
+      "offsite_rates" => [
+        171.61, 174.18, 177.67, 181.22, 184.85, 188.54, 192.31, 196.16, 200.08, 204.08
+      ],
+      "onsite_rates" => [
+        152.81, 155.1, 158.21, 161.37, 164.6, 167.89, 171.25, 174.67, 178.17, 181.73
+      ]
+    ],
+    [
+      "machine_name" => "subject_matter_expert_level_iii",
+      "title"        => "Subject Matter Expert – Level III",
+      "offsite_rates" => [
+        193.06, 195.96, 199.88, 203.87, 207.95, 212.11, 216.35, 220.68, 225.09, 229.6
+      ],
+      "onsite_rates" => [
+        171.91, 174.49, 177.98, 181.54, 185.17, 188.88, 192.65, 196.51, 200.44, 204.44
+      ]
+    ],
+    [
+      "machine_name" => "system_administrator_level_i",
+      "title"        => "System Administrator – Level I",
+      "offsite_rates" => [
+        72.88, 73.97, 75.45, 76.96, 78.5, 80.07, 81.67, 83.3, 84.97, 86.67
+      ],
+      "onsite_rates" => [
+        64.9, 65.87, 67.19, 68.53, 69.9, 71.3, 72.72, 74.18, 75.66, 77.18
+      ]
+    ],
+    [
+      "machine_name" => "system_administrator_level_ii",
+      "title"        => "System Administrator – Level II",
+      "offsite_rates" => [
+        83.35, 84.6, 86.29, 88.02, 89.78, 91.57, 93.4, 95.27, 97.18, 99.12
+      ],
+      "onsite_rates" => [
+        74.22, 75.33, 76.84, 78.38, 79.94, 81.54, 83.17, 84.84, 86.53, 88.26
+      ]
+    ],
+    [
+      "machine_name" => "system_administrator_level_iii",
+      "title"        => "System Administrator – Level III",
+      "offsite_rates" => [
+        106.37, 107.96, 110.12, 112.32, 114.57, 116.86, 119.2, 121.58, 124.02, 126.5
+      ],
+      "onsite_rates" => [
+        94.72, 96.14, 98.06, 100.02, 102.02, 104.06, 106.14, 108.26, 110.43, 112.64
+      ]
+    ],
+    [
+      "machine_name" => "system_operator",
+      "title"        => "System Operator",
+      "offsite_rates" => [
+        64.24, 65.2, 66.51, 67.84, 69.19, 70.58, 71.99, 73.43, 74.9, 76.4
+      ],
+      "onsite_rates" => [
+        57.2, 58.06, 59.22, 60.41, 61.61, 62.85, 64.1, 65.39, 66.69, 68.03
+      ]
+    ],
+    [
+      "machine_name" => "system_programmer",
+      "title"        => "System Programmer",
+      "offsite_rates" => [
+        116.61, 118.36, 120.73, 123.14, 125.61, 128.12, 130.68, 133.3, 135.96, 138.68
+      ],
+      "onsite_rates" => [
+        103.84, 105.4, 107.5, 109.65, 111.85, 114.08, 116.37, 118.69, 121.07, 123.49
+      ]
+    ],
+    [
+      "machine_name" => "systems_architect_level_i",
+      "title"        => "Systems Architect – Level I",
+      "offsite_rates" => [
+        101.91, 103.44, 105.51, 107.62, 109.77, 111.96, 114.2, 116.49, 118.82, 121.19
+      ],
+      "onsite_rates" => [
+        90.75, 92.11, 93.95, 95.83, 97.74, 99.7, 101.69, 103.73, 105.8, 107.92
+      ]
+    ],
+    [
+      "machine_name" => "systems_architect_level_ii",
+      "title"        => "Systems Architect – Level II",
+      "offsite_rates" => [
+        126.43, 128.33, 130.9, 133.51, 136.19, 138.91, 141.69, 144.52, 147.41, 150.36
+      ],
+      "onsite_rates" => [
+        112.58, 114.27, 116.56, 118.89, 121.27, 123.69, 126.17, 128.69, 131.26, 133.89
+      ]
+    ],
+    [
+      "machine_name" => "systems_engineer_level_i",
+      "title"        => "Systems Engineer – Level I",
+      "offsite_rates" => [
+        72.37, 73.45, 74.92, 76.42, 77.95, 79.51, 81.1, 82.72, 84.38, 86.06
+      ],
+      "onsite_rates" => [
+        64.44, 65.41, 66.72, 68.05, 69.41, 70.8, 72.22, 73.66, 75.13, 76.64
+      ]
+    ],
+    [
+      "machine_name" => "systems_engineer_level_ii",
+      "title"        => "Systems Engineer – Level II",
+      "offsite_rates" => [
+        88.95, 90.28, 92.09, 93.93, 95.81, 97.72, 99.68, 101.67, 103.7, 105.78
+      ],
+      "onsite_rates" => [
+        79.2, 80.39, 82, 83.64, 85.31, 87.02, 88.76, 90.53, 92.34, 94.19
+      ]
+    ],
+    [
+      "machine_name" => "systems_engineer_level_iii",
+      "title"        => "Systems Engineer – Level III",
+      "offsite_rates" => [
+        108.01, 109.63, 111.82, 114.06, 116.34, 118.67, 121.04, 123.46, 125.93, 128.45
+      ],
+      "onsite_rates" => [
+        96.18, 97.62, 99.57, 101.57, 103.6, 105.67, 107.78, 109.94, 112.14, 114.38
+      ]
+    ],
+    [
+      "machine_name" => "technical_writer_editor_level_i",
+      "title"        => "Technical Writer/Editor – Level I",
+      "offsite_rates" => [
+        48.27, 48.99, 49.97, 50.97, 51.99, 53.03, 54.09, 55.17, 56.27, 57.4
+      ],
+      "onsite_rates" => [
+        42.98, 43.62, 44.5, 45.39, 46.29, 47.22, 48.16, 49.13, 50.11, 51.11
+      ]
+    ],
+    [
+      "machine_name" => "technical_writer_editor_level_ii",
+      "title"        => "Technical Writer/Editor – Level II",
+      "offsite_rates" => [
+        58.99, 59.88, 61.07, 62.29, 63.54, 64.81, 66.11, 67.43, 68.78, 70.15
+      ],
+      "onsite_rates" => [
+        52.53, 53.32, 54.38, 55.47, 56.58, 57.71, 58.87, 60.04, 61.24, 62.47
+      ]
+    ],
+    [
+      "machine_name" => "technical_writer_editor_level_iii",
+      "title"        => "Technical Writer/Editor – Level III",
+      "offsite_rates" => [
+        80.44, 81.65, 83.28, 84.95, 86.65, 88.38, 90.15, 91.95, 93.79, 95.66
+      ],
+      "onsite_rates" => [
+        71.63, 72.7, 74.16, 75.64, 77.15, 78.7, 80.27, 81.88, 83.51, 85.19
+      ]
+    ],
+    [
+      "machine_name" => "telecommunications_engineer_level_ii",
+      "title"        => "Telecommunications Engineer - Level II",
+      "offsite_rates" => [
+        99.75, 101.24, 103.27, 105.33, 107.44, 109.59, 111.78, 114.02, 116.3, 118.62
+      ],
+      "onsite_rates" => [
+        88.82, 90.15, 91.96, 93.8, 95.67, 97.59, 99.54, 101.53, 103.56, 105.63
+      ]
+    ],
+    [
+      "machine_name" => "telecommunications_engineer_level_i",
+      "title"        => "Telecommunications Engineer – Level I",
+      "offsite_rates" => [
+        77.22, 78.38, 79.95, 81.55, 83.18, 84.84, 86.54, 88.27, 90.04, 91.84
+      ],
+      "onsite_rates" => [
+        68.77, 69.8, 71.19, 72.62, 74.07, 75.55, 77.06, 78.6, 80.17, 81.78
+      ]
+    ],
+    [
+      "machine_name" => "telecommunications_specialist_level_ii",
+      "title"        => "Telecommunications Specialist - Level II",
+      "offsite_rates" => [
+        93.31, 94.71, 96.61, 98.54, 100.51, 102.52, 104.57, 106.66, 108.8, 110.97
+      ],
+      "onsite_rates" => [
+        83.09, 84.34, 86.02, 87.74, 89.5, 91.29, 93.12, 94.98, 96.88, 98.81
+      ]
+    ],
+    [
+      "machine_name" => "telecommunications_specialist_level_i",
+      "title"        => "Telecommunications Specialist – Level I",
+      "offsite_rates" => [
+        78.3, 79.47, 81.06, 82.68, 84.34, 86.02, 87.74, 89.5, 91.29, 93.11
+      ],
+      "onsite_rates" => [
+        69.72, 70.77, 72.18, 73.62, 75.1, 76.6, 78.13, 79.69, 81.29, 82.91
+      ]
+    ],
+    [
+      "machine_name" => "test_engineer",
+      "title"        => "Test Engineer",
+      "offsite_rates" => [
+        102.19, 103.72, 105.79, 107.91, 110.07, 112.27, 114.51, 116.8, 119.14, 121.52
+      ],
+      "onsite_rates" => [
+        90.99, 92.36, 94.2, 96.09, 98.01, 99.97, 101.97, 104.01, 106.09, 108.21
+      ]
+    ],
+    [
+      "machine_name" => "training_manager",
+      "title"        => "Training Manager",
+      "offsite_rates" => [
+        115.67, 117.41, 119.76, 122.15, 124.6, 127.09, 129.63, 132.22, 134.87, 137.56
+      ],
+      "onsite_rates" => [
+        103, 104.55, 106.64, 108.77, 110.95, 113.17, 115.43, 117.74, 120.09, 122.5
+      ]
+    ],
+    [
+      "machine_name" => "training_specialist_level_i",
+      "title"        => "Training Specialist – Level I",
+      "offsite_rates" => [
+        87.95, 89.27, 91.05, 92.88, 94.73, 96.63, 98.56, 100.53, 102.54, 104.59
+      ],
+      "onsite_rates" => [
+        78.32, 79.49, 81.08, 82.7, 84.36, 86.04, 87.76, 89.52, 91.31, 93.14
+      ]
+    ],
+    [
+      "machine_name" => "training_specialist_level_ii",
+      "title"        => "Training Specialist – Level II",
+      "offsite_rates" => [
+        92.24, 93.62, 95.5, 97.41, 99.35, 101.34, 103.37, 105.44, 107.54, 109.7
+      ],
+      "onsite_rates" => [
+        82.14, 83.37, 85.04, 86.74, 88.47, 90.24, 92.05, 93.89, 95.76, 97.68
+      ]
+    ],
+    [
+      "machine_name" => "web_content_administrator",
+      "title"        => "Web Content Administrator",
+      "offsite_rates" => [
+        90.1, 91.45, 93.28, 95.14, 97.04, 98.98, 100.96, 102.98, 105.04, 107.14
+      ],
+      "onsite_rates" => [
+        80.23, 81.43, 83.06, 84.72, 86.41, 88.14, 89.9, 91.7, 93.54, 95.41
+      ]
+    ],
+    [
+      "machine_name" => "web_designer",
+      "title"        => "Web Designer",
+      "offsite_rates" => [
+        93.31, 94.71, 96.61, 98.54, 100.51, 102.52, 104.57, 106.66, 108.8, 110.97
+      ],
+      "onsite_rates" => [
+        83.09, 84.34, 86.02, 87.74, 89.5, 91.29, 93.12, 94.98, 96.88, 98.81
+      ]
+    ],
+    [
+      "machine_name" => "web_project_manager",
+      "title"        => "Web Project Manager",
+      "offsite_rates" => [
+        106.38, 107.97, 110.13, 112.33, 114.58, 116.87, 119.21, 121.59, 124.03, 126.51
+      ],
+      "onsite_rates" => [
+        94.72, 96.14, 98.07, 100.03, 102.03, 104.07, 106.15, 108.27, 110.44, 112.65
+      ]
+    ],
+    [
+      "machine_name" => "web_software_developer",
+      "title"        => "Web Software Developer",
+      "offsite_rates" => [
+        108.55, 110.18, 112.38, 114.63, 116.92, 119.26, 121.65, 124.08, 126.56, 129.09
+      ],
+      "onsite_rates" => [
+        96.66, 98.11, 100.07, 102.07, 104.11, 106.2, 108.32, 110.49, 112.7, 114.95
+      ]
+    ],
+    [
+      "machine_name" => "webmaster",
+      "title"        => "Webmaster",
+      "offsite_rates" => [
+        84.73, 86, 87.72, 89.48, 91.27, 93.09, 94.95, 96.85, 98.79, 100.77
+      ],
+      "onsite_rates" => [
+        75.45, 76.58, 78.11, 79.68, 81.27, 82.9, 84.55, 86.24, 87.97, 89.73
+      ]
+    ],
+    [
+      "machine_name" => "wide_area_network_administrator",
+      "title"        => "Wide Area Network Administrator",
+      "offsite_rates" => [
+        97.6, 99.07, 101.05, 103.07, 105.13, 107.23, 109.38, 111.57, 113.8, 116.07
+      ],
+      "onsite_rates" => [
+        86.91, 88.22, 89.98, 91.78, 93.61, 95.49, 97.4, 99.34, 101.33, 103.36
+      ]
+    ]
+  ];
+  foreach ($import_rates_CATEGORIES as $category) {
+    $category_node = Node::create ([
+      'type' => 'labor_category',
+      'title' => $category ['title'],
+      'field_labor_category_vehicle' => [
+        'target_id' => $import_rates_VEHICLE
+      ]
+    ]);
+    $category_node->status = 1;
+    $category_node->save ();
+    foreach ($category ['offsite_rates'] as $year => $rate) {
+      import_rates_rate ($category_node->id (), $category ['title'], $rate, 0, $year); 
+    }
+    foreach ($category ['onsite_rates'] as $year => $rate) {
+      import_rates_rate ($category_node->id (), $category ['title'], $rate, 1, $year);
+    }
+  }
+}
+
+/**
+ * Create labor rate node.
+ * @param $category, a Labor Category node ID
+ * @param $title, a string
+ * @param $rate, a float
+ * @param $onsite, either 0 or 1.
+ * @param $year, an integer
+ */
+function import_rates_rate ($category, $title, $rate, $onsite, $year) {
+  $rate_node = Node::create ([
+    'type' => 'labor_rate',
+    'title' => $title . ' Year ' . ($year + 1) . ($onsite == 0 ? ' Offsite' : ' Onsite'),
+    'field_rate_category' => ['target_id' => $category],
+    'field_rate_government_site' => ['value' => $onsite],
+    'field_rate_rate' => ['value' => $rate],
+    'field_rate_year' => ['value' => $year]
+  ]);
+  $rate_node->status = 1;
+  $rate_node->save ();
+}

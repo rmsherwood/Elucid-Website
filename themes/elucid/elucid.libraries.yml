@@ -1,0 +1,19 @@
+base:
+  version: VERSION
+  js:
+    node_modules/material-components-web/dist/material-components-web.min.js: {}
+    js/elucid.js: {}
+  css:
+    theme:
+      node_modules/material-components-web/dist/material-components-web.min.css: {}
+      css/style.css: {} 
+  dependencies:
+    - core/underscore
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.ui.draggable
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.ui.datepicker
+    - core/modernizr
+    - core/drupal

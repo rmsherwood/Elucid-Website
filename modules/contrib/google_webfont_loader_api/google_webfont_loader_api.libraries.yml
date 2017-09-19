@@ -1,0 +1,19 @@
+webfont_loader:
+  remote: https://github.com/typekit/webfontloader
+  version: 1.5.21
+  js:
+    //oss.maxcdn.com/webfontloader/1.5.21/webfontloader.js:
+      every_page: true
+      type: external
+      weight: -100
+    google_webfont_loader_api.js:
+      every_page: true
+      type: file
+  license:
+    name: apache
+    url: https://raw.githubusercontent.com/typekit/webfontloader/master/LICENSE
+    gpl-compatible: true
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

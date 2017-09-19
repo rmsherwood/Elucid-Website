@@ -1,0 +1,13 @@
+<?php
+/*
+ * Defines the Rate Table theme.
+ */
+
+/**
+ * Implements hook_theme ().
+ */
+function rate_table_theme () {
+  return [
+    'rate_table' => ['variables' => []]
+  ];
+}

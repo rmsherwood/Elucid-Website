@@ -1,0 +1,12 @@
+name: "Google Webfont Loader API"
+type: module
+description: "Provide a way to safely load font-face into your theme"
+# version: VERSION
+package: Other
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2016-03-15
+version: '8.x-1.1'
+core: '8.x'
+project: 'google_webfont_loader_api'
+datestamp: 1458066282

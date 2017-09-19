@@ -1,0 +1,8 @@
+inlinesvg_library:
+  version: 1.x
+  js:
+    js/inlinesvg.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/underscore

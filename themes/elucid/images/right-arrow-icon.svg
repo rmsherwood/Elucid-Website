@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>right-arrow-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+<!--         <style type="text/css">
+            <![CDATA[
+                path {
+                    transition: fill 0.25s;
+                    cursor: pointer;                    
+                }
+                path:hover {
+                    fill: #71bffe;
+                }
+            ]]>
+        </style> -->
+    </defs>
+    <g id="color-trials" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="original-p22-minionpro" transform="translate(-317.000000, -870.000000)" fill="#4F4F4F">
+            <g id="Quicklinks-Section" transform="translate(0.000000, 570.000000)">
+                <g id="Federal-Preservation" transform="translate(42.000000, 46.000000)">
+                    <g id="chevron-right" transform="translate(275.000000, 254.000000)">
+                        <polygon id="Shape" points="1.37918918 0 5.82183337e-13 1.4 4.5316216 6 5.82183337e-13 10.6 1.37918918 12 7.28999996 6"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

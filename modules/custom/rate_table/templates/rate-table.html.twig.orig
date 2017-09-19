@@ -1,0 +1,63 @@
+<div class="rate_table" data-rate-table-vehicle-nid="48">
+  <div class="rate_table_header">
+    <div class="rate_table_header_tab_section">
+      <div class="rate_table_header_tab_elucid">Elucid Site Labor Rates</div>
+      <div class="rate_table_header_tab_onsite">Government Site Labor Rates</div> 
+    </div>
+  </div>
+  <div class="rate_table_body">
+    <div class="rate_table_body_filter_section">
+      <div class="rate_table_num elucid_select">
+        <label class="rate_table_num_label elucid_select_label">Number of labor categories per page</label>
+        <select class="rate_table_num_select elucid_select_select">
+          <option class="elucid_select_placeholder" selected value="10">Number of labor categories page page</option>
+          <option class="rate_table_num_select_option" value="10">10</option>
+          <option class="rate_table_num_select_option" value="25">25</option>
+          <option class="rate_table_num_select_option" value="50">50</option>
+          <option class="rate_table_num_select_option" value="100">100</option>
+        </select>
+        <div class="rate_table_num_select_icon elucid_select_icon">
+          <img class="rate_table_num_select_icon_img inlinesvg" src="{{ base_path ~ directory }}/images/down-arrow-icon.svg"/>
+        </div>
+      </div>
+      <div class="rate_table_filter">
+        <input class="rate_table_filter_input"/>
+      </div>
+    </div>
+    <div class="rate_table_body_table_section">
+      <table class="rate_table_table">
+        <thead>
+          <tr>
+            <th rowspan="2">Description</th>
+            <th colspan="10">Contract Year</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+          </tr>
+        </thead>
+        <tbody class="rate_table_table_body">
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="rate_table_footer">
+    <div class="rate_table_pagination">
+      <div class="rate_table_pagination_first">First</div>
+      <div class="rate_table_pagination_prev">Prev</div>
+      <div class="rate_table_pagination_links"></div>
+      <div class="rate_table_pagination_next">Next</div>
+      <div class="rate_table_pagination_last">Last</div>
+    </div>
+  </div>
+</div>

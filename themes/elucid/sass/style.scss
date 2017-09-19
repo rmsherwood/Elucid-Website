@@ -1,0 +1,574 @@
+/*
+  This file defines the master stylesheet for
+  the Elucid Theme.
+
+  Compilation
+  -----------
+
+  Compile this file using:
+
+  > sass sass/style.scss > css/style.css
+
+  to generate the master stylesheet for the
+  Elucid theme.
+
+  Note
+  ----
+
+  This module depends on the Font Awesome font
+  library.
+*/
+
+// I. Breakpoints.
+
+$xsmall-breakpoint: 400px;
+$mobile-breakpoint: 650px;
+$tablet-breakpoint: 768px;
+
+// II. Colors.
+
+$blue-dark: rgb(26, 116, 157);
+$blue: rgb(0, 173, 238);
+$blue-light: rgb(185, 228, 239);
+$blue-lightest: rgb(235, 252, 255);
+
+$gray-dark: rgb(83, 82, 83);
+$gray: rgb(124, 124, 124);
+$gray-light: rgb(229, 227, 228);
+$gray-lightest: rgb(244, 244, 244);
+$gray-text: rgb(30, 30, 30);
+$gray-header: rgb(252, 252, 252);
+
+$green-dark: rgb(34, 139, 57);
+$green: rgb(77, 203, 83);
+$green-light: rgb(179, 243, 191);
+
+$yellow-dark: rgb(208, 124, 49);
+$yellow: rgb(252, 206, 76);
+$yellow-light: rgb(255, 227, 180);
+
+$red-dark: rgb(168, 40, 150);
+$red: rgb(255, 81, 49);
+$red-light: rgb(255, 200, 188);
+
+$purple-dark: rgb(94, 32, 160);
+$purple: rgb(143, 107, 216);
+$purple-light: rgb(199, 184, 237);
+
+// III. Font Styles
+
+// III.A. Font Family
+
+$default-font-family: "Open Sans";
+
+// III.B. Font Size
+
+$default-body-font-size: 16px;
+
+$default-h1-font-size: 36px;
+$default-h2-font-size: 32px;
+$default-h3-font-size: 28px;
+$default-h4-font-size: 22px;
+
+$default-mobile-h1-font-size: 26px;
+$default-mobile-h2-font-size: 22px;
+$default-mobile-h3-font-size: 20px;
+$default-mobile-h4-font-size: 18px;
+
+$default-quote-font-size: 24px;
+
+$default-placeholder-font-size: 14px;
+
+$default-label-font-size: 12px;
+
+// III.C. Font Color
+
+$default-quote-color: $gray-dark;
+
+$default-link-color: $blue;
+$default-link-hover-color: $blue-dark;
+$default-link-disabled-color: $gray-light;
+
+$default-button-color: $blue;
+$default-button-hover-color: $blue-dark;
+$default-button-disabled-color: $gray-light;
+
+$default-blue-button-color: white;
+$default-blue-button-hover-color: $blue-dark;
+
+$default-placeholder-color: $gray;
+
+// III.D. Font Weight
+
+$default-h1-font-weight: 700;
+$default-h2-font-weight: 600;
+$default-h3-font-weight: 600;
+$default-h4-font-weight: 400;
+
+// IV. Margins.
+
+$margin-xsmall: 5px;
+$margin-small:  10px;
+$margin-med:    20px;
+$margin-large:  40px;
+$margin-xlarge: 60px;
+
+// V. Dimensions.
+
+$max-content-width: 1024px;
+
+// VI. Element mixins.
+
+/*
+  Accepts no arguments and removes the padding
+  and margins from the element this mixin is
+  applied to.
+*/
+@mixin strip-margins {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Accepts three arguments:
+  * breakpoint, a CSS Dimension
+  * property, a CSS Property
+  * and value, a property value
+  and sets the property to the given value for
+  screens smaller than breakpoint.
+*/
+@mixin at-breakpoint($breakpoint, $property, $value) {
+  @media screen and (max-width: $breakpoint) {
+    #{$property}: $value;
+  }
+}
+
+/*
+  Accepts two arguments:
+  * property, a CSS property
+  * and mobile-value, another CSS value
+  sets property to mobile-value and adds a media
+  query that sets property to mobile-value for
+  mobile screens.
+*/
+@mixin mobile($property, $mobile-value) {
+  @include at-breakpoint($mobile-breakpoint, $property, $mobile-value);
+}
+
+/*
+  Accepts two arguments:
+  * property, a CSS property
+  * and tablet-value, another CSS value
+  sets property to tablet-value and adds a media
+  query that sets property to tablet-value for
+  tablet screens.
+*/
+@mixin tablet($property, $tablet-value) {
+  @include at-breakpoint($tablet-breakpoint, $property, $tablet-value);
+}
+
+/*
+  Accepts four arguments:
+  * property, a CSS property
+  * widescreen-value, a CSS value
+  * tablet-value, a CSS value
+  * and mobile-value, an optional CSS value
+  sets property to widescreen-value and
+  adds media queries that sets property to
+  tablet-value and mobile-value for tablet and
+  mobile screens.
+*/
+@mixin responsive($property, $widescreen-value, $tablet-value, $mobile-value: null) {
+  #{$property}: $widescreen-value;
+  @include tablet($property, $tablet-value);
+  @if $mobile-value {
+    @include mobile($property, $mobile-value);
+  }
+}
+
+// Represents properties shared by all text blocks.
+@mixin text-block {
+  @include strip-margins;
+}
+
+/*
+  Accepts two arguments:
+  * font-size, a CSS length measure
+  and sets the mobile font size of the element
+  that this mixin is applied to.
+*/
+@mixin mobile-font-size($font-size) {
+  @include mobile(font-size, $font-size);
+}
+
+/*
+  Accepts two arguments:
+  * widescreen-font-size, a CSS length measure
+  * mobile-font-size, a CSS length measure
+  and sets the widescreen and mobile font sizes
+  for the element that this mixin is applied to.
+*/
+@mixin widescreen-mobile-font-size($widescreen-font-size, $mobile-font-size){
+  font-size: $widescreen-font-size;
+  @include mobile-font-size($mobile-font-size);
+}
+
+/*
+  Accepts one argument: height, a CSS dimension;
+  and styles the element that this mixin is
+  applied to as a gradient bar
+*/
+@mixin gradient-bar($height) {
+  content: '';
+  display: block;
+  width: 100%;
+  height: $height;
+  background-image: linear-gradient(to left, #72caf2, $blue);
+  background-image: linear-gradient(to left, #72caf2, $blue);
+}
+
+/*
+  Accepts one argument: height, a CSS dimension;
+  and adds a gradient bar to the top of the
+  element that this mixin is applied to.
+*/
+@mixin gradient-bar-before($height) {
+  &:before {
+    @include gradient-bar($height);
+  }
+}
+
+/*
+  Accepts one argument: url, a URL string; and
+  styles the element that this mixin is applied
+  to as an icon.
+*/
+@mixin icon($url, $height, $width, $display) {
+  background-image: url($url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: $display;
+  height: $height;
+  width: $width;
+}
+
+/*
+  Accepts one argument: url, a URL string;
+  and prepends an icon to the element that this
+  mixin is applied to.
+*/
+@mixin icon-front($url, $height, $width, $display) {
+  &:before {
+    @include icon($url, $height, $width, $display);
+  }
+}
+
+/*
+*/
+@mixin icon-after($url, $height, $width, $display) {
+  &:after {
+    @include icon($url, $height, $width, $display);
+  }
+}
+
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H1 element.
+*/
+@mixin h1 (
+  $font-family: null,
+  $font-size:   null,
+  $font-weight: null
+) {
+  @include widescreen-mobile-font-size($default-h1-font-size, $default-mobile-h1-font-size);
+  font-family: if($font-family, $font-family, $default-font-family);
+  font-weight: if($font-weight, $font-weight, $default-h1-font-weight);
+}
+
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H2 element.
+*/
+@mixin h2 (
+  $font-family: null,
+  $font-size:   null,
+  $font-weight: null
+) {
+  @include widescreen-mobile-font-size($default-h2-font-size, $default-mobile-h2-font-size);
+  font-family: if($font-family, $font-family, $default-font-family);
+  font-weight: if($font-weight, $font-weight, $default-h2-font-weight);
+}
+
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H3 element.
+*/
+@mixin h3 (
+  $font-family: null,
+  $font-size:   null,
+  $font-weight: null
+) {
+  @include widescreen-mobile-font-size($default-h3-font-size, $default-mobile-h3-font-size);
+  font-family: if($font-family, $font-family, $default-font-family);
+  font-weight: if($font-weight, $font-weight, $default-h3-font-weight);
+}
+
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H4 element.
+*/
+@mixin h4 (
+  $font-family: null,
+  $font-size:   null,
+  $font-weight: null
+) {
+  @include widescreen-mobile-font-size($default-h4-font-size, $default-mobile-h4-font-size);
+  font-family: if($font-family, $font-family, $default-font-family);
+  font-weight: if($font-weight, $font-weight, $default-h4-font-weight);
+}
+
+/*
+  Accepts two arguments:
+
+  * font-color, a CSS color
+  * hover-text-decoration, a text decoration
+    string
+
+  and styles the element that this mixin is
+  applied to as an inline link element.
+*/
+@mixin a (
+  $font-color: null,
+  $hover-text-decoration: null
+) {
+  font-color: if($font-color, $font-color, $default-link-color);
+  &:hover {
+    text-decoration: if($hover-text-decoration, $hover-text-decoration, underline);
+  }
+}
+
+/*
+  Accepts four arguments:
+
+  * font-color, a CSS color
+  * hover-font-color, a CSS color
+  * code, a hex string like "\f095" that
+    represents a Font Awesome icon
+  * padding, a CSS Dimensions
+
+  and styles the element that this mixin is
+  applied to.
+*/
+@mixin flat-link (
+  $font-color: null,
+  $hover-font-color: null,
+  $code: null,
+  $padding: null
+) {
+  font-color: if($font-color, $font-color, $default-link-color);
+  &:hover {
+    font-color: if($hover-font-color, $hover-font-color, $default-link-hover-color);
+  }
+}
+
+/*
+  Accepts four arguments:
+
+  * font-color, a CSS color
+  * border-radius, a CSS dimensions
+  * box-shadow, a box shadow
+  * hover-box-shadow, a box shadow
+  * hover-font-color, a CSS color
+
+  and styles the element that this mixin is
+  applied to as a button.
+*/
+@mixin button (
+  $font-color: null,
+  $border-radius: null,
+  $box-shadow: null,
+  $hover-box-shadow: null,
+  $hover-font-color: null
+) {
+  $default-border-radius: 2px;
+  $default-button-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  $default-button-hover-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+
+  border-radius: if($border-radius, $border-radius, $default-border-radius);
+  box-shadow: if($box-shadow, $box-shadow, $default-button-box-shadow);
+  color: if($font-color, $font-color, $default-link-color);
+  &:hover {
+    box-shadow: if($hover-box-shadow, $hover-box-shadow, $default-button-hover-box-shadow);
+    color: if($hover-font-color, $hover-font-color, $default-link-hover-color);
+  }
+}
+
+/*
+*/
+@mixin blue-button (
+  $font-color: null,
+  $border-radius: null,
+  $box-shadow: null,
+  $hover-box-shadow: null,
+  $hover-font-color: null
+) {
+  $default-blue-button-background-color: $blue;
+  $default-blue-button-hover-background-color: $blue-light;
+
+  @include button($font-color, $border-radius, $box-shadow, $hover-box-shadow, $hover-font-color);
+  background-color: $default-blue-button-background-color;
+  &:hover {
+    background-color: $default-blue-button-hover-background-color;
+  }
+}
+
+/*
+  Accepts no arguments and removes the dropdown
+  arrow displayed next to select elements in
+  Firefox, Chrome, and IE 9+.
+*/
+@mixin remove-select-arrow () {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+/*
+  Accepts no arguments and styles the element
+  that this mixin is applied to as a select
+  field.
+*/
+@mixin select () {
+  @include remove-select-arrow ();
+  background-color: transparent;
+  border: none;
+}
+
+/*
+  Accepts four arguments:
+
+  * height, CSS Dimensions
+  * width, CSS Dimensions
+  * url, a URL string
+  * z-index, an integer
+
+  and styles the element that this mixin is
+  applied to as a mask displaying the image
+  referenced by url.
+*/
+@mixin mask-right ($height, $width, $url, $z-index) {
+  clear: both;
+  content: "";
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: $width $height;
+  display: block;
+  height: $height;
+  position: absolute;
+  right: - $width;
+  top: 0;
+  width: $width;
+  z-index: $z-index;
+}
+
+/*
+  Applies the default styles to elements
+  according to the styleguide.
+*/
+@mixin styleguide {
+  font-family: $default-font-family;
+  font-size: $default-body-font-size;
+
+  h1 {
+    @include h1;
+  }
+  h2 {
+    @include h2;
+  }
+  h3 {
+    @include h3;
+  }
+  h4 {
+    @include h4;
+  }
+  select {
+    @include select;
+  }
+  .elucid-select {
+    border-bottom: 1px solid $gray;
+    display: inline-block;
+
+    .elucid-select-select {
+      display: inline-block;
+    }
+    .elucid-select-icon {
+      display: inline-block;
+    }
+    &:hover {
+      border-bottom: 2px solid $blue;
+      font-size: $default-placeholder-font-size;
+
+      .elucid-select-label {
+        color: $blue;
+        font-size: $default-label-font-size;
+      }
+    }
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
+  margin-left: 0 !important; // Override the shift caused by expanding the admin toolbar.
+}
+.elucid-page {
+  &:before {
+    @include gradient-bar(3px);
+  }
+}
+.layout-content {
+  margin: 0 auto;
+  max-width: $max-content-width;
+}
+.layout-padded-content {
+  margin: 0 auto;
+  max-width: $max-content-width + 2 * $margin-large;
+  padding: $margin-med $margin-large;
+  @include mobile(padding, $margin-med $margin-small);
+}
+
+
+// VII. Import Extensions.
+
+@import "pages";
+@import "features";

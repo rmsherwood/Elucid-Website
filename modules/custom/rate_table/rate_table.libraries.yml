@@ -1,0 +1,14 @@
+rate_table_library:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/rate_table.js: {}
+  dependencies:
+    - core/underscore
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/modernizr
+    - core/drupal
+

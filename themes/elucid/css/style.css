@@ -1,0 +1,922 @@
+/*
+  This file defines the master stylesheet for
+  the Elucid Theme.
+
+  Compilation
+  -----------
+
+  Compile this file using:
+
+  > sass sass/style.scss > css/style.css
+
+  to generate the master stylesheet for the
+  Elucid theme.
+
+  Note
+  ----
+
+  This module depends on the Font Awesome font
+  library.
+*/
+/*
+  Accepts no arguments and removes the padding
+  and margins from the element this mixin is
+  applied to.
+*/
+/*
+  Accepts three arguments:
+  * breakpoint, a CSS Dimension
+  * property, a CSS Property
+  * and value, a property value
+  and sets the property to the given value for
+  screens smaller than breakpoint.
+*/
+/*
+  Accepts two arguments:
+  * property, a CSS property
+  * and mobile-value, another CSS value
+  sets property to mobile-value and adds a media
+  query that sets property to mobile-value for
+  mobile screens.
+*/
+/*
+  Accepts two arguments:
+  * property, a CSS property
+  * and tablet-value, another CSS value
+  sets property to tablet-value and adds a media
+  query that sets property to tablet-value for
+  tablet screens.
+*/
+/*
+  Accepts four arguments:
+  * property, a CSS property
+  * widescreen-value, a CSS value
+  * tablet-value, a CSS value
+  * and mobile-value, an optional CSS value
+  sets property to widescreen-value and
+  adds media queries that sets property to
+  tablet-value and mobile-value for tablet and
+  mobile screens.
+*/
+/*
+  Accepts two arguments:
+  * font-size, a CSS length measure
+  and sets the mobile font size of the element
+  that this mixin is applied to.
+*/
+/*
+  Accepts two arguments:
+  * widescreen-font-size, a CSS length measure
+  * mobile-font-size, a CSS length measure
+  and sets the widescreen and mobile font sizes
+  for the element that this mixin is applied to.
+*/
+/*
+  Accepts one argument: height, a CSS dimension;
+  and styles the element that this mixin is
+  applied to as a gradient bar
+*/
+/*
+  Accepts one argument: height, a CSS dimension;
+  and adds a gradient bar to the top of the
+  element that this mixin is applied to.
+*/
+/*
+  Accepts one argument: url, a URL string; and
+  styles the element that this mixin is applied
+  to as an icon.
+*/
+/*
+  Accepts one argument: url, a URL string;
+  and prepends an icon to the element that this
+  mixin is applied to.
+*/
+/*
+*/
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H1 element.
+*/
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H2 element.
+*/
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H3 element.
+*/
+/*
+  Accepts three arguments:
+
+  * font-family, a font family string
+  * font-size, a CSS dimension
+  * font-weight, a font weight
+
+  and styles the element that this mixin is
+  applied to as a H4 element.
+*/
+/*
+  Accepts two arguments:
+
+  * font-color, a CSS color
+  * hover-text-decoration, a text decoration
+    string
+
+  and styles the element that this mixin is
+  applied to as an inline link element.
+*/
+/*
+  Accepts four arguments:
+
+  * font-color, a CSS color
+  * hover-font-color, a CSS color
+  * code, a hex string like "\f095" that
+    represents a Font Awesome icon
+  * padding, a CSS Dimensions
+
+  and styles the element that this mixin is
+  applied to.
+*/
+/*
+  Accepts four arguments:
+
+  * font-color, a CSS color
+  * border-radius, a CSS dimensions
+  * box-shadow, a box shadow
+  * hover-box-shadow, a box shadow
+  * hover-font-color, a CSS color
+
+  and styles the element that this mixin is
+  applied to as a button.
+*/
+/*
+*/
+/*
+  Accepts no arguments and removes the dropdown
+  arrow displayed next to select elements in
+  Firefox, Chrome, and IE 9+.
+*/
+/*
+  Accepts no arguments and styles the element
+  that this mixin is applied to as a select
+  field.
+*/
+/*
+  Accepts four arguments:
+
+  * height, CSS Dimensions
+  * width, CSS Dimensions
+  * url, a URL string
+  * z-index, an integer
+
+  and styles the element that this mixin is
+  applied to as a mask displaying the image
+  referenced by url.
+*/
+/*
+  Applies the default styles to elements
+  according to the styleguide.
+*/
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
+  margin-left: 0 !important; }
+
+.elucid-page:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(to left, #72caf2, #00adee);
+  background-image: linear-gradient(to left, #72caf2, #00adee); }
+
+.layout-content {
+  margin: 0 auto;
+  max-width: 1024px; }
+
+.layout-padded-content {
+  margin: 0 auto;
+  max-width: 1104px;
+  padding: 20px 40px; }
+  @media screen and (max-width: 650px) {
+    .layout-padded-content {
+      padding: 20px 10px; } }
+
+/*
+  Defines the front page specific styles.
+*/
+[data-elucid-page-view-id="frontpage"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  [data-elucid-page-view-id="frontpage"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-view-id="frontpage"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-view-id="frontpage"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-view-id="frontpage"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-view-id="frontpage"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-view-id="frontpage"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-view-id="frontpage"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      [data-elucid-page-view-id="frontpage"] .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+
+/*
+  Defines the default styles for the header.
+*/
+header {
+  font-family: "Open Sans";
+  font-size: 16px;
+  border-bottom: 1px solid #7c7c7c;
+  width: 100%; }
+  header h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      header h1 {
+        font-size: 26px; } }
+  header h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      header h2 {
+        font-size: 22px; } }
+  header h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      header h3 {
+        font-size: 20px; } }
+  header h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      header h4 {
+        font-size: 18px; } }
+  header select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    header select::-ms-expand {
+      display: none; }
+  header .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    header .elucid-select .elucid-select-select {
+      display: inline-block; }
+    header .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    header .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      header .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  header .layout-content {
+    display: table;
+    width: 100%; }
+    header .layout-content .region-header-content {
+      display: table-row; }
+      header .layout-content .region-header-content .region-header-left {
+        display: table-cell;
+        padding: 0px;
+        position: relative;
+        vertical-align: top;
+        width: 100px; }
+        header .layout-content .region-header-content .region-header-left:before {
+          clear: both;
+          content: "";
+          background-image: url("../images/logo-mask.svg");
+          background-repeat: no-repeat;
+          background-size: 32px 100%;
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: -32px;
+          top: 0;
+          width: 32px;
+          z-index: 100; }
+        header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
+          padding: 10px 0 10px 40px;
+          text-align: center; }
+          @media screen and (max-width: 950px) {
+            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
+              padding-left: 0; } }
+          header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
+            display: block; }
+            @media screen and (max-width: 950px) {
+              header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
+                display: inline; } }
+            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img {
+              line-height: 0;
+              vertical-align: baseline; }
+      header .layout-content .region-header-content .region-header-right {
+        color: #535253;
+        display: table-cell;
+        padding: 0px;
+        position: relative; }
+        @media screen and (max-width: 950px) {
+          header .layout-content .region-header-content .region-header-right {
+            display: none; } }
+        header .layout-content .region-header-content .region-header-right #region-header-right-background {
+          background-color: #fcfcfc;
+          height: 100%;
+          position: absolute;
+          width: 100vw;
+          z-index: -2; }
+        header .layout-content .region-header-content .region-header-right #region-header-right-top-background {
+          background-color: #ebfcff;
+          height: 50px;
+          position: absolute;
+          width: 100vw;
+          z-index: -1; }
+        header .layout-content .region-header-content .region-header-right .region-header-right-top {
+          background-color: transparent; }
+          header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in {
+            float: right;
+            margin: 10px 40px; }
+            header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-icon {
+              color: #1c7294;
+              display: inline-block; }
+            header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link {
+              font-color: #00adee;
+              font-size: 12px;
+              text-transform: uppercase; }
+              header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover {
+                text-decoration: underline; }
+          header .layout-content .region-header-content .region-header-right .region-header-right-top:after {
+            clear: both;
+            content: "";
+            display: block; }
+        header .layout-content .region-header-content .region-header-right .region-header-right-bottom {
+          background-color: transparent;
+          padding-left: 60px;
+          padding-right: 60px; }
+          header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] {
+            padding-top: 30px;
+            text-transform: uppercase; }
+  header #header_search_toggle_button {
+    background: url("../images/search-white-icon.svg") no-repeat;
+    background-size: 18px;
+    cursor: pointer;
+    float: right;
+    height: 18px;
+    transition: background-image 0.25s;
+    width: 18px; }
+    header #header_search_toggle_button.search_dropdown_active {
+      background: url("../images/search-white-icon.svg") no-repeat; }
+
+.header_menu_widescreen_view_dropdown_component {
+  position: relative; }
+
+#header_search_region {
+  display: none;
+  position: absolute;
+  width: 100%; }
+  @media screen and (max-width: 950px) {
+    #header_search_region {
+      display: none !important; } }
+
+#block-elucid-search {
+  background-color: whitesmoke;
+  border-radius: 0 0 0 3px;
+  display: table;
+  height: 52px;
+  margin: 0;
+  max-width: 100%;
+  padding: 10px;
+  width: 100%;
+  z-index: 100; }
+  @media (min-width: 951px) {
+    #block-elucid-search {
+      width: 50%;
+      margin-left: 50%; } }
+  #block-elucid-search #search-block-form {
+    background-color: white;
+    display: table-row; }
+    #block-elucid-search #search-block-form .form-item {
+      border: none;
+      border-top: solid 1px #6a6a6a;
+      border-left: solid 1px #6a6a6a;
+      border-bottom: solid 1px #6a6a6a;
+      display: table-cell;
+      height: 100%;
+      margin: 0px; }
+      #block-elucid-search #search-block-form .form-item input.form-search {
+        border: none;
+        font-size: rem(12px);
+        outline: none;
+        padding: 3px 8px 0;
+        width: 100%; }
+    #block-elucid-search #search-block-form .form-actions {
+      display: table-cell;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      vertical-align: top;
+      width: 25px; }
+      #block-elucid-search #search-block-form .form-actions input.form-submit {
+        background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
+        background-color: #00adee;
+        border: none;
+        color: transparent;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        width: 32px; }
+
+.header_menu_mobile_view .header_menu_mobile_view_header {
+  padding: 10px 0; }
+  .header_menu_mobile_view .header_menu_mobile_view_header .header_menu_mobile_view_title {
+    margin: 0;
+    padding: 0;
+    font-size: 16px !important; }
+    .header_menu_mobile_view .header_menu_mobile_view_header .header_menu_mobile_view_title:before {
+      background-image: url("../images/menu-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: 21px;
+      width: 21px;
+      margin-right: 10px;
+      position: relative;
+      top: 7px; }
+
+.header_menu_mobile_view_body {
+  padding: 10px 0 5px; }
+  .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button {
+    padding-left: 5px; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button:before {
+      background-image: url("../images/left-arrow-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin-right: 5px; }
+  .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button:hover {
+    color: #00adee; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button:hover:before {
+      background-image: url("../images/left-arrow-icon-selected.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 12px; }
+  .header_menu_mobile_view_body .header_menu_mobile_view_slide_item,
+  .header_menu_mobile_view_body .menu_slide_extra_item {
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    color: #535253;
+    padding: 5px 10px;
+    text-transform: uppercase; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:after,
+    .header_menu_mobile_view_body .menu_slide_extra_item:after {
+      background-image: url("../images/right-arrow-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      right: 20px;
+      top: 5px; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_item a,
+    .header_menu_mobile_view_body .menu_slide_extra_item a {
+      color: #535253;
+      display: block;
+      text-decoration: none;
+      width: 100%; }
+  .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:hover,
+  .header_menu_mobile_view_body .menu_slide_extra_item:hover {
+    color: #00adee; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:hover:after,
+    .header_menu_mobile_view_body .menu_slide_extra_item:hover:after {
+      background-image: url("../images/right-arrow-icon-selected.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+      height: 12px;
+      width: 12px; }
+    .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:hover a,
+    .header_menu_mobile_view_body .menu_slide_extra_item:hover a {
+      color: #00adee; }
+
+.header_menu_mobile_view_close_button {
+  margin-bottom: 5px; }
+
+/*
+  Defines the styles applied to the Rate Table
+  blocks. These blocks are provided by the Rate
+  Table module.
+*/
+.rate_table {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-size: 12px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15); }
+  .rate_table h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      .rate_table h1 {
+        font-size: 26px; } }
+  .rate_table h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      .rate_table h2 {
+        font-size: 22px; } }
+  .rate_table h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      .rate_table h3 {
+        font-size: 20px; } }
+  .rate_table h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      .rate_table h4 {
+        font-size: 18px; } }
+  .rate_table select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    .rate_table select::-ms-expand {
+      display: none; }
+  .rate_table .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    .rate_table .elucid-select .elucid-select-select {
+      display: inline-block; }
+    .rate_table .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    .rate_table .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      .rate_table .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  .rate_table:before {
+    background-image: linear-gradient(-270deg, #73CAF1 2%, #03A9F3 100%);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    content: "";
+    display: block;
+    height: 8px;
+    width: 100%; }
+  .rate_table .rate_table_header {
+    border-bottom: 1px solid #e5e3e4;
+    padding: 20px 40px 0; }
+    @media screen and (max-width: 650px) {
+      .rate_table .rate_table_header {
+        padding: 20px 20px 0; } }
+    .rate_table .rate_table_header .mdc-tab-bar {
+      margin: 0 !important; }
+      .rate_table .rate_table_header .mdc-tab-bar .mdc-tab {
+        font-family: "Open Sans"; }
+        .rate_table .rate_table_header .mdc-tab-bar .mdc-tab:after {
+          background-color: white;
+          display: none; }
+        .rate_table .rate_table_header .mdc-tab-bar .mdc-tab.mdc-tab--active {
+          border-bottom: 3px solid #00adee;
+          color: #00adee; }
+    .rate_table .rate_table_header .rate_table_title {
+      color: #ff5131;
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 40px; }
+      @media screen and (max-width: 650px) {
+        .rate_table .rate_table_header .rate_table_title {
+          font-size: 16px; } }
+    .rate_table .rate_table_header .rate_table_header_tab_section {
+      font-size: 16px; }
+      .rate_table .rate_table_header .rate_table_header_tab_section .mdc-tab {
+        font-size: 16px;
+        text-transform: none; }
+        @media screen and (max-width: 400px) {
+          .rate_table .rate_table_header .rate_table_header_tab_section .mdc-tab {
+            padding: 0; } }
+      .rate_table .rate_table_header .rate_table_header_tab_section .rate_table_header_tab_elucid {
+        display: inline-block;
+        padding-bottom: 15px; }
+      .rate_table .rate_table_header .rate_table_header_tab_section .rate_table_header_tab_onsite {
+        display: inline-block;
+        padding-bottom: 15px; }
+  .rate_table .rate_table_body {
+    border-bottom: 1px solid #ebfcff; }
+    .rate_table .rate_table_body .rate_table_body_filter_section {
+      font-size: 14px;
+      padding: 0 40px; }
+      @media screen and (max-width: 650px) {
+        .rate_table .rate_table_body .rate_table_body_filter_section {
+          padding: 0 20px; } }
+      .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
+        width: 280px; }
+        @media screen and (max-width: 650px) {
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
+            width: 100%; } }
+        @media screen and (max-width: 650px) {
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
+            margin-bottom: 10px; } }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .rate_table_filter_icon {
+          margin: 15px 0 10px 15px; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .mdc-textfield__label {
+          bottom: 0; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .mdc-textfield__input {
+          color: #7c7c7c;
+          font-family: "Open Sans"; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused .mdc-textfield__label {
+          color: #00adee; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused .rate_table_filter_icon path {
+          fill: #00adee; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused:after {
+          background-color: #00adee; }
+      .rate_table .rate_table_body .rate_table_body_filter_section .mdc-select {
+        color: #7c7c7c; }
+      .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num {
+        color: #7c7c7c;
+        margin-left: 20px;
+        display: inline-block; }
+        @media screen and (max-width: 700px) {
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num {
+            display: block; } }
+        @media screen and (max-width: 700px) {
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num {
+            margin-left: 0; } }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_label {
+          display: block;
+          font-size: 10px; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_select {
+          border-bottom: 1px solid #e5e3e4;
+          display: block;
+          padding-bottom: 7px;
+          position: relative;
+          width: 280px; }
+          @media screen and (max-width: 650px) {
+            .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_select {
+              width: 100%; } }
+          @media screen and (max-width: 650px) {
+            .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_select {
+              max-width: 100%; } }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_select .rate_table_num_select_select {
+            width: 100%; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num .rate_table_num_select .rate_table_select_icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1; }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table th {
+      border: none;
+      font-weight: 600; }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table td {
+      border: none; }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_header_year {
+      border-bottom: 1px solid #b9e4ef;
+      text-align: center; }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_header_category {
+      padding-left: 40px; }
+      @media screen and (max-width: 650px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_header_category {
+          padding-left: 20px; } }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header {
+      text-align: center; }
+      @media screen and (max-width: 1100px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_column_header_radius_5 {
+          display: none; } }
+      @media screen and (max-width: 1000px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_column_header_radius_4 {
+          display: none; } }
+      @media screen and (max-width: 900px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_column_header_radius_3 {
+          display: none; } }
+      @media screen and (max-width: 800px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_column_header_radius_2 {
+          display: none; } }
+      @media screen and (max-width: 600px) {
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_column_header_radius_1 {
+          display: none; } }
+      .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_column_header.rate_table_active {
+        display: table-cell; }
+    .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body {
+      border-top: 1px solid #b9e4ef; }
+      .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row {
+        margin: 0 40px; }
+        @media screen and (max-width: 650px) {
+          .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row {
+            margin: 0 20px; } }
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row:nth-of-type(2n+1) {
+          background-color: #ebfcff; }
+        .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td {
+          text-align: center; }
+          .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td:first-of-type {
+            min-width: 270px;
+            padding-left: 40px;
+            text-align: left; }
+            @media screen and (max-width: 650px) {
+              .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td:first-of-type {
+                padding-left: 20px; } }
+            @media screen and (max-width: 650px) {
+              .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td:first-of-type {
+                min-width: 0; } }
+          .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td:last-of-type {
+            padding-right: 40px; }
+            @media screen and (max-width: 650px) {
+              .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td:last-of-type {
+                padding-right: 20px; } }
+          @media screen and (max-width: 1100px) {
+            .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td.rate_table_field_radius_5 {
+              display: none; } }
+          @media screen and (max-width: 1000px) {
+            .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td.rate_table_field_radius_4 {
+              display: none; } }
+          @media screen and (max-width: 900px) {
+            .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td.rate_table_field_radius_3 {
+              display: none; } }
+          @media screen and (max-width: 800px) {
+            .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td.rate_table_field_radius_2 {
+              display: none; } }
+          @media screen and (max-width: 600px) {
+            .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table .rate_table_table_body .rate_table_table_body_row td.rate_table_field_radius_1 {
+              display: none; } }
+  .rate_table .rate_table_footer {
+    font-size: 12px;
+    padding: 20px 40px; }
+    @media screen and (max-width: 650px) {
+      .rate_table .rate_table_footer {
+        padding: 10px; } }
+    @media screen and (max-width: 650px) {
+      .rate_table .rate_table_footer {
+        text-align: center; } }
+    .rate_table .rate_table_footer .rate_table_pagination {
+      border: 1px solid #e5e3e4;
+      display: inline-block; }
+      .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first {
+        cursor: pointer;
+        display: inline-block;
+        padding: 8px;
+        border-right: 1px solid #e5e3e4; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first:hover {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first.rate_table_active {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first.rate_table_disabled {
+          color: #e5e3e4;
+          cursor: not-allowed; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first.rate_table_disabled:hover {
+            background: transparent;
+            color: #e5e3e4; }
+      .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev {
+        cursor: pointer;
+        display: inline-block;
+        padding: 8px;
+        border-right: 1px solid #e5e3e4; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev:hover {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev.rate_table_active {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev.rate_table_disabled {
+          color: #e5e3e4;
+          cursor: not-allowed; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev.rate_table_disabled:hover {
+            background: transparent;
+            color: #e5e3e4; }
+      .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links {
+        display: inline-block; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link {
+          cursor: pointer;
+          display: inline-block;
+          padding: 8px;
+          border-right: 1px solid #e5e3e4; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link:hover {
+            background: #00adee;
+            color: white; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_active {
+            background: #00adee;
+            color: white; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_disabled {
+            color: #e5e3e4;
+            cursor: not-allowed; }
+            .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_disabled:hover {
+              background: transparent;
+              color: #e5e3e4; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_pagination_link_radius_3 {
+            display: none; }
+          @media screen and (max-width: 768px) {
+            .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_pagination_link_radius_2 {
+              display: none; } }
+      .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next {
+        cursor: pointer;
+        display: inline-block;
+        padding: 8px;
+        border-right: 1px solid #e5e3e4; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next:hover {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next.rate_table_active {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next.rate_table_disabled {
+          color: #e5e3e4;
+          cursor: not-allowed; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next.rate_table_disabled:hover {
+            background: transparent;
+            color: #e5e3e4; }
+      .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last {
+        cursor: pointer;
+        display: inline-block;
+        padding: 8px; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last:hover {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last.rate_table_active {
+          background: #00adee;
+          color: white; }
+        .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last.rate_table_disabled {
+          color: #e5e3e4;
+          cursor: not-allowed; }
+          .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last.rate_table_disabled:hover {
+            background: transparent;
+            color: #e5e3e4; }
+    .rate_table .rate_table_footer .rate_table_index {
+      display: inline-block;
+      margin: 20px; }

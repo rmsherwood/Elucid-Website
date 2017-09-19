@@ -1,0 +1,243 @@
+/*
+  Defines the default styles for the header.
+*/
+
+// Note: this variable must equal the breakpoint used in the Header Menu module's stylesheet.
+$header-mobile-breakpoint: 950px;
+
+header {
+  @include styleguide();
+  border-bottom: 1px solid $gray;
+  width: 100%;
+  .layout-content {
+    display: table;
+    width: 100%;
+    .region-header-content {
+      display: table-row;
+      .region-header-left {
+        display: table-cell;
+        padding: 0px;
+        position: relative;
+        vertical-align: top;
+        width: 100px;
+        &:before {
+          @include mask-right(100%, 32px, "../images/logo-mask.svg", 100);
+        }
+        [data-elucid-plugin-id="system_branding_block"] {
+          @include at-breakpoint($header-mobile-breakpoint, padding-left, 0);
+          padding: $margin-small 0 $margin-small $margin-large;
+          text-align: center;
+          a {
+            @include at-breakpoint($header-mobile-breakpoint, display, inline);
+            display: block;
+            img {
+              line-height: 0;
+              vertical-align: baseline;
+            }
+          }
+        }
+      }
+      .region-header-right {
+        color: $gray-dark;
+        display: table-cell;
+        @include at-breakpoint($header-mobile-breakpoint, display, none);
+        padding: 0px;
+        position: relative;
+        #region-header-right-background {
+          background-color: $gray-header;
+          height: 100%;
+          position: absolute;
+          width: 100vw;
+          z-index: -2;
+        }
+        #region-header-right-top-background {
+          background-color: $blue-lightest;
+          height: 50px;
+          position: absolute;
+          width: 100vw;
+          z-index: -1;
+        }
+        .region-header-right-top {
+          background-color: transparent;
+          .elucid-sign-in {
+            float: right;
+            margin: $margin-small $margin-large;
+            .elucid-sign-in-icon {
+              color: #1c7294;
+              display: inline-block;
+            }
+            .elucid-sign-in-link {
+              @include a;
+              font-size: 12px;
+              text-transform: uppercase;
+            }
+          }
+          &:after {
+            clear: both;
+            content: "";
+            display: block;
+          }
+        }
+        .region-header-right-bottom {
+          background-color: transparent;
+          padding-left: $margin-xlarge;
+          padding-right: $margin-xlarge;
+          .header_menu_widescreen_view { 
+            .header_menu_widescreen_view_menu_component {
+              .header_menu_menu_list[data-menu-level="0"] {
+                padding-top: 30px;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #header_search_toggle_button {
+    $header_search_toggle_button_height: 18px;
+    background: url("../images/search-white-icon.svg") no-repeat;
+    background-size: $header_search_toggle_button_height;
+    cursor: pointer;
+    float: right;
+    height: $header_search_toggle_button_height;
+    transition: background-image 0.25s;
+    width: $header_search_toggle_button_height;
+
+    &.search_dropdown_active {
+      background: url("../images/search-white-icon.svg") no-repeat;
+    }
+  }
+}
+.header_menu_widescreen_view_dropdown_component {
+  position: relative;
+}
+#header_search_region {
+  @include at-breakpoint($header-mobile-breakpoint, display, none !important);
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+#block-elucid-search {
+  $subheader-search-height: 52px;
+  background-color: rgb(245,245,245);
+  border-radius: 0 0 0 3px;
+  display: table;
+  height: $subheader-search-height;
+  margin: 0;
+  max-width: 100%;
+  padding: 10px;
+  width: 100%;
+  z-index: 100;
+  @media (min-width: 951px) {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  #search-block-form {
+    background-color: white;
+    display: table-row;
+
+    .form-item {
+      border: none;
+      border-top: solid 1px #6a6a6a;
+      border-left: solid 1px #6a6a6a;
+      border-bottom: solid 1px #6a6a6a;
+      display: table-cell;
+      height: 100%;
+      margin: 0px;
+
+      input.form-search {
+        border: none;
+        font-size: rem(12px);
+        outline: none;
+        padding: 3px 8px 0;
+        width: 100%;
+      }
+    }
+    .form-actions {
+      display: table-cell;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      vertical-align: top;
+      width: 25px;
+
+      input.form-submit {
+        background: url('../images/search-white-icon.svg') no-repeat 50% 50%;
+        background-color: $blue;
+        border: none;
+        color: transparent;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        width: 32px;
+      }
+    }
+  }
+}
+.header_menu_mobile_view {
+  .header_menu_mobile_view_header {
+    padding: $margin-small 0;
+    .header_menu_mobile_view_title {
+      @include strip-margins;
+      &:before {
+        @include icon("../images/menu-icon.svg", 21px, 21px, inline-block);
+        margin-right: $margin-small;
+        position: relative;
+        top: 7px;
+      }
+      font-size: $default-body-font-size !important;
+    }
+  }
+}
+.header_menu_mobile_view_body {
+  padding: $margin-small 0 $margin-xsmall;
+
+  .header_menu_mobile_view_slide_back_button {
+    padding-left: $margin-xsmall;
+    &:before {
+      @include icon("../images/left-arrow-icon.svg", 12px, 12px, inline-block);
+      margin-right: $margin-xsmall;
+    }
+  }
+  .header_menu_mobile_view_slide_back_button:hover {
+    color: $blue;
+    &:before {
+      @include icon("../images/left-arrow-icon-selected.svg", 12px, 12px, inline-block);
+    }
+  }
+  .header_menu_mobile_view_slide_item,
+  .menu_slide_extra_item {
+    position: relative;
+    &:after {
+      @include icon("../images/right-arrow-icon.svg", 12px, 12px, block);
+      position: absolute;
+      right: $margin-med;
+      top: $margin-xsmall;
+    }
+    border-bottom: 1px solid $gray-lightest;
+    color: $gray-dark;
+    padding: $margin-xsmall $margin-small;
+    text-transform: uppercase;
+    a {
+      color: $gray-dark;
+      display: block;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+  .header_menu_mobile_view_slide_item:hover,
+  .menu_slide_extra_item:hover {
+    &:after {
+      @include icon("../images/right-arrow-icon-selected.svg", 12px, 12px, block);
+    }
+    color: $blue;
+    a {
+      color: $blue;
+    }
+  }
+}
+.header_menu_mobile_view_close_button {
+  margin-bottom: $margin-xsmall;
+}

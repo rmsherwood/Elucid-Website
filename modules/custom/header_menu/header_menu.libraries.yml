@@ -1,0 +1,11 @@
+header_menu_library:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/header_menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/underscore

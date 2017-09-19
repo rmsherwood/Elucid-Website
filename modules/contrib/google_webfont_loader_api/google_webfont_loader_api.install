@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Google Webfont Loader API install/update/uninstall hook implementation.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function google_webfont_loader_api_install() {
+  $listing = google_webfont_loader_api_get_font_list(TRUE);
+  \Drupal::configFactory()->getEditable('google_webfont_loader_api.settings')
+    ->set('fontinfo_listing', $listing)
+    ->save();
+}

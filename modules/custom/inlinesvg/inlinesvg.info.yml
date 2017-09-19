@@ -1,0 +1,5 @@
+name: Inline SVG
+description: Replaces IMG elements that have the "inlinesvg" class attribute with inline SVG elements that can be styled using CSS.
+package: Elucid Solutions
+type: module
+core: 8.x

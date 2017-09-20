@@ -7,7 +7,7 @@ $header-mobile-breakpoint: 950px;
 
 header {
   @include styleguide();
-  border-bottom: 1px solid $gray;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
   width: 100%;
   .layout-content {
     display: table;
@@ -18,14 +18,14 @@ header {
         display: table-cell;
         padding: 0px;
         position: relative;
-        vertical-align: top;
+        vertical-align: middle;
         width: 100px;
         &:before {
           @include mask-right(100%, 32px, "../images/logo-mask.svg", 100);
         }
         [data-elucid-plugin-id="system_branding_block"] {
           @include at-breakpoint($header-mobile-breakpoint, padding-left, 0);
-          padding: $margin-small 0 $margin-small $margin-large;
+          padding: $margin-small 0;
           text-align: center;
           a {
             @include at-breakpoint($header-mobile-breakpoint, display, inline);
@@ -61,15 +61,19 @@ header {
           background-color: transparent;
           .elucid-sign-in {
             float: right;
-            margin: $margin-small $margin-large;
+            margin: $margin-small 0;
             .elucid-sign-in-icon {
               color: #1c7294;
               display: inline-block;
+              margin-right: $margin-xsmall;
             }
             .elucid-sign-in-link {
-              @include a;
+              color: #1c7294;
               font-size: 12px;
               text-transform: uppercase;
+              &:hover {
+                text-decoration: none;
+              }
             }
           }
           &:after {
@@ -81,12 +85,27 @@ header {
         .region-header-right-bottom {
           background-color: transparent;
           padding-left: $margin-xlarge;
-          padding-right: $margin-xlarge;
           .header_menu_widescreen_view { 
             .header_menu_widescreen_view_menu_component {
               .header_menu_menu_list[data-menu-level="0"] {
                 padding-top: 30px;
                 text-transform: uppercase;
+                .header_menu_menu_item {
+                  // Note: Chrome overrides link coloring and text decoration for links that do not have hrefs. This statement enforces these styles.
+                  a {
+                    color: $gray-dark;
+                    cursor: pointer;
+                    &:hover {
+                      color: $blue;
+                      text-decoration: none;
+                    }
+                  }
+                  &.elucid_active {
+                    a {
+                      color: $blue;
+                    }
+                  }
+                }
               }
             }
           }
@@ -96,11 +115,12 @@ header {
   }
   #header_search_toggle_button {
     $header_search_toggle_button_height: 18px;
-    background: url("../images/search-white-icon.svg") no-repeat;
     background-size: $header_search_toggle_button_height;
+    background: url("../images/search-icon.svg") no-repeat;
     cursor: pointer;
     float: right;
     height: $header_search_toggle_button_height;
+    margin-top: $margin-xsmall;
     transition: background-image 0.25s;
     width: $header_search_toggle_button_height;
 
@@ -111,6 +131,33 @@ header {
 }
 .header_menu_widescreen_view_dropdown_component {
   position: relative;
+  .header_menu_menu_list {
+    border-top: solid 6px $blue;
+    box-shadow: 0px 1px 2px 0px; 
+    padding: $margin-small 0;
+    .header_menu_widescreen_view_dropdown_arrow {
+      border: 10px solid $blue;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: $blue;
+      border-left-color: transparent;
+      top: -23px;
+      left: 95px;
+      content: '';
+      position: absolute;
+    }
+    .header_menu_menu_item {
+      padding: $margin-small;
+      a {
+        color: $gray-dark;
+        text-transform: uppercase;
+        &:hover {
+          color: $blue;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 #header_search_region {
   @include at-breakpoint($header-mobile-breakpoint, display, none !important);
@@ -176,68 +223,70 @@ header {
     }
   }
 }
-.header_menu_mobile_view {
-  .header_menu_mobile_view_header {
-    padding: $margin-small 0;
-    .header_menu_mobile_view_title {
-      @include strip-margins;
-      &:before {
-        @include icon("../images/menu-icon.svg", 21px, 21px, inline-block);
-        margin-right: $margin-small;
-        position: relative;
-        top: 7px;
+.subheader {
+  .header_menu_mobile_view {
+    .header_menu_mobile_view_header {
+      padding: $margin-small 0;
+      .header_menu_mobile_view_title {
+        @include strip-margins;
+        &:before {
+          @include icon("../images/menu-icon.svg", 21px, 21px, inline-block);
+          margin-right: $margin-small;
+          position: relative;
+          top: 7px;
+        }
+        font-size: $default-body-font-size !important;
       }
-      font-size: $default-body-font-size !important;
     }
   }
-}
-.header_menu_mobile_view_body {
-  padding: $margin-small 0 $margin-xsmall;
+  .header_menu_mobile_view_body {
+    padding: $margin-small 0 $margin-xsmall;
 
-  .header_menu_mobile_view_slide_back_button {
-    padding-left: $margin-xsmall;
-    &:before {
-      @include icon("../images/left-arrow-icon.svg", 12px, 12px, inline-block);
-      margin-right: $margin-xsmall;
+    .header_menu_mobile_view_slide_back_button {
+      padding-left: $margin-xsmall;
+      &:before {
+        @include icon("../images/left-arrow-icon.svg", 12px, 12px, inline-block);
+        margin-right: $margin-xsmall;
+      }
     }
-  }
-  .header_menu_mobile_view_slide_back_button:hover {
-    color: $blue;
-    &:before {
-      @include icon("../images/left-arrow-icon-selected.svg", 12px, 12px, inline-block);
-    }
-  }
-  .header_menu_mobile_view_slide_item,
-  .menu_slide_extra_item {
-    position: relative;
-    &:after {
-      @include icon("../images/right-arrow-icon.svg", 12px, 12px, block);
-      position: absolute;
-      right: $margin-med;
-      top: $margin-xsmall;
-    }
-    border-bottom: 1px solid $gray-lightest;
-    color: $gray-dark;
-    padding: $margin-xsmall $margin-small;
-    text-transform: uppercase;
-    a {
-      color: $gray-dark;
-      display: block;
-      text-decoration: none;
-      width: 100%;
-    }
-  }
-  .header_menu_mobile_view_slide_item:hover,
-  .menu_slide_extra_item:hover {
-    &:after {
-      @include icon("../images/right-arrow-icon-selected.svg", 12px, 12px, block);
-    }
-    color: $blue;
-    a {
+    .header_menu_mobile_view_slide_back_button:hover {
       color: $blue;
+      &:before {
+        @include icon("../images/left-arrow-icon-selected.svg", 12px, 12px, inline-block);
+      }
+    }
+    .header_menu_mobile_view_slide_item,
+    .menu_slide_extra_item {
+      position: relative;
+      &:after {
+        @include icon("../images/right-arrow-icon.svg", 12px, 12px, block);
+        position: absolute;
+        right: $margin-med;
+        top: $margin-xsmall;
+      }
+      border-bottom: 1px solid $gray-lightest;
+      color: $gray-dark;
+      padding: $margin-xsmall $margin-small;
+      text-transform: uppercase;
+      a {
+        color: $gray-dark;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+      }
+    }
+    .header_menu_mobile_view_slide_item:hover,
+    .menu_slide_extra_item:hover {
+      &:after {
+        @include icon("../images/right-arrow-icon-selected.svg", 12px, 12px, block);
+      }
+      color: $blue;
+      a {
+        color: $blue;
+      }
     }
   }
-}
-.header_menu_mobile_view_close_button {
-  margin-bottom: $margin-xsmall;
+  .header_menu_mobile_view_close_button {
+    margin-bottom: $margin-xsmall;
+  }
 }

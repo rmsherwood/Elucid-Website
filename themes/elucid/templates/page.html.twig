@@ -50,7 +50,7 @@
   {% if elucid_view_id is defined %}         data-elucid-page-view-id="{{ elucid_view_id }}" {% endif %}
 >
   <header class="region-header">
-    <div class="layout-content">
+    <div class="layout-padded-content">
       <div class="region-header-content">
         <div class="region-header-left">
           {{ drupal_block ('elucid_branding') }}
@@ -75,7 +75,7 @@
     </div>
   </header>
   <div id="header_search_region">
-    <div class="layout-content">
+    <div class="layout-padded-content">
       {{ drupal_block ('elucid_search') }}
     </div>
   </div>
@@ -87,7 +87,7 @@
   {{ page.help }}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    <div class="layout-padded-content">
+    <div class="layout-padded-content elucid-page-content">
       {{ page.content }}
     </div>{# /.layout-content #}
   </main>

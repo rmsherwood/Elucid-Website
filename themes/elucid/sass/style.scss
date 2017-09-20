@@ -363,10 +363,10 @@ $max-content-width: 1024px;
   applied to as an inline link element.
 */
 @mixin a (
-  $font-color: null,
+  $color: null,
   $hover-text-decoration: null
 ) {
-  font-color: if($font-color, $font-color, $default-link-color);
+  color: if($color, $color, $default-link-color);
   &:hover {
     text-decoration: if($hover-text-decoration, $hover-text-decoration, underline);
   }
@@ -544,6 +544,16 @@ $max-content-width: 1024px;
   }
 }
 
+.layout-content {
+  margin: 0 auto;
+  max-width: $max-content-width;
+}
+.layout-padded-content {
+  @extend .layout-content;
+  padding: 0 42px; // tuned to ensure that the content area is 940px.
+  @include mobile(padding, 0 $margin-small);
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -555,18 +565,11 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   &:before {
     @include gradient-bar(3px);
   }
+  .elucid-page-content {
+    padding-top: $margin-med;
+    padding-bottom: $margin-med;
+  }
 }
-.layout-content {
-  margin: 0 auto;
-  max-width: $max-content-width;
-}
-.layout-padded-content {
-  margin: 0 auto;
-  max-width: $max-content-width + 2 * $margin-large;
-  padding: $margin-med $margin-large;
-  @include mobile(padding, $margin-med $margin-small);
-}
-
 
 // VII. Import Extensions.
 

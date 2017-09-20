@@ -37,7 +37,7 @@
       <ul data-menu-level="{{ menu_level }}">
     {% endif %}
     {% for item in items %}
-      <li data-menu-level="{{ menu_level }}" {{ item.attributes }}> 
+      <li data-menu-level="{{ menu_level }}" {{ item.attributes }} {% if item.in_active_trail %}class="elucid_active"{% endif %}> 
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
@@ -45,7 +45,7 @@
       </li>
     {% endfor %}
     {% if menu_level == 0 %}
-      <div id="header_search_toggle_button" {{ item.attributes }}>Search</div>
+      <div id="header_search_toggle_button" {{ item.attributes }}></div>
     {% endif %}
     </ul>
   {% endif %}

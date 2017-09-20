@@ -448,12 +448,12 @@
     var offset = parentElementOffset - dropdownComponentElementOffset;
     var remainingWidth = $(document).width () - offset;
 
-    this.getElement ().css ('left', Math.max (0,
+    this.getElement ().css ('left',
       (remainingWidth < (elementWidth / 2) ?
         offset - ((elementWidth / 2) - remainingWidth) :
         offset) -
       (elementWidth / 2)
-    ));
+    );
   }
 
   /*

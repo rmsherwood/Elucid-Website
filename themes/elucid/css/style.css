@@ -278,6 +278,14 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       [data-elucid-page-view-id="frontpage"] .elucid-select:hover .elucid-select-label {
         color: #00adee;
         font-size: 12px; }
+  [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+    background-image: url("../images/svg-divider-below-banner.svg");
+    background-repeat: no-repeat;
+    background-size: 101% 82px;
+    height: 80px;
+    position: absolute;
+    transform: translateY(-99%);
+    width: 100%; }
 
 /*
   Defines the default styles for the header.

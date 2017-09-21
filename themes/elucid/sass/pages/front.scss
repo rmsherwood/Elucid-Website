@@ -3,4 +3,15 @@
 */
 [data-elucid-page-view-id="frontpage"] {
   @include styleguide;
+
+  $ribbon-height: 80px;
+  .elucid_banner_ribbon {
+    background-image: url('../images/svg-divider-below-banner.svg');
+    background-repeat: no-repeat;
+    background-size: 101% ($ribbon-height + 2); // Note: the SVG image must have 'preserveAspectRatio="none"'.
+    height: $ribbon-height;
+    position: absolute;
+    transform: translateY(-99%);
+    width: 100%;
+  }
 }

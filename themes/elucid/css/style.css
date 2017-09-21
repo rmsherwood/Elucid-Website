@@ -279,13 +279,25 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         color: #00adee;
         font-size: 12px; }
   [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+    height: 80px;
+    background-size: 101% 83px;
     background-image: url("../images/svg-divider-below-banner.svg");
     background-repeat: no-repeat;
-    background-size: 101% 82px;
-    height: 80px;
     position: absolute;
     transform: translateY(-99%);
     width: 100%; }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+        height: 58.5px; } }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+        height: 37px; } }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+        background-size: 101% 61.5px; } }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
+        background-size: 101% 40px; } }
 
 /*
   Defines the default styles for the header.
@@ -294,7 +306,9 @@ header {
   font-family: "Open Sans";
   font-size: 16px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  width: 100%; }
+  position: relative;
+  width: 100%;
+  z-index: 10; }
   header h1 {
     font-size: 36px;
     font-family: "Open Sans";
@@ -616,7 +630,10 @@ header {
   the homepage banner block.
 */
 #block-homepage-banner-block .banner_block_banner {
-  height: 500px; }
+  height: 416px; }
+  @media screen and (max-width: 650px) {
+    #block-homepage-banner-block .banner_block_banner {
+      height: 300px; } }
   #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
     color: white;
     font-style: italic;

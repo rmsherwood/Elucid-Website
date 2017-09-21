@@ -3,8 +3,10 @@
   the homepage banner block.
 */
 #block-homepage-banner-block {
-  $banner_block_height: 500px;
+  $banner_block_height: 416px;
+  $banner_block_mobile_height: 300px;
   .banner_block_banner {
+    @include mobile(height, $banner_block_mobile_height);
     height: $banner_block_height;
     .banner_block_banner_overlay {
       @include mobile(min-width, 300px);

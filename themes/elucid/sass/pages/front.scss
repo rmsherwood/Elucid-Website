@@ -5,11 +5,14 @@
   @include styleguide;
 
   $ribbon-height: 80px;
+  $ribbon-mobile-height: 37px;
+  $ribbon-tablet-height: ($ribbon-height - $ribbon-mobile-height)/2 + $ribbon-mobile-height;
   .elucid_banner_ribbon {
+    // Note: the SVG image must have 'preserveAspectRatio="none"'.
+    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
+    @include responsive(background-size, 101% ($ribbon-height + 3), 101% ($ribbon-tablet-height + 3), 101% ($ribbon-mobile-height + 3));
     background-image: url('../images/svg-divider-below-banner.svg');
     background-repeat: no-repeat;
-    background-size: 101% ($ribbon-height + 2); // Note: the SVG image must have 'preserveAspectRatio="none"'.
-    height: $ribbon-height;
     position: absolute;
     transform: translateY(-99%);
     width: 100%;

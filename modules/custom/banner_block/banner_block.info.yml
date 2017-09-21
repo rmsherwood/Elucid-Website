@@ -1,0 +1,5 @@
+name: Banner Block
+description: Defines the Banner Block type. Banner blocks can be configured to display banner images with overlay text.
+package: Elucid Solutions
+type: module
+core: 8.x

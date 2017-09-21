@@ -1,0 +1,4 @@
+banner_block_library:
+  css:
+    theme:
+      css/style.css: {}

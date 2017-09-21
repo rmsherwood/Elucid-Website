@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ */
+
+// Implements hook_theme ()
+function banner_block_theme () {
+  return [
+    'banner_block' => [
+      'variables' => [
+        'banner_block_image' => '',
+        'banner_block_overlay' => ''
+      ]
+    ]
+  ];
+}

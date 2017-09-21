@@ -1,0 +1,11 @@
+{#
+/**
+ * banner_block_image: The HTML image
+ *   element that should be used as the banner image.
+ * banner_block_overlay: The overlay text.
+#}
+<div class="banner_block">
+  <div class="banner_block_banner" style="background-image: url('{{ banner_block_image }}');">
+    <div class="banner_block_banner_overlay">{{ banner_block_overlay|raw }}</div>
+  </div>
+</div>

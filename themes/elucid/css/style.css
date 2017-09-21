@@ -604,6 +604,42 @@ header {
   margin-bottom: 5px; }
 
 /*
+  This stylesheet defines custom styling for
+  the homepage banner block.
+*/
+#block-homepage-banner-block .banner_block_banner {
+  height: 500px; }
+  #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
+    color: white;
+    font-style: italic;
+    min-width: 500px;
+    text-transform: uppercase; }
+    @media screen and (max-width: 650px) {
+      #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
+        min-width: 300px; } }
+    #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+      background-image: url("../images/homepage_banner_title_background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: 600;
+      font-size: 58px;
+      padding: 0 20px; }
+      @media screen and (max-width: 650px) {
+        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          font-size: 34px; } }
+    #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+      font-weight: 300;
+      font-size: 60px;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
+      @media screen and (max-width: 650px) {
+        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+          font-size: 38px; } }
+      @media screen and (max-width: 650px) {
+        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+          letter-spacing: 1.9px; } }
+
+/*
   Defines the styles applied to the Rate Table
   blocks. These blocks are provided by the Rate
   Table module.

@@ -1,0 +1,13 @@
+/*
+  This stylesheet provides default styles for
+  the Banner blocks.
+*/
+.banner_block .banner_block_banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .banner_block .banner_block_banner .banner_block_banner_overlay {
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    position: absolute;
+    top: 50%; }

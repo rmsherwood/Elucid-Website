@@ -301,6 +301,16 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-size: 101% 40px; } }
 
 /*
+  This stylesheet defines the styles for the
+  page footer.
+*/
+footer {
+  background-color: #535253;
+  color: white; }
+  footer .footer_top .company_info {
+    color: #d0d0d0; }
+
+/*
   Defines the default styles for the header.
 */
 header {

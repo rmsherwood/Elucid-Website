@@ -91,6 +91,18 @@
     </div>{# /.layout-content #}
   </main>
   <footer role="contentinfo">
+    <div class="footer_top">
+      <div class="company_info">
+        <span class="elucid_bold">Elucid Solutions, Inc</span>
+        <p>4300 Montgomery Ave,<br>Suite 302,<br>Bethesda, MD 20814</p>
+        <p>301.652.8208<br>info@elucidsolutions.com</p> 
+      </div>
+      {{ drupal_block ('footer_nav_menu') }}
+    </div>
+    <div class="footer_bottom">
+      <img src="{{ base_path ~ directory }}/images/cmmi-dev-icon.jpg"/>
+      <div class="credits">&copy; 2017 Elucid Solutions, Inc.</div>
+    </div>
   </footer>
 </div>{# /.layout-container #}
 

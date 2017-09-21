@@ -1,0 +1,15 @@
+/*
+  This stylesheet defines the styles for the
+  page footer.
+*/
+footer {
+  background-color: $gray-dark;
+  color: white;
+  .footer_top {
+    .company_info {
+      color: #d0d0d0;
+    }
+  }
+  .footer_bottom {
+  }
+}

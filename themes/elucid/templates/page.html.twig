@@ -60,10 +60,7 @@
           <div id="region-header-right-top-background"></div>
           <div class="region-header-right-top">
             <div class="elucid-sign-in">
-              <div class="elucid-sign-in-icon">
-                <img class="elucid-sign-in-icon-image" src="{{ base_path ~ directory }}/images/sign-in-icon.svg"></img>
-              </div>
-              <a class="elucid-sign-in-link" href="{{url}}/user">Sign In</a>
+              <a class="elucid-sign-in-link" href="{{url}}/user"><div class="elucid-sign-in-icon"><img class="elucid-sign-in-icon-image" src="{{ base_path ~ directory }}/images/sign-in-icon.svg"></img></div>Sign In</a>
             </div>
           </div>
           <div class="region-header-right-bottom">
@@ -87,6 +84,8 @@
   {{ page.help }}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {{ drupal_block ('homepage_banner_block') }}
+    <div class="elucid_banner_ribbon"></div>
     <div class="layout-padded-content elucid-page-content">
       {{ page.content }}
     </div>{# /.layout-content #}
@@ -94,3 +93,4 @@
   <footer role="contentinfo">
   </footer>
 </div>{# /.layout-container #}
+

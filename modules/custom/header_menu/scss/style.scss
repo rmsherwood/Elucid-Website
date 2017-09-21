@@ -9,6 +9,7 @@ $header-menu-widescreen-view-dropdown-container-background-color: white;
 $header-menu-widescreen-view-dropdown-item-width: 200px;
 $header-menu-mobile-view-background-color: white;
 $header-menu-mobile-view-header-background-color: rgb(0, 173, 238);
+$header-menu-mobile-view-header-hover-background-color: #3571a1;
 $header-menu-mobile-view-header-title-color: white;
 
 .header_menu_drupal_menu {
@@ -71,6 +72,9 @@ $header-menu-mobile-view-header-title-color: white;
     cursor: pointer;
     width: 100%;
 
+    &:hover {
+      background-color: $header-menu-mobile-view-header-hover-background-color;
+    }
     .header_menu_mobile_view_title {
       color: $header-menu-mobile-view-header-title-color;
       text-align: center;
@@ -78,7 +82,7 @@ $header-menu-mobile-view-header-title-color: white;
   }
   .header_menu_mobile_view_collapsible {
     background-color: $header-menu-mobile-view-background-color;
-    box-shadow: #4a4a4a 0px 1px 2px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
     display: none;
     overflow: hidden;
     position: absolute;

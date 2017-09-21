@@ -696,8 +696,8 @@
            .append ($('<li></li>')
              .addClass ('menu_slide_extra_item')
              .html (drupalSettings.user.uid === 0 ?
-               ('<a href="/user/login">SIGN IN</a>') :
-               ('<a href="/user/logout">SIGN OUT</a>')
+               ('<a class="header_menu_sign_in_link" href="/user/login">SIGN IN</a>') :
+               ('<a class="header_menu_sign_out_link" href="/user/logout">SIGN OUT</a>')
              ))
           );
   }

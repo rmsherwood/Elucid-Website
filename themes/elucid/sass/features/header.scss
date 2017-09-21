@@ -18,12 +18,12 @@ header {
       display: table-row;
       .region-header-left {
         display: table-cell;
-        padding: 0px;
+        padding: 0 12px 0 0;
         position: relative;
         vertical-align: middle;
         width: 100px;
         &:before {
-          @include mask-right(100%, 32px, "../images/logo-mask.svg", 100);
+          @include mask-right(100%, 26px, "../images/logo-mask.svg", 100);
         }
         [data-elucid-plugin-id="system_branding_block"] {
           @include at-breakpoint($header-mobile-breakpoint, padding-left, 0);
@@ -34,7 +34,7 @@ header {
             display: block;
             img {
               line-height: 0;
-              vertical-align: baseline;
+              vertical-align: middle;
             }
           }
         }
@@ -61,20 +61,28 @@ header {
         }
         .region-header-right-top {
           background-color: transparent;
+          height: 49px;
           .elucid-sign-in {
             float: right;
             margin: $margin-small 0;
-            .elucid-sign-in-icon {
-              color: #1c7294;
-              display: inline-block;
-              margin-right: $margin-xsmall;
-            }
             .elucid-sign-in-link {
               color: #1c7294;
               font-size: 12px;
               text-transform: uppercase;
+              .elucid-sign-in-icon {
+                color: #1c7294;
+                display: inline-block;
+                line-height: 0px;
+                margin-right: $margin-xsmall;
+                margin-top: -2px; // fine-tuned to center with text.
+                vertical-align: middle;
+              }
               &:hover {
+                color: $blue;
                 text-decoration: none;
+                path {
+                  fill: $blue;
+                }
               }
             }
           }
@@ -125,7 +133,9 @@ header {
     margin-top: $margin-xsmall;
     transition: background-image 0.25s;
     width: $header_search_toggle_button_height;
-
+    &:hover {
+      background: url("../images/search-icon-selected.svg") no-repeat;
+    }
     &.search_dropdown_active {
       background: url("../images/search-white-icon.svg") no-repeat;
     }
@@ -166,45 +176,52 @@ header {
   display: none;
   position: absolute;
   width: 100%;
+  z-index: 1; // otherwise, doesn't appear in Chrome on windows.
+  #block-elucid-search {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
 }
 #block-elucid-search {
-  $subheader-search-height: 52px;
-  background-color: rgb(245,245,245);
-  border-radius: 0 0 0 3px;
   display: table;
-  height: $subheader-search-height;
+  background-color: rgb(245,245,245);
+  height: 64px; // needed by FF to properly size the submit button.
+  padding: 15px;
   margin: 0;
   max-width: 100%;
-  padding: 10px;
   width: 100%;
-  z-index: 100;
+  z-index: 9; // fine-tuned to place under shadow cast by header.
   @media (min-width: 951px) {
     width: 50%;
     margin-left: 50%;
   }
 
   #search-block-form {
-    background-color: white;
+    background-color: transparent;
     display: table-row;
 
     .form-item {
-      border: none;
-      border-top: solid 1px #6a6a6a;
-      border-left: solid 1px #6a6a6a;
-      border-bottom: solid 1px #6a6a6a;
+      background-color: white;
+      border-bottom-left-radius: 2px;
+      border-bottom: solid 1px #d0d0d0;
+      border-left: solid 1px #d0d0d0;
+      border-top-left-radius: 2px;
+      border-top: solid 1px #d0d0d0;
       display: table-cell;
       height: 100%;
-      margin: 0px;
 
       input.form-search {
         border: none;
         font-size: rem(12px);
         outline: none;
-        padding: 3px 8px 0;
-        width: 100%;
+        width: 95%;
+        margin: 3px 0 3px 10px;
       }
     }
     .form-actions {
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
       display: table-cell;
       height: 100%;
       margin: 0px;
@@ -215,7 +232,9 @@ header {
       input.form-submit {
         background: url('../images/search-white-icon.svg') no-repeat 50% 50%;
         background-color: $blue;
+        border-bottom-right-radius: 2px;
         border: none;
+        border-top-right-radius: 2px;
         color: transparent;
         height: 100%;
         margin: 0px;
@@ -228,7 +247,10 @@ header {
 .subheader {
   .header_menu_mobile_view {
     .header_menu_mobile_view_header {
-      padding: $margin-small 0;
+      box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+      padding: 13px 0;
+      position: relative; // set to allow shadow to cast.
+      z-index: 1; // fine-tuned so that this element will cast a shadow of the following elements.
       .header_menu_mobile_view_title {
         @include strip-margins;
         &:before {
@@ -238,57 +260,76 @@ header {
           top: 7px;
         }
         font-size: $default-body-font-size !important;
+        font-weight: 400;
       }
     }
-  }
-  .header_menu_mobile_view_body {
-    padding: $margin-small 0 $margin-xsmall;
+    .header_menu_mobile_view_collapsible {
+      .header_menu_mobile_view_body {
+        padding: 0 0 $margin-xsmall;
 
-    .header_menu_mobile_view_slide_back_button {
-      padding-left: $margin-xsmall;
-      &:before {
-        @include icon("../images/left-arrow-icon.svg", 12px, 12px, inline-block);
-        margin-right: $margin-xsmall;
+        .header_menu_mobile_view_slide_back_button {
+          padding-left: $margin-xsmall;
+          &:before {
+            @include icon("../images/left-arrow-icon.svg", 12px, 12px, inline-block);
+            margin-right: $margin-xsmall;
+          }
+        }
+        .header_menu_mobile_view_slide_back_button:hover {
+          color: $blue;
+          &:before {
+            @include icon("../images/left-arrow-icon-selected.svg", 12px, 12px, inline-block);
+          }
+        }
+        .header_menu_mobile_view_slide_item,
+        .menu_slide_extra_item {
+          border-bottom: 1px solid $gray-lightest;
+          color: $gray-dark;
+          padding: $margin-xsmall $margin-small;
+          text-transform: uppercase;
+          a {
+            color: $gray-dark;
+            display: block;
+            text-decoration: none;
+            width: 100%;
+          }
+        }
+        .header_menu_mobile_view_slide_item:hover,
+        .menu_slide_extra_item:hover {
+          color: $blue;
+          a {
+            color: $blue;
+          }
+        }
+        .header_menu_sign_in_link {
+          &:before {
+            @include icon("../images/sign-in-icon-gray.svg", 12px, 12px, inline-block);
+            margin-right: $margin-xsmall;
+          }
+        }
+        .header_menu_sign_in_link:hover {
+          &:before {
+            @include icon("../images/sign-in-icon-hover.svg", 12px, 12px, inline-block);
+          }
+        }
+        .header_menu_sign_out_link {
+          &:before {
+            @include icon("../images/sign-in-icon-gray.svg", 12px, 12px, inline-block);
+            margin-right: $margin-xsmall;
+          }
+        }
+        .header_menu_sign_out_link:hover {
+          &:before {
+            @include icon("../images/sign-in-icon-hover.svg", 12px, 12px, inline-block);
+          }
+        }
       }
-    }
-    .header_menu_mobile_view_slide_back_button:hover {
-      color: $blue;
-      &:before {
-        @include icon("../images/left-arrow-icon-selected.svg", 12px, 12px, inline-block);
-      }
-    }
-    .header_menu_mobile_view_slide_item,
-    .menu_slide_extra_item {
-      position: relative;
-      &:after {
-        @include icon("../images/right-arrow-icon.svg", 12px, 12px, block);
-        position: absolute;
-        right: $margin-med;
-        top: $margin-xsmall;
-      }
-      border-bottom: 1px solid $gray-lightest;
-      color: $gray-dark;
-      padding: $margin-xsmall $margin-small;
-      text-transform: uppercase;
-      a {
-        color: $gray-dark;
-        display: block;
-        text-decoration: none;
-        width: 100%;
-      }
-    }
-    .header_menu_mobile_view_slide_item:hover,
-    .menu_slide_extra_item:hover {
-      &:after {
-        @include icon("../images/right-arrow-icon-selected.svg", 12px, 12px, block);
-      }
-      color: $blue;
-      a {
+      .header_menu_mobile_view_close_button {
         color: $blue;
+        margin-bottom: $margin-xsmall;
+        &:hover {
+          color: $blue-dark;
+        }
       }
     }
-  }
-  .header_menu_mobile_view_close_button {
-    margin-bottom: $margin-xsmall;
   }
 }

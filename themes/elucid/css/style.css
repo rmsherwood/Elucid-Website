@@ -379,6 +379,9 @@ footer {
         @media screen and (max-width: 768px) {
           footer .footer_content .footer_bottom .footer_bottom_left {
             display: block; } }
+        footer .footer_content .footer_bottom .footer_bottom_left img {
+          max-width: 100%;
+          width: 309px; }
       footer .footer_content .footer_bottom .footer_bottom_right {
         display: table-cell; }
         @media screen and (max-width: 768px) {

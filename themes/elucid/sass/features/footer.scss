@@ -75,6 +75,10 @@ footer {
         display: table-cell;
         margin-bottom: 23px;
         @include tablet(display, block);
+        img {
+          max-width: 100%;
+          width: 309px;
+        }
       }
       .footer_bottom_right {
         display: table-cell;

@@ -221,7 +221,101 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   background-image: linear-gradient(to left, #72caf2, #00adee); }
 .elucid-page .elucid-page-content {
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 90px; }
+
+/*
+  Defines the Capabilities page specific styles.
+*/
+[data-elucid-page-path-alias="/capabilities"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  [data-elucid-page-path-alias="/capabilities"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/capabilities"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-path-alias="/capabilities"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/capabilities"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-path-alias="/capabilities"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/capabilities"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-path-alias="/capabilities"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/capabilities"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-path-alias="/capabilities"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-path-alias="/capabilities"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-path-alias="/capabilities"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  [data-elucid-page-path-alias="/capabilities"] [data-elucid-base-plugin-id="page_title_block"] {
+    text-align: center; }
+    [data-elucid-page-path-alias="/capabilities"] [data-elucid-base-plugin-id="page_title_block"] h1 {
+      background-image: url("../images/svg-header-background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: cover;
+      color: white;
+      display: inline-block;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 0;
+      max-width: 350px;
+      padding: 5px 25px 5px 20px; }
+  [data-elucid-page-path-alias="/capabilities"] .capability_list {
+    display: table;
+    margin-bottom: 80px; }
+    [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item {
+      display: table-row; }
+      [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon {
+        display: table-cell;
+        width: 90px; }
+        @media screen and (max-width: 650px) {
+          [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon {
+            width: 64px; } }
+        [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon img {
+          padding-top: 40px;
+          width: 90px; }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon img {
+              width: 64px; } }
+      [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content {
+        display: table-cell;
+        padding: 20px 0 20px 40px; }
+        [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content .capability_list_item_header {
+          color: #e74131;
+          font-size: 22px;
+          font-weight: 500; }
 
 /*
   Defines the front page specific styles.
@@ -299,6 +393,60 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     @media screen and (max-width: 650px) {
       [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
         background-size: 101% 40px; } }
+  [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+    height: 80px;
+    background-size: 101% 83px;
+    background-image: url("../images/svg-divider-below-capabilities.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+    width: 100%;
+    z-index: 10; }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+        height: 58.5px; } }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+        height: 37px; } }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+        background-size: 101% 61.5px; } }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+        background-size: 101% 40px; } }
+
+/*
+  This stylesheet defines the styling for the
+  client block.
+*/
+#block-ourclients {
+  background-color: #ebfcff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center; }
+  #block-ourclients h2 {
+    background-image: url("../images/svg-header-background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
+    color: white;
+    display: inline-block;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: 350px;
+    padding: 8px 25px 10px 20px; }
+  #block-ourclients .clients_component .clients_icons img {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 20px; }
+    @media screen and (max-width: 650px) {
+      #block-ourclients .clients_component .clients_icons img {
+        max-height: 67px; } }
+    @media screen and (max-width: 650px) {
+      #block-ourclients .clients_component .clients_icons img {
+        max-width: 67px; } }
 
 /*
   This stylesheet defines the styles for the

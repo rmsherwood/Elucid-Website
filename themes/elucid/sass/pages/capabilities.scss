@@ -1,0 +1,49 @@
+/*
+  Defines the Capabilities page specific styles.
+*/
+[data-elucid-page-path-alias="/capabilities"] {
+  @include styleguide;
+
+  [data-elucid-base-plugin-id="page_title_block"] {
+    text-align: center;
+    h1 {
+      background-image: url('../images/svg-header-background.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: cover;
+      color: white;
+      display: inline-block;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 0;
+      max-width: 350px;
+      padding: 5px 25px 5px 20px;
+    }
+  }
+  .capability_list {
+    display: table;
+    margin-bottom: 80px;
+    .capability_list_item {
+      display: table-row;
+      .capability_list_item_icon {
+        @include mobile(width, 64px);
+        display: table-cell;
+        width: 90px;
+        img {
+          @include mobile(width, 64px);
+          padding-top: $margin-large;
+          width: 90px;
+        }
+      }
+      .capability_list_item_content {
+        display: table-cell;
+        padding: $margin-med 0 $margin-med $margin-large;
+        .capability_list_item_header {
+          color: #e74131;
+          font-size: 22px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

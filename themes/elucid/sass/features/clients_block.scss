@@ -1,0 +1,36 @@
+/*
+  This stylesheet defines the styling for the
+  client block.
+*/
+#block-ourclients {
+  background-color: $blue-lightest;
+  padding-top: $margin-med;
+  padding-bottom: $margin-med;
+  text-align: center;
+  h2 {
+    background-image: url('../images/svg-header-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
+    color: white;
+    display: inline-block;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: $margin-med;
+    max-width: 350px;
+    padding: 8px 25px 10px 20px;
+  }
+  .clients_component {
+    .clients_intro {
+    }
+    .clients_icons {
+      img {
+        max-height: 100px;
+        max-width: 100px;
+        margin: $margin-med;
+        @include mobile(max-height, 67px);
+        @include mobile(max-width, 67px);
+      }
+    }
+  }
+}

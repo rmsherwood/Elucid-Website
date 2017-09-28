@@ -4,9 +4,11 @@
 */
 #block-ourclients {
   background-color: $blue-lightest;
-  padding-top: $margin-med;
+  @include mobile(font-size, 14px);
+  padding-top: 60px;
   padding-bottom: $margin-med;
   text-align: center;
+
   h2 {
     background-image: url('../images/svg-header-background.svg');
     background-repeat: no-repeat;
@@ -21,15 +23,28 @@
     padding: 8px 25px 10px 20px;
   }
   .clients_component {
+    @extend .layout-padded-content;
     .clients_intro {
     }
     .clients_icons {
-      img {
-        max-height: 100px;
-        max-width: 100px;
-        margin: $margin-med;
-        @include mobile(max-height, 67px);
-        @include mobile(max-width, 67px);
+      .clients_icon {
+        align-items: center;
+        display: inline-block; /* browser fallback */
+        display: flex;
+        justify-content: center;
+
+        .clients_icon_image {
+          img {
+            height: auto;
+            max-height: 100px;
+            max-width: 100px;
+            margin: $margin-med;
+            @include mobile(margin, $margin-xsmall);
+            width: auto;
+            @include mobile(max-height, 67px);
+            @include mobile(max-width, 67px);
+          }
+        }
       }
     }
   }

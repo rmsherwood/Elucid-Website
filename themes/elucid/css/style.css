@@ -195,14 +195,14 @@
   Applies the default styles to elements
   according to the styleguide.
 */
-.layout-content, .layout-padded-content {
+.layout-content, .layout-padded-content, #block-ourclients .clients_component {
   margin: 0 auto;
   max-width: 1024px; }
 
-.layout-padded-content {
+.layout-padded-content, #block-ourclients .clients_component {
   padding: 0 42px; }
   @media screen and (max-width: 650px) {
-    .layout-padded-content {
+    .layout-padded-content, #block-ourclients .clients_component {
       padding: 0 10px; } }
 
 html, body {
@@ -422,9 +422,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 */
 #block-ourclients {
   background-color: #ebfcff;
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 20px;
   text-align: center; }
+  @media screen and (max-width: 650px) {
+    #block-ourclients {
+      font-size: 14px; } }
   #block-ourclients h2 {
     background-image: url("../images/svg-header-background.svg");
     background-repeat: no-repeat;
@@ -437,16 +440,27 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     margin-bottom: 20px;
     max-width: 350px;
     padding: 8px 25px 10px 20px; }
-  #block-ourclients .clients_component .clients_icons img {
-    max-height: 100px;
-    max-width: 100px;
-    margin: 20px; }
-    @media screen and (max-width: 650px) {
-      #block-ourclients .clients_component .clients_icons img {
-        max-height: 67px; } }
-    @media screen and (max-width: 650px) {
-      #block-ourclients .clients_component .clients_icons img {
-        max-width: 67px; } }
+  #block-ourclients .clients_component .clients_icons .clients_icon {
+    align-items: center;
+    display: inline-block;
+    /* browser fallback */
+    display: flex;
+    justify-content: center; }
+    #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
+      height: auto;
+      max-height: 100px;
+      max-width: 100px;
+      margin: 20px;
+      width: auto; }
+      @media screen and (max-width: 650px) {
+        #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
+          margin: 5px; } }
+      @media screen and (max-width: 650px) {
+        #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
+          max-height: 67px; } }
+      @media screen and (max-width: 650px) {
+        #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
+          max-width: 67px; } }
 
 /*
   This stylesheet defines the styles for the
@@ -600,18 +614,18 @@ header {
       header .elucid-select:hover .elucid-select-label {
         color: #00adee;
         font-size: 12px; }
-  header .layout-content, header .layout-padded-content {
+  header .layout-content, header .layout-padded-content, header #block-ourclients .clients_component, #block-ourclients header .clients_component {
     display: table;
     width: 100%; }
-    header .layout-content .region-header-content, header .layout-padded-content .region-header-content {
+    header .layout-content .region-header-content, header .layout-padded-content .region-header-content, header #block-ourclients .clients_component .region-header-content, #block-ourclients header .clients_component .region-header-content {
       display: table-row; }
-      header .layout-content .region-header-content .region-header-left, header .layout-padded-content .region-header-content .region-header-left {
+      header .layout-content .region-header-content .region-header-left, header .layout-padded-content .region-header-content .region-header-left, header #block-ourclients .clients_component .region-header-content .region-header-left, #block-ourclients header .clients_component .region-header-content .region-header-left {
         display: table-cell;
         padding: 0 12px 0 0;
         position: relative;
         vertical-align: middle;
         width: 100px; }
-        header .layout-content .region-header-content .region-header-left:before, header .layout-padded-content .region-header-content .region-header-left:before {
+        header .layout-content .region-header-content .region-header-left:before, header .layout-padded-content .region-header-content .region-header-left:before, header #block-ourclients .clients_component .region-header-content .region-header-left:before, #block-ourclients header .clients_component .region-header-content .region-header-left:before {
           clear: both;
           content: "";
           background-image: url("../images/logo-mask.svg");
@@ -624,79 +638,79 @@ header {
           top: 0;
           width: 26px;
           z-index: 100; }
-        header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
+        header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header #block-ourclients .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], #block-ourclients header .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
           padding: 10px 0;
           text-align: center; }
           @media screen and (max-width: 950px) {
-            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
+            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], header #block-ourclients .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"], #block-ourclients header .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] {
               padding-left: 0; } }
-          header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
+          header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header #block-ourclients .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, #block-ourclients header .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
             display: block; }
             @media screen and (max-width: 950px) {
-              header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
+              header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, header #block-ourclients .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a, #block-ourclients header .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a {
                 display: inline; } }
-            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img {
+            header .layout-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img, header .layout-padded-content .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img, header #block-ourclients .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img, #block-ourclients header .clients_component .region-header-content .region-header-left [data-elucid-plugin-id="system_branding_block"] a img {
               line-height: 0;
               vertical-align: middle; }
-      header .layout-content .region-header-content .region-header-right, header .layout-padded-content .region-header-content .region-header-right {
+      header .layout-content .region-header-content .region-header-right, header .layout-padded-content .region-header-content .region-header-right, header #block-ourclients .clients_component .region-header-content .region-header-right, #block-ourclients header .clients_component .region-header-content .region-header-right {
         color: #535253;
         display: table-cell;
         padding: 0px;
         position: relative; }
         @media screen and (max-width: 950px) {
-          header .layout-content .region-header-content .region-header-right, header .layout-padded-content .region-header-content .region-header-right {
+          header .layout-content .region-header-content .region-header-right, header .layout-padded-content .region-header-content .region-header-right, header #block-ourclients .clients_component .region-header-content .region-header-right, #block-ourclients header .clients_component .region-header-content .region-header-right {
             display: none; } }
-        header .layout-content .region-header-content .region-header-right #region-header-right-background, header .layout-padded-content .region-header-content .region-header-right #region-header-right-background {
+        header .layout-content .region-header-content .region-header-right #region-header-right-background, header .layout-padded-content .region-header-content .region-header-right #region-header-right-background, header #block-ourclients .clients_component .region-header-content .region-header-right #region-header-right-background, #block-ourclients header .clients_component .region-header-content .region-header-right #region-header-right-background {
           background-color: #fcfcfc;
           height: 100%;
           position: absolute;
           width: 100vw;
           z-index: -2; }
-        header .layout-content .region-header-content .region-header-right #region-header-right-top-background, header .layout-padded-content .region-header-content .region-header-right #region-header-right-top-background {
+        header .layout-content .region-header-content .region-header-right #region-header-right-top-background, header .layout-padded-content .region-header-content .region-header-right #region-header-right-top-background, header #block-ourclients .clients_component .region-header-content .region-header-right #region-header-right-top-background, #block-ourclients header .clients_component .region-header-content .region-header-right #region-header-right-top-background {
           background-color: #ebfcff;
           height: 50px;
           position: absolute;
           width: 100vw;
           z-index: -1; }
-        header .layout-content .region-header-content .region-header-right .region-header-right-top, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top {
+        header .layout-content .region-header-content .region-header-right .region-header-right-top, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top {
           background-color: transparent;
           height: 49px; }
-          header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in {
+          header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in {
             float: right;
             margin: 10px 0; }
-            header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link {
+            header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link {
               color: #1c7294;
               font-size: 12px;
               text-transform: uppercase; }
-              header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon {
+              header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link .elucid-sign-in-icon {
                 color: #1c7294;
                 display: inline-block;
                 line-height: 0px;
                 margin-right: 5px;
                 margin-top: -2px;
                 vertical-align: middle; }
-              header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover {
+              header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover {
                 color: #00adee;
                 text-decoration: none; }
-                header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path {
+                header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path {
                   fill: #00adee; }
-          header .layout-content .region-header-content .region-header-right .region-header-right-top:after, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top:after {
+          header .layout-content .region-header-content .region-header-right .region-header-right-top:after, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top:after, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top:after, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top:after {
             clear: both;
             content: "";
             display: block; }
-        header .layout-content .region-header-content .region-header-right .region-header-right-bottom, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom {
+        header .layout-content .region-header-content .region-header-right .region-header-right-bottom, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom {
           background-color: transparent;
           padding-left: 60px; }
-          header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"], header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] {
+          header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"], header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"], header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"], #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] {
             padding-top: 30px;
             text-transform: uppercase; }
-            header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a {
+            header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a {
               color: #535253;
               cursor: pointer; }
-              header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover {
+              header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover {
                 color: #00adee;
                 text-decoration: none; }
-            header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a {
+            header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a {
               color: #00adee; }
   header #header_search_toggle_button {
     background-size: 18px;

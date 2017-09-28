@@ -10,7 +10,8 @@
     loadFonts ();
 
     // Initialize the material design component elements.
-    mdc.autoInit ();
+    // Note: this roundabout method is forced on us by IE9.
+    typeof mdc === "undefined" || mdc.autoInit ();
   }
 
   /*

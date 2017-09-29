@@ -1,0 +1,72 @@
+/*
+  Defines the Contract Vehicles page specific styles.
+*/
+[data-elucid-page-path-alias="/contract-vehicles"] {
+  @include styleguide;
+  color: #1e1e1e;
+
+  .contract-vehicles {
+    .contract-vehicles-intro {
+      padding: 0 $margin-large;
+    }
+    .contract-vehicles-schedules {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+      padding-bottom: $margin-large;
+
+      &:before {
+        @include gradient-bar(8px);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px; 
+      }
+      .contract-vehicles-schedule {
+        padding: $margin-med $margin-large;
+        border-bottom: solid 1px $gray-light;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+        .contract-vehicles-schedule-logo {
+          margin-bottom: $margin-med;
+          img {
+            width: 275px;
+          }
+        }
+        .contract-vehicles-schedule-header {
+          margin-bottom: $margin-small;
+          h2 {
+            @include strip-margins;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: left;
+            color: $red;
+          }
+        }
+        .contract-vehicles-schedule-body {
+          margin-bottom: $margin-med;
+          p {
+            @include strip-margins;
+          }
+        }
+        .contract-vehicles-schedule-footer {
+          a {
+            color: $blue;
+            &:after {
+              @include icon("../images/read-more-icon.svg", 11px, 19px, inline-block);
+              margin-left: $margin-med;
+            }
+          }
+          a:hover {
+            color: $blue-dark;
+            text-decoration: none;
+            &:after {
+              @include icon("../images/read-more-icon-active.svg", 11px, 19px, inline-block);
+            }
+          }
+        }
+      }
+    }
+  }
+}

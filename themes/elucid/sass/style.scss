@@ -569,6 +569,31 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     padding-top: $margin-med;
     padding-bottom: 90px;
   }
+  $ribbon-height: 80px;
+  $ribbon-mobile-height: 37px;
+  $ribbon-tablet-height: ($ribbon-height - $ribbon-mobile-height)/2 + $ribbon-mobile-height;
+  .elucid_banner_ribbon {
+    // Note: the SVG image must have 'preserveAspectRatio="none"'.
+    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
+    @include responsive(background-size, 101% ($ribbon-height + 3), 101% ($ribbon-tablet-height + 3), 101% ($ribbon-mobile-height + 3));
+    background-image: url('../images/svg-divider-below-banner.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    -webkit-transform: translateY(-99%);
+    transform: translateY(-99%);
+    width: 100%;
+  }
+  .elucid_banner_ribbon {
+    // Note: the SVG image must have 'preserveAspectRatio="none"'.
+    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
+    @include responsive(background-size, 101% ($ribbon-height + 3), 101% ($ribbon-tablet-height + 3), 101% ($ribbon-mobile-height + 3));
+    background-image: url('../images/svg-divider-below-banner.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    -webkit-transform: translateY(-99%);
+    transform: translateY(-99%);
+    width: 100%;
+  }
 }
 
 // VII. Import Extensions.

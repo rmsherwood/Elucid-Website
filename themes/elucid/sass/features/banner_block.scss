@@ -1,0 +1,36 @@
+/*
+  This stylesheet defines styles shared by all banner blocks.
+*/
+[data-elucid-base-plugin-id="banner_block"] {
+  $banner_block_height: 315px;
+  $banner_block_mobile_height: 260px;
+  .banner_block_banner {
+    @include mobile(height, $banner_block_mobile_height);
+    height: $banner_block_height;
+    .banner_block_banner_overlay {
+      @include mobile(min-width, 300px);
+      color: white;
+      font-style: italic;
+      text-transform: uppercase;
+      .elucid_banner_header {
+        @include mobile(font-size, 34px);
+        @include mobile(margin, 0 $margin-small);
+        background-image: url('../images/homepage_banner_title_background.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-weight: 600;
+        font-size: 58px;
+        /* min-width: 500px; // fine-tuned to prevent line wrapping. */
+        margin: 0 $margin-med;
+      }
+      .elucid_banner_subheader {
+        @include mobile(font-size, 38px);
+        @include mobile(letter-spacing, 1.9px);
+        font-weight: 300;
+        font-size: 60px;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}

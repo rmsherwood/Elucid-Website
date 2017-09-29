@@ -222,6 +222,48 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 .elucid-page .elucid-page-content {
   padding-top: 20px;
   padding-bottom: 90px; }
+.elucid-page .elucid_banner_ribbon {
+  height: 80px;
+  background-size: 101% 83px;
+  background-image: url("../images/svg-divider-below-banner.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  -webkit-transform: translateY(-99%);
+  transform: translateY(-99%);
+  width: 100%; }
+  @media screen and (max-width: 768px) {
+    .elucid-page .elucid_banner_ribbon {
+      height: 58.5px; } }
+  @media screen and (max-width: 650px) {
+    .elucid-page .elucid_banner_ribbon {
+      height: 37px; } }
+  @media screen and (max-width: 768px) {
+    .elucid-page .elucid_banner_ribbon {
+      background-size: 101% 61.5px; } }
+  @media screen and (max-width: 650px) {
+    .elucid-page .elucid_banner_ribbon {
+      background-size: 101% 40px; } }
+.elucid-page .elucid_banner_ribbon {
+  height: 80px;
+  background-size: 101% 83px;
+  background-image: url("../images/svg-divider-below-banner.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  -webkit-transform: translateY(-99%);
+  transform: translateY(-99%);
+  width: 100%; }
+  @media screen and (max-width: 768px) {
+    .elucid-page .elucid_banner_ribbon {
+      height: 58.5px; } }
+  @media screen and (max-width: 650px) {
+    .elucid-page .elucid_banner_ribbon {
+      height: 37px; } }
+  @media screen and (max-width: 768px) {
+    .elucid-page .elucid_banner_ribbon {
+      background-size: 101% 61.5px; } }
+  @media screen and (max-width: 650px) {
+    .elucid-page .elucid_banner_ribbon {
+      background-size: 101% 40px; } }
 
 /*
   Defines the Capabilities page specific styles.
@@ -318,82 +360,197 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           font-weight: 500; }
 
 /*
-  Defines the front page specific styles.
+  Defines the Contract Vehicles page specific styles.
 */
-[data-elucid-page-view-id="frontpage"] {
+[data-elucid-page-path-alias="/contract-vehicles"] {
   font-family: "Open Sans";
-  font-size: 16px; }
-  [data-elucid-page-view-id="frontpage"] h1 {
+  font-size: 16px;
+  color: #1e1e1e; }
+  [data-elucid-page-path-alias="/contract-vehicles"] h1 {
     font-size: 36px;
     font-family: "Open Sans";
     font-weight: 700; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] h1 {
+      [data-elucid-page-path-alias="/contract-vehicles"] h1 {
         font-size: 26px; } }
-  [data-elucid-page-view-id="frontpage"] h2 {
+  [data-elucid-page-path-alias="/contract-vehicles"] h2 {
     font-size: 32px;
     font-family: "Open Sans";
     font-weight: 600; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] h2 {
+      [data-elucid-page-path-alias="/contract-vehicles"] h2 {
         font-size: 22px; } }
-  [data-elucid-page-view-id="frontpage"] h3 {
+  [data-elucid-page-path-alias="/contract-vehicles"] h3 {
     font-size: 28px;
     font-family: "Open Sans";
     font-weight: 600; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] h3 {
+      [data-elucid-page-path-alias="/contract-vehicles"] h3 {
         font-size: 20px; } }
-  [data-elucid-page-view-id="frontpage"] h4 {
+  [data-elucid-page-path-alias="/contract-vehicles"] h4 {
     font-size: 22px;
     font-family: "Open Sans";
     font-weight: 400; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] h4 {
+      [data-elucid-page-path-alias="/contract-vehicles"] h4 {
         font-size: 18px; } }
-  [data-elucid-page-view-id="frontpage"] select {
+  [data-elucid-page-path-alias="/contract-vehicles"] select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: transparent;
     border: none; }
-    [data-elucid-page-view-id="frontpage"] select::-ms-expand {
+    [data-elucid-page-path-alias="/contract-vehicles"] select::-ms-expand {
       display: none; }
-  [data-elucid-page-view-id="frontpage"] .elucid-select {
+  [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select {
     border-bottom: 1px solid #7c7c7c;
     display: inline-block; }
-    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-select {
+    [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select .elucid-select-select {
       display: inline-block; }
-    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-icon {
+    [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select .elucid-select-icon {
       display: inline-block; }
-    [data-elucid-page-view-id="frontpage"] .elucid-select:hover {
+    [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select:hover {
       border-bottom: 2px solid #00adee;
       font-size: 14px; }
-      [data-elucid-page-view-id="frontpage"] .elucid-select:hover .elucid-select-label {
+      [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select:hover .elucid-select-label {
         color: #00adee;
         font-size: 12px; }
-  [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
-    height: 80px;
-    background-size: 101% 83px;
-    background-image: url("../images/svg-divider-below-banner.svg");
-    background-repeat: no-repeat;
-    position: absolute;
-    -webkit-transform: translateY(-99%);
-    transform: translateY(-99%);
-    width: 100%; }
-    @media screen and (max-width: 768px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
-        height: 58.5px; } }
+  [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-intro {
+    padding: 0 40px; }
+  [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    padding-bottom: 40px; }
+    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 8px;
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule {
+      padding: 20px 40px;
+      border-bottom: solid 1px #e5e3e4; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule:last-of-type {
+        border-bottom: none; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo {
+        margin-bottom: 20px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo img {
+          width: 275px; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header {
+        margin-bottom: 10px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 1.4;
+          text-align: left;
+          color: #ff5131; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body {
+        margin-bottom: 20px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body p {
+          margin: 0;
+          padding: 0; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer a {
+        color: #00adee; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer a:after {
+          background-image: url("../images/read-more-icon.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 11px;
+          width: 19px;
+          margin-left: 20px; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer a:hover {
+        color: #1a749d;
+        text-decoration: none; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer a:hover:after {
+          background-image: url("../images/read-more-icon-active.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 11px;
+          width: 19px; }
+
+/*
+  Defines the front page specific styles.
+*/
+[data-elucid-page-view-id="frontpage"],
+[data-elucid-page-path-alias="/capabilities"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  [data-elucid-page-view-id="frontpage"] h1,
+  [data-elucid-page-path-alias="/capabilities"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
-        height: 37px; } }
-    @media screen and (max-width: 768px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
-        background-size: 101% 61.5px; } }
+      [data-elucid-page-view-id="frontpage"] h1,
+      [data-elucid-page-path-alias="/capabilities"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-view-id="frontpage"] h2,
+  [data-elucid-page-path-alias="/capabilities"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_banner_ribbon {
-        background-size: 101% 40px; } }
-  [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+      [data-elucid-page-view-id="frontpage"] h2,
+      [data-elucid-page-path-alias="/capabilities"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-view-id="frontpage"] h3,
+  [data-elucid-page-path-alias="/capabilities"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h3,
+      [data-elucid-page-path-alias="/capabilities"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-view-id="frontpage"] h4,
+  [data-elucid-page-path-alias="/capabilities"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-view-id="frontpage"] h4,
+      [data-elucid-page-path-alias="/capabilities"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-view-id="frontpage"] select,
+  [data-elucid-page-path-alias="/capabilities"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-view-id="frontpage"] select::-ms-expand,
+    [data-elucid-page-path-alias="/capabilities"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-view-id="frontpage"] .elucid-select,
+  [data-elucid-page-path-alias="/capabilities"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-select,
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select .elucid-select-icon,
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-view-id="frontpage"] .elucid-select:hover,
+    [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      [data-elucid-page-view-id="frontpage"] .elucid-select:hover .elucid-select-label,
+      [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
+  [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
     height: 80px;
     background-size: 101% 83px;
     background-image: url("../images/svg-divider-below-capabilities.svg");
@@ -404,17 +561,62 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     width: 100%;
     z-index: 10; }
     @media screen and (max-width: 768px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
+      [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
         height: 58.5px; } }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
+      [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
         height: 37px; } }
     @media screen and (max-width: 768px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
+      [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
         background-size: 101% 61.5px; } }
     @media screen and (max-width: 650px) {
-      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon {
+      [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
+      [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
         background-size: 101% 40px; } }
+
+/*
+  This stylesheet defines styles shared by all banner blocks.
+*/
+[data-elucid-base-plugin-id="banner_block"] .banner_block_banner {
+  height: 315px; }
+  @media screen and (max-width: 650px) {
+    [data-elucid-base-plugin-id="banner_block"] .banner_block_banner {
+      height: 260px; } }
+  [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
+    color: white;
+    font-style: italic;
+    text-transform: uppercase; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
+        min-width: 300px; } }
+    [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+      background-image: url("../images/homepage_banner_title_background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: 600;
+      font-size: 58px;
+      /* min-width: 500px; // fine-tuned to prevent line wrapping. */
+      margin: 0 20px; }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          font-size: 34px; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          margin: 0 10px; } }
+    [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+      font-weight: 300;
+      font-size: 60px;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+          font-size: 38px; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+          letter-spacing: 1.9px; } }
 
 /*
   This stylesheet defines the styling for the
@@ -461,6 +663,31 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       @media screen and (max-width: 650px) {
         #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
           max-width: 67px; } }
+
+/*
+  This stylesheet defines the styles used by
+  the contract vehicles banner block.
+*/
+#block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay {
+  text-align: center; }
+  #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+    display: inline-block;
+    font-size: 38px;
+    width: 100vw;
+    max-width: 430px; }
+    @media screen and (max-width: 650px) {
+      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+        font-size: 30px; } }
+    @media screen and (max-width: 650px) {
+      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+        max-width: 330px; } }
+  #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+    font-size: 30px;
+    width: 100vw;
+    max-width: 570px; }
+    @media screen and (max-width: 650px) {
+      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+        font-size: 32px; } }
 
 /*
   This stylesheet defines the styles for the

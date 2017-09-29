@@ -1,0 +1,25 @@
+/*
+  This stylesheet defines the styles used by
+  the contract vehicles banner block.
+*/
+#block-contract-vehicles-banner-block {
+  .banner_block_banner {
+    .banner_block_banner_overlay {
+      text-align: center;
+      .elucid_banner_header {
+        @include mobile(font-size, 30px);
+        @include mobile(max-width, 330px);
+        display: inline-block;
+        font-size: 38px;
+	width: 100vw;
+        max-width: 430px; // fine-tuned
+      }
+      .elucid_banner_subheader {
+        @include mobile(font-size, 32px);
+        font-size: 30px;
+	width: 100vw; 
+        max-width: 570px; // fine-tuned
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/*
+  This stylesheet defines the styles used by
+  the GSA 8(a) banner block.
+*/
+#block-gsa-8a-banner-block {
+  .banner_block_banner {
+    .banner_block_banner_overlay {
+      .elucid_banner_header {
+        max-width: 360px; // fine-tuned
+      }
+      .elucid_banner_subheader {
+        max-width: 690px; // fine-tuned
+      }
+    }
+  }
+}
+

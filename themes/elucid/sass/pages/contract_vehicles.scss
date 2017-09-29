@@ -30,6 +30,7 @@
         .contract-vehicles-schedule-logo {
           margin-bottom: $margin-med;
           img {
+            @include mobile(width, 200px);
             width: 275px;
           }
         }
@@ -51,21 +52,25 @@
           }
         }
         .contract-vehicles-schedule-footer {
-          a {
-            color: $blue;
-            &:after {
-              @include icon("../images/read-more-icon.svg", 11px, 19px, inline-block);
-              margin-left: $margin-med;
-            }
-          }
-          a:hover {
-            color: $blue-dark;
-            text-decoration: none;
-            &:after {
-              @include icon("../images/read-more-icon-active.svg", 11px, 19px, inline-block);
-            }
+          color: $blue;
+          display: inline-block;
+          padding-right: 30px;
+          position: relative;
+          &:after {
+            @include icon("../images/read-more-icon.svg", 11px, 19px, inline-block);
+            position: absolute;
+            right: 0;
+            top: 5px;
           }
         }
+        .contract-vehicles-schedule-footer:hover {
+          color: $blue-dark;
+          text-decoration: none;
+          &:after {
+            @include icon("../images/read-more-icon-active.svg", 11px, 19px, inline-block);
+          }
+        }
+        
       }
     }
   }

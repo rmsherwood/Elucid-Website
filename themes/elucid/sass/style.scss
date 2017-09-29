@@ -506,6 +506,7 @@ $max-content-width: 1024px;
 @mixin styleguide {
   font-family: $default-font-family;
   font-size: $default-body-font-size;
+  @include mobile(font-size, 14px);
 
   h1 {
     @include h1;

@@ -11,25 +11,31 @@
       @include mobile(min-width, 300px);
       color: white;
       font-style: italic;
+      text-align: center;
       text-transform: uppercase;
       .elucid_banner_header {
-        @include mobile(font-size, 34px);
+        @include mobile(font-size, 30px);
         @include mobile(margin, 0 $margin-small);
+        @include mobile(max-width, 330px);
         background-image: url('../images/homepage_banner_title_background.svg');
         background-repeat: no-repeat;
         background-size: cover;
+        display: inline-block;
         font-weight: 600;
-        font-size: 58px;
-        /* min-width: 500px; // fine-tuned to prevent line wrapping. */
-        margin: 0 $margin-med;
+        font-size: 38px;
+        margin: 0 $margin-med $margin-med;
+        max-width: 430px; // fine-tuned
+	width: 100vw;
       }
       .elucid_banner_subheader {
-        @include mobile(font-size, 38px);
+        @include mobile(font-size, 32px);
         @include mobile(letter-spacing, 1.9px);
         font-weight: 300;
-        font-size: 60px;
+        font-size: 30px;
         letter-spacing: 3px;
+        max-width: 570px; // fine-tuned
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	width: 100vw; 
       }
     }
   }

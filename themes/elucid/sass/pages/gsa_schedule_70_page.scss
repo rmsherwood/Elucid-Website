@@ -1,0 +1,65 @@
+/*
+  This stylesheet defines styles applied
+  specifically to the GSA Schedule 70 contract
+  page.
+*/
+[data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] {
+  @include styleguide;
+
+  .schedule {
+    a {
+      @include a;
+    }
+    h2 {
+      color: $red;
+      font-size: 22px;
+      font-weight: 400;
+    }
+    .schedule-intro {
+      margin-bottom: 30px;
+    }
+    .schedule-contracts {
+      margin-bottom: 30px;
+      a {
+        &:before {
+          @include icon("../images/download-icon.svg", 20px, 20px, inline-block);
+          margin-right: $margin-small;
+        }
+      }
+      a:hover {
+        color: $blue-dark;
+        text-decoration: none;
+        &:before {
+          @include icon("../images/download-icon-active.svg", 20px, 20px, inline-block);
+        }
+      }
+    }
+    .schedule-gwac {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+      &:before {
+        @include gradient-bar(8px);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+      .schedule-gwac-content {
+        padding: 18px 28px 20px;
+        a {
+          color: $blue;
+          &:after {
+            @include icon("../images/read-more-icon.svg", 11px, 19px, inline-block);
+            margin-left: $margin-med;
+          }
+        }
+        a:hover {
+          color: $blue-dark;
+          text-decoration: none;
+          &:after {
+            @include icon("../images/read-more-icon-active.svg", 11px, 19px, inline-block);
+          }
+        }
+      }
+    }
+  }
+}

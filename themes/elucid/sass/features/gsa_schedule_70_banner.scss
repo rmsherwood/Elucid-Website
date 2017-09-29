@@ -1,15 +1,15 @@
 /*
   This stylesheet defines the styles used by
-  the contract vehicles banner block.
+  the GSA Schedule 70 banner block.
 */
-#block-contract-vehicles-banner-block {
+#block-gsa-schedule-70-banner-block {
   .banner_block_banner {
     .banner_block_banner_overlay {
       .elucid_banner_header {
-        max-width: 430px; // fine-tuned
+        max-width: 360px; // fine-tuned
       }
       .elucid_banner_subheader {
-        max-width: 570px; // fine-tuned
+        max-width: 915px; // fine-tuned
       }
     }
   }

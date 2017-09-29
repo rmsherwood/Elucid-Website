@@ -578,6 +578,260 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-size: 101% 40px; } }
 
 /*
+  This stylesheet defines styles applied
+  specifically to the GSA Schedule 70 contract
+  page.
+*/
+[data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule a {
+    color: #00adee; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule a:hover {
+      text-decoration: underline; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule h2 {
+    color: #ff5131;
+    font-size: 22px;
+    font-weight: 400; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-intro {
+    margin-bottom: 30px; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-contracts {
+    margin-bottom: 30px; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-contracts a:before {
+      background-image: url("../images/download-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin-right: 10px; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-contracts a:hover {
+      color: #1a749d;
+      text-decoration: none; }
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-contracts a:hover:before {
+        background-image: url("../images/download-icon-active.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        width: 20px; }
+  [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15); }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 8px;
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac .schedule-gwac-content {
+      padding: 18px 28px 20px; }
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac .schedule-gwac-content a {
+        color: #00adee; }
+        [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac .schedule-gwac-content a:after {
+          background-image: url("../images/read-more-icon.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 11px;
+          width: 19px;
+          margin-left: 20px; }
+      [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac .schedule-gwac-content a:hover {
+        color: #1a749d;
+        text-decoration: none; }
+        [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .schedule .schedule-gwac .schedule-gwac-content a:hover:after {
+          background-image: url("../images/read-more-icon-active.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 11px;
+          width: 19px; }
+
+/*
+  This stylesheet defines styles applied
+  specifically to the NITAAC contract page.
+*/
+[data-elucid-page-path-alias="/contract-vehicles/nitaac"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select:hover {
+      border-bottom: 2px solid #00adee;
+      font-size: 14px; }
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select:hover .elucid-select-label {
+        color: #00adee;
+        font-size: 12px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac a {
+    color: #00adee; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac a:hover {
+      text-decoration: underline; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac h2 {
+    color: #ff5131;
+    font-size: 22px;
+    font-weight: 400; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac ul {
+    margin: 0;
+    padding: 0; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac ul li {
+      list-style: none; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-intro {
+    margin-bottom: 30px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-summary {
+    margin-bottom: 30px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-areas {
+    margin-bottom: 20px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-manager {
+    margin-bottom: 30px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-contracts {
+    line-height: 40px;
+    margin-bottom: 30px; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-contracts ul {
+      margin-bottom: 40px; }
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-contracts ul a:before {
+        background-image: url("../images/download-icon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px; }
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-contracts ul a:hover {
+        color: #1a749d;
+        text-decoration: none; }
+        [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-contracts ul a:hover:before {
+          background-image: url("../images/download-icon-active.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 20px;
+          width: 20px; }
+  [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-categories {
+    margin-bottom: 40px; }
+    [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-categories ul {
+      line-height: 40px; }
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-categories ul a:before {
+        background-image: url("../images/download-icon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px; }
+      [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-categories ul a:hover {
+        color: #1a749d;
+        text-decoration: none; }
+        [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .nitaac .nitaac-categories ul a:hover:before {
+          background-image: url("../images/download-icon-active.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 20px;
+          width: 20px; }
+
+/*
   This stylesheet defines styles shared by all banner blocks.
 */
 [data-elucid-base-plugin-id="banner_block"] .banner_block_banner {
@@ -588,6 +842,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
     color: white;
     font-style: italic;
+    text-align: center;
     text-transform: uppercase; }
     @media screen and (max-width: 650px) {
       [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
@@ -596,24 +851,31 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       background-image: url("../images/homepage_banner_title_background.svg");
       background-repeat: no-repeat;
       background-size: cover;
+      display: inline-block;
       font-weight: 600;
-      font-size: 58px;
-      /* min-width: 500px; // fine-tuned to prevent line wrapping. */
-      margin: 0 20px; }
+      font-size: 38px;
+      margin: 0 20px 20px;
+      max-width: 430px;
+      width: 100vw; }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-          font-size: 34px; } }
+          font-size: 30px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
           margin: 0 10px; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          max-width: 330px; } }
     [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
       font-weight: 300;
-      font-size: 60px;
+      font-size: 30px;
       letter-spacing: 3px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
+      max-width: 570px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      width: 100vw; }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-          font-size: 38px; } }
+          font-size: 32px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
           letter-spacing: 1.9px; } }
@@ -668,26 +930,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   This stylesheet defines the styles used by
   the contract vehicles banner block.
 */
-#block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay {
-  text-align: center; }
-  #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-    display: inline-block;
-    font-size: 38px;
-    width: 100vw;
-    max-width: 430px; }
-    @media screen and (max-width: 650px) {
-      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-        font-size: 30px; } }
-    @media screen and (max-width: 650px) {
-      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-        max-width: 330px; } }
-  #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-    font-size: 30px;
-    width: 100vw;
-    max-width: 570px; }
-    @media screen and (max-width: 650px) {
-      #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-        font-size: 32px; } }
+#block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+  max-width: 430px; }
+#block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+  max-width: 570px; }
 
 /*
   This stylesheet defines the styles for the
@@ -781,6 +1027,15 @@ footer {
           @media screen and (max-width: 768px) {
             footer .footer_content .footer_bottom .footer_bottom_right .credits {
               text-align: center; } }
+
+/*
+  This stylesheet defines the styles used by
+  the GSA Schedule 70 banner block.
+*/
+#block-gsa-schedule-70-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+  max-width: 360px; }
+#block-gsa-schedule-70-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+  max-width: 915px; }
 
 /*
   Defines the default styles for the header.

@@ -1,0 +1,75 @@
+/*
+  This stylesheet defines styles applied
+  specifically to the NITAAC contract page.
+*/
+[data-elucid-page-path-alias="/contract-vehicles/nitaac"] {
+  @include styleguide;
+
+  .nitaac {
+    a {
+      @include a;
+    }
+    h2 {
+      color: $red;
+      font-size: 22px;
+      font-weight: 400;
+    }
+    ul {
+      @include strip-margins;
+      li {
+        list-style: none;
+      }
+    }
+    .nitaac-intro {
+      margin-bottom: 30px;
+    }
+    .nitaac-summary {
+      margin-bottom: 30px;
+    }
+    .nitaac-areas {
+      margin-bottom: 20px;
+    }
+    .nitaac-manager {
+      margin-bottom: 30px;
+    }
+    .nitaac-contracts {
+      line-height: $margin-large;
+      margin-bottom: 30px;
+      ul {
+        margin-bottom: $margin-large;
+        a {
+          &:before {
+            @include icon("../images/download-icon.svg", 20px, 20px, inline-block);
+            margin-right: $margin-small;
+          }
+        }
+        a:hover {
+          color: $blue-dark;
+          text-decoration: none;
+          &:before {
+            @include icon("../images/download-icon-active.svg", 20px, 20px, inline-block);
+          }
+        }
+      }
+    }
+    .nitaac-categories {
+      margin-bottom: $margin-large;
+      ul {
+        line-height: $margin-large;
+        a {
+          &:before {
+            @include icon("../images/download-icon.svg", 20px, 20px, inline-block);
+            margin-right: $margin-small;
+          }
+        }
+        a:hover {
+          color: $blue-dark;
+          text-decoration: none;
+          &:before {
+            @include icon("../images/download-icon-active.svg", 20px, 20px, inline-block);
+          }
+        }
+      }
+    }
+  }
+}

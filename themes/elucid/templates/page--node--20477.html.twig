@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display the Contract Vehicles page.
+ * Theme override to display the NITAAC Contract page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template in this directory.
@@ -84,10 +84,11 @@
   {{ page.help }}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    {{ drupal_block ('contract_vehicles_banner_block') }}
+    {{ drupal_block ('nitaac_banner_block') }}
     <div class="elucid_banner_ribbon"></div>
     <div class="layout-padded-content elucid-page-content">
       {{ page.content }}
+      {{ drupal_block ('ratetableblock') }}
     </div>{# /.layout-content #}
   </main>
   <footer role="contentinfo">

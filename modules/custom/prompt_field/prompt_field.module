@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Defines the Prompt field type.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function prompt_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.prompt_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Prompt field type is used to insert custom HTML into forms. This HTML can represent instructions and other guidance to users who are filling out these forms.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function prompt_field_field_formatter_info_alter(&$info) {
+  $info['string']['field_types'][] = 'prompt_field';
+}

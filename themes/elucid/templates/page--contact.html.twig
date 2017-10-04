@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a single page.
+ * Theme override to display the Contact Us page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template in this directory.
@@ -60,7 +60,7 @@
           <div id="region-header-right-top-background"></div>
           <div class="region-header-right-top">
             <div class="elucid-sign-in">
-              <a class="elucid-sign-in-link" href="{{url}}/user"><div class="elucid-sign-in-icon"><img class="inlinesvg elucid-sign-in-icon-image" src="{{ base_path ~ directory }}/images/sign-in-icon.svg"></img></div>Sign In</a>
+              <a class="elucid-sign-in-link" href="{{url}}/user"><div class="elucid-sign-in-icon"><img class="elucid-sign-in-icon-image" src="{{ base_path ~ directory }}/images/sign-in-icon.svg"></img></div>Sign In</a>
             </div>
           </div>
           <div class="region-header-right-bottom">
@@ -84,13 +84,19 @@
   {{ page.help }}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    {{ drupal_block ('homepage_banner_block') }}
+    {{ drupal_block ('contact_us_banner_block') }}
     <div class="elucid_banner_ribbon"></div>
     <div class="layout-padded-content elucid-page-content">
-      {{ page.content }}
+      <p class="elucid-page-intro">Please fill out the form to get in touch with us.</p>
+      <div class="elucid-page-content-wrapper">
+        <div class="elucid-page-content-left">
+          {{ page.content }}
+        </div>
+        <div class="elucid-page-content-right">
+          {{ drupal_block ('contactusinformation') }}
+        </div>
+      </div>
     </div>{# /.layout-content #}
-    <div class="elucid_clients_ribbon"></div>
-    {{ drupal_block ('ourclients') }}
     <div class="elucid_contact_ribbon"></div>
     {{ drupal_block ('contactusblock') }}
   </main>
@@ -122,3 +128,4 @@
     </div>
   </footer>
 </div>{# /.layout-container #}
+

@@ -1,0 +1,108 @@
+/*
+  Define the Search page specific styles.
+*/
+[data-elucid-page-path-alias="/search/node"] {
+  details {
+    display: none;
+  }
+  .form-item-keys {
+    label {
+      display: none;
+    }
+  }
+  .search-help-link {
+    display: none;
+  }
+  .elucid-page-content {
+    h1 {
+      @include mobile(font-size, 24px);
+      color: $blue-dark;
+      font-size: 36px;
+      font-weight: bold;
+    }
+    [data-elucid-plugin-id="system_main_block"] {
+      margin-bottom: 80px;
+
+      h2 {
+        color: $red;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 30px 0 $margin-med;
+        text-transform: uppercase;
+      }
+      ol {
+        @include strip-margins;
+        counter-reset: search_interface 0;
+        margin-left: 30px;
+        li {
+          list-style-type: none;
+          list-style-image: none;
+          position: relative;
+          margin-bottom: 30px;
+          padding-left: 20px;
+          min-height: 2em;
+          border-left: 2px solid #cccccc;
+          &:before {
+            position: absolute;
+            top: 0;
+            left: -2em;
+            width: 0.8em;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: bold;
+            text-align: right;
+            color: $red;
+            content: counter(search_interface);
+            counter-increment: search_interface;
+          }
+          h3 {
+            color: $blue;
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+      #search-form {
+        background-color: transparent;
+        display: table;
+
+        .container-inline {
+          display: table-row;
+          height: 35px;
+
+          .form-item {
+            background-color: white;
+            border-bottom-left-radius: 2px;
+            border-bottom: solid 1px #d0d0d0;
+            border-left: solid 1px #d0d0d0;
+            border-top-left-radius: 2px;
+            border-top: solid 1px #d0d0d0;
+            display: table-cell;
+            height: 100%;
+
+            input.form-search {
+              border: none;
+              font-size: rem(12px);
+              outline: none;
+              width: 95%;
+              margin: 3px 0 3px 10px;
+            }
+          }
+          input.form-submit {
+            background: url('../images/search-white-icon.svg') no-repeat 50% 50%;
+            background-color: $blue;
+            border-bottom-right-radius: 2px;
+            border: none;
+            border-top-right-radius: 2px;
+            color: transparent;
+            display: table-cell;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
+}

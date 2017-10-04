@@ -1,0 +1,7 @@
+name: Prompt Field
+type: module     
+description: 'Defines the Prompt field type which is used to add custom HTML to forms.'
+package: Elucid Solutions
+core: 8.x
+dependencies: 
+  - field 

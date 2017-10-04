@@ -5,48 +5,51 @@
 */
 [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] {
   @include styleguide;
-  .page-content {
-    a {
-      @include a;
-    }
-    h2 {
-      color: $red;
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: $margin-med;
-    }
-    li {
-      list-style: none;
-    }
-    ul {
-      padding-left: 0;
-      margin-left: 0;
-    }
-    .intro {
+  .elucid-page-content {
+    padding-bottom: 80px;
+    .page-content {
+      a {
+        @include a;
+      }
+      h2 {
+        color: $red;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: $margin-med;
+      }
       li {
-        line-height: $margin-large;
         list-style: none;
-        padding-left: 30px;
-        position: relative;
-        &:before {
-          @include icon("../images/check-circle-icon.svg", 20px, 20px, inline-block);
-          left: 0;
-          position: absolute;
-          top: 10px;
+      }
+      ul {
+        padding-left: 0;
+        margin-left: 0;
+      }
+      .intro {
+        li {
+          line-height: $margin-large;
+          list-style: none;
+          padding-left: 30px;
+          position: relative;
+          &:before {
+            @include icon("../images/check-circle-icon.svg", 20px, 20px, inline-block);
+            left: 0;
+            position: absolute;
+            top: 10px;
+          }
         }
       }
-    }
-    .benefits {
-      li {
-        list-style: none;
-        line-height: $margin-large;
-        padding-left: 30px;
-        position: relative;
-        &:before {
-          @include icon("../images/check-circle-icon.svg", 20px, 20px, inline-block);
-          left: 0;
-          position: absolute;
-          top: 10px;
+      .benefits {
+        li {
+          list-style: none;
+          line-height: $margin-large;
+          padding-left: 30px;
+          position: relative;
+          &:before {
+            @include icon("../images/check-circle-icon.svg", 20px, 20px, inline-block);
+            left: 0;
+            position: absolute;
+            top: 10px;
+          }
         }
       }
     }

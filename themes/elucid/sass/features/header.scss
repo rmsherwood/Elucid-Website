@@ -68,13 +68,16 @@ header {
             .elucid-sign-in-link {
               color: #1c7294;
               font-size: 12px;
+              padding-left: $margin-med;
+              position: relative;
               text-transform: uppercase;
               .elucid-sign-in-icon {
                 color: #1c7294;
                 display: inline-block;
+                left: 0;
                 line-height: 0px;
                 margin-right: $margin-xsmall;
-                margin-top: -2px; // fine-tuned to center with text.
+                top: $margin-xsmall;
                 vertical-align: middle;
               }
               &:hover {
@@ -301,9 +304,12 @@ header {
           }
         }
         .header_menu_sign_in_link {
+          padding-left: $margin-med;
+          position: relative;
           &:before {
             @include icon("../images/sign-in-icon-gray.svg", 12px, 12px, inline-block);
-            margin-right: $margin-xsmall;
+            left: 0;
+            top: $margin-xsmall;
           }
         }
         .header_menu_sign_in_link:hover {
@@ -312,9 +318,12 @@ header {
           }
         }
         .header_menu_sign_out_link {
+          padding-left: $margin-med;
+          position: relative;
           &:before {
             @include icon("../images/sign-in-icon-gray.svg", 12px, 12px, inline-block);
-            margin-right: $margin-xsmall;
+            left: 0;
+            top: $margin-xsmall;
           }
         }
         .header_menu_sign_out_link:hover {

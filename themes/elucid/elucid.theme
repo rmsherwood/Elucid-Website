@@ -46,3 +46,10 @@ function elucid_preprocess_page (&$variables) {
     $variables ['elucid_view_id'] = $parameters->get ('view_id');
   }
 }
+
+/**
+ *  Implements hook_form_FORM_ID_alter ().
+ */
+function elucid_form_contact_message_feedback_form_alter (&$form, &$form_state, $form_id) {
+  $form ['actions']['submit']['#value'] = 'Send';
+}

@@ -1,0 +1,57 @@
+/*
+  This stylesheet defines custom styles for
+  textfield form elements.
+*/
+.elucid_textfield {
+  color: $gray;
+  font-size: 14px;
+  position: relative;
+  padding-top: 20px;
+  label {
+    @include strip-margins;
+    position: absolute;
+    transition: all .125s linear;
+    top: 20px;
+    &:after {
+      background-image: none;
+      color: $gray;
+      content: '*';
+      vertical-align: baseline;
+    }
+  }
+  input,textarea {
+    @include strip-margins;
+    border: none;
+    border-bottom: 1px solid #979797;
+    outline: none;
+    box-shadow: none;
+
+    &:-moz-ui-invalid {
+      border-bottom-color: $red;
+      border-bottom-width: 2px;
+      box-shadow: none;
+    }
+  }
+  &.elucid_active {
+    label {
+      color: $blue;
+      font-size: 10px;
+      top: 5px;
+      &:after {
+        color: $blue;
+      }
+    }
+    input,textarea {
+      border-bottom-color: $blue;
+      border-bottom-width: 2px;
+    }
+  }
+  &.elucid_invalid:not(.elucid_active) {
+    label {
+      color: $red;
+      &:after {
+        color: $red;
+      }
+    }
+  }
+}

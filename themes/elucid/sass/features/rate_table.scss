@@ -79,34 +79,71 @@
       .rate_table_filter {
         @include mobile(width, 100%);
         @include mobile(margin-bottom, $margin-small);
+        color: $gray;
+        display: inline-block;
+        font-size: 14px;
+        position: relative;
+        padding-top: 30px;
+        vertical-align: bottom;
         width: $input-width;
         .rate_table_filter_icon {
-          margin: 15px 0 10px 15px;
+          position: absolute;
+          right: 0;
+          bottom: 10px;
         }
-        .mdc-textfield__label {
-          bottom: 0; // override default placement.
+        label {
+          @include strip-margins;
+          position: absolute;
+          transition: all .125s linear;
+          top: 20px;
+          &:after {
+            background-image: none;
+            color: $gray;
+            content: '*';
+            vertical-align: baseline;
+          }
         }
-        .mdc-textfield__input {
-          color: $gray;
-          font-family: $default-font-family;
-          padding-bottom: 14px;
+        input {
+          @include strip-margins;
+          border: none;
+          border-bottom: 1px solid #979797;
+          outline: none;
+          box-shadow: none;
+          width: 100%;
+
+          &:-moz-ui-invalid {
+            border-bottom-color: $red;
+            border-bottom-width: 2px;
+            box-shadow: none;
+          }
         }
-        &.mdc-textfield--focused {
-          .mdc-textfield__label {
+        &.rate_table_active {
+          label {
             color: $blue;
+            font-size: 10px;
+            top: 0;
+            &:after {
+              color: $blue;
+            }
+          }
+          input {
+            border-bottom-color: $blue;
+            border-bottom-width: 2px;
           }
           .rate_table_filter_icon {
             path {
               fill: $blue;
             }
           }
-          &:after {
-            background-color: $blue;
+        }
+        &.elucid_invalid:not(.rate_table_active) {
+          label {
+            color: $red;
+            &:after {
+              color: $red;
+            }
           }
         }
-      }
-      .mdc-select {
-        color: $gray;
       }
       .rate_table_num {
         @include at-breakpoint(700px, display, block);
@@ -114,6 +151,7 @@
         color: $gray;
         margin-left: $margin-med;
         display: inline-block;
+
         .rate_table_num_label {
           display: block;
           font-size: $input-label-font-size;
@@ -126,6 +164,7 @@
           padding-bottom: 7px; // fine-tuned to align bottom borders.
           position: relative;
           width: $input-width;
+
           .rate_table_num_select_select {
             width: 100%;
           }

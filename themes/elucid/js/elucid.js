@@ -11,7 +11,7 @@
 
     // Initialize the material design component elements.
     // Note: this roundabout method is forced on us by IE9.
-    typeof mdc === "undefined" || mdc.autoInit ();
+    // typeof mdc === "undefined" || mdc.autoInit ();
   }
 
   /*

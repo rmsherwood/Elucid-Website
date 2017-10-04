@@ -7,12 +7,14 @@
   .banner_block_banner {
     @include mobile(height, $banner_block_mobile_height);
     height: $banner_block_height;
+    text-align: center;
     .banner_block_banner_overlay {
       @include mobile(min-width, 300px);
       color: white;
+      display: inline-block;
       font-style: italic;
-      text-align: center;
       text-transform: uppercase;
+      margin-top: 70px; // fine-tuned vertical centering.
       .elucid_banner_header {
         @include mobile(font-size, 30px);
         @include mobile(margin, 0 $margin-small);

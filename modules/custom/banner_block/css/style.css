@@ -8,10 +8,10 @@
   background-size: cover;
   position: relative; }
   .banner_block .banner_block_banner .banner_block_banner_overlay {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    position: absolute;
-    top: 50%; }
-
-/*# sourceMappingURL=style.css.map */
+    /*
+          -webkit-transform: translate(-50%, -50%);
+          transform: translateX(-50%) translateY(-50%);
+          left: 50%;
+          position: absolute;
+          top: 50%;
+    */ }

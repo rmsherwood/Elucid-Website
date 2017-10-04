@@ -1,0 +1,10 @@
+/*
+  Defines the stylesheets applied to the user
+  pages.
+*/
+[data-elucid-page-path-alias="/user/login"],
+[data-elucid-page-path-alias="/user/*"] {
+  .elucid-page-content {
+    margin-bottom: 80px;
+  }
+}

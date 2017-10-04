@@ -46,6 +46,12 @@
             #edit-preview {
               display: none;
             }
+            .elucid_textfield.elucid_active {
+              @include mobile(padding-top, 30px);
+              label {
+                @include mobile(top, 0px); // necessary to prevent overlap with input.
+              }
+            }
           }
           margin-bottom: $margin-large;
         }

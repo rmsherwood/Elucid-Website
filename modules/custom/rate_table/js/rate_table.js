@@ -190,6 +190,14 @@
   var featureClassName = 'rate_table';
 
   /*
+  */
+  var ACTIVE   = 'active';
+  var INACTIVE = 'inactive';
+
+  // 
+  var activeClassName = 'rate_table_active';
+
+  /*
     Accepts one argument: featureElement, a
     jQuery HTML Element that represents a table
     feature; and returns a Table element that
@@ -207,6 +215,7 @@
     this.offsiteTabElement      = this.getOffsiteTabElement ();
     this.onsiteTabElement       = this.getOnsiteTabElement ();
     this.numSelectElement       = this.getNumSelectElement ();
+    this.filterElement          = this.getFilterElement ();
     this.filterInputElement     = this.getFilterInputElement ();
     this.tableBodyElement       = this.getTableBodyElement ();
     this.paginationLinksElement = this.getPaginationLinksElement ();
@@ -277,6 +286,48 @@
       var query = inputElement.val ();
       self.setQuery (query.trim ());
     });
+    this.setFilterInputElementState ();
+    inputElement.focusin (function () {
+      self.activateFilterInputElement ();
+    });
+    inputElement.focusout (function () {
+      self.setFilterInputElementState ();
+    });
+    inputElement.change (function () {
+      self.setFilterInputElementState ();
+    });
+    inputElement.get (0).addEventListener ('invalid', function () {
+      self.filterElement.addClass (invalidClassName);
+    });
+    inputElement.get (0).addEventListener ('valid', function () {
+      self.filterElement.removeClass (invalidClassName);
+    });
+  }
+
+  /*
+  */
+  Feature.prototype.setFilterInputElementState = function () {
+    this.filterInputElement.val () ?
+      this.activateFilterInputElement   ():
+      this.deactivateFilterInputElement ();
+  }
+
+  /*
+  */
+  Feature.prototype.activateFilterInputElement = function () {
+    if (this.filterInputElementState === ACTIVE) { return; }
+
+    this.filterInputElementState = ACTIVE;
+    this.filterElement.addClass (activeClassName);
+  }
+
+  /*
+  */
+  Feature.prototype.deactivateFilterInputElement = function () {
+    if (this.filterInputElementState === INACTIVE) { return; }
+
+    this.filterInputElementState = INACTIVE;
+    this.filterElement.removeClass (activeClassName);
   }
 
   // Initializes the column headers.
@@ -815,6 +866,12 @@
   }
 
   /*
+  */
+  Feature.prototype.getFilterElement = function () {
+    return $('.' + filterClassName, this.featureElement);
+  }
+
+  /*
     Accepts no arguments and returs the table
     body element.
   */
@@ -851,6 +908,9 @@
 
   // Returns the filter input element class name.
   var filterInputClassName = 'rate_table_filter_input';
+
+  //
+  var filterClassName = 'rate_table_filter';
 
   // Returns the pagination first element class name.
   var paginationFirstClassName = 'rate_table_pagination_first';

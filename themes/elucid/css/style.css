@@ -470,6 +470,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
                 background-color: #b9e4ef; }
             [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
               display: none; }
+            @media screen and (max-width: 650px) {
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
+                padding-top: 30px; } }
+            @media screen and (max-width: 650px) {
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
+                top: 0px; } }
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
         display: table-cell;
         padding-left: 20px;
@@ -1263,18 +1269,28 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         width: 32px; }
 
 /*
+  Defines the stylesheets applied to the user
+  pages.
+*/
+[data-elucid-page-path-alias="/user/login"] .elucid-page-content,
+[data-elucid-page-path-alias="/user/*"] .elucid-page-content {
+  margin-bottom: 80px; }
+
+/*
   This stylesheet defines styles shared by all banner blocks.
 */
 [data-elucid-base-plugin-id="banner_block"] .banner_block_banner {
-  height: 315px; }
+  height: 315px;
+  text-align: center; }
   @media screen and (max-width: 650px) {
     [data-elucid-base-plugin-id="banner_block"] .banner_block_banner {
       height: 260px; } }
   [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
     color: white;
+    display: inline-block;
     font-style: italic;
-    text-align: center;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-top: 70px; }
     @media screen and (max-width: 650px) {
       [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
         min-width: 300px; } }
@@ -2105,6 +2121,12 @@ header {
         .rate_table .rate_table_body .rate_table_body_filter_section {
           padding: 0 20px; } }
       .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
+        color: #7c7c7c;
+        display: inline-block;
+        font-size: 14px;
+        position: relative;
+        padding-top: 30px;
+        vertical-align: bottom;
         width: 260px; }
         @media screen and (max-width: 650px) {
           .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
@@ -2113,21 +2135,47 @@ header {
           .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter {
             margin-bottom: 10px; } }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .rate_table_filter_icon {
-          margin: 15px 0 10px 15px; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .mdc-textfield__label {
-          bottom: 0; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter .mdc-textfield__input {
-          color: #7c7c7c;
-          font-family: "Open Sans";
-          padding-bottom: 14px; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused .mdc-textfield__label {
-          color: #00adee; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused .rate_table_filter_icon path {
+          position: absolute;
+          right: 0;
+          bottom: 10px; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter label {
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          transition: all .125s linear;
+          top: 20px; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter label:after {
+            background-image: none;
+            color: #7c7c7c;
+            content: '*';
+            vertical-align: baseline; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter input {
+          margin: 0;
+          padding: 0;
+          border: none;
+          border-bottom: 1px solid #979797;
+          outline: none;
+          box-shadow: none;
+          width: 100%; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter input:-moz-ui-invalid {
+            border-bottom-color: #ff5131;
+            border-bottom-width: 2px;
+            box-shadow: none; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label {
+          color: #00adee;
+          font-size: 10px;
+          top: 0; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label:after {
+            color: #00adee; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active input {
+          border-bottom-color: #00adee;
+          border-bottom-width: 2px; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active .rate_table_filter_icon path {
           fill: #00adee; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.mdc-textfield--focused:after {
-          background-color: #00adee; }
-      .rate_table .rate_table_body .rate_table_body_filter_section .mdc-select {
-        color: #7c7c7c; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label {
+          color: #ff5131; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label:after {
+            color: #ff5131; }
       .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num {
         color: #7c7c7c;
         margin-left: 20px;

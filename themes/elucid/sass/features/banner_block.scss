@@ -14,11 +14,13 @@
       display: inline-block;
       font-style: italic;
       text-transform: uppercase;
+      letter-spacing: 1px;
       margin-top: 70px; // fine-tuned vertical centering.
       .elucid_banner_header {
         @include mobile(font-size, 30px);
-        @include mobile(margin, 0 $margin-small);
+        @include mobile(margin, 0 $margin-small $margin-small);
         @include mobile(max-width, 330px);
+        @include mobile(line-height, 40px);
         background-image: url('../images/homepage_banner_title_background.svg');
         background-repeat: no-repeat;
         background-size: cover;

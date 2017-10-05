@@ -16,13 +16,15 @@
       text-transform: uppercase;
       .elucid_banner_header {
         @include mobile(font-size, 34px);
+        @include mobile(padding, 0 10px 0 5px);
+        @include mobile(max-width, 295px);
         background-image: url('../images/homepage_banner_title_background.svg');
         background-repeat: no-repeat;
         background-size: cover;
         font-weight: 600;
         font-size: 58px;
         max-width: 500px;
-        padding: 0 $margin-med;
+        padding: 0 20px 0 10px;
       }
       .elucid_banner_subheader {
         @include mobile(font-size, 38px);

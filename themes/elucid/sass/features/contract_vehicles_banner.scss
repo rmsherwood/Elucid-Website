@@ -6,6 +6,7 @@
   .banner_block_banner {
     .banner_block_banner_overlay {
       .elucid_banner_header {
+        @include mobile(max-width, 350px);
         max-width: 430px; // fine-tuned
       }
       .elucid_banner_subheader {

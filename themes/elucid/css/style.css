@@ -1280,6 +1280,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     display: inline-block;
     font-style: italic;
     text-transform: uppercase;
+    letter-spacing: 1px;
     margin-top: 70px; }
     @media screen and (max-width: 650px) {
       [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay {
@@ -1299,10 +1300,13 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           font-size: 30px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-          margin: 0 10px; } }
+          margin: 0 10px 10px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
           max-width: 330px; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          line-height: 40px; } }
     [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
       font-weight: 300;
       font-size: 30px;
@@ -1411,6 +1415,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 */
 #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
   max-width: 430px; }
+  @media screen and (max-width: 650px) {
+    #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+      max-width: 350px; } }
 #block-contract-vehicles-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
   max-width: 570px; }
 
@@ -1933,10 +1940,16 @@ header {
       font-weight: 600;
       font-size: 58px;
       max-width: 500px;
-      padding: 0 20px; }
+      padding: 0 20px 0 10px; }
       @media screen and (max-width: 650px) {
         #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
           font-size: 34px; } }
+      @media screen and (max-width: 650px) {
+        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          padding: 0 10px 0 5px; } }
+      @media screen and (max-width: 650px) {
+        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          max-width: 295px; } }
     #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
       font-weight: 300;
       font-size: 60px;

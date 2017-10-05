@@ -13,3 +13,7 @@ regions:
   footer: Footer
   # Note: the Template region contains those blocks that are enabled and positioned programmatically within templates.
   template: Template
+conditional-stylesheets:
+  IE 9:
+    all:
+      css/ie9-and-below.css

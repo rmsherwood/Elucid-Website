@@ -129,18 +129,18 @@ header {
   #header_search_toggle_button {
     $header_search_toggle_button_height: 18px;
     background-size: $header_search_toggle_button_height;
-    background: url("../images/search-icon.svg") no-repeat;
+    background: url("../images/search-icon.svg") no-repeat 50% 50%;
     cursor: pointer;
-    float: right;
+    display: table-cell;
     height: $header_search_toggle_button_height;
     margin-top: $margin-xsmall;
     transition: background-image 0.25s;
     width: $header_search_toggle_button_height;
     &:hover {
-      background: url("../images/search-icon-selected.svg") no-repeat;
+      background: url("../images/search-icon-selected.svg") no-repeat 50% 50%;
     }
     &.search_dropdown_active {
-      background: url("../images/search-white-icon.svg") no-repeat;
+      background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
     }
   }
 }

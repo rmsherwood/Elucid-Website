@@ -220,7 +220,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   background-image: linear-gradient(to left, #72caf2, #00adee);
   background-image: linear-gradient(to left, #72caf2, #00adee); }
 .elucid-page .elucid-page-content {
-  padding-top: 20px; }
+  padding-top: 20px;
+  margin-bottom: 100px; }
 .elucid-page .elucid_banner_ribbon {
   height: 80px;
   background-size: 101% 83px;
@@ -337,8 +338,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       max-width: 350px;
       padding: 5px 25px 5px 20px; }
   [data-elucid-page-path-alias="/capabilities"] .capability_list {
-    display: table;
-    margin-bottom: 80px; }
+    display: table; }
     [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item {
       display: table-row; }
       [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon {
@@ -419,123 +419,121 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-select:hover .elucid-select-label {
         color: #00adee;
         font-size: 12px; }
-  [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content {
-    margin-bottom: 80px; }
-    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield input, [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield textarea {
-      width: 100%; }
-    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
-      display: table-row; }
+  [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield input, [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield textarea {
+    width: 100%; }
+  [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
+    display: table-row; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
+        display: block; } }
+    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
+      display: table-cell;
+      vertical-align: top; }
       @media screen and (max-width: 650px) {
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
           display: block; } }
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
-        display: table-cell;
-        vertical-align: top; }
-        @media screen and (max-width: 650px) {
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
-            display: block; } }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] {
-          border-bottom-left-radius: 4px;
-          border-bottom-right-radius: 4px;
-          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-          margin-bottom: 40px; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"]:before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 8px;
-            background-image: linear-gradient(to left, #72caf2, #00adee);
-            background-image: linear-gradient(to left, #72caf2, #00adee);
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form {
-            padding: 40px; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form h2 {
-              color: #ff5131;
-              font-size: 22px;
-              font-weight: 500; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit {
-              border: none;
-              border-radius: 2px;
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 40px; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"]:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 8px;
+          background-image: linear-gradient(to left, #72caf2, #00adee);
+          background-image: linear-gradient(to left, #72caf2, #00adee);
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form {
+          padding: 40px; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form h2 {
+            color: #ff5131;
+            font-size: 22px;
+            font-weight: 500; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit {
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+            color: white;
+            font-weight: bold;
+            padding: 10px 40px;
+            text-transform: uppercase;
+            background-color: #00adee; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
               box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-              color: white;
-              font-weight: bold;
-              padding: 10px 40px;
-              text-transform: uppercase;
-              background-color: #00adee; }
-              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
-                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-                color: #1a749d; }
-              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
-                background-color: #b9e4ef; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
-              display: none; }
-            @media screen and (max-width: 650px) {
-              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
-                padding-top: 30px; } }
-            @media screen and (max-width: 650px) {
-              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
-                top: 0px; } }
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-        display: table-cell;
-        padding-left: 20px;
-        vertical-align: top; }
-        @media screen and (max-width: 650px) {
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-            display: block; } }
-        @media screen and (max-width: 650px) {
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-            padding-left: 0; } }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul {
-          margin: 0;
-          padding: 0;
-          list-style: none; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address {
-            padding-left: 40px;
-            position: relative; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address:before {
-              background-image: url("../images/map-pin-icon.svg");
-              background-size: contain;
-              background-repeat: no-repeat;
-              content: "";
-              display: inline-block;
-              height: 20px;
-              position: absolute;
-              width: 20px;
-              left: 0;
-              margin: 5px; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone {
-            padding-left: 40px;
-            position: relative; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone:before {
-              background-image: url("../images/phone-icon.svg");
-              background-size: contain;
-              background-repeat: no-repeat;
-              content: "";
-              display: inline-block;
-              height: 20px;
-              position: absolute;
-              width: 20px;
-              left: 0;
-              margin: 5px; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email {
-            padding-left: 40px;
-            position: relative; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email:before {
-              background-image: url("../images/email-icon.svg");
-              background-size: contain;
-              background-repeat: no-repeat;
-              content: "";
-              display: inline-block;
-              height: 20px;
-              position: absolute;
-              width: 20px;
-              left: 0;
-              margin: 5px; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right .info-header h2 {
-          font-size: 22px;
-          color: #1a4f63;
-          font-weight: 400; }
+              color: #1a749d; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
+              background-color: #b9e4ef; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
+            display: none; }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
+              padding-top: 30px; } }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
+              top: 0px; } }
+    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
+      display: table-cell;
+      padding-left: 20px;
+      vertical-align: top; }
+      @media screen and (max-width: 650px) {
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
+          display: block; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
+          padding-left: 0; } }
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address {
+          padding-left: 40px;
+          position: relative; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address:before {
+            background-image: url("../images/map-pin-icon.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            position: absolute;
+            width: 20px;
+            left: 0;
+            margin: 5px; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone {
+          padding-left: 40px;
+          position: relative; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone:before {
+            background-image: url("../images/phone-icon.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            position: absolute;
+            width: 20px;
+            left: 0;
+            margin: 5px; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email {
+          padding-left: 40px;
+          position: relative; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email:before {
+            background-image: url("../images/email-icon.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            position: absolute;
+            width: 20px;
+            left: 0;
+            margin: 5px; }
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right .info-header h2 {
+        font-size: 22px;
+        color: #1a4f63;
+        font-weight: 400; }
 
 /*
   Defines the Contract Vehicles page specific styles.
@@ -596,80 +594,78 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select:hover .elucid-select-label {
         color: #00adee;
         font-size: 12px; }
-  [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles {
-    margin-bottom: 80px; }
-    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-intro {
-      padding: 0 40px; }
-    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-      padding-bottom: 40px; }
-      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules:before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 8px;
-        background-image: linear-gradient(to left, #72caf2, #00adee);
-        background-image: linear-gradient(to left, #72caf2, #00adee);
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px; }
-      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule {
-        padding: 20px 40px;
-        border-bottom: solid 1px #e5e3e4; }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule:last-of-type {
-          border-bottom: none; }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo {
-          margin-bottom: 20px; }
-          [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo img {
-            width: 275px; }
-            @media screen and (max-width: 650px) {
-              [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo img {
-                width: 200px; } }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header {
-          margin-bottom: 10px; }
-          [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header h2 {
-            margin: 0;
-            padding: 0;
-            font-size: 22px;
-            font-weight: 400;
-            line-height: 1.4;
-            text-align: left;
-            color: #ff5131; }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body {
-          margin-bottom: 20px; }
-          [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body p {
-            margin: 0;
-            padding: 0; }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer {
-          color: #00adee;
+  [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-intro {
+    padding: 0 40px; }
+  [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    padding-bottom: 40px; }
+    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 8px;
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      background-image: linear-gradient(to left, #72caf2, #00adee);
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule {
+      padding: 20px 40px;
+      border-bottom: solid 1px #e5e3e4; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule:last-of-type {
+        border-bottom: none; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo {
+        margin-bottom: 20px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo img {
+          width: 275px; }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-logo img {
+              width: 200px; } }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header {
+        margin-bottom: 10px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-header h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 1.4;
+          text-align: left;
+          color: #ff5131; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body {
+        margin-bottom: 20px; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-body p {
+          margin: 0;
+          padding: 0; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer {
+        color: #00adee;
+        display: inline-block;
+        padding-right: 30px;
+        position: relative; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:after {
+          background-image: url("../images/read-more-icon.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
           display: inline-block;
-          padding-right: 30px;
-          position: relative; }
-          [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:after {
-            background-image: url("../images/read-more-icon.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            display: inline-block;
-            height: 11px;
-            position: absolute;
-            width: 19px;
-            position: absolute;
-            right: 0;
-            top: 5px; }
-        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:hover {
-          color: #1a749d;
-          text-decoration: none; }
-          [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:hover:after {
-            background-image: url("../images/read-more-icon-active.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            display: inline-block;
-            height: 11px;
-            position: absolute;
-            width: 19px; }
+          height: 11px;
+          position: absolute;
+          width: 19px;
+          position: absolute;
+          right: 0;
+          top: 5px; }
+      [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:hover {
+        color: #1a749d;
+        text-decoration: none; }
+        [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer:hover:after {
+          background-image: url("../images/read-more-icon-active.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 11px;
+          position: absolute;
+          width: 19px; }
 
 /*
   Defines the front page specific styles.
@@ -1197,85 +1193,79 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   @media screen and (max-width: 650px) {
     [data-elucid-page-path-alias="/search/node"] .elucid-page-content h1 {
       font-size: 24px; } }
-[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] {
-  margin-bottom: 80px; }
-  [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] h2 {
-    color: #ff5131;
-    font-size: 22px;
-    font-weight: 400;
-    margin: 30px 0 20px;
-    text-transform: uppercase; }
-  [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol {
-    margin: 0;
-    padding: 0;
-    counter-reset: search_interface 0;
-    margin-left: 30px; }
-    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li {
-      list-style-type: none;
-      list-style-image: none;
-      position: relative;
-      margin-bottom: 30px;
-      padding-left: 20px;
-      min-height: 2em;
-      border-left: 2px solid #cccccc; }
-      [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li:before {
-        position: absolute;
-        top: 0;
-        left: -2em;
-        width: 0.8em;
-        font-size: 16px;
-        line-height: 1;
-        font-weight: bold;
-        text-align: right;
-        color: #ff5131;
-        content: counter(search_interface);
-        counter-increment: search_interface; }
-      [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li h3 {
-        color: #00adee;
-        font-size: 16px;
-        font-weight: 400; }
-  [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form {
-    background-color: transparent;
-    display: table; }
-    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline {
-      display: table-row;
-      height: 35px; }
-      [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline .form-item {
-        background-color: white;
-        border-bottom-left-radius: 2px;
-        border-bottom: solid 1px #d0d0d0;
-        border-left: solid 1px #d0d0d0;
-        border-top-left-radius: 2px;
-        border-top: solid 1px #d0d0d0;
-        display: table-cell;
-        height: 100%; }
-        [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline .form-item input.form-search {
-          border: none;
-          font-size: rem(12px);
-          outline: none;
-          width: 95%;
-          margin: 3px 0 3px 10px; }
-      [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline input.form-submit {
-        background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
-        background-color: #00adee;
-        border-bottom-right-radius: 2px;
+[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] h2 {
+  color: #ff5131;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 30px 0 20px;
+  text-transform: uppercase; }
+[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol {
+  margin: 0;
+  padding: 0;
+  counter-reset: search_interface 0;
+  margin-left: 30px; }
+  [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li {
+    list-style-type: none;
+    list-style-image: none;
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    min-height: 2em;
+    border-left: 2px solid #cccccc; }
+    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li:before {
+      position: absolute;
+      top: 0;
+      left: -2em;
+      width: 0.8em;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: bold;
+      text-align: right;
+      color: #ff5131;
+      content: counter(search_interface);
+      counter-increment: search_interface; }
+    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li h3 {
+      color: #00adee;
+      font-size: 16px;
+      font-weight: 400; }
+[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form {
+  background-color: transparent;
+  display: table; }
+  [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline {
+    display: table-row;
+    height: 35px; }
+    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline .form-item {
+      background-color: white;
+      border-bottom-left-radius: 2px;
+      border-bottom: solid 1px #d0d0d0;
+      border-left: solid 1px #d0d0d0;
+      border-top-left-radius: 2px;
+      border-top: solid 1px #d0d0d0;
+      display: table-cell;
+      height: 100%; }
+      [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline .form-item input.form-search {
         border: none;
-        border-top-right-radius: 2px;
-        color: transparent;
-        display: table-cell;
-        height: 100%;
-        margin: 0px;
-        padding: 0px;
-        width: 32px; }
+        font-size: rem(12px);
+        outline: none;
+        width: 95%;
+        margin: 3px 0 3px 10px; }
+    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline input.form-submit {
+      background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
+      background-color: #00adee;
+      border-bottom-right-radius: 2px;
+      border: none;
+      border-top-right-radius: 2px;
+      color: transparent;
+      display: table-cell;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      width: 32px; }
 
 /*
   Defines the stylesheets applied to the user
   pages.
 */
-[data-elucid-page-path-alias="/user/login"] .elucid-page-content,
-[data-elucid-page-path-alias="/user/*"] .elucid-page-content {
-  margin-bottom: 80px; }
-
 /*
   This stylesheet defines styles shared by all banner blocks.
 */
@@ -1380,7 +1370,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 #block-contactusblock {
   background-color: #00adee;
   color: white;
-  padding-bottom: 40px; }
+  padding: 40px 0; }
   #block-contactusblock .contact-us .contact-us-content {
     text-align: center; }
     #block-contactusblock .contact-us .contact-us-content span {
@@ -1700,17 +1690,17 @@ header {
               color: #00adee; }
   header #header_search_toggle_button {
     background-size: 18px;
-    background: url("../images/search-icon.svg") no-repeat;
+    background: url("../images/search-icon.svg") no-repeat 50% 50%;
     cursor: pointer;
-    float: right;
+    display: table-cell;
     height: 18px;
     margin-top: 5px;
     transition: background-image 0.25s;
     width: 18px; }
     header #header_search_toggle_button:hover {
-      background: url("../images/search-icon-selected.svg") no-repeat; }
+      background: url("../images/search-icon-selected.svg") no-repeat 50% 50%; }
     header #header_search_toggle_button.search_dropdown_active {
-      background: url("../images/search-white-icon.svg") no-repeat; }
+      background: url("../images/search-white-icon.svg") no-repeat 50% 50%; }
 
 .header_menu_widescreen_view_dropdown_component {
   position: relative; }

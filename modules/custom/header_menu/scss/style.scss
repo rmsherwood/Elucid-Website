@@ -29,17 +29,20 @@ $header-menu-mobile-view-header-title-color: white;
 }
 .header_menu_widescreen_view {
   .header_menu_widescreen_view_menu_component {
+    display: table;
+    width: 100%; 
     .header_menu_menu_list[data-menu-level="0"] {
-      display: inline-block;
-      display: flex;
+      display: table-row;
       height: $header-menu-height;
       justify-content: space-between;
       margin: 0 auto;
       width: 100%;
       
       .header_menu_menu_item[data-menu-level="0"] {
-        display: inline-block;
+        display: table-cell;
+        float: none;
         text-align: center;
+        vertical-align: middle;
       }
       .header_menu_menu_item[data-menu-level="1"] {
         display: none;

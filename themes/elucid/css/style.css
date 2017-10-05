@@ -2028,6 +2028,7 @@ header {
     padding: 0;
     border: none;
     border-bottom: 1px solid #979797;
+    color: #1e1e1e;
     outline: none;
     box-shadow: none; }
     .elucid_textfield input:-moz-ui-invalid, .elucid_textfield textarea:-moz-ui-invalid {
@@ -2198,6 +2199,7 @@ header {
           padding: 0;
           border: none;
           border-bottom: 1px solid #979797;
+          color: #1e1e1e;
           outline: none;
           box-shadow: none;
           width: 100%; }

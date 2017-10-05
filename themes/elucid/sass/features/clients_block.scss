@@ -21,6 +21,7 @@
     margin-bottom: $margin-med;
     max-width: 350px;
     padding: 8px 25px 10px 20px;
+    text-transform: uppercase;
   }
   .clients_component {
     @extend .layout-padded-content;
@@ -28,6 +29,7 @@
     }
     .clients_icons {
       .clients_icon {
+        @include mobile(padding-bottom, 20px);
         align-items: center;
         display: inline-block; /* browser fallback */
         display: flex;

@@ -13,11 +13,11 @@
     .elucid-page-intro {
     }
     .elucid-page-content-wrapper {
-      @include mobile(display, block);
+      @include tablet(display, block);
       display: table-row;
 
       .elucid-page-content-left {
-        @include mobile(display, block);
+        @include tablet(display, block);
         display: table-cell;
         vertical-align: top;
 
@@ -46,9 +46,9 @@
               display: none;
             }
             .elucid_textfield.elucid_active {
-              @include mobile(padding-top, 30px);
+              @include tablet(padding-top, 30px);
               label {
-                @include mobile(top, 0px); // necessary to prevent overlap with input.
+                @include tablet(top, 0px); // necessary to prevent overlap with input.
               }
             }
           }
@@ -56,8 +56,8 @@
         }
       }
       .elucid-page-content-right {
-        @include mobile(display, block);
-        @include mobile(padding-left, 0);
+        @include tablet(display, block);
+        @include tablet(padding-left, 0);
         display: table-cell;
         padding-left: $margin-med;
         vertical-align: top;
@@ -65,6 +65,7 @@
           @include strip-margins;
           list-style: none;
           li.info-address {
+            padding-bottom: 15px;
             padding-left: $margin-large;
             position: relative;
             &:before {
@@ -74,6 +75,7 @@
             }
           }
           li.info-phone {
+            padding-bottom: 15px;
             padding-left: $margin-large;
             position: relative;
             &:before {
@@ -85,6 +87,9 @@
           li.info-email {
             padding-left: $margin-large;
             position: relative;
+            a {
+              color: $blue;
+            }
             &:before {
               @include icon('../images/email-icon.svg', 20px, 20px, inline-block);
               left: 0;

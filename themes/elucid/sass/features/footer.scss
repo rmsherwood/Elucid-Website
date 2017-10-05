@@ -41,15 +41,23 @@ footer {
         }
         .company_info {
           .elucid_bold {
+            @include mobile(padding-top, 15px);
             color: white;
             display: inline-block;
             padding-bottom: 15px;
-            padding-top: 15px;
+            padding-top: 0px;
           }
           @media screen and (max-width: $tablet-breakpoint) {
             .elucid_phone {
               display: inline-block;
               padding-bottom: 21px;
+            }
+          }
+          a {
+            color: #d0d0d0;
+            &:hover {
+              color: $blue;
+              text-decoration: none;
             }
           }
         }

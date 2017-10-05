@@ -217,8 +217,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   display: block;
   width: 100%;
   height: 3px;
-  background-image: linear-gradient(to left, #72caf2, #00adee);
-  background-image: linear-gradient(to left, #72caf2, #00adee); }
+  background-image: linear-gradient(to left, #72caf2, #03A9F3);
+  background-image: linear-gradient(to left, #72caf2, #03A9F3); }
 .elucid-page .elucid-page-content {
   padding-top: 20px;
   margin-bottom: 100px; }
@@ -318,10 +318,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/capabilities"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/capabilities"] [data-elucid-base-plugin-id="page_title_block"] {
     text-align: center; }
@@ -356,10 +356,17 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content {
         display: table-cell;
         padding: 20px 0 20px 40px; }
+        @media screen and (max-width: 650px) {
+          [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content {
+            padding: 20px 0 20px 15px; } }
         [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content .capability_list_item_header {
           color: #e74131;
           font-size: 22px;
-          font-weight: 500; }
+          font-weight: 500;
+          text-transform: uppercase; }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content .capability_list_item_header {
+              font-size: 16px; } }
 
 /*
   Defines the Contact-Us page specific styles.
@@ -414,22 +421,22 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/contact/feedback"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/contact/feedback"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield input, [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield textarea {
     width: 100%; }
   [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
     display: table-row; }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 768px) {
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
         display: block; } }
     [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
       display: table-cell;
       vertical-align: top; }
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 768px) {
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
           display: block; } }
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] {
@@ -442,8 +449,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           display: block;
           width: 100%;
           height: 8px;
-          background-image: linear-gradient(to left, #72caf2, #00adee);
-          background-image: linear-gradient(to left, #72caf2, #00adee);
+          background-image: linear-gradient(to left, #72caf2, #03A9F3);
+          background-image: linear-gradient(to left, #72caf2, #03A9F3);
           border-top-left-radius: 4px;
           border-top-right-radius: 4px; }
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form {
@@ -459,29 +466,32 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             color: white;
             font-weight: bold;
             padding: 10px 40px;
+            position: relative;
             text-transform: uppercase;
-            background-color: #00adee; }
+            transition: all 0.25s;
+            background-color: #03A9F3; }
             [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
-              box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-              color: #1a749d; }
+              box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+              color: #1a749d;
+              top: -1px; }
             [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
               background-color: #b9e4ef; }
           [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
             display: none; }
-          @media screen and (max-width: 650px) {
+          @media screen and (max-width: 768px) {
             [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
               padding-top: 30px; } }
-          @media screen and (max-width: 650px) {
+          @media screen and (max-width: 768px) {
             [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
               top: 0px; } }
     [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
       display: table-cell;
       padding-left: 20px;
       vertical-align: top; }
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 768px) {
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
           display: block; } }
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 768px) {
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
           padding-left: 0; } }
       [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul {
@@ -489,6 +499,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         padding: 0;
         list-style: none; }
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address {
+          padding-bottom: 15px;
           padding-left: 40px;
           position: relative; }
           [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address:before {
@@ -503,6 +514,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             left: 0;
             margin: 5px; }
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone {
+          padding-bottom: 15px;
           padding-left: 40px;
           position: relative; }
           [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone:before {
@@ -519,6 +531,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email {
           padding-left: 40px;
           position: relative; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email a {
+            color: #03A9F3; }
           [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email:before {
             background-image: url("../images/email-icon.svg");
             background-size: contain;
@@ -589,10 +603,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/contract-vehicles"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-intro {
     padding: 0 40px; }
@@ -606,8 +620,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       display: block;
       width: 100%;
       height: 8px;
-      background-image: linear-gradient(to left, #72caf2, #00adee);
-      background-image: linear-gradient(to left, #72caf2, #00adee);
+      background-image: linear-gradient(to left, #72caf2, #03A9F3);
+      background-image: linear-gradient(to left, #72caf2, #03A9F3);
       border-top-left-radius: 4px;
       border-top-right-radius: 4px; }
     [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule {
@@ -638,7 +652,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           margin: 0;
           padding: 0; }
       [data-elucid-page-path-alias="/contract-vehicles"] .contract-vehicles .contract-vehicles-schedules .contract-vehicles-schedule .contract-vehicles-schedule-footer {
-        color: #00adee;
+        color: #03A9F3;
         display: inline-block;
         padding-right: 30px;
         position: relative; }
@@ -736,11 +750,11 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       display: inline-block; }
     [data-elucid-page-view-id="frontpage"] .elucid-select:hover,
     [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-view-id="frontpage"] .elucid-select:hover .elucid-select-label,
       [data-elucid-page-path-alias="/capabilities"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-view-id="frontpage"] .elucid_clients_ribbon,
   [data-elucid-page-path-alias="/capabilities"] .elucid_clients_ribbon {
@@ -825,15 +839,15 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-page-content {
     padding-bottom: 80px; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-page-content .page-content a {
-      color: #00adee; }
+      color: #03A9F3; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-page-content .page-content a:hover {
         text-decoration: underline; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-8a"] .elucid-page-content .page-content h2 {
@@ -936,15 +950,15 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content {
     padding-bottom: 80px; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule a {
-      color: #00adee; }
+      color: #03A9F3; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule a:hover {
         text-decoration: underline; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule h2 {
@@ -992,14 +1006,14 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         display: block;
         width: 100%;
         height: 8px;
-        background-image: linear-gradient(to left, #72caf2, #00adee);
-        background-image: linear-gradient(to left, #72caf2, #00adee);
+        background-image: linear-gradient(to left, #72caf2, #03A9F3);
+        background-image: linear-gradient(to left, #72caf2, #03A9F3);
         border-top-left-radius: 4px;
         border-top-right-radius: 4px; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-gwac .schedule-gwac-content {
         padding: 18px 28px 20px; }
         [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-gwac .schedule-gwac-content a {
-          color: #00adee;
+          color: #03A9F3;
           display: inline-block;
           padding-right: 30px;
           position: relative; }
@@ -1083,15 +1097,15 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select .elucid-select-icon {
       display: inline-block; }
     [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content {
     padding-bottom: 80px; }
     [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac a {
-      color: #00adee; }
+      color: #03A9F3; }
       [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac a:hover {
         text-decoration: underline; }
     [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac h2 {
@@ -1120,18 +1134,24 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           display: inline-block;
           padding-left: 30px;
           position: relative; }
+          @media screen and (max-width: 650px) {
+            [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a {
+              line-height: 1.4; } }
           [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a:before {
             background-image: url("../images/download-icon.svg");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
             display: inline-block;
-            height: 20px;
+            height: 14px;
             position: absolute;
-            width: 20px;
+            width: 17px;
             position: absolute;
             left: 0;
-            top: 5px; }
+            top: 12px; }
+            @media screen and (max-width: 650px) {
+              [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a:before {
+                top: 0; } }
         [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a:hover {
           color: #1a749d;
           text-decoration: none; }
@@ -1141,9 +1161,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             background-repeat: no-repeat;
             content: "";
             display: inline-block;
-            height: 20px;
+            height: 14px;
             position: absolute;
-            width: 20px; }
+            width: 17px; }
     [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-categories {
       margin-bottom: 40px; }
       [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-categories ul {
@@ -1158,12 +1178,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             background-repeat: no-repeat;
             content: "";
             display: inline-block;
-            height: 20px;
+            height: 14px;
             position: absolute;
-            width: 20px;
+            width: 17px;
             position: absolute;
             left: 0;
-            top: 5px; }
+            top: 12px; }
         [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-categories ul a:hover {
           color: #1a749d;
           text-decoration: none; }
@@ -1173,9 +1193,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             background-repeat: no-repeat;
             content: "";
             display: inline-block;
-            height: 20px;
+            height: 14px;
             position: absolute;
-            width: 20px; }
+            width: 17px; }
 
 /*
   Define the Search page specific styles.
@@ -1225,7 +1245,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       content: counter(search_interface);
       counter-increment: search_interface; }
     [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li h3 {
-      color: #00adee;
+      color: #03A9F3;
       font-size: 16px;
       font-weight: 400; }
 [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form {
@@ -1251,7 +1271,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         margin: 3px 0 3px 10px; }
     [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] #search-form .container-inline input.form-submit {
       background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
-      background-color: #00adee;
+      background-color: #03A9F3;
       border-bottom-right-radius: 2px;
       border: none;
       border-top-right-radius: 2px;
@@ -1344,13 +1364,17 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     font-weight: 400;
     margin-bottom: 20px;
     max-width: 350px;
-    padding: 8px 25px 10px 20px; }
+    padding: 8px 25px 10px 20px;
+    text-transform: uppercase; }
   #block-ourclients .clients_component .clients_icons .clients_icon {
     align-items: center;
     display: inline-block;
     /* browser fallback */
     display: flex;
     justify-content: center; }
+    @media screen and (max-width: 650px) {
+      #block-ourclients .clients_component .clients_icons .clients_icon {
+        padding-bottom: 20px; } }
     #block-ourclients .clients_component .clients_icons .clients_icon .clients_icon_image img {
       height: auto;
       max-height: 100px;
@@ -1372,40 +1396,49 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   Contact Us blocks.
 */
 #block-contactusblock {
-  background-color: #00adee;
+  background-color: #03A9F3;
   color: white;
+  font-size: 26px;
   padding: 40px 0; }
+  @media screen and (max-width: 650px) {
+    #block-contactusblock {
+      font-size: 18px; } }
   #block-contactusblock .contact-us .contact-us-content {
     text-align: center; }
     #block-contactusblock .contact-us .contact-us-content span {
       padding: 20px 0;
       margin: 0; }
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 768px) {
         #block-contactusblock .contact-us .contact-us-content span {
           display: block; } }
     #block-contactusblock .contact-us .contact-us-content .contact-us-link {
       border: none;
       border-radius: 2px;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-      color: #00adee;
+      color: #03A9F3;
       font-weight: bold;
       padding: 10px 40px;
+      position: relative;
       text-transform: uppercase;
+      transition: all 0.25s;
       background: white;
       border-radius: 2px;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
       cursor: pointer;
       font-weight: bold;
       margin-left: 40px;
-      padding: 5px 40px; }
+      padding: 5px 35px; }
       #block-contactusblock .contact-us .contact-us-content .contact-us-link:hover {
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-        color: #1a749d; }
-      @media screen and (max-width: 650px) {
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+        color: #1a749d;
+        top: -1px; }
+      @media screen and (max-width: 768px) {
         #block-contactusblock .contact-us .contact-us-content .contact-us-link {
           margin-left: 0; } }
+      @media screen and (max-width: 650px) {
+        #block-contactusblock .contact-us .contact-us-content .contact-us-link {
+          font-size: 16px; } }
       #block-contactusblock .contact-us .contact-us-content .contact-us-link:hover {
-        background-color: #b9e4ef;
         color: #1a749d;
         text-decoration: none; }
 
@@ -1452,7 +1485,7 @@ footer {
           footer .footer_content .footer_top ul li a {
             color: white; }
             footer .footer_content .footer_top ul li a:hover {
-              color: #00adee;
+              color: #03A9F3;
               text-decoration: none; }
       footer .footer_content .footer_top .footer_top_left {
         display: table-cell;
@@ -1471,11 +1504,19 @@ footer {
           color: white;
           display: inline-block;
           padding-bottom: 15px;
-          padding-top: 15px; }
+          padding-top: 0px; }
+          @media screen and (max-width: 650px) {
+            footer .footer_content .footer_top .footer_top_left .company_info .elucid_bold {
+              padding-top: 15px; } }
         @media screen and (max-width: 768px) {
           footer .footer_content .footer_top .footer_top_left .company_info .elucid_phone {
             display: inline-block;
             padding-bottom: 21px; } }
+        footer .footer_content .footer_top .footer_top_left .company_info a {
+          color: #d0d0d0; }
+          footer .footer_content .footer_top .footer_top_left .company_info a:hover {
+            color: #03A9F3;
+            text-decoration: none; }
       footer .footer_content .footer_top .footer_top_right {
         display: table-cell;
         vertical-align: top; }
@@ -1589,10 +1630,10 @@ header {
     header .elucid-select .elucid-select-icon {
       display: inline-block; }
     header .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       header .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   header .layout-content, header .layout-padded-content, header #block-ourclients .clients_component, #block-ourclients header .clients_component {
     display: table;
@@ -1673,10 +1714,10 @@ header {
                 top: 5px;
                 vertical-align: middle; }
               header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover {
-                color: #00adee;
+                color: #03A9F3;
                 text-decoration: none; }
                 header .layout-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top .elucid-sign-in .elucid-sign-in-link:hover path {
-                  fill: #00adee; }
+                  fill: #03A9F3; }
           header .layout-content .region-header-content .region-header-right .region-header-right-top:after, header .layout-padded-content .region-header-content .region-header-right .region-header-right-top:after, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-top:after, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-top:after {
             clear: both;
             content: "";
@@ -1691,10 +1732,10 @@ header {
               color: #535253;
               cursor: pointer; }
               header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item a:hover {
-                color: #00adee;
+                color: #03A9F3;
                 text-decoration: none; }
             header .layout-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, header .layout-padded-content .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, header #block-ourclients .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a, #block-ourclients header .clients_component .region-header-content .region-header-right .region-header-right-bottom .header_menu_widescreen_view .header_menu_widescreen_view_menu_component .header_menu_menu_list[data-menu-level="0"] .header_menu_menu_item.elucid_active a {
-              color: #00adee; }
+              color: #03A9F3; }
   header #header_search_toggle_button {
     background-size: 18px;
     background: url("../images/search-icon.svg") no-repeat 50% 50%;
@@ -1712,14 +1753,14 @@ header {
 .header_menu_widescreen_view_dropdown_component {
   position: relative; }
   .header_menu_widescreen_view_dropdown_component .header_menu_menu_list {
-    border-top: solid 6px #00adee;
+    border-top: solid 6px #03A9F3;
     box-shadow: 0px 1px 2px 0px;
     padding: 10px 0; }
     .header_menu_widescreen_view_dropdown_component .header_menu_menu_list .header_menu_widescreen_view_dropdown_arrow {
-      border: 10px solid #00adee;
+      border: 10px solid #03A9F3;
       border-top-color: transparent;
       border-right-color: transparent;
-      border-bottom-color: #00adee;
+      border-bottom-color: #03A9F3;
       border-left-color: transparent;
       top: -23px;
       left: 95px;
@@ -1731,7 +1772,7 @@ header {
         color: #535253;
         text-transform: uppercase; }
         .header_menu_widescreen_view_dropdown_component .header_menu_menu_list .header_menu_menu_item a:hover {
-          color: #00adee;
+          color: #03A9F3;
           text-decoration: none; }
 
 #header_search_region {
@@ -1789,7 +1830,7 @@ header {
       width: 25px; }
       #block-elucid-search #search-block-form .form-actions input.form-submit {
         background: url("../images/search-white-icon.svg") no-repeat 50% 50%;
-        background-color: #00adee;
+        background-color: #03A9F3;
         border-bottom-right-radius: 2px;
         border: none;
         border-top-right-radius: 2px;
@@ -1836,7 +1877,7 @@ header {
       width: 12px;
       margin-right: 5px; }
   .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button:hover {
-    color: #00adee; }
+    color: #03A9F3; }
     .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .header_menu_mobile_view_slide_back_button:hover:before {
       background-image: url("../images/left-arrow-icon-selected.svg");
       background-size: contain;
@@ -1860,10 +1901,10 @@ header {
       width: 100%; }
   .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:hover,
   .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .menu_slide_extra_item:hover {
-    color: #00adee; }
+    color: #03A9F3; }
     .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .header_menu_mobile_view_slide_item:hover a,
     .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .menu_slide_extra_item:hover a {
-      color: #00adee; }
+      color: #03A9F3; }
   .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_body .header_menu_sign_in_link {
     padding-left: 20px;
     position: relative; }
@@ -1911,7 +1952,7 @@ header {
     position: absolute;
     width: 12px; }
 .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_close_button {
-  color: #00adee;
+  color: #03A9F3;
   margin-bottom: 5px; }
   .subheader .header_menu_mobile_view .header_menu_mobile_view_collapsible .header_menu_mobile_view_close_button:hover {
     color: #1a749d; }
@@ -1994,13 +2035,13 @@ header {
       border-bottom-width: 2px;
       box-shadow: none; }
   .elucid_textfield.elucid_active label {
-    color: #00adee;
+    color: #03A9F3;
     font-size: 10px;
     top: 5px; }
     .elucid_textfield.elucid_active label:after {
-      color: #00adee; }
+      color: #03A9F3; }
   .elucid_textfield.elucid_active input, .elucid_textfield.elucid_active textarea {
-    border-bottom-color: #00adee;
+    border-bottom-color: #03A9F3;
     border-bottom-width: 2px; }
   .elucid_textfield.elucid_invalid:not(.elucid_active) label {
     color: #ff5131; }
@@ -2064,10 +2105,10 @@ header {
     .rate_table .elucid-select .elucid-select-icon {
       display: inline-block; }
     .rate_table .elucid-select:hover {
-      border-bottom: 2px solid #00adee;
+      border-bottom: 2px solid #03A9F3;
       font-size: 14px; }
       .rate_table .elucid-select:hover .elucid-select-label {
-        color: #00adee;
+        color: #03A9F3;
         font-size: 12px; }
   .rate_table:before {
     background-image: linear-gradient(270deg, #73CAF1 2%, #03A9F3 100%);
@@ -2091,8 +2132,8 @@ header {
           background-color: white;
           display: none; }
         .rate_table .rate_table_header .mdc-tab-bar .mdc-tab.mdc-tab--active {
-          border-bottom: 3px solid #00adee;
-          color: #00adee; }
+          border-bottom: 3px solid #03A9F3;
+          color: #03A9F3; }
     .rate_table .rate_table_header .rate_table_title {
       color: #ff5131;
       font-size: 22px;
@@ -2165,16 +2206,16 @@ header {
             border-bottom-width: 2px;
             box-shadow: none; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label {
-          color: #00adee;
+          color: #03A9F3;
           font-size: 10px;
           top: 0; }
           .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label:after {
-            color: #00adee; }
+            color: #03A9F3; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active input {
-          border-bottom-color: #00adee;
+          border-bottom-color: #03A9F3;
           border-bottom-width: 2px; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active .rate_table_filter_icon path {
-          fill: #00adee; }
+          fill: #03A9F3; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label {
           color: #ff5131; }
           .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label:after {
@@ -2302,10 +2343,10 @@ header {
         padding: 8px;
         border-right: 1px solid #e5e3e4; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first:hover {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first.rate_table_active {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_first.rate_table_disabled {
           color: #e5e3e4;
@@ -2319,10 +2360,10 @@ header {
         padding: 8px;
         border-right: 1px solid #e5e3e4; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev:hover {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev.rate_table_active {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_prev.rate_table_disabled {
           color: #e5e3e4;
@@ -2338,10 +2379,10 @@ header {
           padding: 8px;
           border-right: 1px solid #e5e3e4; }
           .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link:hover {
-            background: #00adee;
+            background: #03A9F3;
             color: white; }
           .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_active {
-            background: #00adee;
+            background: #03A9F3;
             color: white; }
           .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_links .rate_table_pagination_link.rate_table_disabled {
             color: #e5e3e4;
@@ -2360,10 +2401,10 @@ header {
         padding: 8px;
         border-right: 1px solid #e5e3e4; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next:hover {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next.rate_table_active {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_next.rate_table_disabled {
           color: #e5e3e4;
@@ -2376,10 +2417,10 @@ header {
         display: inline-block;
         padding: 8px; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last:hover {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last.rate_table_active {
-          background: #00adee;
+          background: #03A9F3;
           color: white; }
         .rate_table .rate_table_footer .rate_table_pagination .rate_table_pagination_last.rate_table_disabled {
           color: #e5e3e4;

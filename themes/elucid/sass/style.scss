@@ -28,7 +28,7 @@ $tablet-breakpoint: 768px;
 // II. Colors.
 
 $blue-dark: rgb(26, 116, 157);
-$blue: rgb(0, 173, 238);
+$blue: #03A9F3;
 $blue-light: rgb(185, 228, 239);
 $blue-lightest: rgb(235, 252, 255);
 
@@ -418,7 +418,7 @@ $max-content-width: 1024px;
 ) {
   $default-border-radius: 2px;
   $default-button-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-  $default-button-hover-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  $default-button-hover-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 
   border: none;
   border-radius: if($border-radius, $border-radius, $default-border-radius);
@@ -426,10 +426,13 @@ $max-content-width: 1024px;
   color: if($font-color, $font-color, $default-link-color);
   font-weight: bold;
   padding: $margin-small $margin-large;
+  position: relative;
   text-transform: uppercase;
+  transition: all 0.25s;
   &:hover {
     box-shadow: if($hover-box-shadow, $hover-box-shadow, $default-button-hover-box-shadow);
     color: if($hover-font-color, $hover-font-color, $default-link-hover-color);
+    top: -1px;
   }
 }
 

@@ -3,29 +3,31 @@
   Contact Us blocks.
 */
 #block-contactusblock {
+  @include mobile(font-size, 18px);
   background-color: $blue;
   color: white;
+  font-size: 26px;
   padding: $margin-large 0;
   .contact-us {
     .contact-us-content {
       text-align: center;
       span {
-        @include mobile(display, block);
+        @include tablet(display, block);
         padding: $margin-med 0;
         margin: 0;
       }
       .contact-us-link {
         @include button;
-        @include mobile(margin-left, 0);
+        @include tablet(margin-left, 0);
+        @include mobile(font-size, 16px);
         background: white;
         border-radius: 2px;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
         cursor: pointer;
         font-weight: bold;
         margin-left: $margin-large;
-        padding: $margin-xsmall $margin-large;
+        padding: $margin-xsmall 35px;
         &:hover {
-          background-color: $blue-light;
           color: $blue-dark;
           text-decoration: none;
         }

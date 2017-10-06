@@ -1229,7 +1229,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   @media screen and (max-width: 650px) {
     [data-elucid-page-path-alias="/search/node"] .elucid-page-content h1 {
       font-size: 24px; } }
-[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] h2 {
+[data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] h2, [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] h3 {
   color: #ff5131;
   font-size: 22px;
   font-weight: 400;

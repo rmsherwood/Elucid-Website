@@ -337,6 +337,22 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       margin-bottom: 0;
       max-width: 350px;
       padding: 5px 25px 5px 20px; }
+  [data-elucid-page-path-alias="/capabilities"] .elucid_section_header {
+    text-align: center;
+    width: 100%; }
+    [data-elucid-page-path-alias="/capabilities"] .elucid_section_header .elucid_section_title {
+      background-image: url("../images/svg-header-background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: cover;
+      color: white;
+      display: inline-block;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 20px;
+      max-width: 350px;
+      padding: 8px 25px 10px 20px;
+      text-transform: uppercase; }
   [data-elucid-page-path-alias="/capabilities"] .capability_list {
     display: table; }
     [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item {

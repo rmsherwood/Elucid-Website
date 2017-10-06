@@ -20,6 +20,24 @@
       padding: 5px 25px 5px 20px;
     }
   }
+  .elucid_section_header {
+    text-align: center;
+    width: 100%;
+    .elucid_section_title {
+      background-image: url('../images/svg-header-background.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: cover;
+      color: white;
+      display: inline-block;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: $margin-med;
+      max-width: 350px;
+      padding: 8px 25px 10px 20px;
+      text-transform: uppercase;
+    }
+  }
   .capability_list {
     display: table;
     .capability_list_item {

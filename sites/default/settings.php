@@ -764,7 +764,7 @@ $settings['file_scan_ignore_directories'] = [
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'elucid_website_larry_lee',
+  'database' => 'elucid_website_prod',
   'username' => 'root',
   'password' => 'Tdrvyubi798',
   'prefix' => '',
@@ -774,7 +774,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $databases['default']['default'] = array (
-  'database' => 'elucid_website_larry_lee',
+  'database' => 'elucid_website_prod',
   'username' => 'root',
   'password' => 'Tdrvyubi798',
   'prefix' => '',

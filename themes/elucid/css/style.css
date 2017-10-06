@@ -1260,7 +1260,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       color: #ff5131;
       content: counter(search_interface);
       counter-increment: search_interface; }
-    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li h3 {
+    [data-elucid-page-path-alias="/search/node"] .elucid-page-content [data-elucid-plugin-id="system_main_block"] ol li h3 a {
       color: #03A9F3;
       font-size: 16px;
       font-weight: 400; }

@@ -54,9 +54,11 @@
             counter-increment: search_interface;
           }
           h3 {
-            color: $blue;
-            font-size: 16px;
-            font-weight: 400;
+            a {
+              color: $blue;
+              font-size: 16px;
+              font-weight: 400;
+            }
           }
         }
       }

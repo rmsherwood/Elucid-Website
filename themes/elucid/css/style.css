@@ -224,9 +224,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   margin-bottom: 100px; }
 .elucid-page .elucid_banner_ribbon {
   height: 80px;
-  background-size: 101% 83px;
   background-image: url("../images/svg-divider-below-banner.svg");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   -webkit-transform: translateY(-99%);
   transform: translateY(-99%);
@@ -237,17 +237,11 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   @media screen and (max-width: 650px) {
     .elucid-page .elucid_banner_ribbon {
       height: 37px; } }
-  @media screen and (max-width: 768px) {
-    .elucid-page .elucid_banner_ribbon {
-      background-size: 101% 61.5px; } }
-  @media screen and (max-width: 650px) {
-    .elucid-page .elucid_banner_ribbon {
-      background-size: 101% 40px; } }
 .elucid-page .elucid_contact_ribbon {
   height: 80px;
-  background-size: 101% 95px;
   background-image: url("../images/svg-divider-above-contact-us-cta.svg");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   -webkit-transform: translateY(-99%);
   transform: translateY(-99%);
@@ -258,12 +252,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   @media screen and (max-width: 650px) {
     .elucid-page .elucid_contact_ribbon {
       height: 37px; } }
-  @media screen and (max-width: 768px) {
-    .elucid-page .elucid_contact_ribbon {
-      background-size: 101% 73.5px; } }
-  @media screen and (max-width: 650px) {
-    .elucid-page .elucid_contact_ribbon {
-      background-size: 101% 52px; } }
 
 /*
   Defines the Capabilities page specific styles.
@@ -349,7 +337,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       display: inline-block;
       font-style: italic;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       max-width: 350px;
       padding: 8px 25px 10px 20px;
       text-transform: uppercase; }
@@ -364,17 +352,18 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon {
             width: 64px; } }
         [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon img {
-          padding-top: 40px;
+          padding-top: 0;
           width: 90px; }
           @media screen and (max-width: 650px) {
             [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_icon img {
               width: 64px; } }
       [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content {
         display: table-cell;
-        padding: 20px 0 20px 40px; }
+        padding: 0 0 30px 40px;
+        vertical-align: top; }
         @media screen and (max-width: 650px) {
           [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content {
-            padding: 20px 0 20px 15px; } }
+            padding: 0 0 20px 15px; } }
         [data-elucid-page-path-alias="/capabilities"] .capability_list .capability_list_item .capability_list_item_content .capability_list_item_header {
           color: #e74131;
           font-size: 22px;
@@ -444,126 +433,129 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         font-size: 12px; }
   [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield input, [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid_textfield textarea {
     width: 100%; }
-  [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
-    display: table-row; }
-    @media screen and (max-width: 768px) {
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper {
-        display: block; } }
-    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
-      display: table-cell;
-      vertical-align: top; }
+  [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer {
+    display: table;
+    width: 100%; }
+    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper {
+      display: table-row; }
       @media screen and (max-width: 768px) {
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left {
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper {
           display: block; } }
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] {
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-        margin-bottom: 40px; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"]:before {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 8px;
-          background-image: linear-gradient(to left, #72caf2, #03A9F3);
-          background-image: linear-gradient(to left, #72caf2, #03A9F3);
-          border-top-left-radius: 4px;
-          border-top-right-radius: 4px; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form {
-          padding: 40px; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form h2 {
-            color: #ff5131;
-            font-size: 22px;
-            font-weight: 500; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit {
-            border: none;
-            border-radius: 2px;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-            color: white;
-            font-weight: bold;
-            padding: 10px 40px;
-            position: relative;
-            text-transform: uppercase;
-            transition: all 0.25s;
-            background-color: #03A9F3; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
-              box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-              color: #1a749d;
-              top: -1px; }
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
-              background-color: #b9e4ef; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
-            display: none; }
-          @media screen and (max-width: 768px) {
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
-              padding-top: 30px; } }
-          @media screen and (max-width: 768px) {
-            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
-              top: 0px; } }
-    [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-      display: table-cell;
-      padding-left: 20px;
-      vertical-align: top; }
-      @media screen and (max-width: 768px) {
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-          display: block; } }
-      @media screen and (max-width: 768px) {
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right {
-          padding-left: 0; } }
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul {
-        margin: 0;
-        padding: 0;
-        list-style: none; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address {
-          padding-bottom: 15px;
-          padding-left: 40px;
-          position: relative; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address:before {
-            background-image: url("../images/map-pin-icon.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            display: inline-block;
-            height: 20px;
-            position: absolute;
-            width: 20px;
-            left: 0;
-            margin: 5px; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone {
-          padding-bottom: 15px;
-          padding-left: 40px;
-          position: relative; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone:before {
-            background-image: url("../images/phone-icon.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            display: inline-block;
-            height: 20px;
-            position: absolute;
-            width: 20px;
-            left: 0;
-            margin: 5px; }
-        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email {
-          padding-left: 40px;
-          position: relative; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email a {
-            color: #03A9F3; }
-          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email:before {
-            background-image: url("../images/email-icon.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            display: inline-block;
-            height: 20px;
-            position: absolute;
-            width: 20px;
-            left: 0;
-            margin: 5px; }
-      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper .elucid-page-content-right .info-header h2 {
-        font-size: 22px;
-        color: #1a4f63;
-        font-weight: 400; }
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left {
+        display: table-cell;
+        vertical-align: top; }
+        @media screen and (max-width: 768px) {
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left {
+            display: block; } }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+          margin-bottom: 40px; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"]:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 8px;
+            background-image: linear-gradient(to left, #72caf2, #03A9F3);
+            background-image: linear-gradient(to left, #72caf2, #03A9F3);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form {
+            padding: 40px; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form h2 {
+              color: #ff5131;
+              font-size: 22px;
+              font-weight: 500; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit {
+              border: none;
+              border-radius: 2px;
+              box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+              color: white;
+              font-weight: bold;
+              padding: 10px 40px;
+              position: relative;
+              text-transform: uppercase;
+              transition: all 0.25s;
+              background-color: #03A9F3; }
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
+                box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+                color: #1a749d;
+                top: -1px; }
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form input.js-form-submit:hover {
+                background-color: #b9e4ef; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form #edit-preview {
+              display: none; }
+            @media screen and (max-width: 768px) {
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active {
+                padding-top: 30px; } }
+            @media screen and (max-width: 768px) {
+              [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-left [data-elucid-plugin-id="system_main_block"] #contact-message-feedback-form .elucid_textfield.elucid_active label {
+                top: 0px; } }
+      [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right {
+        display: table-cell;
+        padding-left: 20px;
+        vertical-align: top; }
+        @media screen and (max-width: 768px) {
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right {
+            display: block; } }
+        @media screen and (max-width: 768px) {
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right {
+            padding-left: 0; } }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul {
+          margin: 0;
+          padding: 0;
+          list-style: none; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address {
+            padding-bottom: 15px;
+            padding-left: 40px;
+            position: relative; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-address:before {
+              background-image: url("../images/map-pin-icon.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+              content: "";
+              display: inline-block;
+              height: 20px;
+              position: absolute;
+              width: 20px;
+              left: 0;
+              margin: 5px; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone {
+            padding-bottom: 15px;
+            padding-left: 40px;
+            position: relative; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-phone:before {
+              background-image: url("../images/phone-icon.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+              content: "";
+              display: inline-block;
+              height: 20px;
+              position: absolute;
+              width: 20px;
+              left: 0;
+              margin: 5px; }
+          [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email {
+            padding-left: 40px;
+            position: relative; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email a {
+              color: #03A9F3; }
+            [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right ul li.info-email:before {
+              background-image: url("../images/email-icon.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+              content: "";
+              display: inline-block;
+              height: 20px;
+              position: absolute;
+              width: 20px;
+              left: 0;
+              margin: 5px; }
+        [data-elucid-page-path-alias="/contact/feedback"] .elucid-page-content .elucid-page-content-wrapper-outer .elucid-page-content-wrapper .elucid-page-content-right .info-header h2 {
+          font-size: 22px;
+          color: #1a4f63;
+          font-weight: 400; }
 
 /*
   Defines the Contract Vehicles page specific styles.
@@ -988,7 +980,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       margin-bottom: 30px; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-contracts a {
         display: inline-block;
-        padding-left: 30px;
+        padding-left: 25px;
         position: relative; }
         [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-contracts a:before {
           background-image: url("../images/download-icon.svg");
@@ -996,11 +988,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           background-repeat: no-repeat;
           content: "";
           display: inline-block;
-          height: 20px;
+          height: 17px;
           position: absolute;
-          width: 20px;
+          width: 14px;
           position: absolute;
-          left: 0; }
+          left: 0;
+          top: 1px; }
       [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-contracts a:hover {
         color: #1a749d;
         text-decoration: none; }
@@ -1010,9 +1003,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           background-repeat: no-repeat;
           content: "";
           display: inline-block;
-          height: 20px;
+          height: 17px;
           position: absolute;
-          width: 20px; }
+          width: 14px; }
     [data-elucid-page-path-alias="/contract-vehicles/gsa-schedule-70"] .elucid-page-content .schedule .schedule-gwac {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
@@ -1148,7 +1141,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         margin-bottom: 40px; }
         [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a {
           display: inline-block;
-          padding-left: 30px;
+          padding-left: 25px;
           position: relative; }
           @media screen and (max-width: 650px) {
             [data-elucid-page-path-alias="/contract-vehicles/nitaac"] .elucid-page-content .nitaac .nitaac-contracts ul a {
@@ -1324,19 +1317,24 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
       background-image: url("../images/homepage_banner_title_background.svg");
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 100%;
       display: inline-block;
+      height: 52px;
       font-weight: 600;
       font-size: 38px;
+      line-height: 52px;
       margin: 0 20px 20px;
       max-width: 430px;
       width: 100vw; }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-          font-size: 30px; } }
+          font-size: 28px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-          margin: 0 10px 10px; } }
+          height: 40px; } }
+      @media screen and (max-width: 650px) {
+        [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+          margin: 0 0 10px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
           max-width: 330px; } }
@@ -1352,7 +1350,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       width: 100vw; }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-          font-size: 32px; } }
+          font-size: 28px; } }
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
           letter-spacing: 1.9px; } }
@@ -1441,6 +1439,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       border-radius: 2px;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
       cursor: pointer;
+      font-size: 16px;
       font-weight: bold;
       margin-left: 40px;
       padding: 5px 35px; }
@@ -1448,12 +1447,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
         color: #1a749d;
         top: -1px; }
-      @media screen and (max-width: 768px) {
-        #block-contactusblock .contact-us .contact-us-content .contact-us-link {
-          margin-left: 0; } }
       @media screen and (max-width: 650px) {
         #block-contactusblock .contact-us .contact-us-content .contact-us-link {
           font-size: 16px; } }
+      @media screen and (max-width: 768px) {
+        #block-contactusblock .contact-us .contact-us-content .contact-us-link {
+          margin-left: 0; } }
       #block-contactusblock .contact-us .contact-us-content .contact-us-link:hover {
         color: #1a749d;
         text-decoration: none; }
@@ -1983,19 +1982,16 @@ header {
     #block-homepage-banner-block .banner_block_banner {
       height: 300px; } }
   #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
-    color: white;
-    font-style: italic;
-    min-width: 500px;
-    text-transform: uppercase; }
+    margin-top: 80px;
+    min-width: 500px; }
     @media screen and (max-width: 650px) {
       #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
         min-width: 300px; } }
     #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
-      background-image: url("../images/homepage_banner_title_background.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
       font-weight: 600;
       font-size: 58px;
+      height: 62px;
+      line-height: 62px;
       max-width: 500px;
       padding: 0 20px 0 10px; }
       @media screen and (max-width: 650px) {
@@ -2008,16 +2004,10 @@ header {
         #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
           max-width: 295px; } }
     #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-      font-weight: 300;
-      font-size: 60px;
-      letter-spacing: 3px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
+      font-size: 58px; }
       @media screen and (max-width: 650px) {
         #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
           font-size: 38px; } }
-      @media screen and (max-width: 650px) {
-        #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
-          letter-spacing: 1.9px; } }
 
 /*
   This stylesheet defines custom styles for

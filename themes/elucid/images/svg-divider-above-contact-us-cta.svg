@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="86" viewBox="0 0 1024 86" preserveAspectRatio="none">
-    <g fill="#03A9F3" fill-rule="evenodd">
-        <path d="M1024 68.004L0 0v85.113h1024z" opacity=".3"/>
-        <path d="M0 68.004L1024 0v84.113H0z"/>
-        <path d="M1024 76.059v-8.055L512 34.002 0 68.004v16.11h1024v-8.055z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="87" viewBox="0 0 1024 87" preserveAspectRatio="none">
+    <g fill="#03A9F3" fill-rule="nonzero">
+        <path d="M1024 68L0 0v85.1h1024z" opacity=".3"/>
+        <path d="M0 68L1024 0v84.1H0z"/>
+        <path d="M1024 68L512 34 0 68v18.7h1024z"/>
     </g>
 </svg>

@@ -255,6 +255,7 @@
   */
   Feature.prototype.initTabElements = function () {
     var self = this;
+    this.setOffsite ();
     this.offsiteTabElement.click (function () {
       self.setOffsite ();
     });

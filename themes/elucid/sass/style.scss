@@ -584,9 +584,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   .elucid_banner_ribbon {
     // Note: the SVG image must have 'preserveAspectRatio="none"'.
     @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
-    @include responsive(background-size, 101% ($ribbon-height + 3), 101% ($ribbon-tablet-height + 3), 101% ($ribbon-mobile-height + 3));
     background-image: url('../images/svg-divider-below-banner.svg');
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: absolute;
     -webkit-transform: translateY(-99%);
     transform: translateY(-99%);
@@ -595,9 +595,9 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   .elucid_contact_ribbon {
     // Note: the SVG image must have 'preserveAspectRatio="none"'.
     @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
-    @include responsive(background-size, 101% ($ribbon-height + 15), 101% ($ribbon-tablet-height + 15), 101% ($ribbon-mobile-height + 15));
     background-image: url('../images/svg-divider-above-contact-us-cta.svg');
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: absolute;
     -webkit-transform: translateY(-99%);
     transform: translateY(-99%);

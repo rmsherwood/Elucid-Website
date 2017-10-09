@@ -88,12 +88,14 @@
     <div class="elucid_banner_ribbon"></div>
     <div class="layout-padded-content elucid-page-content">
       <p class="elucid-page-intro">Please fill out the form to get in touch with us.</p>
-      <div class="elucid-page-content-wrapper">
-        <div class="elucid-page-content-left">
-          {{ page.content }}
-        </div>
-        <div class="elucid-page-content-right">
-          {{ drupal_block ('contactusinformation') }}
+      <div class="elucid-page-content-wrapper-outer">
+        <div class="elucid-page-content-wrapper">
+          <div class="elucid-page-content-left">
+            {{ page.content }}
+          </div>
+          <div class="elucid-page-content-right">
+            {{ drupal_block ('contactusinformation') }}
+          </div>
         </div>
       </div>
     </div>{# /.layout-content #}

@@ -1323,7 +1323,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       font-weight: 600;
       font-size: 38px;
       line-height: 52px;
-      margin: 0 20px 20px;
+      margin: 0 20px 10px;
       max-width: 430px;
       width: 100vw; }
       @media screen and (max-width: 650px) {
@@ -1982,7 +1982,7 @@ header {
     #block-homepage-banner-block .banner_block_banner {
       height: 300px; } }
   #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {
-    margin-top: 80px;
+    margin-top: 100px;
     min-width: 500px; }
     @media screen and (max-width: 650px) {
       #block-homepage-banner-block .banner_block_banner .banner_block_banner_overlay {

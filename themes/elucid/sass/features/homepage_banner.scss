@@ -10,7 +10,7 @@
     height: $banner_block_height;
     .banner_block_banner_overlay {
       @include mobile(min-width, 300px);
-      margin-top: 80px;
+      margin-top: 100px;
       min-width: 500px; // fine-tuned to prevent line wrapping.
       .elucid_banner_header {
         @include mobile(font-size, 34px);

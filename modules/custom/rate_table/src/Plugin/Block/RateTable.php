@@ -44,8 +44,7 @@ class RateTable extends BlockBase {
   private function getLaborCategories () {
     $labor_categories = [];
     $query = \Drupal::entityQuery ('node')
-      ->condition ('type', 'labor_category')
-      ->condition ('status', 1);
+      ->condition ('type', 'labor_category');
 
     $result = array_values ($query->execute ());
     foreach ($result as $nid) {
@@ -71,8 +70,7 @@ class RateTable extends BlockBase {
   private function getLaborRates () {
     $labor_rates = [];
     $query = \Drupal::entityQuery ('node')
-      ->condition ('type', 'labor_rate')
-      ->condition ('status', 1);
+      ->condition ('type', 'labor_rate');
 
     $result = array_values ($query->execute ());
     foreach ($result as $nid) {

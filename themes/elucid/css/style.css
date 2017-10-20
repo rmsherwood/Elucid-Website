@@ -1573,19 +1573,35 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 #block-credentials-block {
   background-color: #2d2d2d; }
   #block-credentials-block .credentials {
-    padding: 40px 42px; }
+    padding: 20px 42px; }
     #block-credentials-block .credentials .credentials-content {
       display: table;
       width: 100%; }
+      @media screen and (max-width: 650px) {
+        #block-credentials-block .credentials .credentials-content {
+          display: block; } }
       #block-credentials-block .credentials .credentials-content .credentials-icons {
         display: table-row; }
+        @media screen and (max-width: 650px) {
+          #block-credentials-block .credentials .credentials-content .credentials-icons {
+            display: block; } }
         #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon {
           display: table-cell;
+          padding: 20px 0;
           text-align: center; }
+          @media screen and (max-width: 650px) {
+            #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon {
+              display: block; } }
           #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon:first-of-type {
             text-align: left; }
+            @media screen and (max-width: 650px) {
+              #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon:first-of-type {
+                text-align: center; } }
           #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon:last-of-type {
             text-align: right; }
+            @media screen and (max-width: 650px) {
+              #block-credentials-block .credentials .credentials-content .credentials-icons .credentials-icon:last-of-type {
+                text-align: center; } }
 
 /*
   This stylesheet defines the styles for the

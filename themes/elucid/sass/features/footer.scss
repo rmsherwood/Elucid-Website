@@ -87,6 +87,13 @@ footer {
           max-width: 100%;
           width: 309px;
         }
+        a {
+          color: #d0d0d0;
+          &:hover {
+            color: $blue;
+            text-decoration: none;
+          }
+        }
       }
       .footer_bottom_right {
         display: table-cell;

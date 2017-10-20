@@ -94,6 +94,7 @@
     </div>{# /.layout-content #}
     <div class="elucid_contact_ribbon"></div>
     {{ drupal_block ('contactusblock') }}
+    {{ drupal_block ('credentials_block') }}
   </main>
   <footer role="contentinfo">
     <div class="footer_content layout-padded-content">
@@ -105,7 +106,7 @@
           <div class="company_info">
             <span class="elucid_bold">Elucid Solutions, Inc.</span>
             <p>4300 Montgomery Ave,<br>Suite 302,<br>Bethesda, MD 20814</p>
-            <p><span class="elucid_phone">301.652.8208</span><br><a href="mailto://info@elucidsolutions.com">info@elucidsolutions.com</a></p> 
+            <p><span class="elucid_phone">301.652.8208</span></p> 
           </div>
         </div>
         <div class="footer_top_right">
@@ -114,7 +115,7 @@
       </div>
       <div class="footer_bottom">
         <div class="footer_bottom_left">
-          <img src="{{ base_path ~ directory }}/images/cmmi-dev-icon.png"/>
+          <a href="mailto://info@elucidsolutions.com">info@elucidsolutions.com</a>
         </div>
         <div class="footer_bottom_right">
           <div class="credits">&copy; 2017 Elucid Solutions, Inc.</div>

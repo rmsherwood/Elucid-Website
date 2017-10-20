@@ -1053,6 +1053,97 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             width: 19px; }
 
 /*
+  This stylesheet defines the styles specific
+  to the Leadership Team page.
+*/
+[data-elucid-page-path-alias="/leadership"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  @media screen and (max-width: 650px) {
+    [data-elucid-page-path-alias="/leadership"] {
+      font-size: 14px; } }
+  [data-elucid-page-path-alias="/leadership"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/leadership"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-path-alias="/leadership"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/leadership"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-path-alias="/leadership"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/leadership"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-path-alias="/leadership"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/leadership"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-path-alias="/leadership"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-path-alias="/leadership"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-path-alias="/leadership"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-path-alias="/leadership"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/leadership"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/leadership"] .elucid-select:hover {
+      border-bottom: 2px solid #03A9F3;
+      font-size: 14px; }
+      [data-elucid-page-path-alias="/leadership"] .elucid-select:hover .elucid-select-label {
+        color: #03A9F3;
+        font-size: 12px; }
+  [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row {
+    border-bottom: 1px solid #7c7c7c;
+    padding-bottom: 40px;
+    margin-bottom: 40px; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row:last-of-type {
+      border: none;
+      margin: none; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row:after {
+      clear: both;
+      content: "";
+      display: block; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-photo {
+      float: left;
+      margin-right: 20px;
+      max-width: 379px; }
+      @media screen and (max-width: 768px) {
+        [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-photo {
+          float: none; } }
+      [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-photo .field-content img {
+        height: auto;
+        width: 100%; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-title {
+      color: #3571a1;
+      font-size: 32px;
+      font-weight: 600; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-position {
+      color: #f5581f;
+      font-size: 28px;
+      font-weight: 500; }
+    [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-body {
+      color: #7c7c7c; }
+
+/*
   This stylesheet defines styles applied
   specifically to the NITAAC contract page.
 */

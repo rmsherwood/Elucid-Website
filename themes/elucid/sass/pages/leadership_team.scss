@@ -1,0 +1,55 @@
+/*
+  This stylesheet defines the styles specific
+  to the Leadership Team page.
+*/
+[data-elucid-page-path-alias="/leadership"] {
+  @include styleguide;
+
+  [data-elucid-derivative-plugin-id="leadership_team-block_1"] {
+    [data-elucid-view-id="leadership_team"] {
+      .views-row {
+        border-bottom: 1px solid $gray;
+        padding-bottom: $margin-large;
+        margin-bottom: $margin-large;
+        &:last-of-type {
+          border: none;
+          margin: none;
+        }
+        &:after {
+          clear: both;
+          content: "";
+          display: block;
+        }
+        .views-field {
+          .field-content {
+          }
+        }
+        .views-field-field-profile-photo {
+          float: left;
+          margin-right: $margin-med;
+          max-width: 379px;
+          @include tablet(float, none);
+          .field-content {
+            img {
+              height: auto;
+              width: 100%;
+            }
+          }
+        }
+        .views-field-title {
+          color: #3571a1;
+          font-size: 32px;
+          font-weight: 600;
+        }
+        .views-field-field-profile-position {
+          color: #f5581f;
+          font-size: 28px;
+          font-weight: 500;
+        }
+        .views-field-body {
+          color: $gray;
+        }
+      }
+    }
+  }
+}

@@ -39,11 +39,13 @@
         .views-field-title {
           color: #3571a1;
           font-size: 32px;
+          @include mobile(font-size, 22px);
           font-weight: 600;
         }
         .views-field-field-profile-position {
           color: #f5581f;
           font-size: 28px;
+          @include mobile(font-size, 20px);
           font-weight: 500;
         }
         .views-field-body {

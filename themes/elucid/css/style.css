@@ -1136,10 +1136,16 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       color: #3571a1;
       font-size: 32px;
       font-weight: 600; }
+      @media screen and (max-width: 650px) {
+        [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-title {
+          font-size: 22px; } }
     [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-position {
       color: #f5581f;
       font-size: 28px;
       font-weight: 500; }
+      @media screen and (max-width: 650px) {
+        [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-field-profile-position {
+          font-size: 20px; } }
     [data-elucid-page-path-alias="/leadership"] [data-elucid-derivative-plugin-id="leadership_team-block_1"] [data-elucid-view-id="leadership_team"] .views-row .views-field-body {
       color: #7c7c7c; }
 

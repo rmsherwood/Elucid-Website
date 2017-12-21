@@ -5,13 +5,28 @@
 [data-elucid-page-path-alias="/capabilities"] {
   @include styleguide;
 
-  $ribbon-height: 80px;
-  $ribbon-mobile-height: 37px;
-  $ribbon-tablet-height: ($ribbon-height - $ribbon-mobile-height)/2 + $ribbon-mobile-height;
+  $partners-ribbon-height: 80px;
+  $partners-ribbon-mobile-height: 37px;
+  $partners-ribbon-tablet-height: ($partners-ribbon-height - $partners-ribbon-mobile-height)/2 + $partners-ribbon-mobile-height;
+  .elucid_partners_ribbon {
+    // Note: the SVG image must have 'preserveAspectRatio="none"'.
+    @include responsive(height, $partners-ribbon-height, $partners-ribbon-tablet-height, $partners-ribbon-mobile-height);
+    @include responsive(background-size, 101% ($partners-ribbon-height + 0), 101% ($partners-ribbon-tablet-height + 0), 101% ($partners-ribbon-mobile-height + 3));
+    background-image: url('../images/svg-divider-above-partners.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+    width: 100%;
+    z-index: 10;
+  }
+  $clients-ribbon-height: 80px;
+  $clients-ribbon-mobile-height: 37px;
+  $clients-ribbon-tablet-height: ($clients-ribbon-height - $clients-ribbon-mobile-height)/2 + $clients-ribbon-mobile-height;
   .elucid_clients_ribbon {
     // Note: the SVG image must have 'preserveAspectRatio="none"'.
-    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
-    @include responsive(background-size, 101% ($ribbon-height + 3), 101% ($ribbon-tablet-height + 3), 101% ($ribbon-mobile-height + 3));
+    @include responsive(height, $clients-ribbon-height, $clients-ribbon-tablet-height, $clients-ribbon-mobile-height);
+    @include responsive(background-size, 101% ($clients-ribbon-height + 0), 101% ($clients-ribbon-tablet-height + 0), 101% ($clients-ribbon-mobile-height + 3));
     background-image: url('../images/svg-divider-below-capabilities.svg');
     background-repeat: no-repeat;
     position: absolute;

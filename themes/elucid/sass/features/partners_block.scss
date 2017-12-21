@@ -1,0 +1,52 @@
+/*
+  This stylesheet defines the styling for the
+  client block.
+*/
+#block-template-our-partners {
+  background-color: #f4f4f4;
+  @include mobile(font-size, 14px);
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+
+  h2 {
+    background-image: url('../images/svg-header-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
+    color: white;
+    display: inline-block;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: $margin-med;
+    max-width: 350px;
+    padding: 8px 25px 10px 20px;
+    text-transform: uppercase;
+  }
+  .partners_component {
+    @extend .layout-padded-content;
+    .partners_intro {
+    }
+    .partners_icons {
+      .partners_icon {
+        @include mobile(padding-bottom, 20px);
+        align-items: center;
+        display: inline-block; /* browser fallback */
+        display: flex;
+        justify-content: center;
+
+        .partners_icon_image {
+          img {
+            height: auto;
+            max-height: 100%;
+            max-width: calc(100% - 20px);
+            margin: $margin-med;
+            @include mobile(margin, $margin-xsmall);
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+

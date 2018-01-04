@@ -47,17 +47,19 @@
   {% endif %}
 
   <div class="elucid-view-filter-rows-container">
-    <div class="elucid-filters-container">
-      <div class="elucid-filters-container-header">
-        <div class="elucid-filters-container-title">
-          <h3>Filter</h3>
+    {% if exposed %}
+      <div class="elucid-filters-container">
+        <div class="elucid-filters-container-header">
+          <div class="elucid-filters-container-title">
+            <h3>Filter</h3>
+          </div>
+          <div class="elucid-filters-container-toggle-button">
+            <img alt="Close Filters Icon" class="inlinesvg" src="/themes/elucid/images/expand-less-icon.svg" />
+          </div>
         </div>
-        <div class="elucid-filters-container-toggle-button">
-          <img alt="Close Filters Icon" class="inlinesvg" src="/themes/elucid/images/expand-less-icon.svg" />
-        </div>
+        {{ exposed }}
       </div>
-      {{ exposed }}
-    </div>
+    {% endif %}
     {{ attachment_before }}
     <div class="elucid-table-container">
       {{ rows }}

@@ -1,0 +1,16 @@
+/*
+  This module defines the default styling for
+  the View Term List filter elements.
+*/
+.view_term_list_select {
+  display: none; }
+
+.view_term_list_list {
+  display: table; }
+  .view_term_list_list .view_term_list_item {
+    cursor: pointer;
+    display: table-row; }
+    .view_term_list_list .view_term_list_item .view_term_list_item_label {
+      display: table-cell; }
+  .view_term_list_list .view_term_list_list_toggle_button {
+    cursor: pointer; }

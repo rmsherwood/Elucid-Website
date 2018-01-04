@@ -1444,39 +1444,63 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 20px; }
-[data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] {
-  /*
-      .view_term_list_select {
-        display: block;
-      }
-  */ }
-  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container {
-    display: flex; }
-    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block {
-      color: #424242;
-      margin-right: 22px;
-      width: 217px; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block ul {
-        margin: 0;
-        padding: 0; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block:before {
+[data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container {
+  display: flex; }
+  @media screen and (max-width: 768px) {
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container {
+      display: block; } }
+  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container {
+    margin-bottom: 20px;
+    width: 217px; }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container {
+        width: 100%; } }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header {
+      border-bottom: solid 1px #bae4ee;
+      position: relative; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header h3 {
         color: #e74131;
-        content: "FILTER";
-        display: block;
-        border-bottom: solid 1px #bae4ee;
+        font-family: "Open Sans";
         font-size: 18px;
-        font-stretch: normal;
-        font-style: normal;
-        font-weight: normal;
-        letter-spacing: normal;
         line-height: 1.71;
+        margin: 0;
+        padding: 0;
         text-align: left;
         text-transform: uppercase; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block .form-item-location {
+        @media screen and (max-width: 768px) {
+          [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header h3 {
+            padding-left: 15px; } }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header .elucid-filters-container-toggle-button {
+        cursor: pointer;
+        height: 15px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 15px; }
+        @media screen and (max-width: 768px) {
+          [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header .elucid-filters-container-toggle-button {
+            right: 0px; } }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header .elucid-filters-container-toggle-button svg {
+          height: 100%;
+          width: 100%; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header .elucid-filters-container-toggle-button:hover path {
+          fill: #03a9f3; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container .elucid-filters-container-header .elucid-filters-container-toggle-button.elucid-collapsed {
+          transform: rotate(180deg) translateY(-5px); }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block {
+      color: #424242;
+      margin-right: 22px; }
+      @media screen and (max-width: 768px) {
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block {
+          padding-left: 15px; } }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block ul {
+        margin: 0;
+        padding: 0; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .form-item-location {
         display: none; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block .form-item-category {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .form-item-category {
         display: none; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block .form-item-view-term-list-item-location:before {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .form-item-view-term-list-item-location:before {
         content: "LOCATION";
         display: block;
         color: #3571a1;
@@ -1489,7 +1513,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         line-height: 1.92;
         text-align: left;
         width: 109px; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block .form-item-view-term-list-item-category:before {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .form-item-view-term-list-item-category:before {
         content: "CATEGORY";
         display: block;
         color: #3571a1;
@@ -1502,30 +1526,25 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         line-height: 1.92;
         text-align: left;
         width: 109px; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block [type="submit"] {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block [type="submit"] {
         display: none; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container form#views-exposed-form-careers-career-block .view_term_list_list_reset_button {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .view_term_list_list_reset_button {
         cursor: pointer; }
-    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container {
-      flex: 1;
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .view_term_list_item_deselect_button {
+        margin-left: 20px; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .view_term_list_item_deselect_button svg {
+          vertical-align: middle; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-filters-container form#views-exposed-form-careers-career-block .view_term_list_item_deselect_button svg:hover #close-icon {
+          fill: #03a9f3; }
+  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container {
+    flex: 1;
+    width: 100%; }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table {
       width: 100%; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table {
-        width: 100%; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table thead {
-          border-bottom: solid 1px #bae4ee; }
-          [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table thead th {
-            color: #e74131;
-            font-size: 18px;
-            font-stretch: normal;
-            font-style: normal;
-            font-weight: normal;
-            height: 28px;
-            letter-spacing: normal;
-            line-height: 1.71;
-            text-align: left;
-            text-transform: uppercase;
-            width: 81px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table thead {
+        border-bottom: solid 1px #bae4ee; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table thead th {
+          color: #e74131;
           font-size: 18px;
           font-stretch: normal;
           font-style: normal;
@@ -1533,49 +1552,73 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           height: 28px;
           letter-spacing: normal;
           line-height: 1.71;
-          padding: 10px 15px;
+          padding: 0 15px;
           text-align: left;
-          width: 193px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td.views-field-title a {
-          color: #03a9f3; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td.views-field-field-opening-location a {
-          color: #424242; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr:nth-of-type(2n + 1) {
-          background-color: #eefcff; }
-  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container {
-    margin-top: 35px; }
+          text-transform: uppercase;
+          width: 81px; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td {
+        font-size: 18px;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: normal;
+        height: 28px;
+        letter-spacing: normal;
+        line-height: 1.71;
+        padding: 10px 15px;
+        text-align: left;
+        width: 193px; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td.views-field-title a {
+        color: #03a9f3; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr td.views-field-field-opening-location a {
+        color: #424242; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-filter-rows-container .elucid-table-container table tbody tr:nth-of-type(2n + 1) {
+        background-color: #eefcff; }
+[data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container {
+  margin-top: 35px; }
+  @media screen and (max-width: 768px) {
     [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav {
+      text-align: center; } }
+  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px; }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li {
+      border: 1px solid #d0d0d0;
+      border-right: 0;
+      display: inline-block;
+      padding: 0px;
+      font-size: 14px;
       text-align: center; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul {
-        display: inline-block; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li {
-          border: 1px solid #d0d0d0;
-          border-right: 0;
-          color: #4f4f4f;
-          display: inline-block;
-          padding: 5px;
-          font-size: 14px;
-          text-align: center;
-          width: 146px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul .pager__item {
-          display: inline-block;
-          width: 40px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul a:hover {
-          text-decoration: none; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li.is-active,
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li:hover {
-          background-color: #03a9f3;
-          color: white;
-          height: 30px;
-          width: 40px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li.pager__item--last {
-          border-right: 1px solid #d0d0d0; }
-      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li a {
         color: #4f4f4f;
-        margin-left: 15px; }
-        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info:after {
-          display: inline;
-          content: " Jobs"; }
+        display: block;
+        min-width: 30px;
+        padding: 5px 10px; }
+        [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li a:hover {
+          text-decoration: none; }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul .pager__item {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li.is-active,
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li:hover {
+      background-color: #03a9f3; }
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li.is-active a,
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li:hover a {
+        color: white; }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav ul li.pager__item--last {
+      border-right: 1px solid #d0d0d0; }
+  [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info {
+    color: #4f4f4f;
+    font-size: 14px;
+    margin-left: 15px; }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info {
+        display: block; } }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info {
+        margin: 20px; } }
+    [data-elucid-page-path-alias="/openings"] [data-elucid-view-id="careers"] .elucid-view-pager-container nav .elucid_pager_info:after {
+      display: inline;
+      content: " Jobs"; }
 
 /*
   Define the Search page specific styles.
@@ -1725,6 +1768,15 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       @media screen and (max-width: 650px) {
         [data-elucid-base-plugin-id="banner_block"] .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
           letter-spacing: 1.9px; } }
+
+/*
+  This stylesheet defines the styles used by
+  the Careers banner block.
+*/
+#block-careers-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_header {
+  max-width: 250px; }
+#block-careers-banner-block .banner_block_banner .banner_block_banner_overlay .elucid_banner_subheader {
+  max-width: 915px; }
 
 /*
   This stylesheet defines the styling for the

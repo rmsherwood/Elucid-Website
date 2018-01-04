@@ -1,0 +1,251 @@
+/*
+  Defines the Openings page specific styles.
+*/
+[data-elucid-page-path-alias="/openings"] {
+  #block-readytojointheteam {
+    color: #1e1e1e;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+
+    a {
+      color: #03a9f3;
+      &:hover {
+        font-style: underline;
+      }
+    }
+    h2 {
+      color: #e74131;
+      font-family: $default-font-family;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+  }
+  [data-elucid-view-id="careers"] {
+    .elucid-view-filter-rows-container {
+      display: flex;
+      @include tablet(display, block);
+      .elucid-filters-container {
+        margin-bottom: 20px;
+        width: 217px;
+        @include tablet(width, 100%);
+        .elucid-filters-container-header {
+          border-bottom: solid 1px #bae4ee;
+          position: relative;
+
+          h3 {
+            color: #e74131;
+            font-family: $default-font-family;
+            font-size: 18px;
+            line-height: 1.71;
+            margin: 0;
+            padding: 0;
+            @include tablet(padding-left, 15px);
+            text-align: left;
+            text-transform: uppercase;
+          }
+          .elucid-filters-container-toggle-button {
+            @include tablet(right, 0px);
+            cursor: pointer;
+            height: 15px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 15px;
+
+            svg {
+              height: 100%;
+              width: 100%;
+            }
+            &:hover {
+              path {
+                fill: #03a9f3;
+              }
+            }
+            &.elucid-collapsed {
+              transform: rotate(180deg) translateY(-5px);
+            }
+          }
+        }
+        form#views-exposed-form-careers-career-block {
+          @include tablet(padding-left, 15px);
+          color: #424242;
+          margin-right: 22px;
+          ul {
+            margin: 0;
+            padding: 0;
+          }
+          .form-item-location {
+            display: none;
+          }
+          .form-item-category {
+            display: none; 
+          }
+          .form-item-view-term-list-item-location {
+            &:before {
+              content: "LOCATION";
+              display: block;
+
+              color: #3571a1;
+              font-size: 16px;
+              font-stretch: normal;
+              font-style: normal;
+              font-weight: normal;
+              height: 28px;
+              letter-spacing: normal;
+              line-height: 1.92;
+              text-align: left;
+              width: 109px;
+            }
+          }
+          .form-item-view-term-list-item-category {
+            &:before {
+              content: "CATEGORY";
+              display: block;
+
+              color: #3571a1;
+              font-size: 16px;
+              font-stretch: normal;
+              font-style: normal;
+              font-weight: normal;
+              height: 28px;
+              letter-spacing: normal;
+              line-height: 1.92;
+              text-align: left;
+              width: 109px;
+            }
+          }
+          [type="submit"] {
+            display: none;
+          }
+          .view_term_list_list_reset_button {
+            cursor: pointer;
+          }
+          .view_term_list_item_deselect_button {
+            margin-left: 20px;
+
+            svg {
+              vertical-align: middle;
+            }
+            svg:hover {
+              #close-icon {
+                fill: #03a9f3;
+              }
+            }
+          }
+        }
+      }
+      .elucid-table-container {
+        flex: 1;
+        width: 100%;
+        table {
+          width: 100%;
+          thead {
+            border-bottom: solid 1px #bae4ee;
+            th {
+              color: #e74131;
+              font-size: 18px;
+              font-stretch: normal;
+              font-style: normal;
+              font-weight: normal;
+              height: 28px;
+              letter-spacing: normal;
+              line-height: 1.71;
+              padding: 0 15px;
+              text-align: left;
+              text-transform: uppercase;
+              width: 81px;
+            }
+          }
+          tbody {
+            tr {
+              td {
+                font-size: 18px;
+                font-stretch: normal;
+                font-style: normal;
+                font-weight: normal;
+                height: 28px;
+                letter-spacing: normal;
+                line-height: 1.71;
+                padding: 10px 15px;
+                text-align: left;
+                width: 193px;
+              }
+              td.views-field-title {
+                a {
+                  color: #03a9f3;
+                }
+              }
+              td.views-field-field-opening-location {
+                a {
+                  color: #424242;
+                }
+              }
+            }
+            tr:nth-of-type(2n) {
+            }
+            tr:nth-of-type(2n + 1) {
+              background-color: #eefcff;
+            }
+          }
+        }
+      }
+    }
+    .elucid-view-pager-container {
+      margin-top: 35px;
+      nav {
+        @include tablet(text-align, center);
+
+        ul {
+          display: inline-block;
+          margin: 0px;
+          padding: 0px;
+          li {
+            border: 1px solid #d0d0d0;
+            border-right: 0;
+            display: inline-block;
+            padding: 0px;
+            font-size: 14px;
+            text-align: center;
+
+            a {
+              color: #4f4f4f;
+              display: block;
+              min-width: 30px;
+              padding: 5px 10px;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+          .pager__item {
+            display: inline-block;
+          }
+          li.is-active,
+          li:hover {
+            background-color: #03a9f3;
+            a {
+              color: white;
+            }
+          }
+          li.pager__item--last {
+            border-right: 1px solid #d0d0d0;
+          }
+        }
+        .elucid_pager_info {
+          @include tablet(display, block);
+          @include tablet(margin, 20px);
+          color: #4f4f4f;
+          font-size: 14px;
+          margin-left: 15px;
+
+          &:after {
+            display: inline;
+            content: " Jobs"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/*
+  This stylesheet defines the styles used by
+  the Careers banner block.
+*/
+#block-careers-banner-block {
+  .banner_block_banner {
+    .banner_block_banner_overlay {
+      .elucid_banner_header {
+        max-width: 250px; // fine-tuned
+      }
+      .elucid_banner_subheader {
+        max-width: 915px; // fine-tuned
+      }
+    }
+  }
+}
+

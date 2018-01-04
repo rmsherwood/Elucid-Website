@@ -1,0 +1,7 @@
+name: View Term List
+description: Creates a new view filter that displays taxonomy terms as simple lists.
+package: Elucid Solutions
+type: module
+core: 8.x
+dependencies:
+  - taxonomy

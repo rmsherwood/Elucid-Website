@@ -53,3 +53,16 @@ function elucid_preprocess_page (&$variables) {
 function elucid_form_contact_message_feedback_form_alter (&$form, &$form_state, $form_id) {
   $form ['actions']['submit']['#value'] = 'Send';
 }
+
+/**
+ * Implements template_preprocess_pager ().
+ */
+function elucid_preprocess_pager (&$variables) {
+  global $pager_total, $pager_total_items, $pager_limits;
+  $element = $variables['pager']['#element'];
+  $variables['pager_num_items'] = $pager_total_items[$element];
+  $current = array_key_exists ('current', $variables) ? $variables['current'] - 1 : 0;
+
+  $variables ['pager_offset'] = $current * $pager_limits[$element];
+  $variables ['pager_max_items'] = min ($pager_limits[$element] + $variables['pager_offset'], $variables['pager_num_items']);
+}

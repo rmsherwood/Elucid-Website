@@ -1,0 +1,62 @@
+/*
+  This module defines the default styling for
+  the View Term List filter elements.
+*/
+
+.view_term_list_select {
+  display: none;
+}
+
+.view_term_list_list {
+  display: table;
+
+  .view_term_list_item {
+    cursor: pointer;
+    display: table-row;
+
+    .view_term_list_item_label {
+      display: table-cell;
+    }
+  }
+  .view_term_list_list_toggle_button {
+    cursor: pointer;
+  }
+}
+ul.view_term_list_list {
+  $color-grey: #4F4F4F;
+  color: $color-grey;
+  // font-family: $sans-text;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+
+  .view_term_list_item {
+    border-bottom: 1px solid $color-grey;    
+    display: block;
+    position: relative;    
+    width: 100%;
+
+    .view_term_list_item_label {
+      // @include hover-transition-content($color-blue-primary);
+      display: inline-block;
+      padding: 10px 20px 10px 0;
+      width: 100%;
+    }
+    .view_term_list_item_deselect_button {
+      // @include center-y;
+      position: absolute;
+      right: 0;
+    }
+  }
+  .view_term_list_list_reset_button {
+    // @include hover-transition-content($color-blue-primary);
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .view_term_list_list_toggle_button {
+    // @include hover-transition-content($color-blue-primary);
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+}

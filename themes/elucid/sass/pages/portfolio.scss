@@ -109,7 +109,7 @@
   $default_small_margin:  20px;
 
   $default_font_family: 'Open Sans';
-  $default_text_color:  black;
+  $default_text_color:  $gray-text;
 
   $large_screen_width:  950px;
   $medium_screen_width: 500px;
@@ -144,43 +144,6 @@
 
   // V. General Template Elements
 
-  #page {
-    #page_header {
-      background-image:  url("images/banner.jpg");
-      background-repeat: no-repeat;
-      background-size:   cover;
-      height:            $page_header_height;
-
-      #page_header_content {
-        transform: translateY(-50%);
-        position: relative;
-        top:      50%;
-
-        #page_header_title {
-          font-family: $default_font_family;
-          font-weight: 300;
-          margin:     0px auto;
-          text-align: center;
-          width:      80%;
-
-          span {
-            background-color: rgba(0,0,0,0.7);
-            box-shadow:       20px 0 0 rgba(0,0,0,0.7), -20px 0 0 rgba(0,0,0,0.7);
-            color:            white;
-            font-size:        55px;
-            line-height:      150%;
-          }
-        }
-      }
-    }
-
-    #page_body {
-      margin:    0px auto;
-      max-width: $max_page_width;
-      padding:   0px $default_small_margin $default_small_margin $default_small_margin;
-    }
-  }
-
   // VI. Import Module-Specific Styles
 
   // VII. Import Feature-Specific Styles
@@ -191,7 +154,7 @@
     border:     solid 1px #979797;
 
     .case_study_content_section {
-      font-family: OpenSans-Semibold;
+      font-family: $default_font_family;
 
       .case_study_content_section_header {
         @include outer-container;
@@ -204,17 +167,24 @@
 
         .case_study_content_section_header_lead {
           @include span-columns(4);
+          @include mobile(width, 100%);
+          font-size:   24px;
           font-weight: 300;
-          color:       #309DD2;
+          color:       $blue;
           text-align:  right;
+          @include mobile(text-align, left);
         }
 
         .case_study_content_section_header_body {
           @include span-columns(8);
+          @include mobile(width, 100%);
           border-left:  solid 1px black;
+          @include mobile(border-left, none);
+          font-size:    24px;
           font-weight:  600;
           height:       100%; // Temporary patch
           padding-left: 2.35%; // Manually match margin introduced by the Neat grid.
+          @include mobile(padding-left, 0);
           text-align:   left;
         }
       }
@@ -239,12 +209,13 @@
             @include span-columns(6);
 
             .case_study_content_section_body_links_section_list_item {
-              color:         #309DD2;
+              color:         $default-link-color;
               margin-bottom: 10px;
               margin-left:   20px; // protect list item icon from being overlapped while maintaining correct wrap behavior.
 
               a {
-                color: #309DD2;
+                @include flat-link();
+                // color: $default-link-color;
               }
             }
           }
@@ -257,14 +228,14 @@
         text-align: center;
 
         .case_study_content_section_footer_link_button {
-          background-color:    #309DD2;
-          background-image:    url('features/case_study/images/right-arrow.svg');
-          background-position: 93% 50%;
-          background-repeat:   no-repeat;
+          @include blue-button();
+          /*
+            background-image:    url('/themes/elucid/images/right-arrow.svg');
+            background-position: 93% 50%;
+            background-repeat:   no-repeat;
+          */
           color:               white;
           display:             inline-block; 
-          font-weight:         600;
-          padding:             5px 40px 5px 20px;
         }
       }
     }
@@ -274,11 +245,8 @@
       @include span-columns(8);
       @include shift(2);
 
-      img.case_study_screenshot_section_image {
-        // Temporary patch to remove 5 px of whitespace under image.
+      img {
         position: relative;
-        top:      5px;
-
         width:    100%;
       }
     }

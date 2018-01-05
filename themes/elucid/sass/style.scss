@@ -394,9 +394,9 @@ $max-content-width: 1024px;
   $code: null,
   $padding: null
 ) {
-  font-color: if($font-color, $font-color, $default-link-color);
+  color: if($font-color, $font-color, $default-link-color);
   &:hover {
-    font-color: if($hover-font-color, $hover-font-color, $default-link-hover-color);
+    color: if($hover-font-color, $hover-font-color, $default-link-hover-color);
   }
 }
 

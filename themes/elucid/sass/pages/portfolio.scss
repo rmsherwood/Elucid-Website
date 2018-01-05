@@ -1,0 +1,317 @@
+/*
+  This stylesheet defines the styles specific
+  to the Portfolio page.
+*/
+[data-elucid-page-path-alias="/portfolio"] {
+  /*
+    This stylesheet provides the styling for the
+    Elucid Portfolio website.
+  */
+
+  // I. Import Library Provided Styles
+
+  // II. Import Mixins
+
+  @mixin transitionAll{
+   transition: all .25s ease;
+  }
+
+  @mixin darkenOverlay($background_color){
+    background-color: adjust-color($background_color, $lightness: -60, $alpha: -.9);
+  }
+
+  @mixin boxBackground($background_color) {
+    @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
+
+    background-color: $background_color;
+  }
+
+  @mixin grayBox() {
+    @include boxBackground($primary-gray);
+  }
+
+  @mixin boxTitle($background_color) {
+    background-color: $background_color;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: white;
+    display: block;
+    font-weight: 600;
+    padding: .5em 5%;
+    font-size: 1.6em;
+  }
+
+  @mixin themeBoxTitle() {
+    @include boxTitle($primary-medium-color);
+  }
+
+  @mixin boxItem() {
+    padding: 0.2em;
+  }
+
+  @mixin navHeader() {
+    background-color: $primary-color;
+    color: white;
+    display: block;
+    font-weight: 300;
+    padding: 10px 0px;
+    text-align: center;
+  }
+
+  @mixin navItem($indent) {
+    display: block;
+    padding: 10px 10px 10px $indent;  
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @mixin coloredNavItem($indent, $color, $background_color) {
+    @include navItem($indent);
+    background-color: $background_color;
+    color: $color;
+  }
+
+  @mixin navItemHover($color, $background_color) {
+    background-color: $background_color;
+    color: $color;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s;
+  }
+
+  @mixin box-shadow($shadow) { 
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+
+  @mixin center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @mixin clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  // III. Global Variables
+
+  $default_large_margin:  80px;
+  $default_medium_margin: 40px;
+  $default_small_margin:  20px;
+
+  $default_font_family: 'Open Sans';
+  $default_text_color:  black;
+
+  $large_screen_width:  950px;
+  $medium_screen_width: 500px;
+  $small_screen_width:  400px;
+
+  $max_page_width:     940px;
+  $page_header_height: 340px;
+
+  // IV. Global Element Defaults
+
+  a {
+    color:           $default_text_color;
+    font-family:     $default_font_family;
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: $default_font_family;
+    margin:      0px;
+  }
+
+  p {
+    font-family: $default_font_family;
+    margin:      0px;
+  }
+
+  ul {
+    font-family: $default_font_family;
+    margin:      0px;
+    padding:     0px;
+  }
+
+  // V. General Template Elements
+
+  #page {
+    #page_header {
+      background-image:  url("images/banner.jpg");
+      background-repeat: no-repeat;
+      background-size:   cover;
+      height:            $page_header_height;
+
+      #page_header_content {
+        transform: translateY(-50%);
+        position: relative;
+        top:      50%;
+
+        #page_header_title {
+          font-family: $default_font_family;
+          font-weight: 300;
+          margin:     0px auto;
+          text-align: center;
+          width:      80%;
+
+          span {
+            background-color: rgba(0,0,0,0.7);
+            box-shadow:       20px 0 0 rgba(0,0,0,0.7), -20px 0 0 rgba(0,0,0,0.7);
+            color:            white;
+            font-size:        55px;
+            line-height:      150%;
+          }
+        }
+      }
+    }
+
+    #page_body {
+      margin:    0px auto;
+      max-width: $max_page_width;
+      padding:   0px $default_small_margin $default_small_margin $default_small_margin;
+    }
+  }
+
+  // VI. Import Module-Specific Styles
+
+  // VII. Import Feature-Specific Styles
+
+  .case_study {
+    @include outer-container;
+    margin-top: $default_small_margin;
+    border:     solid 1px #979797;
+
+    .case_study_content_section {
+      font-family: OpenSans-Semibold;
+
+      .case_study_content_section_header {
+        @include outer-container;
+        @include row ();
+        @include span-columns(10);
+        @include shift(1);
+        margin-bottom: $default_small_margin;
+        margin-top:    $default_small_margin;
+        text-align:    center;
+
+        .case_study_content_section_header_lead {
+          @include span-columns(4);
+          font-weight: 300;
+          color:       #309DD2;
+          text-align:  right;
+        }
+
+        .case_study_content_section_header_body {
+          @include span-columns(8);
+          border-left:  solid 1px black;
+          font-weight:  600;
+          height:       100%; // Temporary patch
+          padding-left: 2.35%; // Manually match margin introduced by the Neat grid.
+          text-align:   left;
+        }
+      }
+
+      .case_study_content_section_body {
+        @include row ();
+        .case_study_content_section_body_lead_section {
+          @include span-columns(10);
+          @include shift(1);
+          margin-bottom: $default_small_margin;
+          text-align:    center;
+        }
+
+        .case_study_content_section_body_links_section {
+          @include outer-container;
+          @include span-columns(8);
+          @include shift(2);
+          list-style:    url('images/list-arrows.svg');
+          margin-bottom: $default_small_margin;
+
+          .case_study_content_section_body_links_section_column {
+            @include span-columns(6);
+
+            .case_study_content_section_body_links_section_list_item {
+              color:         #309DD2;
+              margin-bottom: 10px;
+              margin-left:   20px; // protect list item icon from being overlapped while maintaining correct wrap behavior.
+
+              a {
+                color: #309DD2;
+              }
+            }
+          }
+        }
+      }
+
+      .case_study_content_section_footer {
+        @include    row ();
+        margin:     0px auto $default_small_margin;
+        text-align: center;
+
+        .case_study_content_section_footer_link_button {
+          background-color:    #309DD2;
+          background-image:    url('features/case_study/images/right-arrow.svg');
+          background-position: 93% 50%;
+          background-repeat:   no-repeat;
+          color:               white;
+          display:             inline-block; 
+          font-weight:         600;
+          padding:             5px 40px 5px 20px;
+        }
+      }
+    }
+
+    .case_study_screenshot_section {
+      @include row ();
+      @include span-columns(8);
+      @include shift(2);
+
+      img.case_study_screenshot_section_image {
+        // Temporary patch to remove 5 px of whitespace under image.
+        position: relative;
+        top:      5px;
+
+        width:    100%;
+      }
+    }
+  }
+
+  @include media(max-width $medium_screen_width) {
+    .case_study {
+      .case_study_content_section {
+        .case_study_content_section_body {
+          .case_study_content_section_body_links_section {
+            .case_study_content_section_body_links_section_column {
+              @include span-columns(12);
+              @include omega(n);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // VIII. Breakpoints
+
+  @include media(max-width $large_screen_width) {
+    #page {
+      #page_header {
+        #page_header_content {
+          #page_header_title {
+            span {
+              font-size: 38px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

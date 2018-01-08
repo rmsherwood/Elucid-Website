@@ -29,7 +29,7 @@ footer {
         ul {
           display: flex;
           @include tablet(display, none);
-          height: 60px;
+          min-height: 60px;
           justify-content: space-between;
         }
       }

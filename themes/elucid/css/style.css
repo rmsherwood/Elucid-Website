@@ -2178,7 +2178,7 @@ footer {
             text-decoration: none; }
     footer .footer_content .footer_top [data-elucid-base-plugin-id="system_menu_block"] ul {
       display: flex;
-      height: 60px;
+      min-height: 60px;
       justify-content: space-between; }
       @media screen and (max-width: 768px) {
         footer .footer_content .footer_top [data-elucid-base-plugin-id="system_menu_block"] ul {

@@ -172,7 +172,7 @@
           font-weight: 300;
           color:       $blue;
           text-align:  right;
-          @include mobile(text-align, left);
+          @include mobile(text-align, center);
         }
 
         .case_study_content_section_header_body {
@@ -186,6 +186,7 @@
           padding-left: 2.35%; // Manually match margin introduced by the Neat grid.
           @include mobile(padding-left, 0);
           text-align:   left;
+          @include mobile(text-align, center);
         }
       }
 
@@ -202,7 +203,7 @@
           @include outer-container;
           @include span-columns(8);
           @include shift(2);
-          list-style:    url('images/list-arrows.svg');
+          list-style:    url('/themes/elucid/images/check-circle-icon.svg');
           margin-bottom: $default_small_margin;
 
           .case_study_content_section_body_links_section_column {

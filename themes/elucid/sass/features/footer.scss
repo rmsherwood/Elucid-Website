@@ -6,33 +6,40 @@ footer {
   background-color: $gray-dark;
   color: #d0d0d0;
   .footer_content {
-    display: table;
     @include tablet(display, block);
     padding-top: 34px;
     padding-bottom: 60px;
     @include tablet(text-align, center);
     width: 100%;
-    .footer_top {
-      display: table-row;
-      @include tablet(display, block);
-      ul {
-        @include strip-margins;
-        li {
-          list-style-type: none;
-          a {
-            color: white;
-            &:hover {
-              color: $blue;
-              text-decoration: none;
-            }
+    ul {
+      @include strip-margins;
+      li {
+        list-style-type: none;
+        a {
+          color: white;
+          &:hover {
+            color: $blue;
+            text-decoration: none;
           }
         }
       }
-      .footer_top_left {
-        display: table-cell;
+    }
+    .footer_top {
+      [data-elucid-base-plugin-id="system_menu_block"] {
+        ul {
+          display: flex;
+          @include tablet(display, none);
+          height: 60px;
+          justify-content: space-between;
+        }
+      }
+    }
+    .footer_med {
+      @include tablet(display, block);
+      .footer_med_left {
         @include tablet(display, block);
         vertical-align: top;
-        .footer_top_left_mobile_nav {
+        .footer_med_left_mobile_nav {
           display: none;
           @include tablet(display, block);
           li {
@@ -62,27 +69,18 @@ footer {
           }
         }
       }
-      .footer_top_right {
-        display: table-cell;
+      .footer_med_right {
         @include tablet(display, block);
         vertical-align: top;
-        [data-elucid-base-plugin-id="system_menu_block"] {
-          ul {
-            display: flex;
-            @include tablet(display, none);
-            height: 80px;
-            justify-content: space-between;
-          }
-        }
       }
     }
     .footer_bottom {
-      display: table-row;
       @include tablet(display, block);
       .footer_bottom_left {
-        display: table-cell;
         margin-bottom: 23px;
         @include tablet(display, block);
+        float: left;
+        @include tablet(float, none);
         img {
           max-width: 100%;
           width: 309px;
@@ -96,8 +94,9 @@ footer {
         }
       }
       .footer_bottom_right {
-        display: table-cell;
         @include tablet(display, block);
+        float: right;
+        @include tablet(float, none);
         .credits {
           text-align: right;
           @include tablet(text-align, center);

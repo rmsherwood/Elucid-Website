@@ -96,8 +96,11 @@
   <footer role="contentinfo">
     <div class="footer_content layout-padded-content">
       <div class="footer_top">
-        <div class="footer_top_left">
-          <div class="footer_top_left_mobile_nav">
+          {{ drupal_block ('footer_nav_menu') }}
+      </div>
+      <div class="footer_med">
+        <div class="footer_med_left">
+          <div class="footer_med_left_mobile_nav">
             {{ drupal_block ('footer_nav_menu') }}
           </div>
           <div class="company_info">
@@ -106,8 +109,7 @@
             <p><span class="elucid_phone">301.652.8208</span></p> 
           </div>
         </div>
-        <div class="footer_top_right">
-          {{ drupal_block ('footer_nav_menu') }}
+        <div class="footer_med_right">
         </div>
       </div>
       <div class="footer_bottom">
@@ -121,5 +123,3 @@
     </div>
   </footer>
 </div>{# /.layout-container #}
-
-

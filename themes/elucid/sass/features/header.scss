@@ -97,6 +97,7 @@ header {
         }
         .region-header-right-bottom {
           background-color: transparent;
+          font-size: 14px;
           padding-left: $margin-xlarge;
           .header_menu_widescreen_view { 
             .header_menu_widescreen_view_menu_component {
@@ -127,9 +128,9 @@ header {
     }
   }
   #header_search_toggle_button {
-    $header_search_toggle_button_height: 18px;
-    background-size: $header_search_toggle_button_height;
+    $header_search_toggle_button_height: 14px;
     background: url("../images/search-icon.svg") no-repeat 50% 50%;
+    background-size: $header_search_toggle_button_height;
     cursor: pointer;
     display: table-cell;
     height: $header_search_toggle_button_height;

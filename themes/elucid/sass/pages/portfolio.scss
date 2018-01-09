@@ -148,6 +148,10 @@
 
   // VII. Import Feature-Specific Styles
 
+  .elucid_portfolio_ribbon {
+    @include ribbon('../images/svg-divider-blue-white-banner.svg');
+  }
+
   .case_study {
     @include outer-container;
     margin-top: $default_small_margin;
@@ -203,17 +207,23 @@
           @include outer-container;
           @include span-columns(8);
           @include shift(2);
-          list-style:    url('/themes/elucid/images/check-circle-icon.svg');
           margin-bottom: $default_small_margin;
-
           .case_study_content_section_body_links_section_column {
             @include span-columns(6);
 
             .case_study_content_section_body_links_section_list_item {
-              color:         $default-link-color;
+              color: $default-link-color;
+              list-style: none;
               margin-bottom: 10px;
               margin-left:   20px; // protect list item icon from being overlapped while maintaining correct wrap behavior.
-
+              padding-left: 30px;
+              position: relative;
+              &:before {
+                @include icon("../images/check-circle-icon.svg", 20px, 20px, inline-block);
+                left: 0;
+                position: absolute;
+                top: 3px;
+              }
               a {
                 @include flat-link();
                 // color: $default-link-color;

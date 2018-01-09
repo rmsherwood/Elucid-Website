@@ -83,6 +83,20 @@ html {
   applied to as a gradient bar
 */
 /*
+  Accepts four arguments:
+
+  * $url, an SVG image URL
+  * $height, an optional CSS dimension
+  * $tablet-height, an optional CSS dimension
+  * $mobile-height, an optional CSS dimension
+
+  and styles the element that this mixin is
+  applied to as a ribbon element.
+
+  Note: the SVG image must have
+  'preserveAspectRatio="none"'.
+*/
+/*
   Accepts one argument: height, a CSS dimension;
   and adds a gradient bar to the top of the
   element that this mixin is applied to.
@@ -1653,6 +1667,21 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     font-family: "Open Sans";
     margin: 0px;
     padding: 0px; }
+  [data-elucid-page-path-alias="/portfolio"] .elucid_portfolio_ribbon {
+    height: 80px;
+    background-image: url("../images/svg-divider-blue-white-banner.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    -webkit-transform: translateY(-99%);
+    transform: translateY(-99%);
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      [data-elucid-page-path-alias="/portfolio"] .elucid_portfolio_ribbon {
+        height: 58.5px; } }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/portfolio"] .elucid_portfolio_ribbon {
+        height: 37px; } }
   [data-elucid-page-path-alias="/portfolio"] .case_study {
     max-width: 100%;
     margin-left: auto;
@@ -1755,7 +1784,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
           margin-right: 2.35765%;
           width: 65.88078%;
           margin-left: 17.05961%;
-          list-style: url("/themes/elucid/images/check-circle-icon.svg");
           margin-bottom: 20px; }
           [data-elucid-page-path-alias="/portfolio"] .case_study .case_study_content_section .case_study_content_section_body .case_study_content_section_body_links_section::after {
             clear: both;
@@ -1772,8 +1800,23 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
               margin-right: 0; }
             [data-elucid-page-path-alias="/portfolio"] .case_study .case_study_content_section .case_study_content_section_body .case_study_content_section_body_links_section .case_study_content_section_body_links_section_column .case_study_content_section_body_links_section_list_item {
               color: #03A9F3;
+              list-style: none;
               margin-bottom: 10px;
-              margin-left: 20px; }
+              margin-left: 20px;
+              padding-left: 30px;
+              position: relative; }
+              [data-elucid-page-path-alias="/portfolio"] .case_study .case_study_content_section .case_study_content_section_body .case_study_content_section_body_links_section .case_study_content_section_body_links_section_column .case_study_content_section_body_links_section_list_item:before {
+                background-image: url("../images/check-circle-icon.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                content: "";
+                display: inline-block;
+                height: 20px;
+                position: absolute;
+                width: 20px;
+                left: 0;
+                position: absolute;
+                top: 3px; }
               [data-elucid-page-path-alias="/portfolio"] .case_study .case_study_content_section .case_study_content_section_body .case_study_content_section_body_links_section .case_study_content_section_body_links_section_column .case_study_content_section_body_links_section_list_item a {
                 color: #03A9F3; }
                 [data-elucid-page-path-alias="/portfolio"] .case_study .case_study_content_section .case_study_content_section_body .case_study_content_section_body_links_section .case_study_content_section_body_links_section_column .case_study_content_section_body_links_section_list_item a:hover {

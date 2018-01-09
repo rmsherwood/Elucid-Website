@@ -230,6 +230,38 @@ $max-content-width: 1024px;
   background-image: linear-gradient(to left, #72caf2, $blue);
 }
 
+$default-ribbon-height: 80px;
+$default-ribbon-mobile-height: 37px;
+$default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-height)/2 + $default-ribbon-mobile-height;
+
+/*
+  Accepts four arguments:
+
+  * $url, an SVG image URL
+  * $height, an optional CSS dimension
+  * $tablet-height, an optional CSS dimension
+  * $mobile-height, an optional CSS dimension
+
+  and styles the element that this mixin is
+  applied to as a ribbon element.
+
+  Note: the SVG image must have
+  'preserveAspectRatio="none"'.
+*/
+@mixin ribbon($url, $height: null, $tablet-height: null, $mobile-height: null) {
+  @include responsive(height,
+    if($height, $height, $default-ribbon-height),
+    if($tablet-height, $tablet-height, $default-ribbon-tablet-height),
+    if($mobile-height, $mobile-height, $default-ribbon-mobile-height));
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  -webkit-transform: translateY(-99%);
+  transform: translateY(-99%);
+  width: 100%;
+}
+
 /*
   Accepts one argument: height, a CSS dimension;
   and adds a gradient bar to the top of the
@@ -581,30 +613,11 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     padding-top: $margin-med;
     margin-bottom: 100px;
   }
-  $ribbon-height: 80px;
-  $ribbon-mobile-height: 37px;
-  $ribbon-tablet-height: ($ribbon-height - $ribbon-mobile-height)/2 + $ribbon-mobile-height;
   .elucid_banner_ribbon {
-    // Note: the SVG image must have 'preserveAspectRatio="none"'.
-    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
-    background-image: url('../images/svg-divider-below-banner.svg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: absolute;
-    -webkit-transform: translateY(-99%);
-    transform: translateY(-99%);
-    width: 100%;
+    @include ribbon('../images/svg-divider-below-banner.svg');
   }
   .elucid_contact_ribbon {
-    // Note: the SVG image must have 'preserveAspectRatio="none"'.
-    @include responsive(height, $ribbon-height, $ribbon-tablet-height, $ribbon-mobile-height);
-    background-image: url('../images/svg-divider-above-contact-us-cta.svg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: absolute;
-    -webkit-transform: translateY(-99%);
-    transform: translateY(-99%);
-    width: 100%;
+    @include ribbon('../images/svg-divider-above-contact-us-cta.svg');
   }
 }
 

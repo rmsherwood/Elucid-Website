@@ -230,6 +230,17 @@ $max-content-width: 1024px;
   background-image: linear-gradient(to left, #72caf2, $blue);
 }
 
+/*
+  Accepts one argument: height, a CSS dimension;
+  and adds a gradient bar to the top of the
+  element that this mixin is applied to.
+*/
+@mixin gradient-bar-before($height) {
+  &:before {
+    @include gradient-bar($height);
+  }
+}
+
 $default-ribbon-height: 80px;
 $default-ribbon-mobile-height: 37px;
 $default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-height)/2 + $default-ribbon-mobile-height;
@@ -260,17 +271,6 @@ $default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-
   -webkit-transform: translateY(-99%);
   transform: translateY(-99%);
   width: 100%;
-}
-
-/*
-  Accepts one argument: height, a CSS dimension;
-  and adds a gradient bar to the top of the
-  element that this mixin is applied to.
-*/
-@mixin gradient-bar-before($height) {
-  &:before {
-    @include gradient-bar($height);
-  }
 }
 
 /*

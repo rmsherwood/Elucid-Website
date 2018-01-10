@@ -83,6 +83,11 @@ html {
   applied to as a gradient bar
 */
 /*
+  Accepts one argument: height, a CSS dimension;
+  and adds a gradient bar to the top of the
+  element that this mixin is applied to.
+*/
+/*
   Accepts four arguments:
 
   * $url, an SVG image URL
@@ -95,11 +100,6 @@ html {
 
   Note: the SVG image must have
   'preserveAspectRatio="none"'.
-*/
-/*
-  Accepts one argument: height, a CSS dimension;
-  and adds a gradient bar to the top of the
-  element that this mixin is applied to.
 */
 /*
   Accepts one argument: url, a URL string; and
@@ -1450,45 +1450,45 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   This stylesheet defines the styles used by
   the Job Opening pages.
 */
-[data-elucid-page-node-type="opening"] h2 {
+[data-elucid-page-node-type="opening"] .elucid-page-content h2 {
   color: #e74131;
   font-family: "Open Sans";
   font-size: 32px;
   font-weight: 400; }
-[data-elucid-page-node-type="opening"] h3 {
+[data-elucid-page-node-type="opening"] .elucid-page-content h3 {
   color: #3571a1;
   font-size: 28px;
   font-weight: 600; }
-[data-elucid-page-node-type="opening"] .elucid-opening-location {
+[data-elucid-page-node-type="opening"] .elucid-page-content .elucid-opening-location {
   font-size: 22px;
   font-weight: 400; }
-[data-elucid-page-node-type="opening"] #block-readytojointheteam {
+[data-elucid-page-node-type="opening"] .elucid-page-content #block-readytojointheteam {
   color: #1e1e1e;
   font-size: 16px;
   line-height: 1.4;
   margin-bottom: 60px; }
-  [data-elucid-page-node-type="opening"] #block-readytojointheteam a {
+  [data-elucid-page-node-type="opening"] .elucid-page-content #block-readytojointheteam a {
     color: #03a9f3; }
-    [data-elucid-page-node-type="opening"] #block-readytojointheteam a:hover {
+    [data-elucid-page-node-type="opening"] .elucid-page-content #block-readytojointheteam a:hover {
       font-style: underline; }
-  [data-elucid-page-node-type="opening"] #block-readytojointheteam h2 {
+  [data-elucid-page-node-type="opening"] .elucid-page-content #block-readytojointheteam h2 {
     color: #e74131;
     font-family: "Open Sans";
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 20px; }
-[data-elucid-page-node-type="opening"] .elucid-application-container {
+[data-elucid-page-node-type="opening"] .elucid-page-content .elucid-application-container {
   border-radius: 4px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
   margin-top: 60px; }
-  [data-elucid-page-node-type="opening"] .elucid-application-container:before {
+  [data-elucid-page-node-type="opening"] .elucid-page-content .elucid-application-container:before {
     content: '';
     display: block;
     width: 100%;
     height: 8px;
     background-image: linear-gradient(to left, #72caf2, #03A9F3);
     background-image: linear-gradient(to left, #72caf2, #03A9F3); }
-  [data-elucid-page-node-type="opening"] .elucid-application-container .contact-message-job-application-form {
+  [data-elucid-page-node-type="opening"] .elucid-page-content .elucid-application-container .contact-message-job-application-form {
     padding: 40px; }
 
 /*

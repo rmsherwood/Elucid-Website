@@ -84,10 +84,7 @@
   {{ page.help }}
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    <div class="layout-padded-content elucid-page-content">
-      {{ drupal_block ('elucid_page_title') }}
-      {{ page.content }}
-    </div>{# /.layout-content #}
+    {{ page.content }}
     <div class="elucid_contact_ribbon"></div>
     {{ drupal_block ('contactusblock') }}
   </main>

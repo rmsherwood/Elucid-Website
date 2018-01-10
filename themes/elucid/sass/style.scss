@@ -483,7 +483,7 @@ $default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-
   $default-blue-button-background-color: $blue;
   $default-blue-button-hover-background-color: $blue-light;
 
-  @include button($font-color, $border-radius, $box-shadow, $hover-box-shadow, $hover-font-color);
+  @include button(if($font-color, $font-color, $default-blue-button-color), $border-radius, $box-shadow, $hover-box-shadow, $hover-font-color);
   background-color: $default-blue-button-background-color;
   &:hover {
     background-color: $default-blue-button-hover-background-color;

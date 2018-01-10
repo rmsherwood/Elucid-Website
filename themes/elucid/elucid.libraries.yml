@@ -5,6 +5,7 @@ base:
     node_modules/material-components-web/dist/material-components-web.min.js: {}
     js/elucid.js: {}
     js/input.js: {}
+    js/input_file.js: {}
     js/openings.js: {}
   css:
     theme:

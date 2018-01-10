@@ -1,0 +1,51 @@
+/*
+  This stylesheet defines styles used by the
+  Application form.
+*/
+.contact-message-job-application-form {
+  font-family: $default-font-family;
+  .ajax-new-content {
+    display: none !important;
+  }
+  a {
+    @include flat-link();
+  }
+  h3 {
+    color: #e74131;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  input,
+  textarea {
+    max-width: 100%;
+  }
+  .js-form-item {
+    label {
+      color: $gray;
+      font-size: 14px;
+      min-width: 120px;
+    }
+    [role="alert"] {
+      display: none;
+    }
+    .js-form-managed-file {
+      display: inline-block;
+    }
+    .description {
+      display: none;
+    }
+  }
+  .js-form-submit {
+    @include blue-button();
+  }
+  [data-drupal-selector="edit-preview"] {
+    display: none;
+  }
+  .elucid-input-file-hidden { 
+    display: none;
+  }
+  .elucid-input-file-link {
+    @include flat-link();
+    cursor: pointer;
+  }
+}

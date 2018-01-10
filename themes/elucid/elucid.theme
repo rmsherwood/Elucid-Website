@@ -55,6 +55,13 @@ function elucid_form_contact_message_feedback_form_alter (&$form, &$form_state, 
 }
 
 /**
+ *  Implements hook_form_FORM_ID_alter ().
+ */
+function elucid_form_contact_message_job_application_form_alter (&$form, &$form_state, $form_id) {
+  $form ['actions']['submit']['#value'] = 'Submit Application';
+}
+
+/**
  * Implements template_preprocess_pager ().
  */
 function elucid_preprocess_pager (&$variables) {

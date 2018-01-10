@@ -28,6 +28,7 @@ class TwigExtension extends \Twig_Extension {
       new \Twig_SimpleFunction('drupal_field', [$this, 'drupalField']),
       new \Twig_SimpleFunction('drupal_menu', [$this, 'drupalMenu']),
       new \Twig_SimpleFunction('drupal_form', [$this, 'drupalForm']),
+      new \Twig_SimpleFunction('elucid_contact_form', [$this, 'elucidContactForm']),
       new \Twig_SimpleFunction('drupal_token', [$this, 'drupalToken']),
       new \Twig_SimpleFunction('drupal_config', [$this, 'drupalConfig']),
       new \Twig_SimpleFunction('drupal_dump', [$this, 'drupalDump']),
@@ -232,6 +233,26 @@ class TwigExtension extends \Twig_Extension {
     $form_builder = \Drupal::formBuilder();
     $args = func_get_args();
     return call_user_func_array([$form_builder, 'getForm'], $args);
+  }
+
+  public function elucidContactForm($form_id) {
+    $entity_manager = \Drupal::entityManager();
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    $contact_form = $entity_manager
+      ->getStorage('contact_form')
+      ->load($form_id);
+
+    $message = $entity_manager
+      ->getStorage('contact_message')
+      ->create([
+        'contact_form' => $contact_form->id (),
+      ]);
+
+    $entityFormBuilder = \Drupal::service('entity.form_builder');
+    $form = $entityFormBuilder->getForm($message);
+    $form['#title'] = $contact_form->label();
+    return $form;
   }
 
   /**

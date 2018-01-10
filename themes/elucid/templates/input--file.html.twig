@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+<div class="elucid-input-file">
+  <div class="elucid-input-file-hidden">
+    <input class="elucid-input-file-button" {{ attributes }} />
+  </div>
+  <div class="elucid-input-file-link">Attach</div>
+  <div class="elucid-input-file-caption">
+    {{ children }}
+  </div>
+</div>

@@ -45,6 +45,7 @@
   */
   FormComponent.prototype.getInputComponentElements = function () {
     return $('.form-item.js-form-type-textfield,\
+      .form-item.js-form-type-url,\
       .form-item.js-form-type-email,\
       .form-item.js-form-type-password,\
       .form-item.js-form-type-textarea', this.formElement);

@@ -76,7 +76,7 @@ class BannerBlock extends BlockBase {
   public function build () {
     $fid = $this->configuration ['banner_block_image_fid'];
     $file = \Drupal::entityManager()->getStorage ('file')->load ($fid);
-    $file_url = $file ? $file->url() : $this->configuration ['banner_block_image_url'];
+    $file_url = $file ? $file->url() : '';
     return [
       '#attached' => [
         'library' => ['banner_block/banner_block_library'],

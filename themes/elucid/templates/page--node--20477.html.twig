@@ -86,10 +86,7 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     {{ drupal_block ('nitaac_banner_block') }}
     <div class="elucid_banner_ribbon"></div>
-    <div class="layout-padded-content elucid-page-content">
-      {{ page.content }}
-      {{ drupal_block ('ratetableblock') }}
-    </div>{# /.layout-content #}
+    {{ page.content }}
     <div class="elucid_contact_ribbon"></div>
     {{ drupal_block ('contactusblock') }}
     {{ drupal_block ('credentials_block') }}
@@ -97,7 +94,7 @@
   <footer role="contentinfo">
     <div class="footer_content layout-padded-content">
       <div class="footer_top">
-          {{ drupal_block ('footer_nav_menu') }}
+        {{ drupal_block ('footer_nav_menu') }}
       </div>
       <div class="footer_med">
         <div class="footer_med_left">

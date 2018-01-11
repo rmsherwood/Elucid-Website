@@ -62,14 +62,11 @@ class BannerBlock extends BlockBase {
     $this->configuration ['banner_block_overlay'] = $form_state->getValue ('banner_block_overlay');
     $this->configuration ['banner_block_image'] = $form_state->getValue ('banner_block_image');
     $fid = empty ($form_state->getValue ('banner_block_image')) ? null : $form_state->getValue ('banner_block_image')[0];
-    if ($fid) {
-      $file = \Drupal::entityManager()->getStorage ('file')->load ($fid);
-      if ($file) {
-        $file->setPermanent ();
-        $file->save ();
-        $file_url = $file->url();
-        $this->configuration ['banner_block_image_url'] = $file_url;
-      }
+    $this->configuration ['banner_block_image_fid'] = $fid;
+    $file = \Drupal::entityManager()->getStorage ('file')->load ($fid);
+    if ($file) {
+      $file->setPermanent ();
+      $file->save ();
     }
   }
 
@@ -77,6 +74,9 @@ class BannerBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build () {
+    $fid = $this->configuration ['banner_block_image_fid'];
+    $file = \Drupal::entityManager()->getStorage ('file')->load ($fid);
+    $file_url = $file ? $file->url() : $this->configuration ['banner_block_image_url'];
     return [
       '#attached' => [
         'library' => ['banner_block/banner_block_library'],
@@ -84,7 +84,7 @@ class BannerBlock extends BlockBase {
       ],
       '#cache' => array ('max-age' => 0),
       '#theme' => 'banner_block',
-      '#banner_block_image' => $this->configuration ['banner_block_image_url'],
+      '#banner_block_image' => $file_url,
       '#banner_block_overlay' => $this->configuration ['banner_block_overlay']
     ];
   }

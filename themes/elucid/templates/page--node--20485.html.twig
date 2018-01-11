@@ -86,10 +86,7 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     {{ drupal_block ('leadership_banner_block') }}
     <div class="elucid_banner_ribbon"></div>
-    <div class="layout-padded-content elucid-page-content">
-      {{ page.content }}
-      {{ drupal_block ('views_block__leadership_team_block_1') }}
-    </div>{# /.layout-content #}
+    {{ page.content }}
     <div class="elucid_contact_ribbon"></div>
     {{ drupal_block ('contactusblock') }}
     {{ drupal_block ('credentials_block') }}

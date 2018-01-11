@@ -1,8 +1,7 @@
 {#
 /**
  * @file
- * Theme used to display individual Job Opening pages.
- * This template uses the Twig Tweaks module to insert the Application form.
+ * Theme override to display the Job Openings page.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -71,48 +70,24 @@
  *   in different view modes.
  */
 #}
+
 <div class="elucid-page-node">
-  {{ drupal_block ('job_opening_banner_block') }}
-  <div class="elucid_banner_ribbon"></div>
   <div class="layout-padded-content elucid-page-content">
-    {{ drupal_block ('elucid_page_title') }}
+   {{ drupal_block ('elucid_page_title') }}
     <article{{ attributes }}>
       {{ drupal_block ('breadcrumbs') }}
       {{ title_prefix }}
-        <h2{{ title_attributes }}>{{label}}</h2>
-        <h3 class="elucid-opening-location">
-          {{content.field_opening_location}}
-        </h3>
-      {{ title_suffix }}
-
-      {% if display_submitted %}
-        <footer>
-          {{ author_picture }}
-          <div{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </footer>
+      {% if not page %}
+        <h2{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
       {% endif %}
-
+      {{ title_suffix }}
       <div{{ content_attributes }}>
-        {# {{ content }} #}
-        <div class="elucid-opening-intro">
-          {{ content.body }}
-        </div>
-        <div class="elucid-opening-responsibilities">
-          <h3>Essential Duties &amp; Responsibilities</h3>
-          {{ content.field_opening_responsibilities }}
-        </div>
-        <div class="elucid-opening-requirements">
-          <h3>Requirements</h3>
-          {{ content.field_opening_requirements }}
-        </div>
-      </div>
-      {{ drupal_block('readytojointheteam') }}
-      <div class="elucid-application-container">
-        {{ elucid_contact_form('job_application') }}
+        {{ content }}
+        {{ drupal_block ('readytojointheteam') }}
+        {{ drupal_block ('views_block__careers_career_block') }}
       </div>
     </article>
-  </div>
-</div>{# /.layout-content #}
+  </div>{# /.layout-content #}
+</div>

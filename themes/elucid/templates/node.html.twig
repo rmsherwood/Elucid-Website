@@ -71,18 +71,21 @@
  */
 #}
 
-<div class="layout-padded-content elucid-page-content">
- {{ drupal_block ('elucid_page_title') }}
-  <article{{ attributes }}>
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-    <div{{ content_attributes }}>
-      {{ content }}
-    </div>
-  </article>
-</div>{# /.layout-content #}
+<div class="elucid-page-node">
+  <div class="layout-padded-content elucid-page-content">
+   {{ drupal_block ('elucid_page_title') }}
+    <article{{ attributes }}>
+      {{ drupal_block ('breadcrumbs') }}
+      {{ title_prefix }}
+      {% if not page %}
+        <h2{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+      {% endif %}
+      {{ title_suffix }}
+      <div{{ content_attributes }}>
+        {{ content }}
+      </div>
+    </article>
+  </div>{# /.layout-content #}
+</div>

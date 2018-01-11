@@ -1,0 +1,24 @@
+/*
+  This stylesheet defines the default styles
+  for the breadcrumb block.
+*/
+[data-elucid-plugin-id="system_breadcrumb_block"] {
+  margin-bottom: $margin-med;
+  a {
+    @include flat-link();
+  }
+  nav {
+    font-size: 12px;
+    ol {
+      @include strip-margins();
+      list-style: none;
+      li {
+        display: inline-block;
+        .elucid-breadcrumb-divider {
+          height: 8px;
+          width: 8px;
+        }
+      }
+    }
+  }
+}

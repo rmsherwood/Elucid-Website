@@ -2,7 +2,9 @@
   Defines the default styles for the Benefits
   page.
 */
-[data-elucid-page-path-alias="/benefits"] {
+[data-elucid-page-path-alias="/benefits"],
+[data-elucid-page-path-alias="/careers/benefits"],
+[data-elucid-page-path-alias="/careers/employee-benefits"] {
   @include styleguide;
   h2 {
     color: #e74131;

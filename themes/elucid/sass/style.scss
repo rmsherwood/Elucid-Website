@@ -554,6 +554,9 @@ $default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-
   font-size: $default-body-font-size;
   @include mobile(font-size, 14px);
 
+  .elucid-message {
+    @extend .layout-padded-content;
+  }
   h1 {
     @include h1;
   }

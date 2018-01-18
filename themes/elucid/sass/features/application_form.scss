@@ -11,9 +11,9 @@
     @include flat-link();
   }
   h3 {
-    color: #e74131;
-    font-size: 22px;
-    font-weight: 400;
+    color: #e74131 !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
   }
   input,
   textarea {

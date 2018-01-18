@@ -12,11 +12,13 @@
     position: absolute;
     transition: all .125s linear;
     top: 20px;
-    &:after {
-      background-image: none;
-      color: $gray;
-      content: '*';
-      vertical-align: baseline;
+    &.form-required {
+      &:after {
+        background-image: none;
+        color: $gray;
+        content: ' *';
+        vertical-align: baseline;
+      }
     }
   }
   input,textarea {

@@ -221,13 +221,16 @@ $max-content-width: 1024px;
   and styles the element that this mixin is
   applied to as a gradient bar
 */
-@mixin gradient-bar($height) {
+@mixin gradient-bar($height, $border-radius: null) {
   content: '';
   display: block;
   width: 100%;
   height: $height;
   background-image: linear-gradient(to left, #72caf2, $blue);
   background-image: linear-gradient(to left, #72caf2, $blue);
+  border-top-left-radius: if($border-radius, $border-radius, 0px);
+  border-top-right-radius: if($border-radius, $border-radius, 0px);
+  
 }
 
 /*
@@ -235,9 +238,9 @@ $max-content-width: 1024px;
   and adds a gradient bar to the top of the
   element that this mixin is applied to.
 */
-@mixin gradient-bar-before($height) {
+@mixin gradient-bar-before($height, $border-radius: null) {
   &:before {
-    @include gradient-bar($height);
+    @include gradient-bar($height, $border-radius);
   }
 }
 

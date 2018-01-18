@@ -48,6 +48,7 @@
       .form-item.js-form-type-url,\
       .form-item.js-form-type-email,\
       .form-item.js-form-type-password,\
+      .form-item.js-form-type-tel,\
       .form-item.js-form-type-textarea', this.formElement);
   }
 

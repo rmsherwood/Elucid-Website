@@ -2077,6 +2077,50 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   pages.
 */
 /*
+  This stylesheet defines the default styles
+  for accordion elements.
+*/
+.accordion {
+  border: 1px solid #d2d2d2;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+  margin-top: 10px;
+  margin-bottom: 20px; }
+  .accordion .accordion_item .accordion_item_header {
+    border-bottom: 1px solid #d2d2d2;
+    color: #525252;
+    cursor: pointer;
+    display: table;
+    border-collapse: collapse;
+    width: 100%; }
+    .accordion .accordion_item .accordion_item_header .accordion_item_header_left {
+      border-right: 1px solid #d2d2d2;
+      display: table-cell;
+      text-align: center;
+      width: 120px; }
+    .accordion .accordion_item .accordion_item_header .accordion_item_header_middle {
+      display: table-cell;
+      padding: 15px 0px 15px 20px; }
+    .accordion .accordion_item .accordion_item_header .accordion_item_header_right {
+      border-left: 1px solid #d2d2d2;
+      display: table-cell;
+      text-align: center;
+      width: 30px; }
+  .accordion .accordion_item .accordion_item_header:hover {
+    background-color: #edfcff;
+    color: #1a749d; }
+    .accordion .accordion_item .accordion_item_header:hover .accordion_item_header_right svg path {
+      fill: #1a749d; }
+  .accordion .accordion_item .accordion_item_body {
+    width: 100%;
+    border-bottom: 1px solid #d2d2d2; }
+  .accordion .accordion_item.accordion_expanded .accordion_item_header {
+    color: #03A9F3; }
+    .accordion .accordion_item.accordion_expanded .accordion_item_header .accordion_item_header_right svg {
+      transform: rotate(180deg); }
+      .accordion .accordion_item.accordion_expanded .accordion_item_header .accordion_item_header_right svg path {
+        fill: #03A9F3; }
+
+/*
   This stylesheet defines styles used by the
   Application form.
 */

@@ -276,6 +276,95 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
       height: 37px; } }
 
 /*
+  Defines the default styles for the Benefits
+  page.
+*/
+[data-elucid-page-path-alias="/benefits"] {
+  font-family: "Open Sans";
+  font-size: 16px; }
+  @media screen and (max-width: 650px) {
+    [data-elucid-page-path-alias="/benefits"] {
+      font-size: 14px; } }
+  [data-elucid-page-path-alias="/benefits"] h1 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 700; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/benefits"] h1 {
+        font-size: 26px; } }
+  [data-elucid-page-path-alias="/benefits"] h2 {
+    font-size: 32px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/benefits"] h2 {
+        font-size: 22px; } }
+  [data-elucid-page-path-alias="/benefits"] h3 {
+    font-size: 28px;
+    font-family: "Open Sans";
+    font-weight: 600; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/benefits"] h3 {
+        font-size: 20px; } }
+  [data-elucid-page-path-alias="/benefits"] h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 400; }
+    @media screen and (max-width: 650px) {
+      [data-elucid-page-path-alias="/benefits"] h4 {
+        font-size: 18px; } }
+  [data-elucid-page-path-alias="/benefits"] select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none; }
+    [data-elucid-page-path-alias="/benefits"] select::-ms-expand {
+      display: none; }
+  [data-elucid-page-path-alias="/benefits"] .elucid-select {
+    border-bottom: 1px solid #7c7c7c;
+    display: inline-block; }
+    [data-elucid-page-path-alias="/benefits"] .elucid-select .elucid-select-select {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/benefits"] .elucid-select .elucid-select-icon {
+      display: inline-block; }
+    [data-elucid-page-path-alias="/benefits"] .elucid-select:hover {
+      border-bottom: 2px solid #03A9F3;
+      font-size: 14px; }
+      [data-elucid-page-path-alias="/benefits"] .elucid-select:hover .elucid-select-label {
+        color: #03A9F3;
+        font-size: 12px; }
+  [data-elucid-page-path-alias="/benefits"] h2 {
+    color: #e74131;
+    font-weight: 400;
+    margin-bottom: 20px; }
+  [data-elucid-page-path-alias="/benefits"] .accordion {
+    margin: 40px 0; }
+    [data-elucid-page-path-alias="/benefits"] .accordion .accordion_item_body {
+      padding: 20px; }
+  [data-elucid-page-path-alias="/benefits"] .apply_button {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+    color: white;
+    font-weight: bold;
+    padding: 10px 40px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    background-color: #03A9F3;
+    display: inline-block;
+    margin: 20px 0; }
+    [data-elucid-page-path-alias="/benefits"] .apply_button:hover {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+      color: #1a749d;
+      top: -1px; }
+    [data-elucid-page-path-alias="/benefits"] .apply_button:hover {
+      background-color: #b9e4ef; }
+    [data-elucid-page-path-alias="/benefits"] .apply_button:hover {
+      text-decoration: none; }
+
+/*
   Defines the Capabilities page specific styles.
 */
 [data-elucid-page-path-alias="/capabilities"] {
@@ -2091,17 +2180,19 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     cursor: pointer;
     display: table;
     border-collapse: collapse;
-    width: 100%; }
-    .accordion .accordion_item .accordion_item_header .accordion_item_header_left {
-      border-right: 1px solid #d2d2d2;
-      display: table-cell;
-      text-align: center;
-      width: 120px; }
+    width: 100%;
+    /*
+          .accordion_item_header_left {
+            border-right: 1px solid rgba(210, 210, 210, 100);
+            display: table-cell;
+            text-align: center;
+            width: 120px
+          }
+    */ }
     .accordion .accordion_item .accordion_item_header .accordion_item_header_middle {
       display: table-cell;
       padding: 15px 0px 15px 20px; }
     .accordion .accordion_item .accordion_item_header .accordion_item_header_right {
-      border-left: 1px solid #d2d2d2;
       display: table-cell;
       text-align: center;
       width: 30px; }

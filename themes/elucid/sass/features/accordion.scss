@@ -17,21 +17,19 @@
       display: table;
       border-collapse: collapse;
       width: 100%;
-
+/*
       .accordion_item_header_left {
         border-right: 1px solid rgba(210, 210, 210, 100);
         display: table-cell;
         text-align: center;
         width: 120px
       }
-
+*/
       .accordion_item_header_middle {
         display: table-cell;
         padding: 15px 0px 15px 20px;
       }
-
       .accordion_item_header_right {
-        border-left: 1px solid rgba(210, 210, 210, 100);
         display: table-cell;
         text-align: center;
         width: 30px;
@@ -52,7 +50,6 @@
       width: 100%;
       border-bottom: 1px solid rgba(210, 210, 210, 100);
     }
-
     &.accordion_expanded {
       .accordion_item_header {
         color: $default-link-color;

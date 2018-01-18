@@ -4,6 +4,7 @@ base:
     https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js: { type: external }
     node_modules/material-components-web/dist/material-components-web.min.js: {}
     js/elucid.js: {}
+    js/accordion.js: {}
     js/input.js: {}
     js/input_file.js: {}
     js/openings.js: {}

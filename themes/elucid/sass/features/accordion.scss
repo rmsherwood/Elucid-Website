@@ -1,0 +1,70 @@
+/*
+  This stylesheet defines the default styles
+  for accordion elements.
+*/
+
+.accordion {
+  border: 1px solid rgba(210, 210, 210, 100);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  .accordion_item {
+    .accordion_item_header {
+      border-bottom: 1px solid rgba(210, 210, 210, 100);
+      color: #525252;
+      cursor: pointer;
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+
+      .accordion_item_header_left {
+        border-right: 1px solid rgba(210, 210, 210, 100);
+        display: table-cell;
+        text-align: center;
+        width: 120px
+      }
+
+      .accordion_item_header_middle {
+        display: table-cell;
+        padding: 15px 0px 15px 20px;
+      }
+
+      .accordion_item_header_right {
+        border-left: 1px solid rgba(210, 210, 210, 100);
+        display: table-cell;
+        text-align: center;
+        width: 30px;
+      }
+    }
+    .accordion_item_header:hover{
+      background-color: #edfcff;
+      color: $default-link-hover-color;
+      .accordion_item_header_right {
+        svg {
+          path {
+            fill: $default-link-hover-color;
+          }
+        }
+      }
+    }
+    .accordion_item_body {
+      width: 100%;
+      border-bottom: 1px solid rgba(210, 210, 210, 100);
+    }
+
+    &.accordion_expanded {
+      .accordion_item_header {
+        color: $default-link-color;
+        .accordion_item_header_right {
+          svg {
+            transform: rotate(180deg);
+            path {
+              fill: $default-link-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

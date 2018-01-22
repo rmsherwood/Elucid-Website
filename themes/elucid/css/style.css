@@ -3323,17 +3323,19 @@ header {
             border-bottom-color: #ff5131;
             border-bottom-width: 2px;
             box-shadow: none; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_focus label {
+          color: #03A9F3; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_focus label:after {
+            color: #03A9F3; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_focus input {
+          border-bottom-color: #03A9F3; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_focus .rate_table_filter_icon path {
+          fill: #03A9F3; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label {
-          color: #03A9F3;
           font-size: 10px;
           top: 0; }
-          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active label:after {
-            color: #03A9F3; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active input {
-          border-bottom-color: #03A9F3;
           border-bottom-width: 2px; }
-        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.rate_table_active .rate_table_filter_icon path {
-          fill: #03A9F3; }
         .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label {
           color: #ff5131; }
           .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_filter.elucid_invalid:not(.rate_table_active) label:after {
@@ -3370,6 +3372,12 @@ header {
             top: 0;
             right: 0;
             z-index: -1; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num.rate_table_focus label {
+          color: #03A9F3; }
+          .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num.rate_table_focus label:after {
+            color: #03A9F3; }
+        .rate_table .rate_table_body .rate_table_body_filter_section .rate_table_num.rate_table_focus .rate_table_select_icon path {
+          fill: #03A9F3; }
     .rate_table .rate_table_body .rate_table_body_table_section .rate_table_table th {
       border: none;
       font-weight: 600; }
@@ -3635,14 +3643,16 @@ header {
       border-bottom-color: #ff5131;
       border-bottom-width: 2px;
       box-shadow: none; }
+  .elucid_textfield.elucid_focus label {
+    color: #03A9F3; }
+    .elucid_textfield.elucid_focus label:after {
+      color: #03A9F3; }
+  .elucid_textfield.elucid_focus input, .elucid_textfield.elucid_focus textarea {
+    border-bottom-color: #03A9F3; }
   .elucid_textfield.elucid_active label {
-    color: #03A9F3;
     font-size: 10px;
     top: 5px; }
-    .elucid_textfield.elucid_active label:after {
-      color: #03A9F3; }
   .elucid_textfield.elucid_active input, .elucid_textfield.elucid_active textarea {
-    border-bottom-color: #03A9F3;
     border-bottom-width: 2px; }
   .elucid_textfield.elucid_invalid:not(.elucid_active) label {
     color: #ff5131; }

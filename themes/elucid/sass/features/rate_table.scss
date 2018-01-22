@@ -118,23 +118,29 @@
             box-shadow: none;
           }
         }
-        &.rate_table_active {
+        &.rate_table_focus {
           label {
             color: $blue;
-            font-size: 10px;
-            top: 0;
             &:after {
               color: $blue;
             }
           }
           input {
             border-bottom-color: $blue;
-            border-bottom-width: 2px;
           }
           .rate_table_filter_icon {
             path {
               fill: $blue;
             }
+          }
+        }
+        &.rate_table_active {
+          label {
+            font-size: 10px;
+            top: 0;
+          }
+          input {
+            border-bottom-width: 2px;
           }
         }
         &.elucid_invalid:not(.rate_table_active) {
@@ -174,6 +180,19 @@
             top: 0;
             right: 0;
             z-index: -1; // place icon "behind" select element to allow select to receive inputs.
+          }
+        }
+        &.rate_table_focus {
+          label {
+            color: $blue;
+            &:after {
+              color: $blue;
+            }
+          }
+          .rate_table_select_icon {
+            path {
+              fill: $blue;
+            }
           }
         }
       }

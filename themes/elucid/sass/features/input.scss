@@ -35,17 +35,23 @@
       box-shadow: none;
     }
   }
-  &.elucid_active {
+  &.elucid_focus {
     label {
       color: $blue;
-      font-size: 10px;
-      top: 5px;
       &:after {
         color: $blue;
       }
     }
-    input,textarea {
+    input, textarea {
       border-bottom-color: $blue;
+    }
+  }
+  &.elucid_active {
+    label {
+      font-size: 10px;
+      top: 5px;
+    }
+    input,textarea {
       border-bottom-width: 2px;
     }
   }

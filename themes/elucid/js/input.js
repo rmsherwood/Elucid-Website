@@ -63,6 +63,7 @@
   /*
   */
   function InputComponent (formItemElement) {
+    this.state = INACTIVE;
     this.formItemElement = formItemElement;
     this.inputElement = this.getInputElement ();
   }
@@ -74,9 +75,11 @@
     this.setState ();
     this.inputElement.focusin (function () {
       self.activate ();
+      self.addFocusClass ();
     });
     this.inputElement.focusout (function () {
       self.setState ();
+      self.removeFocusClass ();
     });
     this.inputElement.change (function () {
       self.setState ();
@@ -96,6 +99,18 @@
     this.inputElement.val () ?
       this.activate   ():
       this.deactivate ();
+  }
+
+  /*
+  */
+  InputComponent.prototype.addFocusClass = function () { 
+    this.formItemElement.addClass (focusClassName);
+  }
+
+  /*
+  */
+  InputComponent.prototype.removeFocusClass = function () {
+    this.formItemElement.removeClass (focusClassName);
   }
 
   /*
@@ -121,6 +136,9 @@
   InputComponent.prototype.getInputElement = function () {
     return $('input,textarea', this.formItemElement);
   }
+
+  //
+  var focusClassName = 'elucid_focus';
 
   //
   var activeClassName = 'elucid_active';

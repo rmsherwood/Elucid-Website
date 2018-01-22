@@ -214,6 +214,7 @@
 
     this.offsiteTabElement      = this.getOffsiteTabElement ();
     this.onsiteTabElement       = this.getOnsiteTabElement ();
+    this.numElement             = this.getNumElement ();
     this.numSelectElement       = this.getNumSelectElement ();
     this.filterElement          = this.getFilterElement ();
     this.filterInputElement     = this.getFilterInputElement ();
@@ -271,6 +272,12 @@
   Feature.prototype.initNumElement = function () {
     var self = this;
     var selectElement = this.numSelectElement;
+    selectElement.focusin (function () {
+      self.addNumElementFocusClass ();
+    });
+    selectElement.focusout (function () {
+      self.removeNumElementFocusClass ();
+    });
     selectElement.change (function () {
       self.setNum (parseInt (selectElement.val ()));
     });
@@ -289,9 +296,11 @@
     });
     this.setFilterInputElementState ();
     inputElement.focusin (function () {
+      self.addFilterElementFocusClass ();
       self.activateFilterInputElement ();
     });
     inputElement.focusout (function () {
+      self.removeFilterElementFocusClass ();
       self.setFilterInputElementState ();
     });
     inputElement.change (function () {
@@ -303,6 +312,30 @@
     inputElement.get (0).addEventListener ('valid', function () {
       self.filterElement.removeClass (invalidClassName);
     });
+  }
+
+  /*
+  */
+  Feature.prototype.addNumElementFocusClass = function () {
+    this.numElement.addClass (focusClassName);
+  }
+
+  /*
+  */
+  Feature.prototype.removeNumElementFocusClass = function () {
+    this.numElement.removeClass (focusClassName);
+  }
+
+  /*
+  */
+  Feature.prototype.addFilterElementFocusClass = function () {
+    this.filterElement.addClass (focusClassName);
+  }
+
+  /*
+  */
+  Feature.prototype.removeFilterElementFocusClass = function () {
+    this.filterElement.removeClass (focusClassName);
   }
 
   /*
@@ -826,10 +859,18 @@
 
   /*
     Accepts no arguments and returns the num
-    element.
+    select element.
   */
   Feature.prototype.getNumSelectElement = function () {
     return $('.' + numSelectClassName, this.featureElement);
+  }
+
+  /*
+    Accepts no arguments and returns the num
+    element.
+  */
+  Feature.prototype.getNumElement = function () {
+    return $('.' + numClassName, this.featureElement);
   }
 
   /*
@@ -885,6 +926,9 @@
 
   // Represents the num select class name.
   var numSelectClassName = 'rate_table_num_select_select';
+
+  // Represents the num class name.
+  var numClassName = 'rate_table_num';
 
   // Represents the table body element class name.
   var tableBodyClassName = 'rate_table_table_body';
@@ -951,6 +995,9 @@
 
   // Returns the active class name.
   var activeClassName = 'rate_table_active';
+
+  // Returns the focus class name.
+  var focusClassName = 'rate_table_focus';
 
   // Returns the Material active class name.
   var materialActiveClassName = 'mdc-tab--active';

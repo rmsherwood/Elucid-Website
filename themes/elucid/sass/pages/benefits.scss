@@ -6,23 +6,22 @@
 [data-elucid-page-path-alias="/careers/benefits"],
 [data-elucid-page-path-alias="/careers/employee-benefits"] {
   @include styleguide;
-  h2 {
-    color: #e74131;
-    font-weight: 400;
-    margin-bottom: $margin-med;
-  }
-  .accordion {
-    margin: $margin-large 0;
-    .accordion_item_body {
-      padding: $margin-med;
+  article {
+    h2 {
+      color: #e74131;
+      font-weight: 400;
+      margin-bottom: $margin-med;
     }
-  }
-  .apply_button {
-    @include blue-button;
-    display: inline-block;
-    margin: $margin-med 0;
-    &:hover {
-      text-decoration: none;
+    .accordion {
+      margin: $margin-large 0;
+    }
+    .apply_button {
+      @include blue-button;
+      display: inline-block;
+      margin: $margin-med 0;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

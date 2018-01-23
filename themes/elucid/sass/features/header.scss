@@ -7,6 +7,7 @@ $header-mobile-breakpoint: 950px;
 
 header {
   @include styleguide();
+  background-color: white;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
   position: relative; // needed for the shadow effect to cast over subsequent elements.
   width: 100%;
@@ -180,7 +181,7 @@ header {
   display: none;
   position: absolute;
   width: 100%;
-  z-index: 1; // otherwise, doesn't appear in Chrome on windows.
+  z-index: 3; // otherwise, doesn't appear in Chrome on windows.
   #block-elucid-search {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
     border-bottom-left-radius: 2px;
@@ -249,12 +250,13 @@ header {
   }
 }
 .subheader {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
+  position: relative; // set to allow shadow to cast.
+  z-index: 2; // fine-tuned so that this element will cast a shadow of the following elements.
+
   .header_menu_mobile_view {
     .header_menu_mobile_view_header {
-      box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
       padding: 13px 0;
-      position: relative; // set to allow shadow to cast.
-      z-index: 1; // fine-tuned so that this element will cast a shadow of the following elements.
       .header_menu_mobile_view_title {
         @include strip-margins;
         &:before {

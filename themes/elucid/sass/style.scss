@@ -119,6 +119,7 @@ $margin-xlarge: 60px;
 // V. Dimensions.
 
 $max-content-width: 1024px;
+$max-padded-content-width: 940px;
 
 // VI. Element mixins.
 
@@ -241,6 +242,32 @@ $max-content-width: 1024px;
 @mixin gradient-bar-before($height, $border-radius: null) {
   &:before {
     @include gradient-bar($height, $border-radius);
+  }
+}
+
+/*
+  Accepts no arguments and styles the element
+  that this mixin is applied to as a close
+  button.
+
+  Note: the element must contain an inline SVG
+  element representing the close icon.
+*/
+@mixin close-button($top,$right) {
+  cursor: pointer;
+  position: absolute;
+  top: $top;
+  right: $right;
+  svg {
+    transition: all .25s;
+  }
+  &:hover {
+    svg {
+      transform: rotate(90deg);
+      path {
+        fill: $default-link-color;
+      }
+    }
   }
 }
 
@@ -554,9 +581,6 @@ $default-ribbon-tablet-height: ($default-ribbon-height - $default-ribbon-mobile-
   font-size: $default-body-font-size;
   @include mobile(font-size, 14px);
 
-  .elucid-message {
-    @extend .layout-padded-content;
-  }
   h1 {
     @include h1;
   }

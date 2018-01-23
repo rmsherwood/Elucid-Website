@@ -21,13 +21,13 @@
  *   - class: HTML classes.
  */
 #}
+{% if not (message_list is empty) %}
   <div class="elucid-message">
     <div class="elucid-message-header">
       <div class="elucid-message-close-button">
         <img class="inlinesvg" src="/themes/elucid/images/close-icon.svg" alt="Message window close button"/>
       </div>
     </div>
-{% if not (message_list is empty) %}
     {% for type, messages in message_list %}
       <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
         {% if type == 'error' %}
@@ -50,5 +50,5 @@
         {% endif %}
       </div>
     {% endfor %}
-{% endif %}
   </div>
+{% endif %}

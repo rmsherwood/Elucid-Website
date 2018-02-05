@@ -17,10 +17,6 @@
       @include close-button(-5px, -25px);
     }
   }
-  .elucid-message-title {
-    font-size: 14px;
-    font-weight: bold;
-  }
   @mixin message($background-color, $foreground-color) {
     background-color: $background-color;
     border-left: 7px solid $foreground-color;

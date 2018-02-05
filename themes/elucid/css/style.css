@@ -3185,9 +3185,6 @@ header {
         transform: rotate(90deg); }
         .elucid-message .elucid-message-header .elucid-message-close-button:hover svg path {
           fill: #03A9F3; }
-  .elucid-message .elucid-message-title {
-    font-size: 14px;
-    font-weight: bold; }
   .elucid-message [aria-label="Status message"] {
     background-color: #f0fff6;
     border-left: 7px solid #18865f;

@@ -189,7 +189,7 @@ class ManagedFile extends FormElement {
     }
 
     $status_messages = ['#type' => 'status_messages'];
-    $form['#prefix'] .= $renderer->renderRoot($status_messages);
+    $form['#suffix'] .= $renderer->renderRoot($status_messages);
     $output = $renderer->renderRoot($form);
 
     $response = new AjaxResponse();

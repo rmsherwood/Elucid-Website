@@ -1,0 +1,27 @@
+/*
+  This stylesheet defines the default styles
+  for form errors.
+*/
+.field--type-file {
+  .form-item {
+    .form-managed-file {
+      .elucid-message {
+        display: none;
+      }
+    }
+  }
+  .elucid-message {
+    border: solid 2px #e74131;
+    color: #e34233;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    .elucid-message-header {
+      display: none;
+    }
+    .elucid-message-title {
+      display: none;
+    }
+  }
+}

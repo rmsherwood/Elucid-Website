@@ -3212,28 +3212,28 @@ header {
   This stylesheet defines the default styles
   for the System Notifications (Messages) block.
 */
-.elucid-message {
+.elucid-message-region .elucid-message {
   background-color: #f4f4f4;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   padding: 20px 40px;
   position: relative;
   z-index: 1; }
-  .elucid-message .elucid-message-header {
+  .elucid-message-region .elucid-message .elucid-message-header {
     margin: 0 auto;
     max-width: 940px;
     position: relative; }
-    .elucid-message .elucid-message-header .elucid-message-close-button {
+    .elucid-message-region .elucid-message .elucid-message-header .elucid-message-close-button {
       cursor: pointer;
       position: absolute;
       top: -5px;
       right: -25px; }
-      .elucid-message .elucid-message-header .elucid-message-close-button svg {
+      .elucid-message-region .elucid-message .elucid-message-header .elucid-message-close-button svg {
         transition: all .25s; }
-      .elucid-message .elucid-message-header .elucid-message-close-button:hover svg {
+      .elucid-message-region .elucid-message .elucid-message-header .elucid-message-close-button:hover svg {
         transform: rotate(90deg); }
-        .elucid-message .elucid-message-header .elucid-message-close-button:hover svg path {
+        .elucid-message-region .elucid-message .elucid-message-header .elucid-message-close-button:hover svg path {
           fill: #03A9F3; }
-  .elucid-message [aria-label="Status message"] {
+  .elucid-message-region .elucid-message [aria-label="Status message"] {
     background-color: #f0fff6;
     border-left: 7px solid #18865f;
     color: #18865f;
@@ -3242,11 +3242,11 @@ header {
     margin: 0 auto;
     max-width: 940px;
     padding: 10px; }
-    .elucid-message [aria-label="Status message"] a {
+    .elucid-message-region .elucid-message [aria-label="Status message"] a {
       color: #03A9F3; }
-      .elucid-message [aria-label="Status message"] a:hover {
+      .elucid-message-region .elucid-message [aria-label="Status message"] a:hover {
         color: #1a749d; }
-  .elucid-message [aria-label="Warning message"] {
+  .elucid-message-region .elucid-message [aria-label="Warning message"] {
     background-color: #fffdf7;
     border-left: 7px solid #d4a329;
     color: #d4a329;
@@ -3255,11 +3255,11 @@ header {
     margin: 0 auto;
     max-width: 940px;
     padding: 10px; }
-    .elucid-message [aria-label="Warning message"] a {
+    .elucid-message-region .elucid-message [aria-label="Warning message"] a {
       color: #03A9F3; }
-      .elucid-message [aria-label="Warning message"] a:hover {
+      .elucid-message-region .elucid-message [aria-label="Warning message"] a:hover {
         color: #1a749d; }
-  .elucid-message [aria-label="Error message"] {
+  .elucid-message-region .elucid-message [aria-label="Error message"] {
     background-color: #fefbfb;
     border-left: 7px solid #e34233;
     color: #e34233;
@@ -3268,9 +3268,9 @@ header {
     margin: 0 auto;
     max-width: 940px;
     padding: 10px; }
-    .elucid-message [aria-label="Error message"] a {
+    .elucid-message-region .elucid-message [aria-label="Error message"] a {
       color: #03A9F3; }
-      .elucid-message [aria-label="Error message"] a:hover {
+      .elucid-message-region .elucid-message [aria-label="Error message"] a:hover {
         color: #1a749d; }
 
 /*
